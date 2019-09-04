@@ -156,7 +156,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def setLanguage(self, language):
         # file dialog
         if not self.file_dialog_translator.isEmpty():
-            QApplication.removeTranslator(self.self.file_dialog_translator)
+            QApplication.removeTranslator(self.file_dialog_translator)
 
         qmfile = "qtbase_" + QLocale.system().name().split('_')[0] + '.qm'
         self.file_dialog_translator.load(qmfile,
