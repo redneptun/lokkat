@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Creating Offline Installers | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Creating Offline Installers</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-creating-installers.html" />
+  <link rel="next" href="ifw-online-installers.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-creating-installers.html">Creating Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-online-installers.html">Creating Online Installers</a>
+</p><p/>
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Creating Offline Installers</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-offline-installers.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Offline installers do not try to connect to an online repository at all during installation. However, the metadata configuration (config.xml) enables users to add and update components online.</p>
+<p>Offline installers are especially useful in cases where a corporate firewall does not allow end users to connect to web servers. The network administrator can set up a local update service within the network.</p>
+<p>To create offline installers, use the <code>--offline-only</code> option of the <code>binarycreator</code> tool.</p>
+<p>To create an offline installer in Windows, enter the following command:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\binarycreator<span class="operator">.</span>exe <span class="operator">-</span><span class="operator">-</span>offline<span class="operator">-</span>only <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\installerbase<span class="operator">.</span>exe <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span>\<span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+<p>Some options have default values, and therefore, you can omit them. For example, enter the following command to create an installer binary called SDKInstaller.exe that contains the packages identified by org.qt-project.sdk and their dependencies:</p>
+<pre class="cpp">
+
+  binarycreator<span class="operator">.</span>exe <span class="operator">-</span><span class="operator">-</span>offline<span class="operator">-</span>only <span class="operator">-</span>c installer<span class="operator">-</span>config <span class="operator">-</span>p installer<span class="operator">-</span>packes SDKInstaller<span class="operator">.</span>exe
+
+</pre>
+</div>
+<!-- @@@ifw-offline-installers.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-creating-installers.html">Creating Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-online-installers.html">Creating Online Installers</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

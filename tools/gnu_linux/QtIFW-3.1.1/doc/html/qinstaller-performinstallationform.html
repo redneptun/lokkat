@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- performinstallationform.cpp -->
+  <title>PerformInstallationForm Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >PerformInstallationForm</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PerformInstallationForm Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-performinstallationform.html">QInstaller::PerformInstallationForm</a>)<br/></span>
+<!-- $$$PerformInstallationForm-brief -->
+<p>The <a href="qinstaller-performinstallationform.html">PerformInstallationForm</a> class shows progress information about the installation state. <a href="#details">More...</a></p>
+<!-- @@@PerformInstallationForm -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;PerformInstallationForm&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-performinstallationform-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#PerformInstallationForm">PerformInstallationForm</a></b>(QObject *<i>parent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#enableDetails">enableDetails</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#isShowingDetails">isShowingDetails</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#scrollDetailsToTheEnd">scrollDetailsToTheEnd</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#setDetailsButtonEnabled">setDetailsButtonEnabled</a></b>(bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#setDetailsWidgetVisible">setDetailsWidgetVisible</a></b>(bool <i>visible</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#setupUi">setupUi</a></b>(QWidget *<i>widget</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#startUpdateProgress">startUpdateProgress</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#stopUpdateProgress">stopUpdateProgress</a></b>()</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#appendProgressDetails">appendProgressDetails</a></b>(const QString &amp;<i>details</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#clearDetailsBrowser">clearDetailsBrowser</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#onDownloadStatusChanged">onDownloadStatusChanged</a></b>(const QString &amp;<i>status</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#toggleDetails">toggleDetails</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#updateProgress">updateProgress</a></b>()</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationform.html#showDetailsChanged">showDetailsChanged</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$PerformInstallationForm-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-performinstallationform.html">PerformInstallationForm</a> class shows progress information about the installation state.</p>
+<p>A progress bar indicates the progress of the installation, update, or uninstallation.</p>
+<p>The page contains a button for showing or hiding detailed information about the progress in an <i>details browser</i>. The text on the button changes depending on whether the details browser is currently shown or hidden.</p>
+</div>
+<!-- @@@PerformInstallationForm -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PerformInstallationForm[overload1]$$$PerformInstallationFormQObject* -->
+<h3 class="fn" id="PerformInstallationForm"><a name="PerformInstallationForm"></a>PerformInstallationForm::<span class="name">PerformInstallationForm</span>(<span class="type">QObject</span> *<i>parent</i>)</h3>
+<p>Constructs the perform installation UI with <i>parent</i> as parent.</p>
+<!-- @@@PerformInstallationForm -->
+<!-- $$$appendProgressDetails[overload1]$$$appendProgressDetailsconstQString& -->
+<h3 class="fn" id="appendProgressDetails"><a name="appendProgressDetails"></a><code>[slot] </code><span class="type">void</span> PerformInstallationForm::<span class="name">appendProgressDetails</span>(const <span class="type">QString</span> &amp;<i>details</i>)</h3>
+<p>Displays <i>details</i> about progress of the installation in the details browser.</p>
+<!-- @@@appendProgressDetails -->
+<!-- $$$clearDetailsBrowser[overload1]$$$clearDetailsBrowser -->
+<h3 class="fn" id="clearDetailsBrowser"><a name="clearDetailsBrowser"></a><code>[slot] </code><span class="type">void</span> PerformInstallationForm::<span class="name">clearDetailsBrowser</span>()</h3>
+<p>Clears the contents of the details browser.</p>
+<!-- @@@clearDetailsBrowser -->
+<!-- $$$enableDetails[overload1]$$$enableDetails -->
+<h3 class="fn" id="enableDetails"><a name="enableDetails"></a><span class="type">void</span> PerformInstallationForm::<span class="name">enableDetails</span>()</h3>
+<p>Enables the details button with the text <b>Show Details</b> and hides the details browser.</p>
+<!-- @@@enableDetails -->
+<!-- $$$isShowingDetails[overload1]$$$isShowingDetails -->
+<h3 class="fn" id="isShowingDetails"><a name="isShowingDetails"></a><span class="type">bool</span> PerformInstallationForm::<span class="name">isShowingDetails</span>() const</h3>
+<p>Returns <code>true</code> if the details browser is visible.</p>
+<!-- @@@isShowingDetails -->
+<!-- $$$onDownloadStatusChanged[overload1]$$$onDownloadStatusChangedconstQString& -->
+<h3 class="fn" id="onDownloadStatusChanged"><a name="onDownloadStatusChanged"></a><code>[slot] </code><span class="type">void</span> PerformInstallationForm::<span class="name">onDownloadStatusChanged</span>(const <span class="type">QString</span> &amp;<i>status</i>)</h3>
+<p>Changes the label text according to the changes in the download status specified by <i>status</i>.</p>
+<!-- @@@onDownloadStatusChanged -->
+<!-- $$$scrollDetailsToTheEnd[overload1]$$$scrollDetailsToTheEnd -->
+<h3 class="fn" id="scrollDetailsToTheEnd"><a name="scrollDetailsToTheEnd"></a><span class="type">void</span> PerformInstallationForm::<span class="name">scrollDetailsToTheEnd</span>()</h3>
+<p>Scrolls to the bottom of the details browser.</p>
+<!-- @@@scrollDetailsToTheEnd -->
+<!-- $$$setDetailsButtonEnabled[overload1]$$$setDetailsButtonEnabledbool -->
+<h3 class="fn" id="setDetailsButtonEnabled"><a name="setDetailsButtonEnabled"></a><span class="type">void</span> PerformInstallationForm::<span class="name">setDetailsButtonEnabled</span>(<span class="type">bool</span> <i>enable</i>)</h3>
+<p>Enables the details button if <i>enable</i> is <code>true</code>.</p>
+<!-- @@@setDetailsButtonEnabled -->
+<!-- $$$setDetailsWidgetVisible[overload1]$$$setDetailsWidgetVisiblebool -->
+<h3 class="fn" id="setDetailsWidgetVisible"><a name="setDetailsWidgetVisible"></a><span class="type">void</span> PerformInstallationForm::<span class="name">setDetailsWidgetVisible</span>(<span class="type">bool</span> <i>visible</i>)</h3>
+<p>Shows the details button if <i>visible</i> is <code>true</code>.</p>
+<!-- @@@setDetailsWidgetVisible -->
+<!-- $$$setupUi[overload1]$$$setupUiQWidget* -->
+<h3 class="fn" id="setupUi"><a name="setupUi"></a><span class="type">void</span> PerformInstallationForm::<span class="name">setupUi</span>(<span class="type">QWidget</span> *<i>widget</i>)</h3>
+<p>Sets up the perform installation UI specified by <i>widget</i>.</p>
+<!-- @@@setupUi -->
+<!-- $$$showDetailsChanged[overload1]$$$showDetailsChanged -->
+<h3 class="fn" id="showDetailsChanged"><a name="showDetailsChanged"></a><code>[signal] </code><span class="type">void</span> PerformInstallationForm::<span class="name">showDetailsChanged</span>()</h3>
+<p>This signal is emitted when the end users select the details button to show or hide progress details.</p>
+<!-- @@@showDetailsChanged -->
+<!-- $$$startUpdateProgress[overload1]$$$startUpdateProgress -->
+<h3 class="fn" id="startUpdateProgress"><a name="startUpdateProgress"></a><span class="type">void</span> PerformInstallationForm::<span class="name">startUpdateProgress</span>()</h3>
+<p>Starts the update progress timer.</p>
+<!-- @@@startUpdateProgress -->
+<!-- $$$stopUpdateProgress[overload1]$$$stopUpdateProgress -->
+<h3 class="fn" id="stopUpdateProgress"><a name="stopUpdateProgress"></a><span class="type">void</span> PerformInstallationForm::<span class="name">stopUpdateProgress</span>()</h3>
+<p>Stops the update progress timer.</p>
+<!-- @@@stopUpdateProgress -->
+<!-- $$$toggleDetails[overload1]$$$toggleDetails -->
+<h3 class="fn" id="toggleDetails"><a name="toggleDetails"></a><code>[slot] </code><span class="type">void</span> PerformInstallationForm::<span class="name">toggleDetails</span>()</h3>
+<p>Sets the text of the details button to <b>Hide Details</b> or <b>Show Details</b> depending on whether the details are currently shown or hidden. Emits the <a href="qinstaller-performinstallationform.html#showDetailsChanged">showDetailsChanged</a>() signal.</p>
+<!-- @@@toggleDetails -->
+<!-- $$$updateProgress[overload1]$$$updateProgress -->
+<h3 class="fn" id="updateProgress"><a name="updateProgress"></a><code>[slot] </code><span class="type">void</span> PerformInstallationForm::<span class="name">updateProgress</span>()</h3>
+<p>Updates the progress of the installation on the progress bar.</p>
+<!-- @@@updateProgress -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+/****************************************************************************
+**
+** Copyright (C) 2017 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
+**
+** This file is part of the Qt Installer Framework.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see http://www.qt.io/terms-conditions. For further
+** information use the contact form at http://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: http://www.gnu.org/copyleft/fdl.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example startmenu
+    \ingroup qtifwexamples
+    \title Start Menu Shortcut Example
+
+    \brief Using a component script to add an entry to the Windows Start menu.
+
+    \image qtifw-examples-startmenu.png
+
+    \e{Start Menu} illustrates how to use the \gui Component function to add an
+    entry for opening a README file to the Windows \uicontrol Start menu.
+
+    \include installerfw-examples-configuring.qdocinc
+
+    \quotefile startmenu/config/config.xml
+
+    \include installerfw-examples-packaging.qdocinc
+
+    \list
+        \li The \c <Default> element is set to \c true to preselect the
+            component in the installer.
+        \li The \c <Script> element specifies the file name of the JavaScript
+            file that is loaded to perform operations.
+    \endlist
+
+    \quotefile startmenu/packages/org.qtproject.ifw.example/meta/package.xml
+
+    \section1 Adding Entries to Start Menu
+
+    In installscript.qs, we use the \c createOperations() function to call the
+    component::createOperations() function, which creates the \c Extract
+    operation by default:
+
+    \quotefromfile startmenu/packages/org.qtproject.ifw.example/meta/installscript.qs
+    \skipto createOperations
+    \printuntil {
+    \skipto createOperations
+    \printuntil ;
+
+    On Windows, we use the component::addOperation function to add a shortcut
+    to the \uicontrol Start menu for opening the readme file:
+
+    \printuntil /^\}/
+
+    \include installerfw-examples-generating.qdocinc
+*/

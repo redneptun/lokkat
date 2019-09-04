@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Creating Online Installers | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Creating Online Installers</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-offline-installers.html" />
+  <link rel="next" href="ifw-updates.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-offline-installers.html">Creating Offline Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-updates.html">Promoting Updates</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#creating-repositories">Creating Repositories</a></li>
+<li class="level1"><a href="#configuring-repositories">Configuring Repositories</a></li>
+<li class="level1"><a href="#configuring-repository-categories">Configuring Repository Categories</a></li>
+<li class="level1"><a href="#creating-installer-binaries">Creating Installer Binaries</a></li>
+<li class="level1"><a href="#reducing-installer-size">Reducing Installer Size</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Creating Online Installers</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-online-installers.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Online installers fetch the repository description (Updates.xml), in addition to the one stored inside of the binary. Create a repository and upload it to a web server. Then specify the location of the repository in the config.xml file that you use to create the installer.</p>
+<a name="creating-repositories"></a>
+<h2 id="creating-repositories">Creating Repositories</h2>
+<p>Use the <code>repogen</code> tool to create online repositories of all packages of one package directory:</p>
+<p>repogen.exe -p &lt;package_directory&gt; &lt;repository_directory&gt;</p>
+<p>For example, to create a repository that contains only org.qt-project.sdk.qt and org.qt-project.sdk.qtcreator, enter the following command:</p>
+<pre class="cpp">
+
+  repogen<span class="operator">.</span>exe <span class="operator">-</span>p packages <span class="operator">-</span>i org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>sdk<span class="operator">.</span>qt<span class="operator">,</span>org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>sdk<span class="operator">.</span>qtcreator repository
+
+</pre>
+<p>When the repository has been created, upload it to a web server. You must specify the location of the repository in the installer configuration file.</p>
+<a name="configuring-repositories"></a>
+<h2 id="configuring-repositories">Configuring Repositories</h2>
+<p>The <code>&lt;RemoteRepositories&gt;</code> element in the installer configuration file (config.xml) can contain a list of several repositories. Each of them can have the following settings:</p>
+<ul>
+<li><code>&lt;Url&gt;</code>, which points to a list of available components.</li>
+<li><code>&lt;Enabled&gt;</code>, with 0 disabling this repository.</li>
+<li><code>&lt;Username&gt;</code>, which is used as user on a protected repository.</li>
+<li><code>&lt;Password&gt;</code>, which sets the password to use on a protected repository.</li>
+<li><code>&lt;DisplayName&gt;</code>, which optionally sets a string to display instead of the URL.</li>
+</ul>
+<p>The URL needs to point to the Updates.xml file that lists the available components. For example:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>RemoteRepositories<span class="operator">&gt;</span>
+       <span class="operator">&lt;</span>Repository<span class="operator">&gt;</span>
+               <span class="operator">&lt;</span>Url<span class="operator">&gt;</span>http:<span class="comment">//www.example.com/packages&lt;/Url&gt;</span>
+               <span class="operator">&lt;</span>Enabled<span class="operator">&gt;</span><span class="number">1</span><span class="operator">&lt;</span><span class="operator">/</span>Enabled<span class="operator">&gt;</span>
+               <span class="operator">&lt;</span>Username<span class="operator">&gt;</span>user<span class="operator">&lt;</span><span class="operator">/</span>Username<span class="operator">&gt;</span>
+               <span class="operator">&lt;</span>Password<span class="operator">&gt;</span>password<span class="operator">&lt;</span><span class="operator">/</span>Password<span class="operator">&gt;</span>
+               <span class="operator">&lt;</span>DisplayName<span class="operator">&gt;</span>Example repository<span class="operator">&lt;</span><span class="operator">/</span>DisplayName<span class="operator">&gt;</span>
+       <span class="operator">&lt;</span><span class="operator">/</span>Repository<span class="operator">&gt;</span>
+  <span class="operator">&lt;</span><span class="operator">/</span>RemoteRepositories<span class="operator">&gt;</span>
+
+</pre>
+<p>The installer works only if it can access the repository. If the repository is accessed after the installation, the maintenance tool rejects installation. However, uninstallation is still possible. A repository can be enabled or disabled by default. For repositories requiring authentication, the details can also be set here, although entering a password here is usually not advisable as it is saved in plain text. Authentication details not set here will be gotten at runtime using a dialog. The user can work around these settings at runtime.</p>
+<a name="configuring-repository-categories"></a>
+<h2 id="configuring-repository-categories">Configuring Repository Categories</h2>
+<p>The <code>&lt;RepositoryCategory&gt;</code> element in the installer configuration file (config.xml) can contain a list of several <code>&lt;RemoteRepositories&gt;</code> elements. Each <code>&lt;RemoteRepositories&gt;</code> element within the <code>&lt;RepositoryCagetory&gt;</code> element is considered a category. Each catecory can have a <code>&lt;DisplayName&gt;</code>, a <code>&lt;Tooltip&gt;</code>, a <code>&lt;Preselected&gt;</code> element and several <code>&lt;Repository&gt;</code> elements. Repository categories are shown in the component selection page, on the left side of the component selection widget:</p>
+<p class="centerAlign"><img src="images/ifw-repository-categories.png" alt="&quot;Component selection Page&quot;" /></p><p>By default, only repositories with no category are shown in the component selection widget. Checking one or several repositories and pressing <b>Fetch</b> will update the widget to show content also from the selected categorized repositories. Components in the repository categories are marked as <i>unstable</i> meaning that you can install other components although some components have missing dependencies, script errors and so on. For more information about <i>unstable</i> components, see <a href="ifw-globalconfig.html#summary-of-configuration-file-elements">Summary of Configuration File Elements</a>.</p>
+<p>Example of creating a repository category:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>RepositoryCategories<span class="operator">&gt;</span>
+      <span class="operator">&lt;</span>RemoteRepositories<span class="operator">&gt;</span>
+           <span class="operator">&lt;</span>Displayname<span class="operator">&gt;</span>Category <span class="number">1</span><span class="operator">&lt;</span><span class="operator">/</span>Displayname<span class="operator">&gt;</span>
+           <span class="operator">&lt;</span>Preselected<span class="operator">&gt;</span><span class="keyword">true</span><span class="operator">&lt;</span><span class="operator">/</span>Preselected<span class="operator">&gt;</span>
+           <span class="operator">&lt;</span>Tooltip<span class="operator">&gt;</span>Tooltip <span class="keyword">for</span> category <span class="number">1</span><span class="operator">&lt;</span><span class="operator">/</span>Tooltip<span class="operator">&gt;</span>
+           <span class="operator">&lt;</span>Repository<span class="operator">&gt;</span>
+                   <span class="operator">&lt;</span>Url<span class="operator">&gt;</span>http:<span class="comment">//www.example.com/packages&lt;/Url&gt;</span>
+                   <span class="operator">&lt;</span>Enabled<span class="operator">&gt;</span><span class="number">1</span><span class="operator">&lt;</span><span class="operator">/</span>Enabled<span class="operator">&gt;</span>
+                   <span class="operator">&lt;</span>Username<span class="operator">&gt;</span>user<span class="operator">&lt;</span><span class="operator">/</span>Username<span class="operator">&gt;</span>
+                   <span class="operator">&lt;</span>Password<span class="operator">&gt;</span>password<span class="operator">&lt;</span><span class="operator">/</span>Password<span class="operator">&gt;</span>
+                   <span class="operator">&lt;</span>DisplayName<span class="operator">&gt;</span>Example repository<span class="operator">&lt;</span><span class="operator">/</span>DisplayName<span class="operator">&gt;</span>
+           <span class="operator">&lt;</span><span class="operator">/</span>Repository<span class="operator">&gt;</span>
+      <span class="operator">&lt;</span><span class="operator">/</span>RemoteRepositories<span class="operator">&gt;</span>
+  <span class="operator">&lt;</span><span class="operator">/</span>RepositoryCategories<span class="operator">&gt;</span>
+
+</pre>
+<a name="creating-installer-binaries"></a>
+<h2 id="creating-installer-binaries">Creating Installer Binaries</h2>
+<p>To create an online installer by using the <code>binarycreator</code> tool, enter the following command:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\installerbase<span class="operator">.</span>exe <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span>\<span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">-</span>e <span class="operator">&lt;</span>packages<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+<p>For example, enter the following command to create an installer binary called SDKInstaller.exe that will not contain data for org.qt-project.sdk.qt and org.qt-project.qtcreator, because those packages are downloaded from a remote repository:</p>
+<pre class="cpp">
+
+  binarycreator<span class="operator">.</span>exe <span class="operator">-</span>p installer<span class="operator">-</span>packages <span class="operator">-</span>c installer<span class="operator">-</span>config\config<span class="operator">.</span>xml <span class="operator">-</span>e org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>sdk<span class="operator">.</span>qt<span class="operator">,</span>org<span class="operator">.</span>qt<span class="operator">-</span>project<span class="operator">.</span>qtcreator SDKInstaller<span class="operator">.</span>exe
+
+</pre>
+<a name="reducing-installer-size"></a>
+<h2 id="reducing-installer-size">Reducing Installer Size</h2>
+<p>Even if the components are fetched from a web server, <code>binarycreator</code> adds them to the installer binary by default. However, when the installer checks the web server for updates, end users are spared a download if new versions are not available.</p>
+<p>Alternatively, you can create online installers that do not contain any data and that fetch all the data from the web server. Use the <code>-n</code> parameter of the <code>binarycreator</code> tool and only add the root component to the installer. Usually the root component is empty and hence only adds the XML description of the root.</p>
+<p>For more information about the options that you have, see <a href="ifw-tools.html#summary-of-binarycreator-parameters">Summary of binarycreator Parameters</a>.</p>
+</div>
+<!-- @@@ifw-online-installers.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-offline-installers.html">Creating Offline Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-updates.html">Promoting Updates</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

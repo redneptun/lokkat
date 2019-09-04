@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>TargetDirectoryPage Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >TargetDirectoryPage</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">TargetDirectoryPage Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-targetdirectorypage.html">QInstaller::TargetDirectoryPage</a>)<br/></span>
+<!-- $$$TargetDirectoryPage-brief -->
+<p>The <a href="qinstaller-targetdirectorypage.html">TargetDirectoryPage</a> class specifies the target directory for the installation. <a href="#details">More...</a></p>
+<!-- @@@TargetDirectoryPage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;TargetDirectoryPage&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></td></tr></table></div><ul>
+<li><a href="qinstaller-targetdirectorypage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#TargetDirectoryPage">TargetDirectoryPage</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#initializePage">initializePage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#setTargetDir">setTargetDir</a></b>(const QString &amp;<i>dirName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#targetDir">targetDir</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#validatePage">validatePage</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#isComplete">isComplete</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="qinstaller-packagemanagerpage.html#public-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#entering">entering</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-targetdirectorypage.html#leaving">leaving</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">2 signals inherited from <a href="qinstaller-packagemanagerpage.html#signals">QInstaller::PackageManagerPage</a></li>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$TargetDirectoryPage-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-targetdirectorypage.html">TargetDirectoryPage</a> class specifies the target directory for the installation.</p>
+<p>End users can leave the page to continue the installation only if certain criteria are fulfilled. Some of them are checked in the <a href="qinstaller-targetdirectorypage.html#validatePage">validatePage</a>() function, some in the targetDirWarning() function:</p>
+<ul>
+<li>No empty path given as target.</li>
+<li>No relative path given as target.</li>
+<li>Only ASCII characters are allowed in the path if the &lt;AllowNonAsciiCharacters&gt; element in the configuration file is set to <code>false</code>.</li>
+<li>The following ambiguous characters are not allowed in the path: [&quot;~&lt;&gt;|?*!@#$%^&amp;:,;]</li>
+<li>No root or home directory given as target.</li>
+<li>On Windows, path names must be less than 260 characters long.</li>
+<li>No spaces in the path if the &lt;AllowSpaceInPath&gt; element in the configuration file is set to <code>false</code>.</li>
+</ul>
+</div>
+<!-- @@@TargetDirectoryPage -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$TargetDirectoryPage[overload1]$$$TargetDirectoryPagePackageManagerCore* -->
+<h3 class="fn" id="TargetDirectoryPage"><a name="TargetDirectoryPage"></a>TargetDirectoryPage::<span class="name">TargetDirectoryPage</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Constructs a target directory selection page with <i>core</i> as parent.</p>
+<!-- @@@TargetDirectoryPage -->
+<!-- $$$entering[overload1]$$$entering -->
+<h3 class="fn" id="entering"><a name="entering"></a><code>[virtual protected] </code><span class="type">void</span> TargetDirectoryPage::<span class="name">entering</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#entering">PackageManagerPage::entering</a>().</p>
+<p>Initializes the page's fields based on values from fields on previous pages.</p>
+<!-- @@@entering -->
+<!-- $$$initializePage[overload1]$$$initializePage -->
+<h3 class="fn" id="initializePage"><a name="initializePage"></a><span class="type">void</span> TargetDirectoryPage::<span class="name">initializePage</span>()</h3>
+<p>Initializes the page.</p>
+<!-- @@@initializePage -->
+<!-- $$$isComplete[overload1]$$$isComplete -->
+<h3 class="fn" id="isComplete"><a name="isComplete"></a><code>[virtual] </code><span class="type">bool</span> TargetDirectoryPage::<span class="name">isComplete</span>() const</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#isComplete">PackageManagerPage::isComplete</a>().</p>
+<p>Requests a warning message to be shown to end users upon invalid input. If the input is valid, the <b>Next</b> button is enabled.</p>
+<p>Returns <code>true</code> if a valid path to the target directory is set; otherwise returns <code>false</code>.</p>
+<!-- @@@isComplete -->
+<!-- $$$leaving[overload1]$$$leaving -->
+<h3 class="fn" id="leaving"><a name="leaving"></a><code>[virtual protected] </code><span class="type">void</span> TargetDirectoryPage::<span class="name">leaving</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#leaving">PackageManagerPage::leaving</a>().</p>
+<p>Called when end users leave the page and the <a href="qinstaller-packagemanagergui.html">PackageManagerGui</a>:currentPageChanged() signal is triggered.</p>
+<!-- @@@leaving -->
+<!-- $$$setTargetDir[overload1]$$$setTargetDirconstQString& -->
+<h3 class="fn" id="setTargetDir"><a name="setTargetDir"></a><span class="type">void</span> TargetDirectoryPage::<span class="name">setTargetDir</span>(const <span class="type">QString</span> &amp;<i>dirName</i>)</h3>
+<p>Sets the directory specified by <i>dirName</i> as the target directory for the installation.</p>
+<p><b>See also </b><a href="qinstaller-targetdirectorypage.html#targetDir">targetDir</a>().</p>
+<!-- @@@setTargetDir -->
+<!-- $$$targetDir[overload1]$$$targetDir -->
+<h3 class="fn" id="targetDir"><a name="targetDir"></a><span class="type">QString</span> TargetDirectoryPage::<span class="name">targetDir</span>() const</h3>
+<p>Returns the target directory for the installation.</p>
+<p><b>See also </b><a href="qinstaller-targetdirectorypage.html#setTargetDir">setTargetDir</a>().</p>
+<!-- @@@targetDir -->
+<!-- $$$validatePage[overload1]$$$validatePage -->
+<h3 class="fn" id="validatePage"><a name="validatePage"></a><span class="type">bool</span> TargetDirectoryPage::<span class="name">validatePage</span>()</h3>
+<p>Checks whether the target directory exists and has contents:</p>
+<ul>
+<li>Returns <code>true</code> if the directory exists and is empty.</li>
+<li>Returns <code>false</code> if the directory already exists and contains an installation.</li>
+<li>Returns <code>false</code> if the target is a file or a symbolic link.</li>
+<li>Returns <code>true</code> or <code>false</code> if the directory exists but is not empty, depending on the choice that the end users make in the displayed message box.</li>
+</ul>
+<!-- @@@validatePage -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

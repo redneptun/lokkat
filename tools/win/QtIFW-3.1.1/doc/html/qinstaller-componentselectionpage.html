@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>ComponentSelectionPage Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ComponentSelectionPage</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ComponentSelectionPage Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-componentselectionpage.html">QInstaller::ComponentSelectionPage</a>)<br/></span>
+<!-- $$$ComponentSelectionPage-brief -->
+<p>The <a href="qinstaller-componentselectionpage.html">ComponentSelectionPage</a> class changes the checked state of components. <a href="#details">More...</a></p>
+<!-- @@@ComponentSelectionPage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;ComponentSelectionPage&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></td></tr></table></div><ul>
+<li><a href="qinstaller-componentselectionpage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#ComponentSelectionPage">ComponentSelectionPage</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#dtor.ComponentSelectionPage">~ComponentSelectionPage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#addVirtualComponentToUninstall">addVirtualComponentToUninstall</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#allowCompressedRepositoryInstall">allowCompressedRepositoryInstall</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#deselectAll">deselectAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#deselectComponent">deselectComponent</a></b>(const QString &amp;<i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#selectAll">selectAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#selectComponent">selectComponent</a></b>(const QString &amp;<i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#selectDefault">selectDefault</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#isComplete">isComplete</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="qinstaller-packagemanagerpage.html#public-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#showEvent">showEvent</a></b>(QShowEvent *<i>event</i>)</td></tr>
+</table></div>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#entering">entering</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpage.html#leaving">leaving</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">2 signals inherited from <a href="qinstaller-packagemanagerpage.html#signals">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$ComponentSelectionPage-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-componentselectionpage.html">ComponentSelectionPage</a> class changes the checked state of components.</p>
+</div>
+<!-- @@@ComponentSelectionPage -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ComponentSelectionPage[overload1]$$$ComponentSelectionPagePackageManagerCore* -->
+<h3 class="fn" id="ComponentSelectionPage"><a name="ComponentSelectionPage"></a>ComponentSelectionPage::<span class="name">ComponentSelectionPage</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Constructs a component selection page with <i>core</i> as parent.</p>
+<!-- @@@ComponentSelectionPage -->
+<!-- $$$~ComponentSelectionPage[overload1]$$$~ComponentSelectionPage -->
+<h3 class="fn" id="dtor.ComponentSelectionPage"><a name="dtor.ComponentSelectionPage"></a>ComponentSelectionPage::<span class="name">~ComponentSelectionPage</span>()</h3>
+<p>Destructs a component selection page.</p>
+<!-- @@@~ComponentSelectionPage -->
+<!-- $$$addVirtualComponentToUninstall[overload1]$$$addVirtualComponentToUninstallconstQString& -->
+<h3 class="fn" id="addVirtualComponentToUninstall"><a name="addVirtualComponentToUninstall"></a><span class="type">bool</span> ComponentSelectionPage::<span class="name">addVirtualComponentToUninstall</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<!-- @@@addVirtualComponentToUninstall -->
+<!-- $$$allowCompressedRepositoryInstall[overload1]$$$allowCompressedRepositoryInstall -->
+<h3 class="fn" id="allowCompressedRepositoryInstall"><a name="allowCompressedRepositoryInstall"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">allowCompressedRepositoryInstall</span>()</h3>
+<!-- @@@allowCompressedRepositoryInstall -->
+<!-- $$$deselectAll[overload1]$$$deselectAll -->
+<h3 class="fn" id="deselectAll"><a name="deselectAll"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">deselectAll</span>()</h3>
+<p>Deselects all components in the component tree.</p>
+<!-- @@@deselectAll -->
+<!-- $$$deselectComponent[overload1]$$$deselectComponentconstQString& -->
+<h3 class="fn" id="deselectComponent"><a name="deselectComponent"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">deselectComponent</span>(const <span class="type">QString</span> &amp;<i>id</i>)</h3>
+<p>Deselects the component with <i>id</i> in the component tree.</p>
+<!-- @@@deselectComponent -->
+<!-- $$$entering[overload1]$$$entering -->
+<h3 class="fn" id="entering"><a name="entering"></a><code>[virtual protected] </code><span class="type">void</span> ComponentSelectionPage::<span class="name">entering</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#entering">PackageManagerPage::entering</a>().</p>
+<p>Initializes the page's fields based on values from fields on previous pages. The text to display depends on whether the page is being used in an installer, updater, or uninstaller.</p>
+<!-- @@@entering -->
+<!-- $$$isComplete[overload1]$$$isComplete -->
+<h3 class="fn" id="isComplete"><a name="isComplete"></a><code>[virtual] </code><span class="type">bool</span> ComponentSelectionPage::<span class="name">isComplete</span>() const</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#isComplete">PackageManagerPage::isComplete</a>().</p>
+<p>Returns <code>true</code> if at least one component is checked on the page.</p>
+<!-- @@@isComplete -->
+<!-- $$$leaving[overload1]$$$leaving -->
+<h3 class="fn" id="leaving"><a name="leaving"></a><code>[virtual protected] </code><span class="type">void</span> ComponentSelectionPage::<span class="name">leaving</span>()</h3>
+<!-- @@@leaving -->
+<!-- $$$selectAll[overload1]$$$selectAll -->
+<h3 class="fn" id="selectAll"><a name="selectAll"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">selectAll</span>()</h3>
+<p>Selects all components in the component tree.</p>
+<!-- @@@selectAll -->
+<!-- $$$selectComponent[overload1]$$$selectComponentconstQString& -->
+<h3 class="fn" id="selectComponent"><a name="selectComponent"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">selectComponent</span>(const <span class="type">QString</span> &amp;<i>id</i>)</h3>
+<p>Selects the component with <i>id</i> in the component tree.</p>
+<!-- @@@selectComponent -->
+<!-- $$$selectDefault[overload1]$$$selectDefault -->
+<h3 class="fn" id="selectDefault"><a name="selectDefault"></a><span class="type">void</span> ComponentSelectionPage::<span class="name">selectDefault</span>()</h3>
+<p>Selects the components that have the <code>&lt;Default&gt;</code> element set to <code>true</code> in the package information file.</p>
+<!-- @@@selectDefault -->
+<!-- $$$showEvent[overload1]$$$showEventQShowEvent* -->
+<h3 class="fn" id="showEvent"><a name="showEvent"></a><code>[protected] </code><span class="type">void</span> ComponentSelectionPage::<span class="name">showEvent</span>(<span class="type">QShowEvent</span> *<i>event</i>)</h3>
+<p>Called when the show event <i>event</i> occurs. Switching pages back and forth might restore or remove the checked state of certain components the end users have checked or not checked, because the dependencies are resolved and checked when clicking <b>Next</b>. So as not to confuse the end users with newly checked components they did not check, the state they left the page in is restored.</p>
+<!-- @@@showEvent -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

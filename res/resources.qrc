@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/bomb.png</file>
+        <file>icons/delete.png</file>
+        <file>icons/globe_network.png</file>
+        <file>icons/help.png</file>
+        <file>icons/information.png</file>
+        <file>icons/lock.png</file>
+        <file>icons/lock_open.png</file>
+        <file>icons/lokkat_16.png</file>
+        <file>icons/lokkat_24.png</file>
+        <file>icons/lokkat_32.png</file>
+        <file>icons/lokkat_48.png</file>
+        <file>icons/lokkat_64.png</file>
+        <file>icons/lokkat_128.png</file>
+        <file>icons/lokkat_256.png</file>
+        <file>icons/lokkat_512.png</file>
+        <file>icons/plus.png</file>
+        <file>icons/safe.png</file>
+        <file>l10n/about_de.qm</file>
+        <file>l10n/about_en.qm</file>
+        <file>l10n/gui_de.qm</file>
+        <file>l10n/gui_en.qm</file>
+    </qresource>
+</RCC>

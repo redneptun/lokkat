@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qdesktopservices.qdoc -->
+  <title>QDesktopServices QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QDesktopServices QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$QDesktopServices-brief -->
+<p>Provides methods for accessing common desktop services. <a href="#details">More...</a></p>
+<!-- @@@QDesktopServices -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-qdesktopservices-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">string <b><b><a href="scripting-qdesktopservices.html#displayName-method">displayName</a></b></b>(int <i>location</i>)</li>
+<li class="fn">array <b><b><a href="scripting-qdesktopservices.html#findFiles-method">findFiles</a></b></b>(string <i>path</i>, string <i>pattern</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-qdesktopservices.html#openUrl-method">openUrl</a></b></b>(string <i>url</i>)</li>
+<li class="fn">string <b><b><a href="scripting-qdesktopservices.html#storageLocation-method">storageLocation</a></b></b>(int <i>location</i>)</li>
+</ul>
+<!-- $$$QDesktopServices-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>Many desktop environments provide services that can be used by applications to perform common tasks, such as opening a file, in a way that is both consistent and takes into account the user's application preferences.</p>
+<p>This object contains methods that provide simple interfaces to these services that indicate whether they succeeded or failed.</p>
+<p>The <a href="scripting-qdesktopservices.html#openUrl-method">openUrl()</a> method is used to open files located at arbitrary URLs in external applications. For URLs that correspond to resources on the local filing system (where the URL scheme is &quot;file&quot;), a suitable application is used to open the file.</p>
+<p>The <a href="scripting-qdesktopservices.html#displayName-method">displayName()</a> and <a href="scripting-qdesktopservices.html#storageLocation-method">storageLocation()</a> methods take one of the following enums as an argument:</p>
+<ul>
+<li>DesktopServices.DesktopLocation</li>
+<li>DesktopServices.DocumentsLocation</li>
+<li>DesktopServices.FontsLocation</li>
+<li>DesktopServices.ApplicationsLocation</li>
+<li>DesktopServices.MusicLocation</li>
+<li>DesktopServices.MoviesLocation</li>
+<li>DesktopServices.PicturesLocation</li>
+<li>DesktopServices.TempLocation</li>
+<li>DesktopServices.HomeLocation</li>
+<li>DesktopServices.DataLocation</li>
+<li>DesktopServices.CacheLocation</li>
+<li>DesktopServices.GenericDataLocation</li>
+<li>DesktopServices.RuntimeLocation</li>
+<li>DesktopServices.ConfigLocation</li>
+<li>DesktopServices.DownloadLocation</li>
+<li>DesktopServices.GenericCacheLocation</li>
+<li>DesktopServices.GenericConfigLocation</li>
+</ul>
+<p>The enum values correspond to the values of the QStandardPaths::StandardLocation enum with the same names.</p>
+<!-- @@@QDesktopServices -->
+<h2>Method Documentation</h2>
+<!-- $$$displayName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="displayName-method">
+<td class="tblQmlFuncNode"><p>
+<a name="displayName-method"></a><span class="type">string</span> <span class="name">displayName</span>(<span class="type">int</span> <i>location</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns a localized display name for the specified <i>location</i> or an empty QString if no relevant location can be found.</p>
+</div></div><!-- @@@displayName -->
+<br/>
+<!-- $$$findFiles -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="findFiles-method">
+<td class="tblQmlFuncNode"><p>
+<a name="findFiles-method"></a><span class="type">array</span> <span class="name">findFiles</span>(<span class="type">string</span> <i>path</i>, <span class="type">string</span> <i>pattern</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns file names matching <i>pattern</i>. Searches the files recursively from <i>path</i>. <i>Pattern</i> understands * and ? wildcards.</p>
+</div></div><!-- @@@findFiles -->
+<br/>
+<!-- $$$openUrl -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="openUrl-method">
+<td class="tblQmlFuncNode"><p>
+<a name="openUrl-method"></a><span class="type">boolean</span> <span class="name">openUrl</span>(<span class="type">string</span> <i>url</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Uses the URL scheme <code>file</code> to open the specified <i>url</i> with a suitable application.</p>
+<p><b>Warning:</b> A return value of <code>true</code> indicates that the installer has successfully requested the operating system to open the URL in an external application. It may still fail to launch or fail to open the requested URL. This result will not be reported back to the installer.</p>
+</div></div><!-- @@@openUrl -->
+<br/>
+<!-- $$$storageLocation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="storageLocation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="storageLocation-method"></a><span class="type">string</span> <span class="name">storageLocation</span>(<span class="type">int</span> <i>location</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the specified <i>location</i>.</p>
+</div></div><!-- @@@storageLocation -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

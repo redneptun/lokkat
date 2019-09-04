@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- component.cpp -->
+  <title>SortingPriorityLessThan Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >SortingPriorityLessThan</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SortingPriorityLessThan Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-component-sortingprioritylessthan.html">QInstaller::Component::SortingPriorityLessThan</a>)<br/></span>
+<!-- $$$SortingPriorityLessThan-brief -->
+<p>The <a href="qinstaller-component-sortingprioritylessthan.html">SortingPriorityLessThan</a> class sets an increasing sorting order for child components. <a href="#details">More...</a></p>
+<!-- @@@SortingPriorityLessThan -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;SortingPriorityLessThan&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-component-sortingprioritylessthan-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component-sortingprioritylessthan.html#operator-28-29">operator()</a></b>(const Component *<i>lhs</i>, const Component *<i>rhs</i>) const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$SortingPriorityLessThan-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-component-sortingprioritylessthan.html">SortingPriorityLessThan</a> class sets an increasing sorting order for child components.</p>
+<p>If the component contains several children and has this sorting priority set, the child list is sorted so that the child component with the lowest priority is placed on top.</p>
+</div>
+<!-- @@@SortingPriorityLessThan -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$operator()[overload1]$$$operator()constComponent*constComponent* -->
+<h3 class="fn" id="operator-28-29"><a name="operator-28-29"></a><span class="type">bool</span> SortingPriorityLessThan::<span class="name">operator()</span>(const <span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *<i>lhs</i>, const <span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *<i>rhs</i>) const</h3>
+<p>Returns <code>true</code> if <i>lhs</i> is less than <i>rhs</i>; otherwise returns <code>false</code>.</p>
+<!-- @@@operator() -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

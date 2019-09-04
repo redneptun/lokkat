@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>PerformInstallationPage Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >PerformInstallationPage</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PerformInstallationPage Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-performinstallationpage.html">QInstaller::PerformInstallationPage</a>)<br/></span>
+<!-- $$$PerformInstallationPage-brief -->
+<p>The <a href="qinstaller-performinstallationpage.html">PerformInstallationPage</a> class shows progress information about the installation state. <a href="#details">More...</a></p>
+<!-- @@@PerformInstallationPage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;PerformInstallationPage&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></td></tr></table></div><ul>
+<li><a href="qinstaller-performinstallationpage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#PerformInstallationPage">PerformInstallationPage</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#dtor.PerformInstallationPage">~PerformInstallationPage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#isAutoSwitching">isAutoSwitching</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="qinstaller-packagemanagerpage.html#public-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#setTitleMessage">setTitleMessage</a></b>(const QString &amp;<i>title</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#setAutomatedPageSwitchEnabled">setAutomatedPageSwitchEnabled</a></b>(bool <i>request</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 signals inherited from <a href="qinstaller-packagemanagerpage.html#signals">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#entering">entering</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#isInterruptible">isInterruptible</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-performinstallationpage.html#leaving">leaving</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$PerformInstallationPage-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-performinstallationpage.html">PerformInstallationPage</a> class shows progress information about the installation state.</p>
+<p>This class is a container for the <a href="qinstaller-performinstallationform.html">PerformInstallationForm</a> class, which constructs the actual UI for the page.</p>
+</div>
+<!-- @@@PerformInstallationPage -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PerformInstallationPage[overload1]$$$PerformInstallationPagePackageManagerCore* -->
+<h3 class="fn" id="PerformInstallationPage"><a name="PerformInstallationPage"></a>PerformInstallationPage::<span class="name">PerformInstallationPage</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Constructs a perform installation page with <i>core</i> as parent. The page contains a <a href="qinstaller-performinstallationform.html">PerformInstallationForm</a> that defines the UI for the page.</p>
+<!-- @@@PerformInstallationPage -->
+<!-- $$$~PerformInstallationPage[overload1]$$$~PerformInstallationPage -->
+<h3 class="fn" id="dtor.PerformInstallationPage"><a name="dtor.PerformInstallationPage"></a>PerformInstallationPage::<span class="name">~PerformInstallationPage</span>()</h3>
+<p>Destructs a perform installation page.</p>
+<!-- @@@~PerformInstallationPage -->
+<!-- $$$entering[overload1]$$$entering -->
+<h3 class="fn" id="entering"><a name="entering"></a><code>[virtual protected] </code><span class="type">void</span> PerformInstallationPage::<span class="name">entering</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#entering">PackageManagerPage::entering</a>().</p>
+<p>Initializes the page's fields based on values from fields on previous pages. The text to display depends on whether the page is being used in an installer, updater, or uninstaller.</p>
+<!-- @@@entering -->
+<!-- $$$isAutoSwitching[overload1]$$$isAutoSwitching -->
+<h3 class="fn" id="isAutoSwitching"><a name="isAutoSwitching"></a><span class="type">bool</span> PerformInstallationPage::<span class="name">isAutoSwitching</span>() const</h3>
+<p>Returns <code>true</code> if automatically switching to the page is requested.</p>
+<!-- @@@isAutoSwitching -->
+<!-- $$$isInterruptible[overload1]$$$isInterruptible -->
+<h3 class="fn" id="isInterruptible"><a name="isInterruptible"></a><code>[virtual protected] </code><span class="type">bool</span> PerformInstallationPage::<span class="name">isInterruptible</span>() const</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#isInterruptible">PackageManagerPage::isInterruptible</a>().</p>
+<p>Returns <code>true</code> if the installation can be interrupted.</p>
+<!-- @@@isInterruptible -->
+<!-- $$$leaving[overload1]$$$leaving -->
+<h3 class="fn" id="leaving"><a name="leaving"></a><code>[virtual protected] </code><span class="type">void</span> PerformInstallationPage::<span class="name">leaving</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#leaving">PackageManagerPage::leaving</a>().</p>
+<p>Called when end users leave the page and the <a href="qinstaller-packagemanagergui.html">PackageManagerGui</a>:currentPageChanged() signal is triggered.</p>
+<!-- @@@leaving -->
+<!-- $$$setAutomatedPageSwitchEnabled[overload1]$$$setAutomatedPageSwitchEnabledbool -->
+<h3 class="fn" id="setAutomatedPageSwitchEnabled"><a name="setAutomatedPageSwitchEnabled"></a><code>[signal] </code><span class="type">void</span> PerformInstallationPage::<span class="name">setAutomatedPageSwitchEnabled</span>(<span class="type">bool</span> <i>request</i>)</h3>
+<p>Enables automatic switching of pages when <i>request</i> is <code>true</code>.</p>
+<!-- @@@setAutomatedPageSwitchEnabled -->
+<!-- $$$setTitleMessage[overload1]$$$setTitleMessageconstQString& -->
+<h3 class="fn" id="setTitleMessage"><a name="setTitleMessage"></a><code>[slot] </code><span class="type">void</span> PerformInstallationPage::<span class="name">setTitleMessage</span>(const <span class="type">QString</span> &amp;<i>title</i>)</h3>
+<p>Sets <i>title</i> as the title of the perform installation page.</p>
+<!-- @@@setTitleMessage -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

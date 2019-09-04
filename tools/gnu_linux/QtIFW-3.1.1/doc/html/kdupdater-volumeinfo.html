@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>VolumeInfo Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >VolumeInfo</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">VolumeInfo Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-volumeinfo.html">KDUpdater::VolumeInfo</a>)<br/></span>
+<ul>
+<li><a href="kdupdater-volumeinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#VolumeInfo">VolumeInfo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#availableSize">availableSize</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#fileSystemType">fileSystemType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#mountPath">mountPath</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#setAvailableSize">setAvailableSize</a></b>(const quint64 &amp;<i>available</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#setFileSystemType">setFileSystemType</a></b>(const QString &amp;<i>type</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#setMountPath">setMountPath</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#setSize">setSize</a></b>(const quint64 &amp;<i>size</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#setVolumeDescriptor">setVolumeDescriptor</a></b>(const QString &amp;<i>descriptor</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#size">size</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#volumeDescriptor">volumeDescriptor</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#operator-eq-eq">operator==</a></b>(const VolumeInfo &amp;<i>other</i>) const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> VolumeInfo </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-volumeinfo.html#fromPath">fromPath</a></b>(const QString &amp;<i>path</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$VolumeInfo[overload1]$$$VolumeInfo -->
+<h3 class="fn" id="VolumeInfo"><a name="VolumeInfo"></a>VolumeInfo::<span class="name">VolumeInfo</span>()</h3>
+<p>Default constructs an instance of VolumeInfo.</p><!-- @@@VolumeInfo -->
+<!-- $$$availableSize[overload1]$$$availableSize -->
+<h3 class="fn" id="availableSize"><a name="availableSize"></a><span class="type">quint64</span> VolumeInfo::<span class="name">availableSize</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#setAvailableSize">setAvailableSize</a>().</p>
+<!-- @@@availableSize -->
+<!-- $$$fileSystemType[overload1]$$$fileSystemType -->
+<h3 class="fn" id="fileSystemType"><a name="fileSystemType"></a><span class="type">QString</span> VolumeInfo::<span class="name">fileSystemType</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#setFileSystemType">setFileSystemType</a>().</p>
+<!-- @@@fileSystemType -->
+<!-- $$$fromPath[overload1]$$$fromPathconstQString& -->
+<h3 class="fn" id="fromPath"><a name="fromPath"></a><code>[static] </code><span class="type"><a href="kdupdater-volumeinfo.html#VolumeInfo">VolumeInfo</a></span> VolumeInfo::<span class="name">fromPath</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<!-- @@@fromPath -->
+<!-- $$$mountPath[overload1]$$$mountPath -->
+<h3 class="fn" id="mountPath"><a name="mountPath"></a><span class="type">QString</span> VolumeInfo::<span class="name">mountPath</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#setMountPath">setMountPath</a>().</p>
+<!-- @@@mountPath -->
+<!-- $$$setAvailableSize[overload1]$$$setAvailableSizeconstquint64& -->
+<h3 class="fn" id="setAvailableSize"><a name="setAvailableSize"></a><span class="type">void</span> VolumeInfo::<span class="name">setAvailableSize</span>(const <span class="type">quint64</span> &amp;<i>available</i>)</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#availableSize">availableSize</a>().</p>
+<!-- @@@setAvailableSize -->
+<!-- $$$setFileSystemType[overload1]$$$setFileSystemTypeconstQString& -->
+<h3 class="fn" id="setFileSystemType"><a name="setFileSystemType"></a><span class="type">void</span> VolumeInfo::<span class="name">setFileSystemType</span>(const <span class="type">QString</span> &amp;<i>type</i>)</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#fileSystemType">fileSystemType</a>().</p>
+<!-- @@@setFileSystemType -->
+<!-- $$$setMountPath[overload1]$$$setMountPathconstQString& -->
+<h3 class="fn" id="setMountPath"><a name="setMountPath"></a><span class="type">void</span> VolumeInfo::<span class="name">setMountPath</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#mountPath">mountPath</a>().</p>
+<!-- @@@setMountPath -->
+<!-- $$$setSize[overload1]$$$setSizeconstquint64& -->
+<h3 class="fn" id="setSize"><a name="setSize"></a><span class="type">void</span> VolumeInfo::<span class="name">setSize</span>(const <span class="type">quint64</span> &amp;<i>size</i>)</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#size">size</a>().</p>
+<!-- @@@setSize -->
+<!-- $$$setVolumeDescriptor[overload1]$$$setVolumeDescriptorconstQString& -->
+<h3 class="fn" id="setVolumeDescriptor"><a name="setVolumeDescriptor"></a><span class="type">void</span> VolumeInfo::<span class="name">setVolumeDescriptor</span>(const <span class="type">QString</span> &amp;<i>descriptor</i>)</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#volumeDescriptor">volumeDescriptor</a>().</p>
+<!-- @@@setVolumeDescriptor -->
+<!-- $$$size[overload1]$$$size -->
+<h3 class="fn" id="size"><a name="size"></a><span class="type">quint64</span> VolumeInfo::<span class="name">size</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#setSize">setSize</a>().</p>
+<!-- @@@size -->
+<!-- $$$volumeDescriptor[overload1]$$$volumeDescriptor -->
+<h3 class="fn" id="volumeDescriptor"><a name="volumeDescriptor"></a><span class="type">QString</span> VolumeInfo::<span class="name">volumeDescriptor</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-volumeinfo.html#setVolumeDescriptor">setVolumeDescriptor</a>().</p>
+<!-- @@@volumeDescriptor -->
+<!-- $$$operator==[overload1]$$$operator==constVolumeInfo& -->
+<h3 class="fn" id="operator-eq-eq"><a name="operator-eq-eq"></a><span class="type">bool</span> VolumeInfo::<span class="name">operator==</span>(const <span class="type"><a href="kdupdater-volumeinfo.html#VolumeInfo">VolumeInfo</a></span> &amp;<i>other</i>) const</h3>
+<!-- @@@operator== -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

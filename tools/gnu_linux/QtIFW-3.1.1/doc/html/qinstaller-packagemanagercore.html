@@ -1,0 +1,1046 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagercore.cpp -->
+  <title>PackageManagerCore Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >PackageManagerCore</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PackageManagerCore Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-packagemanagercore.html">QInstaller::PackageManagerCore</a>)<br/></span>
+<!-- $$$PackageManagerCore-brief -->
+<p>The <a href="qinstaller-packagemanagercore.html">PackageManagerCore</a> class provides the core functionality of the Qt Installer Framework. <a href="#details">More...</a></p>
+<!-- @@@PackageManagerCore -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;PackageManagerCore&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-packagemanagercore-members.html">List of all members, including inherited members</a></li>
+<li><a href="qinstaller-packagemanagercore-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#ComponentType-enum">ComponentType</a></b> { Root, Descendants, Dependencies, Replacements, AllNoReplacements, All }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#ComponentType-enum">ComponentTypes</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#Status-enum">Status</a></b> { Success, Failure, Running, Canceled, Unfinished, ForceUpdate }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#UnstableError-enum">UnstableError</a></b> { DepencyToUnstable, ShaMismatch, ScriptLoadingFailed, MissingDependency }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#WizardPage-enum">WizardPage</a></b> { Introduction, TargetDirectory, ComponentSelection, LicenseCheck, ..., InstallationFinished }</td></tr>
+</table></div>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><a href="qinstaller-packagemanagercore.html#status-prop">status</a></b> : const int</li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#PackageManagerCore">PackageManagerCore</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#PackageManagerCore-1">PackageManagerCore</a></b>(qint64 <i>magicmaker</i>, const QList&lt;OperationBlob&gt; &amp;<i>operations</i>, const QString &amp;<i>socketName</i> = QString(), const QString &amp;<i>key</i> = QLatin1String( Protocol::DefaultAuthorizationKey ), Protocol::Mode <i>mode</i> = Protocol::Mode::Production)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#dtor.PackageManagerCore">~PackageManagerCore</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#addFilesForDelayedDeletion">addFilesForDelayedDeletion</a></b>(const QStringList &amp;<i>files</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#addUserRepositories">addUserRepositories</a></b>(const QStringList &amp;<i>repositories</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#addWizardPage">addWizardPage</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>, int <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#addWizardPageItem">addWizardPageItem</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>, int <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#appendRootComponent">appendRootComponent</a></b>(Component *<i>component</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#appendUpdaterComponent">appendUpdaterComponent</a></b>(Component *<i>component</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#autoAcceptMessageBoxes">autoAcceptMessageBoxes</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#autoRejectMessageBoxes">autoRejectMessageBoxes</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#calculateComponents">calculateComponents</a></b>(QString *<i>displayString</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#calculateComponentsToInstall">calculateComponentsToInstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#calculateComponentsToUninstall">calculateComponentsToUninstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Component *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentByName-1">componentByName</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ScriptEngine *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentScriptEngine">componentScriptEngine</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#components">components</a></b>(ComponentTypes <i>mask</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentsToInstallError">componentsToInstallError</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentsToUninstall">componentsToUninstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#containsValue">containsValue</a></b>(const QString &amp;<i>key</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ScriptEngine *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#controlScriptEngine">controlScriptEngine</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ComponentModel *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#defaultComponentModel">defaultComponentModel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#dependees">dependees</a></b>(const Component *<i>_component</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#downloadNeededArchives">downloadNeededArchives</a></b>(double <i>partProgressSize</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#dropAdminRights">dropAdminRights</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#environmentVariable">environmentVariable</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#error">error</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QVariant&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#execute">execute</a></b>(const QString &amp;<i>program</i>, const QStringList &amp;<i>arguments</i> = QStringList(), const QString &amp;<i>stdIn</i> = QString(), const QString &amp;<i>stdInCodec</i> = QLatin1String( &quot;latin1&quot; ), const QString &amp;<i>stdOutCodec</i> = QLatin1String( &quot;latin1&quot; )) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#executeDetached">executeDetached</a></b>(const QString &amp;<i>program</i>, const QStringList &amp;<i>arguments</i> = QStringList(), const QString &amp;<i>workingDirectory</i> = QString()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#fetchCompressedPackagesTree">fetchCompressedPackagesTree</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#fetchLocalPackagesTree">fetchLocalPackagesTree</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#fetchRemotePackagesTree">fetchRemotePackagesTree</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#fileExists">fileExists</a></b>(const QString &amp;<i>filePath</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#filesForDelayedDeletion">filesForDelayedDeletion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishedWithSuccess">finishedWithSuccess</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#foundEssentialUpdate">foundEssentialUpdate</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#gainAdminRights">gainAdminRights</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#guiObject">guiObject</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#installReason">installReason</a></b>(Component *<i>component</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#installerBinaryPath">installerBinaryPath</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isFileExtensionRegistered">isFileExtensionRegistered</a></b>(const QString &amp;<i>extension</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isInstaller">isInstaller</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isMaintainer">isMaintainer</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isOfflineOnly">isOfflineOnly</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isPackageManager">isPackageManager</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isProcessRunning">isProcessRunning</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isUninstaller">isUninstaller</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isUpdater">isUpdater</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#isVerbose">isVerbose</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#killProcess">killProcess</a></b>(const QString &amp;<i>absoluteFilePath</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> LocalPackagesHash </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#localInstalledPackages">localInstalledPackages</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#localInstallerBinaryUsed">localInstallerBinaryUsed</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#maintenanceToolName">maintenanceToolName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#needsHardRestart">needsHardRestart</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#networkSettingsChanged">networkSettingsChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#operationExists">operationExists</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#orderedComponentsToInstall">orderedComponentsToInstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#performOperation">performOperation</a></b>(const QString &amp;<i>name</i>, const QStringList &amp;<i>arguments</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PackageManagerProxyFactory *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#proxyFactory">proxyFactory</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#readFile">readFile</a></b>(const QString &amp;<i>filePath</i>, const QString &amp;<i>codecName</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PackagesList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#remotePackages">remotePackages</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#removeWizardPage">removeWizardPage</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#removeWizardPageItem">removeWizardPageItem</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#replaceVariables">replaceVariables</a></b>(const QString &amp;<i>str</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#replaceVariables-1">replaceVariables</a></b>(const QByteArray &amp;<i>ba</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#replaceVariables-2">replaceVariables</a></b>(const QStringList &amp;<i>str</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#requiredDiskSpace">requiredDiskSpace</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#requiredTemporaryDiskSpace">requiredTemporaryDiskSpace</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#reset">reset</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#rollBackInstallation">rollBackInstallation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#run">run</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setDefaultPageVisible">setDefaultPageVisible</a></b>(int <i>page</i>, bool <i>visible</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setDependsOnLocalInstallerBinary">setDependsOnLocalInstallerBinary</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setFoundEssentialUpdate">setFoundEssentialUpdate</a></b>(bool <i>foundEssentialUpdate</i> = true)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setGuiObject">setGuiObject</a></b>(QObject *<i>gui</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setInstallerBaseBinary">setInstallerBaseBinary</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setMessageBoxAutomaticAnswer">setMessageBoxAutomaticAnswer</a></b>(const QString &amp;<i>identifier</i>, int <i>button</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setNeedsHardRestart">setNeedsHardRestart</a></b>(bool <i>needsHardRestart</i> = true)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setPackageManager">setPackageManager</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setProxyFactory">setProxyFactory</a></b>(PackageManagerProxyFactory *<i>factory</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setTemporaryRepositories">setTemporaryRepositories</a></b>(const QStringList &amp;<i>repositories</i>, bool <i>replace</i> = false, bool <i>compressed</i> = false)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setTestChecksum">setTestChecksum</a></b>(bool <i>test</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setUninstaller">setUninstaller</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setUpdater">setUpdater</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setValidatorForCustomPage">setValidatorForCustomPage</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>, const QString &amp;<i>callbackName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setValue">setValue</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setVerbose">setVerbose</a></b>(bool <i>on</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Settings &amp;</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#settings">settings</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#size">size</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>value</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Status </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#status-prop">status</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#testChecksum">testChecksum</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#updateComponentsSilently">updateComponentsSilently</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ComponentModel *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#updaterComponentModel">updaterComponentModel</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#value">value</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>defaultValue</i> = QString()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#values">values</a></b>(const QString &amp;<i>key</i>, const QStringList &amp;<i>defaultValue</i> = QStringList()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#writeMaintenanceConfigFiles">writeMaintenanceConfigFiles</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#writeMaintenanceTool">writeMaintenanceTool</a></b>()</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#cancelMetaInfoJob">cancelMetaInfoJob</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentsToInstallNeedsRecalculation">componentsToInstallNeedsRecalculation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#interrupt">interrupt</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#languageChanged">languageChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#runInstaller">runInstaller</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#runPackageUpdater">runPackageUpdater</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#runUninstaller">runUninstaller</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setCanceled">setCanceled</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setCompleteUninstallation">setCompleteUninstallation</a></b>(bool <i>complete</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#aboutCalculateComponentsToInstall">aboutCalculateComponentsToInstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#aboutCalculateComponentsToUninstall">aboutCalculateComponentsToUninstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentAdded">componentAdded</a></b>(QInstaller::Component *<i>comp</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#coreNetworkSettingsChanged">coreNetworkSettingsChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#currentPageChanged">currentPageChanged</a></b>(int <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishAllComponentsReset">finishAllComponentsReset</a></b>(const QList&lt;QInstaller::Component *&gt; &amp;<i>rootComponents</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishButtonClicked">finishButtonClicked</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishUpdaterComponentsReset">finishUpdaterComponentsReset</a></b>(const QList&lt;QInstaller::Component *&gt; &amp;<i>componentsWithUpdates</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishedCalculateComponentsToInstall">finishedCalculateComponentsToInstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#finishedCalculateComponentsToUninstall">finishedCalculateComponentsToUninstall</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#guiObjectChanged">guiObjectChanged</a></b>(QObject *<i>gui</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#installationFinished">installationFinished</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#installationInterrupted">installationInterrupted</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#installationStarted">installationStarted</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#metaJobInfoMessage">metaJobInfoMessage</a></b>(const QString &amp;<i>message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#metaJobProgress">metaJobProgress</a></b>(int <i>progress</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#metaJobTotalProgress">metaJobTotalProgress</a></b>(int <i>progress</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#rootComponentsAdded">rootComponentsAdded</a></b>(QList&lt;QInstaller::Component *&gt; <i>components</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setAutomatedPageSwitchEnabled">setAutomatedPageSwitchEnabled</a></b>(bool <i>request</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setValidatorForCustomPageRequested">setValidatorForCustomPageRequested</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>, const QString &amp;<i>callbackName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#startAllComponentsReset">startAllComponentsReset</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#startUpdaterComponentsReset">startUpdaterComponentsReset</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#status-prop">statusChanged</a></b>(<i>QInstaller::PackageManagerCore::Status</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#titleMessageChanged">titleMessageChanged</a></b>(const QString &amp;<i>title</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#uninstallationFinished">uninstallationFinished</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#uninstallationStarted">uninstallationStarted</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#unstableComponentFound">unstableComponentFound</a></b>(const QString &amp;<i>type</i>, const QString &amp;<i>errorMessage</i>, const QString &amp;<i>component</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#updateFinished">updateFinished</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#updaterComponentsAdded">updaterComponentsAdded</a></b>(QList&lt;QInstaller::Component *&gt; <i>components</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#valueChanged">valueChanged</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#wizardPageInsertionRequested">wizardPageInsertionRequested</a></b>(QWidget *<i>widget</i>, QInstaller::PackageManagerCore::WizardPage <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#wizardPageRemovalRequested">wizardPageRemovalRequested</a></b>(QWidget *<i>widget</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#wizardPageVisibilityChangeRequested">wizardPageVisibilityChangeRequested</a></b>(bool <i>visible</i>, int <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#wizardWidgetInsertionRequested">wizardWidgetInsertionRequested</a></b>(QWidget *<i>widget</i>, QInstaller::PackageManagerCore::WizardPage <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#wizardWidgetRemovalRequested">wizardWidgetRemovalRequested</a></b>(QWidget *<i>widget</i>)</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#checkableName">checkableName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Component *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#componentByName">componentByName</a></b>(const QString &amp;<i>name</i>, const QList&lt;Component *&gt; &amp;<i>components</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#createLocalRepositoryFromBinary">createLocalRepositoryFromBinary</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#findLibrary">findLibrary</a></b>(const QString &amp;<i>name</i>, const QStringList &amp;<i>paths</i> = QStringList())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#findPath">findPath</a></b>(const QString &amp;<i>name</i>, const QStringList &amp;<i>paths</i> = QStringList())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#noForceInstallation">noForceInstallation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#parseNameAndVersion">parseNameAndVersion</a></b>(const QString &amp;<i>requirement</i>, QString *<i>name</i>, QString *<i>version</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#parseNames">parseNames</a></b>(const QStringList &amp;<i>requirements</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setCreateLocalRepositoryFromBinary">setCreateLocalRepositoryFromBinary</a></b>(bool <i>create</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setNoForceInstallation">setNoForceInstallation</a></b>(bool <i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setVirtualComponentsFont">setVirtualComponentsFont</a></b>(const QFont &amp;<i>font</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#setVirtualComponentsVisible">setVirtualComponentsVisible</a></b>(bool <i>visible</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#versionMatches">versionMatches</a></b>(const QString &amp;<i>version</i>, const QString &amp;<i>requirement</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QFont </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#virtualComponentsFont">virtualComponentsFont</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagercore.html#virtualComponentsVisible">virtualComponentsVisible</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$PackageManagerCore-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-packagemanagercore.html">PackageManagerCore</a> class provides the core functionality of the Qt Installer Framework.</p>
+</div>
+<!-- @@@PackageManagerCore -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ComponentType$$$Root$$$Descendants$$$Dependencies$$$Replacements$$$AllNoReplacements$$$All -->
+<h3 class="flags" id="ComponentType-enum"><a name="ComponentType-enum"></a>enum PackageManagerCore::<span class="name">ComponentType</span><br/>flags PackageManagerCore::<span class="name">ComponentTypes</span></h3>
+<p>This enum holds the type of the component list to be returned:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Root</code></td><td class="topAlign tblval"><code>0x1</code></td><td class="topAlign">Returns a list of root components.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Descendants</code></td><td class="topAlign tblval"><code>0x2</code></td><td class="topAlign">Returns a list of all descendant components. In updater mode the list is empty, because component updates cannot have children.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Dependencies</code></td><td class="topAlign tblval"><code>0x4</code></td><td class="topAlign">Returns a list of all available dependencies when run as updater. When running as installer, package manager, or uninstaller, this will always result in an empty list.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Replacements</code></td><td class="topAlign tblval"><code>0x8</code></td><td class="topAlign">Returns a list of all available replacement components relevant to the run mode.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::AllNoReplacements</code></td><td class="topAlign tblval"><code>( Root | Descendants | Dependencies )</code></td><td class="topAlign">Returns a list of available components, including root, descendant, and dependency components relevant to the run mode.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::All</code></td><td class="topAlign tblval"><code>( Root | Descendants | Dependencies | Replacements )</code></td><td class="topAlign">Returns a list of all available components, including root, descendant, dependency, and replacement components relevant to the run mode.</td></tr>
+</table></div>
+<p>The ComponentTypes type is a typedef for <a href="">QFlags</a>&lt;ComponentType&gt;. It stores an OR combination of ComponentType values.</p>
+<!-- @@@ComponentType -->
+<!-- $$$Status$$$Success$$$Failure$$$Running$$$Canceled$$$Unfinished$$$ForceUpdate -->
+<h3 class="fn" id="Status-enum"><a name="Status-enum"></a>enum PackageManagerCore::<span class="name">Status</span></h3>
+<p>This enum type holds the package manager status:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Success</code></td><td class="topAlign tblval"><code>EXIT_SUCCESS</code></td><td class="topAlign">Installation was successful.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Failure</code></td><td class="topAlign tblval"><code>EXIT_FAILURE</code></td><td class="topAlign">Installation failed.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Running</code></td><td class="topAlign tblval">?</td><td class="topAlign">Installation is in progress.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Canceled</code></td><td class="topAlign tblval">?</td><td class="topAlign">Installation was canceled.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Unfinished</code></td><td class="topAlign tblval">?</td><td class="topAlign">Installation was not completed.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::ForceUpdate</code></td><td class="topAlign tblval">?</td><td class="topAlign">&nbsp;</td></tr>
+</table></div>
+<!-- @@@Status -->
+<!-- $$$UnstableError$$$DepencyToUnstable$$$ShaMismatch$$$ScriptLoadingFailed$$$MissingDependency -->
+<h3 class="fn" id="UnstableError-enum"><a name="UnstableError-enum"></a>enum PackageManagerCore::<span class="name">UnstableError</span></h3>
+<!-- @@@UnstableError -->
+<!-- $$$WizardPage$$$Introduction$$$TargetDirectory$$$ComponentSelection$$$LicenseCheck$$$StartMenuSelection$$$ReadyForInstallation$$$PerformInstallation$$$InstallationFinished$$$End -->
+<h3 class="fn" id="WizardPage-enum"><a name="WizardPage-enum"></a>enum PackageManagerCore::<span class="name">WizardPage</span></h3>
+<p>This enum type holds the pre-defined package manager pages:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::Introduction</code></td><td class="topAlign tblval"><code>0x1000</code></td><td class="topAlign"><a href="noninteractive.html#introduction-page">Introduction Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::TargetDirectory</code></td><td class="topAlign tblval"><code>0x2000</code></td><td class="topAlign"><a href="noninteractive.html#target-directory-page">Target Directory Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::ComponentSelection</code></td><td class="topAlign tblval"><code>0x3000</code></td><td class="topAlign"><a href="noninteractive.html#component-selection-page">Component Selection Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::LicenseCheck</code></td><td class="topAlign tblval"><code>0x4000</code></td><td class="topAlign"><a href="noninteractive.html#license-agreement-page">License Agreement Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::StartMenuSelection</code></td><td class="topAlign tblval"><code>0x5000</code></td><td class="topAlign"><a href="noninteractive.html#start-menu-directory-page">Start Menu Directory Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::ReadyForInstallation</code></td><td class="topAlign tblval"><code>0x6000</code></td><td class="topAlign"><a href="noninteractive.html#ready-for-installation-page">Ready for Installation Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::PerformInstallation</code></td><td class="topAlign tblval"><code>0x7000</code></td><td class="topAlign"><a href="noninteractive.html#perform-installation-page">Perform Installation Page</a></td></tr>
+<tr><td class="topAlign"><code>QInstaller::PackageManagerCore::InstallationFinished</code></td><td class="topAlign tblval"><code>0x8000</code></td><td class="topAlign"><a href="noninteractive.html#finished-page">Finished Page</a></td></tr>
+</table></div>
+<!-- @@@WizardPage -->
+</div>
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$status-prop$$$status$$$statusChangedQInstaller::PackageManagerCore::Status -->
+<h3 class="fn" id="status-prop"><a name="status-prop"></a><span class="name">status</span> : const <span class="type">int</span></h3>
+<p>Installation status.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> Status </td><td class="memItemRight bottomAlign"><span class="name"><b>status</b></span>() const</td></tr>
+</table></div>
+<p><b>Notifier signal:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>statusChanged</b></span>(<i>QInstaller::PackageManagerCore::Status</i>)</td></tr>
+</table></div>
+<!-- @@@status -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PackageManagerCore[overload1]$$$PackageManagerCore -->
+<h3 class="fn" id="PackageManagerCore"><a name="PackageManagerCore"></a>PackageManagerCore::<span class="name">PackageManagerCore</span>()</h3>
+<p>Used by operation runner to get a fake installer.</p>
+<!-- @@@PackageManagerCore -->
+<!-- $$$PackageManagerCore$$$PackageManagerCoreqint64constQList<OperationBlob>&constQString&constQString&Protocol::Mode -->
+<h3 class="fn" id="PackageManagerCore-1"><a name="PackageManagerCore-1"></a>PackageManagerCore::<span class="name">PackageManagerCore</span>(<span class="type">qint64</span> <i>magicmaker</i>, const <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-operationblob.html">OperationBlob</a></span>&gt; &amp;<i>operations</i>, const <span class="type">QString</span> &amp;<i>socketName</i> = QString(), const <span class="type">QString</span> &amp;<i>key</i> = QLatin1String( Protocol::DefaultAuthorizationKey ), <span class="type">Protocol::Mode</span> <i>mode</i> = Protocol::Mode::Production)</h3>
+<p>Creates an installer or uninstaller and performs sanity checks on the operations specified by <i>operations</i>.</p>
+<p>The magic marker <i>magicmaker</i> is a <code>quint64</code> that identifies the type of the binary: <code>installer</code> or <code>uninstaller</code>.</p>
+<p>Creates and initializes a remote client. Requests administrator's rights for QFile, QSettings, and QProcess operations. Calls <code>init()</code> with <i>socketName</i>, <i>key</i>, and <i>mode</i> to set the server side authorization key.</p>
+<!-- @@@PackageManagerCore -->
+<!-- $$$~PackageManagerCore[overload1]$$$~PackageManagerCore -->
+<h3 class="fn" id="dtor.PackageManagerCore"><a name="dtor.PackageManagerCore"></a>PackageManagerCore::<span class="name">~PackageManagerCore</span>()</h3>
+<p>Destroys the instance.</p>
+<!-- @@@~PackageManagerCore -->
+<!-- $$$aboutCalculateComponentsToInstall[overload1]$$$aboutCalculateComponentsToInstall -->
+<h3 class="fn" id="aboutCalculateComponentsToInstall"><a name="aboutCalculateComponentsToInstall"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">aboutCalculateComponentsToInstall</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#aboutCalculateComponentsToInstall-signal">installer.aboutCalculateComponentsToInstall</a>.</p>
+<!-- @@@aboutCalculateComponentsToInstall -->
+<!-- $$$aboutCalculateComponentsToUninstall[overload1]$$$aboutCalculateComponentsToUninstall -->
+<h3 class="fn" id="aboutCalculateComponentsToUninstall"><a name="aboutCalculateComponentsToUninstall"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">aboutCalculateComponentsToUninstall</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#aboutCalculateComponentsToUninstall-signal">installer.aboutCalculateComponentsToUninstall</a>.</p>
+<!-- @@@aboutCalculateComponentsToUninstall -->
+<!-- $$$addFilesForDelayedDeletion[overload1]$$$addFilesForDelayedDeletionconstQStringList& -->
+<h3 class="fn" id="addFilesForDelayedDeletion"><a name="addFilesForDelayedDeletion"></a><span class="type">void</span> PackageManagerCore::<span class="name">addFilesForDelayedDeletion</span>(const <span class="type">QStringList</span> &amp;<i>files</i>)</h3>
+<!-- @@@addFilesForDelayedDeletion -->
+<!-- $$$addUserRepositories[overload1]$$$addUserRepositoriesconstQStringList& -->
+<h3 class="fn" id="addUserRepositories"><a name="addUserRepositories"></a><span class="type">void</span> PackageManagerCore::<span class="name">addUserRepositories</span>(const <span class="type">QStringList</span> &amp;<i>repositories</i>)</h3>
+<p>Registers additional <i>repositories</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#addUserRepositories-method">installer.addUserRepositories</a> and <a href="qinstaller-packagemanagercore.html#setTemporaryRepositories">setTemporaryRepositories</a>().</p>
+<!-- @@@addUserRepositories -->
+<!-- $$$addWizardPage[overload1]$$$addWizardPageQInstaller::Component*constQString&int -->
+<h3 class="fn" id="addWizardPage"><a name="addWizardPage"></a><span class="type">bool</span> PackageManagerCore::<span class="name">addWizardPage</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>, <span class="type">int</span> <i>page</i>)</h3>
+<p>Adds the widget with object name <i>name</i> registered by <i>component</i> as a new page into the installer's GUI wizard. The widget is added before <i>page</i>.</p>
+<p>See <a href="noninteractive.html">Controller Scripting</a> for the possible values of <i>page</i>.</p>
+<p>Returns <code>true</code> if the operation succeeded.</p>
+<p><b>See also </b><a href="scripting-installer.html#addWizardPage-method">installer.addWizardPage</a>.</p>
+<!-- @@@addWizardPage -->
+<!-- $$$addWizardPageItem[overload1]$$$addWizardPageItemQInstaller::Component*constQString&int -->
+<h3 class="fn" id="addWizardPageItem"><a name="addWizardPageItem"></a><span class="type">bool</span> PackageManagerCore::<span class="name">addWizardPageItem</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>, <span class="type">int</span> <i>page</i>)</h3>
+<p>Adds the widget with the object name <i>name</i> registered by <i>component</i> as a GUI element into the installer's GUI wizard. The widget is added on <i>page</i>.</p>
+<p>See <a href="noninteractive.html">Controller Scripting</a> for the possible values of <i>page</i>.</p>
+<p>If the widget can be found in an UI file for the component, returns <code>true</code> and emits the <a href="qinstaller-packagemanagercore.html#wizardWidgetInsertionRequested">wizardWidgetInsertionRequested</a>() signal.</p>
+<p><b>See also </b><a href="scripting-installer.html#addWizardPageItem-method">installer.addWizardPageItem</a>, <a href="qinstaller-packagemanagercore.html#removeWizardPageItem">removeWizardPageItem</a>(), and <a href="qinstaller-packagemanagercore.html#wizardWidgetInsertionRequested">wizardWidgetInsertionRequested</a>().</p>
+<!-- @@@addWizardPageItem -->
+<!-- $$$appendRootComponent[overload1]$$$appendRootComponentComponent* -->
+<h3 class="fn" id="appendRootComponent"><a name="appendRootComponent"></a><span class="type">void</span> PackageManagerCore::<span class="name">appendRootComponent</span>(<span class="type"><a href="qinstaller-component.html">Component</a></span> *<i>component</i>)</h3>
+<p>Appends <i>component</i> as the root component to the internal storage for installer or package manager components. To append a component as a child to an already existing component, use <a href="qinstaller-component.html#appendComponent">Component::appendComponent</a>(). Emits the <a href="qinstaller-packagemanagercore.html#componentAdded">componentAdded</a>() signal.</p>
+<!-- @@@appendRootComponent -->
+<!-- $$$appendUpdaterComponent[overload1]$$$appendUpdaterComponentComponent* -->
+<h3 class="fn" id="appendUpdaterComponent"><a name="appendUpdaterComponent"></a><span class="type">void</span> PackageManagerCore::<span class="name">appendUpdaterComponent</span>(<span class="type"><a href="qinstaller-component.html">Component</a></span> *<i>component</i>)</h3>
+<p>Appends <i>component</i> to the internal storage for updater components. Emits the <a href="qinstaller-packagemanagercore.html#componentAdded">componentAdded</a>() signal.</p>
+<!-- @@@appendUpdaterComponent -->
+<!-- $$$autoAcceptMessageBoxes[overload1]$$$autoAcceptMessageBoxes -->
+<h3 class="fn" id="autoAcceptMessageBoxes"><a name="autoAcceptMessageBoxes"></a><span class="type">void</span> PackageManagerCore::<span class="name">autoAcceptMessageBoxes</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#autoAcceptMessageBoxes-method">installer.autoAcceptMessageBoxes</a>, <a href="qinstaller-packagemanagercore.html#autoRejectMessageBoxes">autoRejectMessageBoxes</a>(), and <a href="qinstaller-packagemanagercore.html#setMessageBoxAutomaticAnswer">setMessageBoxAutomaticAnswer</a>().</p>
+<!-- @@@autoAcceptMessageBoxes -->
+<!-- $$$autoRejectMessageBoxes[overload1]$$$autoRejectMessageBoxes -->
+<h3 class="fn" id="autoRejectMessageBoxes"><a name="autoRejectMessageBoxes"></a><span class="type">void</span> PackageManagerCore::<span class="name">autoRejectMessageBoxes</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#autoRejectMessageBoxes-method">installer.autoRejectMessageBoxes</a>, <a href="qinstaller-packagemanagercore.html#autoAcceptMessageBoxes">autoAcceptMessageBoxes</a>(), and <a href="qinstaller-packagemanagercore.html#setMessageBoxAutomaticAnswer">setMessageBoxAutomaticAnswer</a>().</p>
+<!-- @@@autoRejectMessageBoxes -->
+<!-- $$$calculateComponents[overload1]$$$calculateComponentsQString* -->
+<h3 class="fn" id="calculateComponents"><a name="calculateComponents"></a><span class="type">bool</span> PackageManagerCore::<span class="name">calculateComponents</span>(<span class="type">QString</span> *<i>displayString</i>)</h3>
+<!-- @@@calculateComponents -->
+<!-- $$$calculateComponentsToInstall[overload1]$$$calculateComponentsToInstall -->
+<h3 class="fn" id="calculateComponentsToInstall"><a name="calculateComponentsToInstall"></a><span class="type">bool</span> PackageManagerCore::<span class="name">calculateComponentsToInstall</span>() const</h3>
+<p>Determines which components to install based on the current run mode and returns an ordered list of components to install. Also auto installed dependencies are resolved. The <a href="qinstaller-packagemanagercore.html#aboutCalculateComponentsToInstall">aboutCalculateComponentsToInstall</a>() signal is emitted before the calculation starts, the <a href="qinstaller-packagemanagercore.html#finishedCalculateComponentsToInstall">finishedCalculateComponentsToInstall</a>() signal once all calculations are done.</p>
+<p><b>See also </b><a href="scripting-installer.html#calculateComponentsToInstall-method">installer.calculateComponentsToInstall</a>.</p>
+<!-- @@@calculateComponentsToInstall -->
+<!-- $$$calculateComponentsToUninstall[overload1]$$$calculateComponentsToUninstall -->
+<h3 class="fn" id="calculateComponentsToUninstall"><a name="calculateComponentsToUninstall"></a><span class="type">bool</span> PackageManagerCore::<span class="name">calculateComponentsToUninstall</span>() const</h3>
+<p>Calculates a list of components to uninstall based on the current run mode. The <a href="qinstaller-packagemanagercore.html#aboutCalculateComponentsToUninstall">aboutCalculateComponentsToUninstall</a>() signal is emitted before the calculation starts, the <a href="qinstaller-packagemanagercore.html#finishedCalculateComponentsToUninstall">finishedCalculateComponentsToUninstall</a>() signal once all calculations are done. Always returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#calculateComponentsToUninstall-method">installer.calculateComponentsToUninstall</a>.</p>
+<!-- @@@calculateComponentsToUninstall -->
+<!-- $$$cancelMetaInfoJob[overload1]$$$cancelMetaInfoJob -->
+<h3 class="fn" id="cancelMetaInfoJob"><a name="cancelMetaInfoJob"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">cancelMetaInfoJob</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#cancelMetaInfoJob-method">installer.cancelMetaInfoJob</a>.</p>
+<!-- @@@cancelMetaInfoJob -->
+<!-- $$$checkableName[overload1]$$$checkableNameconstQString& -->
+<h3 class="fn" id="checkableName"><a name="checkableName"></a><code>[static] </code><span class="type">QString</span> PackageManagerCore::<span class="name">checkableName</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<!-- @@@checkableName -->
+<!-- $$$componentAdded[overload1]$$$componentAddedQInstaller::Component* -->
+<h3 class="fn" id="componentAdded"><a name="componentAdded"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">componentAdded</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>comp</i>)</h3>
+<p>Emitted when the new root component <i>comp</i> is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#componentAdded-signal">installer.componentAdded</a>, <a href="qinstaller-packagemanagercore.html#rootComponentsAdded">rootComponentsAdded</a>(), and <a href="qinstaller-packagemanagercore.html#updaterComponentsAdded">updaterComponentsAdded</a>().</p>
+<!-- @@@componentAdded -->
+<!-- $$$componentByName[overload1]$$$componentByNameconstQString&constQList<Component*>& -->
+<h3 class="fn" id="componentByName"><a name="componentByName"></a><code>[static] </code><span class="type"><a href="qinstaller-component.html">Component</a></span> *PackageManagerCore::<span class="name">componentByName</span>(const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; &amp;<i>components</i>)</h3>
+<p>Searches <i>components</i> for a component matching <i>name</i> and returns it. <i>name</i> can also contain a version requirement. For example, <code>org.qt-project.sdk.qt</code> returns any component with that name, whereas <code>org.qt-project.sdk.qt-&gt;=4.5</code> requires the returned component to have at least version 4.5&#x2e; If no component matches the requirement, <code>0</code> is returned.</p>
+<!-- @@@componentByName -->
+<!-- $$$componentByName$$$componentByNameconstQString& -->
+<h3 class="fn" id="componentByName-1"><a name="componentByName-1"></a><span class="type"><a href="qinstaller-component.html">Component</a></span> *PackageManagerCore::<span class="name">componentByName</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Returns a component matching <i>name</i>. <i>name</i> can also contain a version requirement. For example, <code>org.qt-project.sdk.qt</code> returns any component with that name, whereas <code>org.qt-project.sdk.qt-&gt;=4.5</code> requires the returned component to have at least version 4.5&#x2e; If no component matches the requirement, <code>0</code> is returned.</p>
+<!-- @@@componentByName -->
+<!-- $$$componentScriptEngine[overload1]$$$componentScriptEngine -->
+<h3 class="fn" id="componentScriptEngine"><a name="componentScriptEngine"></a><span class="type"><a href="qinstaller-scriptengine.html">ScriptEngine</a></span> *PackageManagerCore::<span class="name">componentScriptEngine</span>() const</h3>
+<p>Returns the script engine that prepares and runs the component scripts.</p>
+<p><b>See also </b><a href="scripting.html">Component Scripting</a>.</p>
+<!-- @@@componentScriptEngine -->
+<!-- $$$components[overload1]$$$componentsComponentTypes -->
+<h3 class="fn" id="components"><a name="components"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; PackageManagerCore::<span class="name">components</span>(<span class="type"><a href="qinstaller-packagemanagercore.html#ComponentType-enum">ComponentTypes</a></span> <i>mask</i>) const</h3>
+<p>Returns a list of components depending on the component types passed in <i>mask</i>.</p>
+<!-- @@@components -->
+<!-- $$$componentsToInstallError[overload1]$$$componentsToInstallError -->
+<h3 class="fn" id="componentsToInstallError"><a name="componentsToInstallError"></a><span class="type">QString</span> PackageManagerCore::<span class="name">componentsToInstallError</span>() const</h3>
+<p>Returns errors found in the components that are marked for installation.</p>
+<!-- @@@componentsToInstallError -->
+<!-- $$$componentsToInstallNeedsRecalculation[overload1]$$$componentsToInstallNeedsRecalculation -->
+<h3 class="fn" id="componentsToInstallNeedsRecalculation"><a name="componentsToInstallNeedsRecalculation"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">componentsToInstallNeedsRecalculation</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#componentsToInstallNeedsRecalculation-method">installer.componentsToInstallNeedsRecalculation</a>.</p>
+<!-- @@@componentsToInstallNeedsRecalculation -->
+<!-- $$$componentsToUninstall[overload1]$$$componentsToUninstall -->
+<h3 class="fn" id="componentsToUninstall"><a name="componentsToUninstall"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; PackageManagerCore::<span class="name">componentsToUninstall</span>() const</h3>
+<p>Returns a human-readable description of the error that occurred when evaluating the components to install. The error message is empty if no error occurred.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#calculateComponentsToInstall">calculateComponentsToInstall</a>.</p>
+<!-- @@@componentsToUninstall -->
+<!-- $$$containsValue[overload1]$$$containsValueconstQString& -->
+<h3 class="fn" id="containsValue"><a name="containsValue"></a><span class="type">bool</span> PackageManagerCore::<span class="name">containsValue</span>(const <span class="type">QString</span> &amp;<i>key</i>) const</h3>
+<p>Returns <code>true</code> if the installer contains a value for <i>key</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#containsValue-method">installer.containsValue</a>, <a href="qinstaller-packagemanagercore.html#value">value</a>(), <a href="qinstaller-packagemanagercore.html#setValue">setValue</a>(), and <a href="qinstaller-packagemanagercore.html#valueChanged">valueChanged</a>().</p>
+<!-- @@@containsValue -->
+<!-- $$$controlScriptEngine[overload1]$$$controlScriptEngine -->
+<h3 class="fn" id="controlScriptEngine"><a name="controlScriptEngine"></a><span class="type"><a href="qinstaller-scriptengine.html">ScriptEngine</a></span> *PackageManagerCore::<span class="name">controlScriptEngine</span>() const</h3>
+<p>Returns the script engine that prepares and runs the control script.</p>
+<p><b>See also </b><a href="noninteractive.html">Controller Scripting</a>.</p>
+<!-- @@@controlScriptEngine -->
+<!-- $$$coreNetworkSettingsChanged[overload1]$$$coreNetworkSettingsChanged -->
+<h3 class="fn" id="coreNetworkSettingsChanged"><a name="coreNetworkSettingsChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">coreNetworkSettingsChanged</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#coreNetworkSettingsChanged-signal">installer.coreNetworkSettingsChanged</a>.</p>
+<!-- @@@coreNetworkSettingsChanged -->
+<!-- $$$createLocalRepositoryFromBinary[overload1]$$$createLocalRepositoryFromBinary -->
+<h3 class="fn" id="createLocalRepositoryFromBinary"><a name="createLocalRepositoryFromBinary"></a><code>[static] </code><span class="type">bool</span> PackageManagerCore::<span class="name">createLocalRepositoryFromBinary</span>()</h3>
+<p>Returns <code>true</code> if a local repository should be created from binary content.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setCreateLocalRepositoryFromBinary">setCreateLocalRepositoryFromBinary</a>().</p>
+<!-- @@@createLocalRepositoryFromBinary -->
+<!-- $$$currentPageChanged[overload1]$$$currentPageChangedint -->
+<h3 class="fn" id="currentPageChanged"><a name="currentPageChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">currentPageChanged</span>(<span class="type">int</span> <i>page</i>)</h3>
+<p>Emitted when the current page <i>page</i> changes.</p>
+<p><b>See also </b><a href="scripting-installer.html#currentPageChanged-signal">installer.currentPageChanged</a>.</p>
+<!-- @@@currentPageChanged -->
+<!-- $$$defaultComponentModel[overload1]$$$defaultComponentModel -->
+<h3 class="fn" id="defaultComponentModel"><a name="defaultComponentModel"></a><span class="type"><a href="qinstaller-componentmodel.html">ComponentModel</a></span> *PackageManagerCore::<span class="name">defaultComponentModel</span>() const</h3>
+<p>Returns the default component model.</p>
+<!-- @@@defaultComponentModel -->
+<!-- $$$dependees[overload1]$$$dependeesconstComponent* -->
+<h3 class="fn" id="dependees"><a name="dependees"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; PackageManagerCore::<span class="name">dependees</span>(const <span class="type"><a href="qinstaller-component.html">Component</a></span> *<i>_component</i>) const</h3>
+<p>Returns a list of components that depend on <i>_component</i>. The list can be empty.</p>
+<p><b>Note: </b>Automatic dependencies are not resolved.</p><!-- @@@dependees -->
+<!-- $$$downloadNeededArchives[overload1]$$$downloadNeededArchivesdouble -->
+<h3 class="fn" id="downloadNeededArchives"><a name="downloadNeededArchives"></a><span class="type">int</span> PackageManagerCore::<span class="name">downloadNeededArchives</span>(<span class="type">double</span> <i>partProgressSize</i>)</h3>
+<p>Returns the number of archives that will be downloaded.</p>
+<p><i>partProgressSize</i> is reserved for the download progress.</p>
+<!-- @@@downloadNeededArchives -->
+<!-- $$$dropAdminRights[overload1]$$$dropAdminRights -->
+<h3 class="fn" id="dropAdminRights"><a name="dropAdminRights"></a><span class="type">void</span> PackageManagerCore::<span class="name">dropAdminRights</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#dropAdminRights-method">installer.dropAdminRights</a> and <a href="qinstaller-packagemanagercore.html#gainAdminRights">gainAdminRights</a>().</p>
+<!-- @@@dropAdminRights -->
+<!-- $$$environmentVariable[overload1]$$$environmentVariableconstQString& -->
+<h3 class="fn" id="environmentVariable"><a name="environmentVariable"></a><span class="type">QString</span> PackageManagerCore::<span class="name">environmentVariable</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Returns the content of the environment variable <i>name</i>. An empty string is returned if the environment variable is not set.</p>
+<p><b>See also </b><a href="scripting-installer.html#environmentVariable-method">installer.environmentVariable</a>.</p>
+<!-- @@@environmentVariable -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn" id="error"><a name="error"></a><span class="type">QString</span> PackageManagerCore::<span class="name">error</span>() const</h3>
+<p>Returns a human-readable description of the last error that occurred.</p>
+<!-- @@@error -->
+<!-- $$$execute[overload1]$$$executeconstQString&constQStringList&constQString&constQString&constQString& -->
+<h3 class="fn" id="execute"><a name="execute"></a><span class="type">QList</span>&lt;<span class="type">QVariant</span>&gt; PackageManagerCore::<span class="name">execute</span>(const <span class="type">QString</span> &amp;<i>program</i>, const <span class="type">QStringList</span> &amp;<i>arguments</i> = QStringList(), const <span class="type">QString</span> &amp;<i>stdIn</i> = QString(), const <span class="type">QString</span> &amp;<i>stdInCodec</i> = QLatin1String( &quot;latin1&quot; ), const <span class="type">QString</span> &amp;<i>stdOutCodec</i> = QLatin1String( &quot;latin1&quot; )) const</h3>
+<p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process and waits for it to finish.</p>
+<p><i>stdIn</i> is sent as standard input to the application.</p>
+<p><i>stdInCodec</i> is the name of the codec to use for converting the input string into bytes to write to the standard input of the application.</p>
+<p><i>stdOutCodec</i> is the name of the codec to use for converting data written by the application to standard output into a string.</p>
+<p>Returns an empty array if the program could not be executed, otherwise the output of command as the first item, and the return code as the second.</p>
+<p><b>Note: </b>On Unix, the output is just the output to stdout, not to stderr.</p><p><b>See also </b><a href="scripting-installer.html#execute-method">installer.execute</a> and <a href="qinstaller-packagemanagercore.html#executeDetached">executeDetached</a>().</p>
+<!-- @@@execute -->
+<!-- $$$executeDetached[overload1]$$$executeDetachedconstQString&constQStringList&constQString& -->
+<h3 class="fn" id="executeDetached"><a name="executeDetached"></a><span class="type">bool</span> PackageManagerCore::<span class="name">executeDetached</span>(const <span class="type">QString</span> &amp;<i>program</i>, const <span class="type">QStringList</span> &amp;<i>arguments</i> = QStringList(), const <span class="type">QString</span> &amp;<i>workingDirectory</i> = QString()) const</h3>
+<p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process, and detaches from it. Returns <code>true</code> on success; otherwise returns <code>false</code>. If the installer exits, the detached process will continue to live.</p>
+<p><b>Note: </b>Arguments that contain spaces are not passed to the process as separate arguments.</p><p><b>Unix:</b> The started process will run in its own session and act like a daemon.</p>
+<p><b>Windows:</b> Arguments that contain spaces are wrapped in quotes. The started process will run as a regular standalone process.</p>
+<p>The process will be started in the directory <i>workingDirectory</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#executeDetached-method">installer.executeDetached</a>.</p>
+<!-- @@@executeDetached -->
+<!-- $$$fetchCompressedPackagesTree[overload1]$$$fetchCompressedPackagesTree -->
+<h3 class="fn" id="fetchCompressedPackagesTree"><a name="fetchCompressedPackagesTree"></a><span class="type">bool</span> PackageManagerCore::<span class="name">fetchCompressedPackagesTree</span>()</h3>
+<p>Checks for compressed packages to install. Returns <code>true</code> if newer versions exist and they can be installed.</p>
+<!-- @@@fetchCompressedPackagesTree -->
+<!-- $$$fetchLocalPackagesTree[overload1]$$$fetchLocalPackagesTree -->
+<h3 class="fn" id="fetchLocalPackagesTree"><a name="fetchLocalPackagesTree"></a><span class="type">bool</span> PackageManagerCore::<span class="name">fetchLocalPackagesTree</span>()</h3>
+<p>Returns <code>true</code> if the package manager is running and installed packages are found. Otherwise, returns <code>false</code>.</p>
+<!-- @@@fetchLocalPackagesTree -->
+<!-- $$$fetchRemotePackagesTree[overload1]$$$fetchRemotePackagesTree -->
+<h3 class="fn" id="fetchRemotePackagesTree"><a name="fetchRemotePackagesTree"></a><span class="type">bool</span> PackageManagerCore::<span class="name">fetchRemotePackagesTree</span>()</h3>
+<p>Checks for packages to install. Returns <code>true</code> if newer versions exist and they can be installed.</p>
+<!-- @@@fetchRemotePackagesTree -->
+<!-- $$$fileExists[overload1]$$$fileExistsconstQString& -->
+<h3 class="fn" id="fileExists"><a name="fileExists"></a><span class="type">bool</span> PackageManagerCore::<span class="name">fileExists</span>(const <span class="type">QString</span> &amp;<i>filePath</i>) const</h3>
+<p>Returns <code>true</code> if the <i>filePath</i> exists; otherwise returns <code>false</code>.</p>
+<p><b>Note: </b>If the file is a symlink that points to a non existing file, <code>false</code> is returned.</p><p><b>See also </b><a href="scripting-installer.html#fileExists-method">installer.fileExists</a>.</p>
+<!-- @@@fileExists -->
+<!-- $$$filesForDelayedDeletion[overload1]$$$filesForDelayedDeletion -->
+<h3 class="fn" id="filesForDelayedDeletion"><a name="filesForDelayedDeletion"></a><span class="type">QStringList</span> PackageManagerCore::<span class="name">filesForDelayedDeletion</span>() const</h3>
+<!-- @@@filesForDelayedDeletion -->
+<!-- $$$findLibrary[overload1]$$$findLibraryconstQString&constQStringList& -->
+<h3 class="fn" id="findLibrary"><a name="findLibrary"></a><code>[static] </code><span class="type">QString</span> PackageManagerCore::<span class="name">findLibrary</span>(const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QStringList</span> &amp;<i>paths</i> = QStringList())</h3>
+<p>Finds a library named <i>name</i> in <i>paths</i>. If <i>paths</i> is empty, it gets filled with platform dependent default paths. The resulting path is returned.</p>
+<p>This method can be used by scripts to check external dependencies.</p>
+<p><b>See also </b><a href="scripting-installer.html#findLibrary-method">installer.findLibrary</a> and <a href="qinstaller-packagemanagercore.html#findPath">findPath</a>().</p>
+<!-- @@@findLibrary -->
+<!-- $$$findPath[overload1]$$$findPathconstQString&constQStringList& -->
+<h3 class="fn" id="findPath"><a name="findPath"></a><code>[static] </code><span class="type">QString</span> PackageManagerCore::<span class="name">findPath</span>(const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QStringList</span> &amp;<i>paths</i> = QStringList())</h3>
+<p>Tries to find the file name <i>name</i> in one of the paths specified by <i>paths</i>. The resulting path is returned.</p>
+<p>This method can be used by scripts to check external dependencies.</p>
+<p><b>See also </b><a href="scripting-installer.html#findPath-method">installer.findPath</a> and <a href="qinstaller-packagemanagercore.html#findLibrary">findLibrary</a>().</p>
+<!-- @@@findPath -->
+<!-- $$$finishAllComponentsReset[overload1]$$$finishAllComponentsResetconstQList<QInstaller::Component*>& -->
+<h3 class="fn" id="finishAllComponentsReset"><a name="finishAllComponentsReset"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">finishAllComponentsReset</span>(const <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *&gt; &amp;<i>rootComponents</i>)</h3>
+<p>Triggered when the list of new root components, <i>rootComponents</i>, has been updated.</p>
+<p><b>See also </b><a href="scripting-installer.html#finishAllComponentsReset-signal">installer.finishAllComponentsReset</a> and <a href="qinstaller-packagemanagercore.html#startAllComponentsReset">startAllComponentsReset</a>().</p>
+<!-- @@@finishAllComponentsReset -->
+<!-- $$$finishButtonClicked[overload1]$$$finishButtonClicked -->
+<h3 class="fn" id="finishButtonClicked"><a name="finishButtonClicked"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">finishButtonClicked</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#finishButtonClicked-signal">installer.finishButtonClicked</a>.</p>
+<!-- @@@finishButtonClicked -->
+<!-- $$$finishUpdaterComponentsReset[overload1]$$$finishUpdaterComponentsResetconstQList<QInstaller::Component*>& -->
+<h3 class="fn" id="finishUpdaterComponentsReset"><a name="finishUpdaterComponentsReset"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">finishUpdaterComponentsReset</span>(const <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *&gt; &amp;<i>componentsWithUpdates</i>)</h3>
+<p>Triggered when the list of available remote updates, <i>componentsWithUpdates</i>, has been updated.</p>
+<p><b>See also </b><a href="scripting-installer.html#finishUpdaterComponentsReset-signal">installer.finishUpdaterComponentsReset</a>.</p>
+<!-- @@@finishUpdaterComponentsReset -->
+<!-- $$$finishedCalculateComponentsToInstall[overload1]$$$finishedCalculateComponentsToInstall -->
+<h3 class="fn" id="finishedCalculateComponentsToInstall"><a name="finishedCalculateComponentsToInstall"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">finishedCalculateComponentsToInstall</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#finishedCalculateComponentsToInstall-signal">installer.finishedCalculateComponentsToInstall</a>.</p>
+<!-- @@@finishedCalculateComponentsToInstall -->
+<!-- $$$finishedCalculateComponentsToUninstall[overload1]$$$finishedCalculateComponentsToUninstall -->
+<h3 class="fn" id="finishedCalculateComponentsToUninstall"><a name="finishedCalculateComponentsToUninstall"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">finishedCalculateComponentsToUninstall</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#finishedCalculateComponentsToUninstall-signal">installer.finishedCalculateComponentsToUninstall</a>.</p>
+<!-- @@@finishedCalculateComponentsToUninstall -->
+<!-- $$$finishedWithSuccess[overload1]$$$finishedWithSuccess -->
+<h3 class="fn" id="finishedWithSuccess"><a name="finishedWithSuccess"></a><span class="type">bool</span> PackageManagerCore::<span class="name">finishedWithSuccess</span>() const</h3>
+<p>Returns <code>true</code> if at least one complete installation or update was successful, even if the user cancelled the latest installation process.</p>
+<!-- @@@finishedWithSuccess -->
+<!-- $$$foundEssentialUpdate[overload1]$$$foundEssentialUpdate -->
+<h3 class="fn" id="foundEssentialUpdate"><a name="foundEssentialUpdate"></a><span class="type">bool</span> PackageManagerCore::<span class="name">foundEssentialUpdate</span>() const</h3>
+<p>Returns <code>true</code> if essential component update is found.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setFoundEssentialUpdate">setFoundEssentialUpdate</a>().</p>
+<!-- @@@foundEssentialUpdate -->
+<!-- $$$gainAdminRights[overload1]$$$gainAdminRights -->
+<h3 class="fn" id="gainAdminRights"><a name="gainAdminRights"></a><span class="type">bool</span> PackageManagerCore::<span class="name">gainAdminRights</span>()</h3>
+<p>Tries to gain admin rights. On success, it returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#gainAdminRights-method">installer.gainAdminRights</a> and <a href="qinstaller-packagemanagercore.html#dropAdminRights">dropAdminRights</a>().</p>
+<!-- @@@gainAdminRights -->
+<!-- $$$guiObject[overload1]$$$guiObject -->
+<h3 class="fn" id="guiObject"><a name="guiObject"></a><span class="type">QObject</span> *PackageManagerCore::<span class="name">guiObject</span>() const</h3>
+<p>Returns the GUI object.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setGuiObject">setGuiObject</a>().</p>
+<!-- @@@guiObject -->
+<!-- $$$guiObjectChanged[overload1]$$$guiObjectChangedQObject* -->
+<h3 class="fn" id="guiObjectChanged"><a name="guiObjectChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">guiObjectChanged</span>(<span class="type">QObject</span> *<i>gui</i>)</h3>
+<p>Emitted when the GUI object is set to <i>gui</i>.</p>
+<!-- @@@guiObjectChanged -->
+<!-- $$$installReason[overload1]$$$installReasonComponent* -->
+<h3 class="fn" id="installReason"><a name="installReason"></a><span class="type">QString</span> PackageManagerCore::<span class="name">installReason</span>(<span class="type"><a href="qinstaller-component.html">Component</a></span> *<i>component</i>) const</h3>
+<p>Returns the reason why <i>component</i> needs to be installed:</p>
+<ul>
+<li>The component was scheduled for installation.</li>
+<li>The component was added as a dependency for another component.</li>
+<li>The component was added as an automatic dependency.</li>
+</ul>
+<!-- @@@installReason -->
+<!-- $$$installationFinished[overload1]$$$installationFinished -->
+<h3 class="fn" id="installationFinished"><a name="installationFinished"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">installationFinished</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#installationFinished-signal">installer.installationFinished</a>, <a href="qinstaller-packagemanagercore.html#installationStarted">installationStarted</a>(), and <a href="qinstaller-packagemanagercore.html#installationInterrupted">installationInterrupted</a>().</p>
+<!-- @@@installationFinished -->
+<!-- $$$installationInterrupted[overload1]$$$installationInterrupted -->
+<h3 class="fn" id="installationInterrupted"><a name="installationInterrupted"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">installationInterrupted</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#installationInterrupted-signal">installer.installationInterrupted</a>, <a href="qinstaller-packagemanagercore.html#interrupt">interrupt</a>(), <a href="qinstaller-packagemanagercore.html#installationStarted">installationStarted</a>(), and <a href="qinstaller-packagemanagercore.html#installationFinished">installationFinished</a>().</p>
+<!-- @@@installationInterrupted -->
+<!-- $$$installationStarted[overload1]$$$installationStarted -->
+<h3 class="fn" id="installationStarted"><a name="installationStarted"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">installationStarted</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#installationStarted-signal">installer.installationStarted</a>, <a href="qinstaller-packagemanagercore.html#installationFinished">installationFinished</a>(), and <a href="qinstaller-packagemanagercore.html#installationInterrupted">installationInterrupted</a>().</p>
+<!-- @@@installationStarted -->
+<!-- $$$installerBinaryPath[overload1]$$$installerBinaryPath -->
+<h3 class="fn" id="installerBinaryPath"><a name="installerBinaryPath"></a><span class="type">QString</span> PackageManagerCore::<span class="name">installerBinaryPath</span>() const</h3>
+<p>Returns the path to the installer binary.</p>
+<!-- @@@installerBinaryPath -->
+<!-- $$$interrupt[overload1]$$$interrupt -->
+<h3 class="fn" id="interrupt"><a name="interrupt"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">interrupt</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#interrupt-method">installer.interrupt</a> and <a href="qinstaller-packagemanagercore.html#installationInterrupted">installationInterrupted</a>().</p>
+<!-- @@@interrupt -->
+<!-- $$$isFileExtensionRegistered[overload1]$$$isFileExtensionRegisteredconstQString& -->
+<h3 class="fn" id="isFileExtensionRegistered"><a name="isFileExtensionRegistered"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isFileExtensionRegistered</span>(const <span class="type">QString</span> &amp;<i>extension</i>) const</h3>
+<p>Returns whether the file extension <i>extension</i> is already registered in the Windows registry. Returns <code>false</code> on all other platforms.</p>
+<p><b>See also </b><a href="scripting-installer.html#isFileExtensionRegistered-method">installer.isFileExtensionRegistered</a>.</p>
+<!-- @@@isFileExtensionRegistered -->
+<!-- $$$isInstaller[overload1]$$$isInstaller -->
+<h3 class="fn" id="isInstaller"><a name="isInstaller"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isInstaller</span>() const</h3>
+<p>Returns <code>true</code> if running as installer.</p>
+<p><b>See also </b><a href="scripting-installer.html#isInstaller-method">installer.isInstaller</a>, <a href="qinstaller-packagemanagercore.html#isUninstaller">isUninstaller</a>(), <a href="qinstaller-packagemanagercore.html#isUpdater">isUpdater</a>(), and <a href="qinstaller-packagemanagercore.html#isPackageManager">isPackageManager</a>().</p>
+<!-- @@@isInstaller -->
+<!-- $$$isMaintainer[overload1]$$$isMaintainer -->
+<h3 class="fn" id="isMaintainer"><a name="isMaintainer"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isMaintainer</span>() const</h3>
+<p>Returns <code>true</code> if it is a package manager or an updater.</p>
+<!-- @@@isMaintainer -->
+<!-- $$$isOfflineOnly[overload1]$$$isOfflineOnly -->
+<h3 class="fn" id="isOfflineOnly"><a name="isOfflineOnly"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isOfflineOnly</span>() const</h3>
+<p>Returns <code>true</code> if this is an offline-only installer.</p>
+<p><b>See also </b><a href="scripting-installer.html#isOfflineOnly-method">installer.isOfflineOnly</a>.</p>
+<!-- @@@isOfflineOnly -->
+<!-- $$$isPackageManager[overload1]$$$isPackageManager -->
+<h3 class="fn" id="isPackageManager"><a name="isPackageManager"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isPackageManager</span>() const</h3>
+<p>Returns <code>true</code> if running as the package manager.</p>
+<p><b>See also </b><a href="scripting-installer.html#isPackageManager-method">installer.isPackageManager</a>, <a href="qinstaller-packagemanagercore.html#setPackageManager">setPackageManager</a>(), <a href="qinstaller-packagemanagercore.html#isInstaller">isInstaller</a>(), <a href="qinstaller-packagemanagercore.html#isUninstaller">isUninstaller</a>(), and <a href="qinstaller-packagemanagercore.html#isUpdater">isUpdater</a>().</p>
+<!-- @@@isPackageManager -->
+<!-- $$$isProcessRunning[overload1]$$$isProcessRunningconstQString& -->
+<h3 class="fn" id="isProcessRunning"><a name="isProcessRunning"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isProcessRunning</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Returns <code>true</code> if a process with <i>name</i> is running. On Windows, the comparison is case-insensitive.</p>
+<p><b>See also </b><a href="scripting-installer.html#isProcessRunning-method">installer.isProcessRunning</a>.</p>
+<!-- @@@isProcessRunning -->
+<!-- $$$isUninstaller[overload1]$$$isUninstaller -->
+<h3 class="fn" id="isUninstaller"><a name="isUninstaller"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isUninstaller</span>() const</h3>
+<p>Returns <code>true</code> if running as uninstaller.</p>
+<p><b>See also </b><a href="scripting-installer.html#isUninstaller-method">installer.isUninstaller</a>, <a href="qinstaller-packagemanagercore.html#setUninstaller">setUninstaller</a>(), <a href="qinstaller-packagemanagercore.html#isInstaller">isInstaller</a>(), <a href="qinstaller-packagemanagercore.html#isUpdater">isUpdater</a>(), and <a href="qinstaller-packagemanagercore.html#isPackageManager">isPackageManager</a>().</p>
+<!-- @@@isUninstaller -->
+<!-- $$$isUpdater[overload1]$$$isUpdater -->
+<h3 class="fn" id="isUpdater"><a name="isUpdater"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isUpdater</span>() const</h3>
+<p>Returns <code>true</code> if running as updater.</p>
+<p><b>See also </b><a href="scripting-installer.html#isUpdater-method">installer.isUpdater</a>, <a href="qinstaller-packagemanagercore.html#setUpdater">setUpdater</a>(), <a href="qinstaller-packagemanagercore.html#isInstaller">isInstaller</a>(), <a href="qinstaller-packagemanagercore.html#isUninstaller">isUninstaller</a>(), and <a href="qinstaller-packagemanagercore.html#isPackageManager">isPackageManager</a>().</p>
+<!-- @@@isUpdater -->
+<!-- $$$isVerbose[overload1]$$$isVerbose -->
+<h3 class="fn" id="isVerbose"><a name="isVerbose"></a><span class="type">bool</span> PackageManagerCore::<span class="name">isVerbose</span>() const</h3>
+<p>Returns <code>true</code> if the package manager displays detailed information.</p>
+<!-- @@@isVerbose -->
+<!-- $$$killProcess[overload1]$$$killProcessconstQString& -->
+<h3 class="fn" id="killProcess"><a name="killProcess"></a><span class="type">bool</span> PackageManagerCore::<span class="name">killProcess</span>(const <span class="type">QString</span> &amp;<i>absoluteFilePath</i>) const</h3>
+<p>Returns <code>true</code> if a process with <i>absoluteFilePath</i> could be killed or is not running.</p>
+<p><b>Note: </b>This is implemented in a semi blocking way (to keep the main thread to paint the UI).</p><p><b>See also </b><a href="scripting-installer.html#killProcess-method">installer.killProcess</a>.</p>
+<!-- @@@killProcess -->
+<!-- $$$languageChanged[overload1]$$$languageChanged -->
+<h3 class="fn" id="languageChanged"><a name="languageChanged"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">languageChanged</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#languageChanged-method">installer.languageChanged</a>.</p>
+<!-- @@@languageChanged -->
+<!-- $$$localInstalledPackages[overload1]$$$localInstalledPackages -->
+<h3 class="fn" id="localInstalledPackages"><a name="localInstalledPackages"></a><span class="type">LocalPackagesHash</span> PackageManagerCore::<span class="name">localInstalledPackages</span>()</h3>
+<p>Returns a list of local installed packages. The list can be empty.</p>
+<!-- @@@localInstalledPackages -->
+<!-- $$$localInstallerBinaryUsed[overload1]$$$localInstallerBinaryUsed -->
+<h3 class="fn" id="localInstallerBinaryUsed"><a name="localInstallerBinaryUsed"></a><span class="type">bool</span> PackageManagerCore::<span class="name">localInstallerBinaryUsed</span>()</h3>
+<p>Returns <code>false</code> if the installer is run on Windows, and the installer has been started from a remote file system drive. Otherwise returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#localInstallerBinaryUsed-method">installer.localInstallerBinaryUsed</a> and <a href="qinstaller-packagemanagercore.html#setDependsOnLocalInstallerBinary">setDependsOnLocalInstallerBinary</a>().</p>
+<!-- @@@localInstallerBinaryUsed -->
+<!-- $$$maintenanceToolName[overload1]$$$maintenanceToolName -->
+<h3 class="fn" id="maintenanceToolName"><a name="maintenanceToolName"></a><span class="type">QString</span> PackageManagerCore::<span class="name">maintenanceToolName</span>() const</h3>
+<p>Returns the path name of the maintenance tool binary.</p>
+<!-- @@@maintenanceToolName -->
+<!-- $$$metaJobInfoMessage[overload1]$$$metaJobInfoMessageconstQString& -->
+<h3 class="fn" id="metaJobInfoMessage"><a name="metaJobInfoMessage"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">metaJobInfoMessage</span>(const <span class="type">QString</span> &amp;<i>message</i>)</h3>
+<p>Triggered with informative updates, <i>message</i>, of the communication with a remote repository.</p>
+<p><b>See also </b><a href="scripting-installer.html#metaJobInfoMessage-signal">installer.metaJobInfoMessage</a>.</p>
+<!-- @@@metaJobInfoMessage -->
+<!-- $$$metaJobProgress[overload1]$$$metaJobProgressint -->
+<h3 class="fn" id="metaJobProgress"><a name="metaJobProgress"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">metaJobProgress</span>(<span class="type">int</span> <i>progress</i>)</h3>
+<p>Triggered with progress updates of the communication with a remote repository. Values of <i>progress</i> range from 0 to 100.</p>
+<p><b>See also </b><a href="scripting-installer.html#metaJobProgress-signal">installer.metaJobProgress</a>.</p>
+<!-- @@@metaJobProgress -->
+<!-- $$$metaJobTotalProgress[overload1]$$$metaJobTotalProgressint -->
+<h3 class="fn" id="metaJobTotalProgress"><a name="metaJobTotalProgress"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">metaJobTotalProgress</span>(<span class="type">int</span> <i>progress</i>)</h3>
+<!-- @@@metaJobTotalProgress -->
+<!-- $$$needsHardRestart[overload1]$$$needsHardRestart -->
+<h3 class="fn" id="needsHardRestart"><a name="needsHardRestart"></a><span class="type">bool</span> PackageManagerCore::<span class="name">needsHardRestart</span>() const</h3>
+<p>Returns <code>true</code> if a hard restart of the application is requested.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setNeedsHardRestart">setNeedsHardRestart</a>().</p>
+<!-- @@@needsHardRestart -->
+<!-- $$$networkSettingsChanged[overload1]$$$networkSettingsChanged -->
+<h3 class="fn" id="networkSettingsChanged"><a name="networkSettingsChanged"></a><span class="type">void</span> PackageManagerCore::<span class="name">networkSettingsChanged</span>()</h3>
+<p>Emits the <a href="qinstaller-packagemanagercore.html#coreNetworkSettingsChanged">coreNetworkSettingsChanged</a>() signal when network settings change.</p>
+<!-- @@@networkSettingsChanged -->
+<!-- $$$noForceInstallation[overload1]$$$noForceInstallation -->
+<h3 class="fn" id="noForceInstallation"><a name="noForceInstallation"></a><code>[static] </code><span class="type">bool</span> PackageManagerCore::<span class="name">noForceInstallation</span>()</h3>
+<p>Returns <code>true</code> if forced installation is not set for all components for which the &lt;ForcedInstallation&gt; element is set in the package information file.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setNoForceInstallation">setNoForceInstallation</a>().</p>
+<!-- @@@noForceInstallation -->
+<!-- $$$operationExists[overload1]$$$operationExistsconstQString& -->
+<h3 class="fn" id="operationExists"><a name="operationExists"></a><span class="type">bool</span> PackageManagerCore::<span class="name">operationExists</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Returns <code>true</code> if the operation specified by <i>name</i> exists.</p>
+<!-- @@@operationExists -->
+<!-- $$$orderedComponentsToInstall[overload1]$$$orderedComponentsToInstall -->
+<h3 class="fn" id="orderedComponentsToInstall"><a name="orderedComponentsToInstall"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; PackageManagerCore::<span class="name">orderedComponentsToInstall</span>() const</h3>
+<p>Returns an ordered list of components to install. The list can be empty.</p>
+<!-- @@@orderedComponentsToInstall -->
+<!-- $$$parseNameAndVersion[overload1]$$$parseNameAndVersionconstQString&QString*QString* -->
+<h3 class="fn" id="parseNameAndVersion"><a name="parseNameAndVersion"></a><code>[static] </code><span class="type">void</span> PackageManagerCore::<span class="name">parseNameAndVersion</span>(const <span class="type">QString</span> &amp;<i>requirement</i>, <span class="type">QString</span> *<i>name</i>, <span class="type">QString</span> *<i>version</i>)</h3>
+<!-- @@@parseNameAndVersion -->
+<!-- $$$parseNames[overload1]$$$parseNamesconstQStringList& -->
+<h3 class="fn" id="parseNames"><a name="parseNames"></a><code>[static] </code><span class="type">QStringList</span> PackageManagerCore::<span class="name">parseNames</span>(const <span class="type">QStringList</span> &amp;<i>requirements</i>)</h3>
+<!-- @@@parseNames -->
+<!-- $$$performOperation[overload1]$$$performOperationconstQString&constQStringList& -->
+<h3 class="fn" id="performOperation"><a name="performOperation"></a><span class="type">bool</span> PackageManagerCore::<span class="name">performOperation</span>(const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QStringList</span> &amp;<i>arguments</i>)</h3>
+<p>Performs the operation <i>name</i> with <i>arguments</i>.</p>
+<p>Returns <code>false</code> if the operation cannot be created or executed.</p>
+<p><b>Note: </b>The operation is performed threaded. It is not advised to call this function after installation finished signals.</p><p><b>See also </b><a href="scripting-installer.html#performOperation-method">installer.performOperation</a>.</p>
+<!-- @@@performOperation -->
+<!-- $$$proxyFactory[overload1]$$$proxyFactory -->
+<h3 class="fn" id="proxyFactory"><a name="proxyFactory"></a><span class="type">PackageManagerProxyFactory</span> *PackageManagerCore::<span class="name">proxyFactory</span>() const</h3>
+<p>Returns a copy of the proxy factory that the package manager uses to determine the proxies to be used for requests.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setProxyFactory">setProxyFactory</a>().</p>
+<!-- @@@proxyFactory -->
+<!-- $$$readFile[overload1]$$$readFileconstQString&constQString& -->
+<h3 class="fn" id="readFile"><a name="readFile"></a><span class="type">QString</span> PackageManagerCore::<span class="name">readFile</span>(const <span class="type">QString</span> &amp;<i>filePath</i>, const <span class="type">QString</span> &amp;<i>codecName</i>) const</h3>
+<p>Returns the contents of the file <i>filePath</i> using the encoding specified by <i>codecName</i>. The file is read in the text mode, that is, end-of-line terminators are translated to the local encoding.</p>
+<p><b>Note: </b>If the file does not exist or an error occurs while reading the file, an empty string is returned.</p><p><b>See also </b><a href="scripting-installer.html#readFile-method">installer.readFile</a>.</p>
+<!-- @@@readFile -->
+<!-- $$$remotePackages[overload1]$$$remotePackages -->
+<h3 class="fn" id="remotePackages"><a name="remotePackages"></a><span class="type">PackagesList</span> PackageManagerCore::<span class="name">remotePackages</span>()</h3>
+<p>Returns a list of packages available in all the repositories that were looked at.</p>
+<!-- @@@remotePackages -->
+<!-- $$$removeWizardPage[overload1]$$$removeWizardPageQInstaller::Component*constQString& -->
+<h3 class="fn" id="removeWizardPage"><a name="removeWizardPage"></a><span class="type">bool</span> PackageManagerCore::<span class="name">removeWizardPage</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Removes the widget with the object name <i>name</i> previously added to the installer's wizard by <i>component</i>.</p>
+<p>Returns <code>true</code> if the operation succeeded.</p>
+<p><b>See also </b><a href="scripting-installer.html#removeWizardPage-method">installer.removeWizardPage</a>, <a href="qinstaller-packagemanagercore.html#addWizardPage">addWizardPage</a>(), <a href="qinstaller-packagemanagercore.html#setDefaultPageVisible">setDefaultPageVisible</a>(), and <a href="qinstaller-packagemanagercore.html#wizardPageRemovalRequested">wizardPageRemovalRequested</a>().</p>
+<!-- @@@removeWizardPage -->
+<!-- $$$removeWizardPageItem[overload1]$$$removeWizardPageItemQInstaller::Component*constQString& -->
+<h3 class="fn" id="removeWizardPageItem"><a name="removeWizardPageItem"></a><span class="type">bool</span> PackageManagerCore::<span class="name">removeWizardPageItem</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Removes the widget with the object name <i>name</i> previously added to the installer's wizard by <i>component</i>.</p>
+<p>If the widget can be found in an UI file for the component, returns <code>true</code> and emits the <a href="qinstaller-packagemanagercore.html#wizardWidgetRemovalRequested">wizardWidgetRemovalRequested</a>() signal.</p>
+<p><b>See also </b><a href="scripting-installer.html#removeWizardPageItem-method">installer.removeWizardPageItem</a> and <a href="qinstaller-packagemanagercore.html#addWizardPageItem">addWizardPageItem</a>().</p>
+<!-- @@@removeWizardPageItem -->
+<!-- $$$replaceVariables[overload1]$$$replaceVariablesconstQString& -->
+<h3 class="fn" id="replaceVariables"><a name="replaceVariables"></a><span class="type">QString</span> PackageManagerCore::<span class="name">replaceVariables</span>(const <span class="type">QString</span> &amp;<i>str</i>) const</h3>
+<p>Replaces all variables within <i>str</i> by their respective values and returns the result.</p>
+<!-- @@@replaceVariables -->
+<!-- $$$replaceVariables$$$replaceVariablesconstQByteArray& -->
+<h3 class="fn" id="replaceVariables-1"><a name="replaceVariables-1"></a><span class="type">QByteArray</span> PackageManagerCore::<span class="name">replaceVariables</span>(const <span class="type">QByteArray</span> &amp;<i>ba</i>) const</h3>
+<p>This is an overloaded function.</p>
+<p>Replaces all variables within <i>ba</i> by their respective values and returns the result.</p>
+<!-- @@@replaceVariables -->
+<!-- $$$replaceVariables$$$replaceVariablesconstQStringList& -->
+<h3 class="fn" id="replaceVariables-2"><a name="replaceVariables-2"></a><span class="type">QStringList</span> PackageManagerCore::<span class="name">replaceVariables</span>(const <span class="type">QStringList</span> &amp;<i>str</i>) const</h3>
+<p>This is an overloaded function.</p>
+<p>Replaces all variables in any instance of <i>str</i> by their respective values and returns the results.</p>
+<!-- @@@replaceVariables -->
+<!-- $$$requiredDiskSpace[overload1]$$$requiredDiskSpace -->
+<h3 class="fn" id="requiredDiskSpace"><a name="requiredDiskSpace"></a><span class="type">quint64</span> PackageManagerCore::<span class="name">requiredDiskSpace</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#requiredDiskSpace-method">installer.requiredDiskSpace</a> and <a href="qinstaller-packagemanagercore.html#requiredTemporaryDiskSpace">requiredTemporaryDiskSpace</a>().</p>
+<!-- @@@requiredDiskSpace -->
+<!-- $$$requiredTemporaryDiskSpace[overload1]$$$requiredTemporaryDiskSpace -->
+<h3 class="fn" id="requiredTemporaryDiskSpace"><a name="requiredTemporaryDiskSpace"></a><span class="type">quint64</span> PackageManagerCore::<span class="name">requiredTemporaryDiskSpace</span>() const</h3>
+<p><b>See also </b><a href="scripting-installer.html#requiredTemporaryDiskSpace-method">installer.requiredTemporaryDiskSpace</a> and <a href="qinstaller-packagemanagercore.html#requiredDiskSpace">requiredDiskSpace</a>().</p>
+<!-- @@@requiredTemporaryDiskSpace -->
+<!-- $$$reset[overload1]$$$reset -->
+<h3 class="fn" id="reset"><a name="reset"></a><span class="type">void</span> PackageManagerCore::<span class="name">reset</span>()</h3>
+<p>Resets the class to its initial state.</p>
+<!-- @@@reset -->
+<!-- $$$rollBackInstallation[overload1]$$$rollBackInstallation -->
+<h3 class="fn" id="rollBackInstallation"><a name="rollBackInstallation"></a><span class="type">void</span> PackageManagerCore::<span class="name">rollBackInstallation</span>()</h3>
+<p>Cancels the installation and performs the UNDO step of all already executed operations.</p>
+<!-- @@@rollBackInstallation -->
+<!-- $$$rootComponentsAdded[overload1]$$$rootComponentsAddedQList<QInstaller::Component*> -->
+<h3 class="fn" id="rootComponentsAdded"><a name="rootComponentsAdded"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">rootComponentsAdded</span>(<span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *&gt; <i>components</i>)</h3>
+<p>Emitted when the list of root components specified by <i>components</i> is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#rootComponentsAdded-signal">installer.rootComponentsAdded</a>, <a href="qinstaller-packagemanagercore.html#componentAdded">componentAdded</a>(), and <a href="qinstaller-packagemanagercore.html#updaterComponentsAdded">updaterComponentsAdded</a>().</p>
+<!-- @@@rootComponentsAdded -->
+<!-- $$$run[overload1]$$$run -->
+<h3 class="fn" id="run"><a name="run"></a><span class="type">bool</span> PackageManagerCore::<span class="name">run</span>()</h3>
+<p>Runs the installer, uninstaller, updater, or package manager, depending on the type of this binary. Returns <code>true</code> on success, otherwise <code>false</code>.</p>
+<!-- @@@run -->
+<!-- $$$runInstaller[overload1]$$$runInstaller -->
+<h3 class="fn" id="runInstaller"><a name="runInstaller"></a><code>[slot] </code><span class="type">bool</span> PackageManagerCore::<span class="name">runInstaller</span>()</h3>
+<p>Runs the installer. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+<p><b>See also </b><a href="scripting-installer.html#runInstaller-method">installer.runInstaller</a>.</p>
+<!-- @@@runInstaller -->
+<!-- $$$runPackageUpdater[overload1]$$$runPackageUpdater -->
+<h3 class="fn" id="runPackageUpdater"><a name="runPackageUpdater"></a><code>[slot] </code><span class="type">bool</span> PackageManagerCore::<span class="name">runPackageUpdater</span>()</h3>
+<p>Runs the updater. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+<p><b>See also </b><a href="scripting-installer.html#runPackageUpdater-method">installer.runPackageUpdater</a>.</p>
+<!-- @@@runPackageUpdater -->
+<!-- $$$runUninstaller[overload1]$$$runUninstaller -->
+<h3 class="fn" id="runUninstaller"><a name="runUninstaller"></a><code>[slot] </code><span class="type">bool</span> PackageManagerCore::<span class="name">runUninstaller</span>()</h3>
+<p>Runs the uninstaller. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+<p><b>See also </b><a href="scripting-installer.html#runUninstaller-method">installer.runUninstaller</a>.</p>
+<!-- @@@runUninstaller -->
+<!-- $$$setAutomatedPageSwitchEnabled[overload1]$$$setAutomatedPageSwitchEnabledbool -->
+<h3 class="fn" id="setAutomatedPageSwitchEnabled"><a name="setAutomatedPageSwitchEnabled"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">setAutomatedPageSwitchEnabled</span>(<span class="type">bool</span> <i>request</i>)</h3>
+<p>Triggered when the automatic switching from the perform installation to the installation finished page is enabled (<i>request</i> is <code>true</code>) or disabled (<i>request</i> is <code>false</code>).</p>
+<p>The automatic switching is disabled automatically when for example the user expands or unexpands the <b>Details</b> section of the <a href="qinstaller-packagemanagercore.html#WizardPage-enum">PerformInstallation</a> page.</p>
+<p><b>See also </b><a href="scripting-installer.html#setAutomatedPageSwitchEnabled-signal">installer.setAutomatedPageSwitchEnabled</a>.</p>
+<!-- @@@setAutomatedPageSwitchEnabled -->
+<!-- $$$setCanceled[overload1]$$$setCanceled -->
+<h3 class="fn" id="setCanceled"><a name="setCanceled"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">setCanceled</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#setCanceled-method">installer.setCanceled</a>.</p>
+<!-- @@@setCanceled -->
+<!-- $$$setCompleteUninstallation[overload1]$$$setCompleteUninstallationbool -->
+<h3 class="fn" id="setCompleteUninstallation"><a name="setCompleteUninstallation"></a><code>[slot] </code><span class="type">void</span> PackageManagerCore::<span class="name">setCompleteUninstallation</span>(<span class="type">bool</span> <i>complete</i>)</h3>
+<p>Sets the uninstallation to be <i>complete</i>. If <i>complete</i> is false, only components deselected by the user will be uninstalled. This option applies only on uninstallation.</p>
+<p><b>See also </b><a href="scripting-installer.html#setCompleteUninstallation-method">installer.setCompleteUninstallation</a>.</p>
+<!-- @@@setCompleteUninstallation -->
+<!-- $$$setCreateLocalRepositoryFromBinary[overload1]$$$setCreateLocalRepositoryFromBinarybool -->
+<h3 class="fn" id="setCreateLocalRepositoryFromBinary"><a name="setCreateLocalRepositoryFromBinary"></a><code>[static] </code><span class="type">void</span> PackageManagerCore::<span class="name">setCreateLocalRepositoryFromBinary</span>(<span class="type">bool</span> <i>create</i>)</h3>
+<p>Determines that a local repository should be created from binary content if <i>create</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#createLocalRepositoryFromBinary">createLocalRepositoryFromBinary</a>().</p>
+<!-- @@@setCreateLocalRepositoryFromBinary -->
+<!-- $$$setDefaultPageVisible[overload1]$$$setDefaultPageVisibleintbool -->
+<h3 class="fn" id="setDefaultPageVisible"><a name="setDefaultPageVisible"></a><span class="type">bool</span> PackageManagerCore::<span class="name">setDefaultPageVisible</span>(<span class="type">int</span> <i>page</i>, <span class="type">bool</span> <i>visible</i>)</h3>
+<p>Sets the visibility of the default page with the ID <i>page</i> to <i>visible</i>. That is, removes it from or adds it to the wizard. This works only for pages that were in the installer when it was started.</p>
+<p>Returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#setDefaultPageVisible-method">installer.setDefaultPageVisible</a>, <a href="qinstaller-packagemanagercore.html#addWizardPage">addWizardPage</a>(), and <a href="qinstaller-packagemanagercore.html#removeWizardPage">removeWizardPage</a>().</p>
+<!-- @@@setDefaultPageVisible -->
+<!-- $$$setDependsOnLocalInstallerBinary[overload1]$$$setDependsOnLocalInstallerBinary -->
+<h3 class="fn" id="setDependsOnLocalInstallerBinary"><a name="setDependsOnLocalInstallerBinary"></a><span class="type">void</span> PackageManagerCore::<span class="name">setDependsOnLocalInstallerBinary</span>()</h3>
+<p>Makes sure the installer runs from a local drive. Otherwise the user will get an appropriate error message.</p>
+<p><b>Note: </b>This only works on Windows.</p><p><b>See also </b><a href="scripting-installer.html#setDependsOnLocalInstallerBinary-method">installer.setDependsOnLocalInstallerBinary</a> and <a href="qinstaller-packagemanagercore.html#localInstallerBinaryUsed">localInstallerBinaryUsed</a>().</p>
+<!-- @@@setDependsOnLocalInstallerBinary -->
+<!-- $$$setFoundEssentialUpdate[overload1]$$$setFoundEssentialUpdatebool -->
+<h3 class="fn" id="setFoundEssentialUpdate"><a name="setFoundEssentialUpdate"></a><span class="type">void</span> PackageManagerCore::<span class="name">setFoundEssentialUpdate</span>(<span class="type">bool</span> <i>foundEssentialUpdate</i> = true)</h3>
+<p>Sets the value of <i>foundEssentialUpdate</i>, defaults <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#foundEssentialUpdate">foundEssentialUpdate</a>().</p>
+<!-- @@@setFoundEssentialUpdate -->
+<!-- $$$setGuiObject[overload1]$$$setGuiObjectQObject* -->
+<h3 class="fn" id="setGuiObject"><a name="setGuiObject"></a><span class="type">void</span> PackageManagerCore::<span class="name">setGuiObject</span>(<span class="type">QObject</span> *<i>gui</i>)</h3>
+<p>Sets the maintenance tool UI to <i>gui</i>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#guiObject">guiObject</a>().</p>
+<!-- @@@setGuiObject -->
+<!-- $$$setInstallerBaseBinary[overload1]$$$setInstallerBaseBinaryconstQString& -->
+<h3 class="fn" id="setInstallerBaseBinary"><a name="setInstallerBaseBinary"></a><span class="type">void</span> PackageManagerCore::<span class="name">setInstallerBaseBinary</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p>Sets the <code>installerbase</code> binary located at <i>path</i> to use when writing the maintenance tool. Set the path if an update to the binary is available.</p>
+<p>If the path is not set, the executable segment of the running installer or uninstaller will be used.</p>
+<p><b>See also </b><a href="scripting-installer.html#setInstallerBaseBinary-method">installer.setInstallerBaseBinary</a>.</p>
+<!-- @@@setInstallerBaseBinary -->
+<!-- $$$setMessageBoxAutomaticAnswer[overload1]$$$setMessageBoxAutomaticAnswerconstQString&int -->
+<h3 class="fn" id="setMessageBoxAutomaticAnswer"><a name="setMessageBoxAutomaticAnswer"></a><span class="type">void</span> PackageManagerCore::<span class="name">setMessageBoxAutomaticAnswer</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, <span class="type">int</span> <i>button</i>)</h3>
+<p>Automatically closes the message box with the ID <i>identifier</i> as if the user had pressed <i>button</i>.</p>
+<p>This can be used for unattended (automatic) installations.</p>
+<p><b>See also </b><a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">installer.setMessageBoxAutomaticAnswer</a>, <a href="scripting-qmessagebox.html">QMessageBox</a>, <a href="qinstaller-packagemanagercore.html#autoAcceptMessageBoxes">autoAcceptMessageBoxes</a>(), and <a href="qinstaller-packagemanagercore.html#autoRejectMessageBoxes">autoRejectMessageBoxes</a>().</p>
+<!-- @@@setMessageBoxAutomaticAnswer -->
+<!-- $$$setNeedsHardRestart[overload1]$$$setNeedsHardRestartbool -->
+<h3 class="fn" id="setNeedsHardRestart"><a name="setNeedsHardRestart"></a><span class="type">void</span> PackageManagerCore::<span class="name">setNeedsHardRestart</span>(<span class="type">bool</span> <i>needsHardRestart</i> = true)</h3>
+<p>Enables a component to request a hard restart of the application if <i>needsHardRestart</i> is set to <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#needsHardRestart">needsHardRestart</a>().</p>
+<!-- @@@setNeedsHardRestart -->
+<!-- $$$setNoForceInstallation[overload1]$$$setNoForceInstallationbool -->
+<h3 class="fn" id="setNoForceInstallation"><a name="setNoForceInstallation"></a><code>[static] </code><span class="type">void</span> PackageManagerCore::<span class="name">setNoForceInstallation</span>(<span class="type">bool</span> <i>value</i>)</h3>
+<p>Overwrites the value specified for the component in the <code>&lt;ForcedInstallation&gt;</code> element in the package information file with <i>value</i>. This enables end users to select or deselect the component in the installer.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#noForceInstallation">noForceInstallation</a>().</p>
+<!-- @@@setNoForceInstallation -->
+<!-- $$$setPackageManager[overload1]$$$setPackageManager -->
+<h3 class="fn" id="setPackageManager"><a name="setPackageManager"></a><span class="type">void</span> PackageManagerCore::<span class="name">setPackageManager</span>()</h3>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#isPackageManager">isPackageManager</a>() and <a href="scripting-installer.html#setPackageManager-method">installer.setPackageManager</a>.</p>
+<!-- @@@setPackageManager -->
+<!-- $$$setProxyFactory[overload1]$$$setProxyFactoryPackageManagerProxyFactory* -->
+<h3 class="fn" id="setProxyFactory"><a name="setProxyFactory"></a><span class="type">void</span> PackageManagerCore::<span class="name">setProxyFactory</span>(<span class="type">PackageManagerProxyFactory</span> *<i>factory</i>)</h3>
+<p>Sets the proxy factory for the package manager to be <i>factory</i>. A proxy factory is used to determine a more specific list of proxies to be used for a given request, instead of trying to use the same proxy value for all requests. This might only be of use for HTTP or FTP requests.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#proxyFactory">proxyFactory</a>().</p>
+<!-- @@@setProxyFactory -->
+<!-- $$$setTemporaryRepositories[overload1]$$$setTemporaryRepositoriesconstQStringList&boolbool -->
+<h3 class="fn" id="setTemporaryRepositories"><a name="setTemporaryRepositories"></a><span class="type">void</span> PackageManagerCore::<span class="name">setTemporaryRepositories</span>(const <span class="type">QStringList</span> &amp;<i>repositories</i>, <span class="type">bool</span> <i>replace</i> = false, <span class="type">bool</span> <i>compressed</i> = false)</h3>
+<p>Sets additional <i>repositories</i> for this instance of the installer or updater if <i>replace</i> is <code>false</code>. Will be removed after invoking it again.</p>
+<p><b>See also </b><a href="scripting-installer.html#setTemporaryRepositories-method">installer.setTemporaryRepositories</a> and <a href="qinstaller-packagemanagercore.html#addUserRepositories">addUserRepositories</a>().</p>
+<!-- @@@setTemporaryRepositories -->
+<!-- $$$setTestChecksum[overload1]$$$setTestChecksumbool -->
+<h3 class="fn" id="setTestChecksum"><a name="setTestChecksum"></a><span class="type">void</span> PackageManagerCore::<span class="name">setTestChecksum</span>(<span class="type">bool</span> <i>test</i>)</h3>
+<p>The <i>test</i> argument determines whether the downloader should try to download SHA-1 checksums for archives.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#testChecksum">testChecksum</a>().</p>
+<!-- @@@setTestChecksum -->
+<!-- $$$setUninstaller[overload1]$$$setUninstaller -->
+<h3 class="fn" id="setUninstaller"><a name="setUninstaller"></a><span class="type">void</span> PackageManagerCore::<span class="name">setUninstaller</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#setUninstaller-method">installer.setUninstaller</a>, <a href="qinstaller-packagemanagercore.html#isUninstaller">isUninstaller</a>(), <a href="qinstaller-packagemanagercore.html#setUpdater">setUpdater</a>(), and <a href="qinstaller-packagemanagercore.html#setPackageManager">setPackageManager</a>().</p>
+<!-- @@@setUninstaller -->
+<!-- $$$setUpdater[overload1]$$$setUpdater -->
+<h3 class="fn" id="setUpdater"><a name="setUpdater"></a><span class="type">void</span> PackageManagerCore::<span class="name">setUpdater</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#setUpdater-method">installer.setUpdater</a>, <a href="qinstaller-packagemanagercore.html#isUpdater">isUpdater</a>(), <a href="qinstaller-packagemanagercore.html#setUninstaller">setUninstaller</a>(), and <a href="qinstaller-packagemanagercore.html#setPackageManager">setPackageManager</a>().</p>
+<!-- @@@setUpdater -->
+<!-- $$$setValidatorForCustomPage[overload1]$$$setValidatorForCustomPageQInstaller::Component*constQString&constQString& -->
+<h3 class="fn" id="setValidatorForCustomPage"><a name="setValidatorForCustomPage"></a><span class="type">void</span> PackageManagerCore::<span class="name">setValidatorForCustomPage</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QString</span> &amp;<i>callbackName</i>)</h3>
+<p>Sets a validator for the custom page specified by <i>name</i> and <i>callbackName</i> for the component <i>component</i>.</p>
+<p>When using this, <i>name</i> has to match a dynamic page starting with <code>Dynamic</code>. For example, if the page is called DynamicReadyToInstallWidget, then <i>name</i> should be set to <code>ReadyToInstallWidget</code>. The <i>callbackName</i> should be set to a function that returns a boolean. When the <code>Next</code> button is pressed on the custom page, then it will call the <i>callbackName</i> function. If this returns <code>true</code>, then it will move to the next page.</p>
+<p><b>See also </b><a href="scripting-installer.html#setValidatorForCustomPage-method">installer.setValidatorForCustomPage</a> and <a href="qinstaller-packagemanagercore.html#setValidatorForCustomPageRequested">setValidatorForCustomPageRequested</a>().</p>
+<!-- @@@setValidatorForCustomPage -->
+<!-- $$$setValidatorForCustomPageRequested[overload1]$$$setValidatorForCustomPageRequestedQInstaller::Component*constQString&constQString& -->
+<h3 class="fn" id="setValidatorForCustomPageRequested"><a name="setValidatorForCustomPageRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">setValidatorForCustomPageRequested</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QString</span> &amp;<i>callbackName</i>)</h3>
+<p>Requests that a validator be set for the custom page specified by <i>name</i> and <i>callbackName</i> for the component <i>component</i>. Triggered when <a href="qinstaller-packagemanagercore.html#setValidatorForCustomPage">setValidatorForCustomPage</a>() is called.</p>
+<p><b>See also </b><a href="scripting-installer.html#setValidatorForCustomPageRequested-signal">installer.setValidatorForCustomPageRequested</a>.</p>
+<!-- @@@setValidatorForCustomPageRequested -->
+<!-- $$$setValue[overload1]$$$setValueconstQString&constQString& -->
+<h3 class="fn" id="setValue"><a name="setValue"></a><span class="type">void</span> PackageManagerCore::<span class="name">setValue</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>value</i>)</h3>
+<p>Sets the installer value for <i>key</i> to <i>value</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#setValue-method">installer.setValue</a>, <a href="qinstaller-packagemanagercore.html#value">value</a>(), <a href="qinstaller-packagemanagercore.html#containsValue">containsValue</a>(), and <a href="qinstaller-packagemanagercore.html#valueChanged">valueChanged</a>().</p>
+<!-- @@@setValue -->
+<!-- $$$setVerbose[overload1]$$$setVerbosebool -->
+<h3 class="fn" id="setVerbose"><a name="setVerbose"></a><span class="type">void</span> PackageManagerCore::<span class="name">setVerbose</span>(<span class="type">bool</span> <i>on</i>)</h3>
+<p>Determines that the package manager displays detailed information if <i>on</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#isVerbose">isVerbose</a>().</p>
+<!-- @@@setVerbose -->
+<!-- $$$setVirtualComponentsFont[overload1]$$$setVirtualComponentsFontconstQFont& -->
+<h3 class="fn" id="setVirtualComponentsFont"><a name="setVirtualComponentsFont"></a><code>[static] </code><span class="type">void</span> PackageManagerCore::<span class="name">setVirtualComponentsFont</span>(const <span class="type">QFont</span> &amp;<i>font</i>)</h3>
+<p>Sets the virtual components' font to <i>font</i>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#virtualComponentsFont">virtualComponentsFont</a>().</p>
+<!-- @@@setVirtualComponentsFont -->
+<!-- $$$setVirtualComponentsVisible[overload1]$$$setVirtualComponentsVisiblebool -->
+<h3 class="fn" id="setVirtualComponentsVisible"><a name="setVirtualComponentsVisible"></a><code>[static] </code><span class="type">void</span> PackageManagerCore::<span class="name">setVirtualComponentsVisible</span>(<span class="type">bool</span> <i>visible</i>)</h3>
+<p>Shows virtual components if <i>visible</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#virtualComponentsVisible">virtualComponentsVisible</a>().</p>
+<!-- @@@setVirtualComponentsVisible -->
+<!-- $$$settings[overload1]$$$settings -->
+<h3 class="fn" id="settings"><a name="settings"></a><span class="type">Settings</span> &amp;PackageManagerCore::<span class="name">settings</span>() const</h3>
+<p>Returns the settings for the package manager.</p>
+<!-- @@@settings -->
+<!-- $$$size[overload1]$$$sizeQInstaller::Component*constQString& -->
+<h3 class="fn" id="size"><a name="size"></a><span class="type">quint64</span> PackageManagerCore::<span class="name">size</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>value</i>) const</h3>
+<p>Returns the size of the component <i>component</i> as <i>value</i>.</p>
+<!-- @@@size -->
+<!-- $$$startAllComponentsReset[overload1]$$$startAllComponentsReset -->
+<h3 class="fn" id="startAllComponentsReset"><a name="startAllComponentsReset"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">startAllComponentsReset</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#startAllComponentsReset-signal">installer.startAllComponentsReset</a> and <a href="qinstaller-packagemanagercore.html#finishAllComponentsReset">finishAllComponentsReset</a>().</p>
+<!-- @@@startAllComponentsReset -->
+<!-- $$$startUpdaterComponentsReset[overload1]$$$startUpdaterComponentsReset -->
+<h3 class="fn" id="startUpdaterComponentsReset"><a name="startUpdaterComponentsReset"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">startUpdaterComponentsReset</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#startUpdaterComponentsReset-signal">installer.startUpdaterComponentsReset</a>.</p>
+<!-- @@@startUpdaterComponentsReset -->
+<!-- $$$testChecksum[overload1]$$$testChecksum -->
+<h3 class="fn" id="testChecksum"><a name="testChecksum"></a><span class="type">bool</span> PackageManagerCore::<span class="name">testChecksum</span>() const</h3>
+<p>Checks whether the downloader should try to download SHA-1 checksums for archives and returns the checksums.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setTestChecksum">setTestChecksum</a>().</p>
+<!-- @@@testChecksum -->
+<!-- $$$titleMessageChanged[overload1]$$$titleMessageChangedconstQString& -->
+<h3 class="fn" id="titleMessageChanged"><a name="titleMessageChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">titleMessageChanged</span>(const <span class="type">QString</span> &amp;<i>title</i>)</h3>
+<p>Emitted when the text of the installer status (on the <a href="qinstaller-packagemanagercore.html#WizardPage-enum">PerformInstallation</a> page) changes to <i>title</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#titleMessageChanged-signal">installer.titleMessageChanged</a>.</p>
+<!-- @@@titleMessageChanged -->
+<!-- $$$uninstallationFinished[overload1]$$$uninstallationFinished -->
+<h3 class="fn" id="uninstallationFinished"><a name="uninstallationFinished"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">uninstallationFinished</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#uninstallationFinished-signal">installer.uninstallationFinished</a> and <a href="qinstaller-packagemanagercore.html#uninstallationStarted">uninstallationStarted</a>().</p>
+<!-- @@@uninstallationFinished -->
+<!-- $$$uninstallationStarted[overload1]$$$uninstallationStarted -->
+<h3 class="fn" id="uninstallationStarted"><a name="uninstallationStarted"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">uninstallationStarted</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#uninstallationStarted-signal">installer.uninstallationStarted</a> and <a href="qinstaller-packagemanagercore.html#uninstallationFinished">uninstallationFinished</a>().</p>
+<!-- @@@uninstallationStarted -->
+<!-- $$$unstableComponentFound[overload1]$$$unstableComponentFoundconstQString&constQString&constQString& -->
+<h3 class="fn" id="unstableComponentFound"><a name="unstableComponentFound"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">unstableComponentFound</span>(const <span class="type">QString</span> &amp;<i>type</i>, const <span class="type">QString</span> &amp;<i>errorMessage</i>, const <span class="type">QString</span> &amp;<i>component</i>)</h3>
+<!-- @@@unstableComponentFound -->
+<!-- $$$updateComponentsSilently[overload1]$$$updateComponentsSilently -->
+<h3 class="fn" id="updateComponentsSilently"><a name="updateComponentsSilently"></a><span class="type">void</span> PackageManagerCore::<span class="name">updateComponentsSilently</span>()</h3>
+<!-- @@@updateComponentsSilently -->
+<!-- $$$updateFinished[overload1]$$$updateFinished -->
+<h3 class="fn" id="updateFinished"><a name="updateFinished"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">updateFinished</span>()</h3>
+<p><b>See also </b><a href="scripting-installer.html#installationFinished-signal">installer.installationFinished</a>.</p>
+<!-- @@@updateFinished -->
+<!-- $$$updaterComponentModel[overload1]$$$updaterComponentModel -->
+<h3 class="fn" id="updaterComponentModel"><a name="updaterComponentModel"></a><span class="type"><a href="qinstaller-componentmodel.html">ComponentModel</a></span> *PackageManagerCore::<span class="name">updaterComponentModel</span>() const</h3>
+<p>Returns the updater component model.</p>
+<!-- @@@updaterComponentModel -->
+<!-- $$$updaterComponentsAdded[overload1]$$$updaterComponentsAddedQList<QInstaller::Component*> -->
+<h3 class="fn" id="updaterComponentsAdded"><a name="updaterComponentsAdded"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">updaterComponentsAdded</span>(<span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *&gt; <i>components</i>)</h3>
+<p>Emitted when a new list of updater components specified by <i>components</i> is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#updaterComponentsAdded-signal">installer.updaterComponentsAdded</a>, <a href="qinstaller-packagemanagercore.html#componentAdded">componentAdded</a>(), and <a href="qinstaller-packagemanagercore.html#rootComponentsAdded">rootComponentsAdded</a>().</p>
+<!-- @@@updaterComponentsAdded -->
+<!-- $$$value[overload1]$$$valueconstQString&constQString& -->
+<h3 class="fn" id="value"><a name="value"></a><span class="type">QString</span> PackageManagerCore::<span class="name">value</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>defaultValue</i> = QString()) const</h3>
+<p>Returns the installer value for <i>key</i>. If <i>key</i> is not known to the system, <i>defaultValue</i> is returned. Additionally, on Windows, <i>key</i> can be a registry key.</p>
+<p><b>See also </b><a href="scripting-installer.html#value-method">installer.value</a>, <a href="qinstaller-packagemanagercore.html#setValue">setValue</a>(), <a href="qinstaller-packagemanagercore.html#containsValue">containsValue</a>(), and <a href="qinstaller-packagemanagercore.html#valueChanged">valueChanged</a>().</p>
+<!-- @@@value -->
+<!-- $$$valueChanged[overload1]$$$valueChangedconstQString&constQString& -->
+<h3 class="fn" id="valueChanged"><a name="valueChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">valueChanged</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>value</i>)</h3>
+<p>Emitted when the value <i>value</i> of the key <i>key</i> changes.</p>
+<p><b>See also </b><a href="scripting-installer.html#valueChanged-signal">installer.valueChanged</a> and <a href="qinstaller-packagemanagercore.html#setValue">setValue</a>().</p>
+<!-- @@@valueChanged -->
+<!-- $$$values[overload1]$$$valuesconstQString&constQStringList& -->
+<h3 class="fn" id="values"><a name="values"></a><span class="type">QStringList</span> PackageManagerCore::<span class="name">values</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QStringList</span> &amp;<i>defaultValue</i> = QStringList()) const</h3>
+<p>Returns the installer value for <i>key</i>. If <i>key</i> is not known to the system, <i>defaultValue</i> is returned. Additionally, on Windows, <i>key</i> can be a registry key.</p>
+<p><b>See also </b><a href="scripting-installer.html#values-method">installer.values</a> and <a href="qinstaller-packagemanagercore.html#value">value</a>().</p>
+<!-- @@@values -->
+<!-- $$$versionMatches[overload1]$$$versionMatchesconstQString&constQString& -->
+<h3 class="fn" id="versionMatches"><a name="versionMatches"></a><code>[static] </code><span class="type">bool</span> PackageManagerCore::<span class="name">versionMatches</span>(const <span class="type">QString</span> &amp;<i>version</i>, const <span class="type">QString</span> &amp;<i>requirement</i>)</h3>
+<p>Returns <code>true</code> when <i>version</i> matches the <i>requirement</i>. <i>requirement</i> can be a fixed version number or it can be prefixed by the comparators '&gt;', '&gt;=', '&lt;', '&lt;=' and '='.</p>
+<p><b>See also </b><a href="scripting-installer.html#versionMatches-method">installer.versionMatches</a>.</p>
+<!-- @@@versionMatches -->
+<!-- $$$virtualComponentsFont[overload1]$$$virtualComponentsFont -->
+<h3 class="fn" id="virtualComponentsFont"><a name="virtualComponentsFont"></a><code>[static] </code><span class="type">QFont</span> PackageManagerCore::<span class="name">virtualComponentsFont</span>()</h3>
+<p>Returns the virtual components' font.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setVirtualComponentsFont">setVirtualComponentsFont</a>().</p>
+<!-- @@@virtualComponentsFont -->
+<!-- $$$virtualComponentsVisible[overload1]$$$virtualComponentsVisible -->
+<h3 class="fn" id="virtualComponentsVisible"><a name="virtualComponentsVisible"></a><code>[static] </code><span class="type">bool</span> PackageManagerCore::<span class="name">virtualComponentsVisible</span>()</h3>
+<p>Returns <code>true</code> if virtual components are visible.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setVirtualComponentsVisible">setVirtualComponentsVisible</a>().</p>
+<!-- @@@virtualComponentsVisible -->
+<!-- $$$wizardPageInsertionRequested[overload1]$$$wizardPageInsertionRequestedQWidget*QInstaller::PackageManagerCore::WizardPage -->
+<h3 class="fn" id="wizardPageInsertionRequested"><a name="wizardPageInsertionRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">wizardPageInsertionRequested</span>(<span class="type">QWidget</span> *<i>widget</i>, <span class="type"><a href="qinstaller-packagemanagercore.html#WizardPage-enum">QInstaller::PackageManagerCore::WizardPage</a></span> <i>page</i>)</h3>
+<p>Emitted when a custom <i>widget</i> is about to be inserted into <i>page</i> by <a href="qinstaller-packagemanagercore.html#addWizardPage">addWizardPage</a>().</p>
+<p><b>See also </b><a href="scripting-installer.html#wizardPageInsertionRequested-signal">installer.wizardPageInsertionRequested</a>.</p>
+<!-- @@@wizardPageInsertionRequested -->
+<!-- $$$wizardPageRemovalRequested[overload1]$$$wizardPageRemovalRequestedQWidget* -->
+<h3 class="fn" id="wizardPageRemovalRequested"><a name="wizardPageRemovalRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">wizardPageRemovalRequested</span>(<span class="type">QWidget</span> *<i>widget</i>)</h3>
+<p>Emitted when a <i>widget</i> is removed by <a href="qinstaller-packagemanagercore.html#removeWizardPage">removeWizardPage</a>().</p>
+<p><b>See also </b><a href="scripting-installer.html#wizardPageRemovalRequested-signal">installer.wizardPageRemovalRequested</a>.</p>
+<!-- @@@wizardPageRemovalRequested -->
+<!-- $$$wizardPageVisibilityChangeRequested[overload1]$$$wizardPageVisibilityChangeRequestedboolint -->
+<h3 class="fn" id="wizardPageVisibilityChangeRequested"><a name="wizardPageVisibilityChangeRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">wizardPageVisibilityChangeRequested</span>(<span class="type">bool</span> <i>visible</i>, <span class="type">int</span> <i>page</i>)</h3>
+<p>Emitted when the visibility of the page with the ID <i>page</i> changes to <i>visible</i>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagercore.html#setDefaultPageVisible">setDefaultPageVisible</a>() and <a href="scripting-installer.html#wizardPageVisibilityChangeRequested-signal">installer.wizardPageVisibilityChangeRequested</a>.</p>
+<!-- @@@wizardPageVisibilityChangeRequested -->
+<!-- $$$wizardWidgetInsertionRequested[overload1]$$$wizardWidgetInsertionRequestedQWidget*QInstaller::PackageManagerCore::WizardPage -->
+<h3 class="fn" id="wizardWidgetInsertionRequested"><a name="wizardWidgetInsertionRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">wizardWidgetInsertionRequested</span>(<span class="type">QWidget</span> *<i>widget</i>, <span class="type"><a href="qinstaller-packagemanagercore.html#WizardPage-enum">QInstaller::PackageManagerCore::WizardPage</a></span> <i>page</i>)</h3>
+<p>Emitted when a <i>widget</i> is inserted into <i>page</i> by <a href="qinstaller-packagemanagercore.html#addWizardPageItem">addWizardPageItem</a>().</p>
+<p><b>See also </b><a href="scripting-installer.html#wizardWidgetInsertionRequested-signal">installer.wizardWidgetInsertionRequested</a>.</p>
+<!-- @@@wizardWidgetInsertionRequested -->
+<!-- $$$wizardWidgetRemovalRequested[overload1]$$$wizardWidgetRemovalRequestedQWidget* -->
+<h3 class="fn" id="wizardWidgetRemovalRequested"><a name="wizardWidgetRemovalRequested"></a><code>[signal] </code><span class="type">void</span> PackageManagerCore::<span class="name">wizardWidgetRemovalRequested</span>(<span class="type">QWidget</span> *<i>widget</i>)</h3>
+<p>Emitted when a <i>widget</i> is removed by <a href="qinstaller-packagemanagercore.html#removeWizardPageItem">removeWizardPageItem</a>().</p>
+<p><b>See also </b><a href="scripting-installer.html#wizardWidgetRemovalRequested-signal">installer.wizardWidgetRemovalRequested</a>.</p>
+<!-- @@@wizardWidgetRemovalRequested -->
+<!-- $$$writeMaintenanceConfigFiles[overload1]$$$writeMaintenanceConfigFiles -->
+<h3 class="fn" id="writeMaintenanceConfigFiles"><a name="writeMaintenanceConfigFiles"></a><span class="type">void</span> PackageManagerCore::<span class="name">writeMaintenanceConfigFiles</span>()</h3>
+<p>Creates the maintenance tool configuration files.</p>
+<!-- @@@writeMaintenanceConfigFiles -->
+<!-- $$$writeMaintenanceTool[overload1]$$$writeMaintenanceTool -->
+<h3 class="fn" id="writeMaintenanceTool"><a name="writeMaintenanceTool"></a><span class="type">void</span> PackageManagerCore::<span class="name">writeMaintenanceTool</span>()</h3>
+<p>Creates the maintenance tool in the installation directory.</p>
+<!-- @@@writeMaintenanceTool -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- dependencies.qdoc -->
+  <title>Dependency Solving Example | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qtifwexamples.html">Qt Installer Framework Examples</a></td><td >Dependency Solving Example</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#configuring-the-example-installer">Configuring the Example Installer</a></li>
+<li class="level1"><a href="#creating-the-example-package-information-file">Creating the Example Package Information File</a></li>
+<li class="level1"><a href="#specifying-dependencies-on-other-components">Specifying Dependencies on Other Components</a></li>
+<li class="level1"><a href="#specifying-automatic-dependencies-on-other-components">Specifying Automatic Dependencies on Other Components</a></li>
+<li class="level1"><a href="#forcing-the-installation-of-a-component">Forcing the Installation of a Component</a></li>
+<li class="level1"><a href="#installing-components-by-default">Installing Components by Default</a></li>
+<li class="level1"><a href="#solving-the-dependencies">Solving the Dependencies</a></li>
+<li class="level1"><a href="#generating-the-example-installer">Generating the Example Installer</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Dependency Solving Example</h1>
+<span class="subtitle"></span>
+<!-- $$$dependencies-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/qtifw-examples-dependencies.png" alt="" /></p><p><i>Dependency Solving</i> illustrates how to specify dependencies and automatic dependencies between components in the package information files and how that influences the installation and maintenance processes.</p>
+<a name="configuring-the-example-installer"></a>
+<h2 id="configuring-the-example-installer">Configuring the Example Installer</h2>
+<p>The installer configuration file, config.xml, in the <code>config</code> directory specifies the text and default values used in the installer:</p>
+<ul>
+<li>The <code>&lt;Name&gt;</code> element specifies the application name that is added to the page name and introduction text.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the application version number.</li>
+<li>The <code>&lt;Title&gt;</code> element specifies the installer name displayed on the title bar.</li>
+<li>The <code>&lt;Publisher&gt;</code> element specifies the publisher of the software (as shown in the Windows Control Panel, for example).</li>
+<li>The <code>&lt;StartMenuDir&gt;</code> element specifies the name of the default program group for the product in the Windows <b>Start</b> menu.</li>
+<li>The <code>&lt;TargetDir&gt;</code> element specifies that the default target directory is located in the <code>IfwExamples</code> directory in the home directory of the current user (because the predefined variable<code>@HomeDir@</code> is used as a part of the value). For more information, see <a href="scripting.html#predefined-variables">Predefined Variables</a>.</li>
+</ul>
+<ul>
+<li>The <code>&lt;CreateLocalRepository&gt;</code> element is set to <code>true</code> to create a local repository. This enables end users to run the maintenance tool after the initial installation to install additional components or to uninstall components. The changes in the installation will respect the dependencies defined in the example.</li>
+</ul>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;Installer&gt;
+      &lt;Name&gt;Dependency Solving Example&lt;/Name&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;Title&gt;Dependency Solving Example&lt;/Title&gt;
+      &lt;Publisher&gt;Qt-Project&lt;/Publisher&gt;
+      &lt;StartMenuDir&gt;Qt IFW Examples&lt;/StartMenuDir&gt;
+      &lt;TargetDir&gt;@HomeDir@/IfwExamples/dependencies&lt;/TargetDir&gt;
+      &lt;CreateLocalRepository&gt;true&lt;/CreateLocalRepository&gt;
+      &lt;InstallActionColumnVisible&gt;true&lt;/InstallActionColumnVisible&gt;
+  &lt;/Installer&gt;
+
+</pre>
+<a name="creating-the-example-package-information-file"></a>
+<h2 id="creating-the-example-package-information-file">Creating the Example Package Information File</h2>
+<p>The installer package information file, package.xml, in the <code>meta</code> directory specifies the components that are available for installation:</p>
+<ul>
+<li>The <code>&lt;DisplayName&gt;</code> element specifies the human-readable name of the component.</li>
+<li>The <code>&lt;Description&gt;</code> element specifies the human-readable description of the component.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the version number of the component.</li>
+<li>The <code>&lt;ReleaseDate&gt;</code> element specifies the date when this component version was released.</li>
+</ul>
+<ul>
+<li>The <code>&lt;SortingPriority&gt;</code> element specifies the location of the component in the component tree. The tree is sorted from highest to lowest priority, with the highest priority on the top.</li>
+</ul>
+<p>In this example, the package.xml files for the components contain additional elements that specify the dependencies. The following sections illustrate how the elements are used.</p>
+<a name="specifying-dependencies-on-other-components"></a>
+<h2 id="specifying-dependencies-on-other-components">Specifying Dependencies on Other Components</h2>
+<p>We define a dependency for <i>Component C</i> on <i>Component A</i> and <i>Component B</i>. Thus, if we select Component C for installation, both Component A and Component B are installed as well. We define the dependencies in the <code>&lt;Dependencies&gt;</code> element in Component C's package.xml file as a comma-separated list of the identifiers of the components that this component depends on:</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;Component C (depends on A and B)&lt;/DisplayName&gt;
+      &lt;Description&gt;This component depends on Component A and Component B. Selecting this component for installation also marks Component A and Component B for installation, which in turn marks Component D, because it has an automatic dependency on Component A and Component B.&lt;/Description&gt;
+      &lt;Dependencies&gt;componentA, componentB&lt;/Dependencies&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2014-08-25&lt;/ReleaseDate&gt;
+      &lt;SortingPriority&gt;80&lt;/SortingPriority&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="specifying-automatic-dependencies-on-other-components"></a>
+<h2 id="specifying-automatic-dependencies-on-other-components">Specifying Automatic Dependencies on Other Components</h2>
+<p>We define an automatic dependency for <i>Component D</i> on Component A and Component B. Thus, if Component A and Component B are both marked for installation, Component D is automatically installed as well. We define the automatic dependency in the <code>&lt;AutoDependOn&gt;</code> element in Component D's package.xml file:</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;Component D (auto depends on A and B)&lt;/DisplayName&gt;
+      &lt;Description&gt;This component has an automatic dependency on Component A and Component B. If both A and B are marked for installation, this component is also installed.&lt;/Description&gt;
+      &lt;AutoDependOn&gt;componentA, componentB&lt;/AutoDependOn&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2014-08-25&lt;/ReleaseDate&gt;
+      &lt;SortingPriority&gt;70&lt;/SortingPriority&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="forcing-the-installation-of-a-component"></a>
+<h2 id="forcing-the-installation-of-a-component">Forcing the Installation of a Component</h2>
+<p>We define that <i>Component E</i> is always automatically installed and the end user cannot deselect it. To define this, we set the <code>&lt;ForcedInstallation&gt;</code> element to <code>true</code> in Component E's package.xml file:</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;Component E (forced)&lt;/DisplayName&gt;
+      &lt;Description&gt;This is a forced component that is always installed.&lt;/Description&gt;
+      &lt;ForcedInstallation&gt;true&lt;/ForcedInstallation&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2014-08-25&lt;/ReleaseDate&gt;
+      &lt;SortingPriority&gt;60&lt;/SortingPriority&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="installing-components-by-default"></a>
+<h2 id="installing-components-by-default">Installing Components by Default</h2>
+<p>We define a dependency for <i>Component G</i> on Component A, and we mark G as a default component. Thus, Component G is marked for installation by default, and so is Component A, because it is required by G. To define this, we set the value of the <code>&lt;Default&gt;</code> element to <code>true</code> in Component G's package.xml file:</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;Component G (default, depends on A, dependency added dynamically)&lt;/DisplayName&gt;
+      &lt;Description&gt;By default, this component is selected for installation. It depends on component A. Dependency is added from inside component script.&lt;/Description&gt;
+      &lt;Default&gt;true&lt;/Default&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2014-08-25&lt;/ReleaseDate&gt;
+      &lt;Script&gt;installscript.js&lt;/Script&gt;
+      &lt;SortingPriority&gt;30&lt;/SortingPriority&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="solving-the-dependencies"></a>
+<h2 id="solving-the-dependencies">Solving the Dependencies</h2>
+<p>Selecting component C for installation also selects the following components:</p>
+<ul>
+<li>Component A and Component B, because Component C requires them.</li>
+<li>Component D, because both Component A and Component B are marked for installation and thus the conditions for installing Component D are met.</li>
+</ul>
+<a name="generating-the-example-installer"></a>
+<h2 id="generating-the-example-installer">Generating the Example Installer</h2>
+<p>To create the example installer, switch to the example source directory on the command line and enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>c config\config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer<span class="operator">.</span>exe
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>binarycreator <span class="operator">-</span>c config<span class="operator">/</span>config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer
+
+</pre>
+</li>
+</ul>
+<p>The installer is created in the current directory.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qt-installer-framework-dependencies-config-config-xml.html">dependencies/config/config.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componenta-data-installcontent-txt.html">dependencies/packages/componentA/data/installcontent.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componenta-data-installcontenta-txt.html">dependencies/packages/componentA/data/installcontentA.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componenta-meta-package-xml.html">dependencies/packages/componentA/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentb-data-installcontentb-txt.html">dependencies/packages/componentB/data/installcontentB.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentb-meta-package-xml.html">dependencies/packages/componentB/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentc-data-installcontentc-txt.html">dependencies/packages/componentC/data/installcontentC.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentc-meta-package-xml.html">dependencies/packages/componentC/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentd-data-installcontentd-txt.html">dependencies/packages/componentD/data/installcontentD.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentd-meta-package-xml.html">dependencies/packages/componentD/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componente-data-installcontente-txt.html">dependencies/packages/componentE/data/installcontentE.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componente-meta-package-xml.html">dependencies/packages/componentE/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-data-installcontentf-txt.html">dependencies/packages/componentF/data/installcontentF.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-meta-package-xml.html">dependencies/packages/componentF/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-data-installcontentf-1-txt.html">dependencies/packages/componentF.subcomponent1/data/installcontentF_1.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-meta-package-xml.html">dependencies/packages/componentF.subcomponent1/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-subsubcomponent1-data-installcontentf-1-1-txt.html">dependencies/packages/componentF.subcomponent1.subsubcomponent1/data/installcontentF_1_1.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-subsubcomponent1-meta-package-xml.html">dependencies/packages/componentF.subcomponent1.subsubcomponent1/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-subsubcomponent2-data-installcontentf-1-2-txt.html">dependencies/packages/componentF.subcomponent1.subsubcomponent2/data/installcontentF_1_2.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent1-subsubcomponent2-meta-package-xml.html">dependencies/packages/componentF.subcomponent1.subsubcomponent2/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-data-installcontentf-2-txt.html">dependencies/packages/componentF.subcomponent2/data/installcontentF_2.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-meta-package-xml.html">dependencies/packages/componentF.subcomponent2/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-subsubcomponent1-data-installcontentf-2-1-txt.html">dependencies/packages/componentF.subcomponent2.subsubcomponent1/data/installcontentF_2_1.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-subsubcomponent1-meta-package-xml.html">dependencies/packages/componentF.subcomponent2.subsubcomponent1/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-subsubcomponent2-data-installcontentf-2-2-txt.html">dependencies/packages/componentF.subcomponent2.subsubcomponent2/data/installcontentF_2_2.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentf-subcomponent2-subsubcomponent2-meta-package-xml.html">dependencies/packages/componentF.subcomponent2.subsubcomponent2/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentg-data-installcontentg-txt.html">dependencies/packages/componentG/data/installcontentG.txt</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentg-meta-installscript-js.html">dependencies/packages/componentG/meta/installscript.js</a></li>
+<li><a href="qt-installer-framework-dependencies-packages-componentg-meta-package-xml.html">dependencies/packages/componentG/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-dependencies-dependencies-pro.html">dependencies/dependencies.pro</a></li>
+</ul>
+</div>
+<!-- @@@dependencies -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

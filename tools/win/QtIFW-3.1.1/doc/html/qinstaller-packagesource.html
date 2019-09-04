@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagesource.cpp -->
+  <title>PackageSource Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >PackageSource</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-variables">Public Variables</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PackageSource Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-packagesource.html">QInstaller::PackageSource</a>)<br/></span>
+<!-- $$$PackageSource-brief -->
+<p>The <a href="qinstaller-packagesource.html">PackageSource</a> class specifies a single package source. <a href="#details">More...</a></p>
+<!-- @@@PackageSource -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;PackageSource&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-packagesource-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagesource.html#PackageSource">PackageSource</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagesource.html#PackageSource-1">PackageSource</a></b>(const QUrl &amp;<i>u</i>, int <i>p</i>)</td></tr>
+</table></div>
+<a name="public-variables"></a>
+<h2 id="public-variables">Public Variables</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagesource.html#priority-var">priority</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QUrl </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagesource.html#url-var">url</a></b></td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$PackageSource-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-packagesource.html">PackageSource</a> class specifies a single package source.</p>
+<p>An package source represents a link to an repository that contains packages applicable by the installer or package maintenance application. This structure describes a single package source in terms of url and priority. While different repositories can host the same packages, packages coming from a higher priority source take precedence over lower priority packages during applicable package computation.</p>
+</div>
+<!-- @@@PackageSource -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PackageSource[overload1]$$$PackageSource -->
+<h3 class="fn" id="PackageSource"><a name="PackageSource"></a>PackageSource::<span class="name">PackageSource</span>()</h3>
+<p>Constructs an empty package source info object. The object's priority is set to -1. The url is initialized using a default-constructed value.</p>
+<!-- @@@PackageSource -->
+<!-- $$$PackageSource$$$PackageSourceconstQUrl&int -->
+<h3 class="fn" id="PackageSource-1"><a name="PackageSource-1"></a>PackageSource::<span class="name">PackageSource</span>(const <span class="type">QUrl</span> &amp;<i>u</i>, <span class="type">int</span> <i>p</i>)</h3>
+<p>Constructs an package source info object. The object's url is set to <i>u</i>, while the priority is set to <i>p</i>.</p>
+<!-- @@@PackageSource -->
+</div>
+<div class="vars">
+<h2>Member Variable Documentation</h2>
+<!-- $$$priority -->
+<h3 class="fn" id="priority-var"><a name="priority-var"></a><span class="type">int</span> PackageSource::<span class="name">priority</span></h3>
+<p>This variable holds the priority of the package source.</p>
+<!-- @@@priority -->
+<!-- $$$url -->
+<h3 class="fn" id="url-var"><a name="url-var"></a><span class="type">QUrl</span> PackageSource::<span class="name">url</span></h3>
+<p>This variable holds the URL of the package source.</p>
+<!-- @@@url -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagercore.qdoc -->
+  <title>installer QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">installer QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$installer-brief -->
+<p>Provides access to core functionality of the Qt Installer Framework. <a href="#details">More...</a></p>
+<!-- @@@installer -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-installer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="scripting-installer.html#aboutCalculateComponentsToInstall-signal">aboutCalculateComponentsToInstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#aboutCalculateComponentsToUninstall-signal">aboutCalculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#componentAdded-signal">componentAdded</a></b></b>(Component <i>component</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#coreNetworkSettingsChanged-signal">coreNetworkSettingsChanged</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#currentPageChanged-signal">currentPageChanged</a></b></b>(int <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishAllComponentsReset-signal">finishAllComponentsReset</a></b></b>(list&lt;Component&gt; <i>rootComponents</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishButtonClicked-signal">finishButtonClicked</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishUpdaterComponentsReset-signal">finishUpdaterComponentsReset</a></b></b>(list&lt;Component&gt; <i>componentsWithUpdates</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishedCalculateComponentsToInstall-signal">finishedCalculateComponentsToInstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishedCalculateComponentsToUninstall-signal">finishedCalculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationFinished-signal">installationFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationInterrupted-signal">installationInterrupted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationStarted-signal">installationStarted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#metaJobInfoMessage-signal">metaJobInfoMessage</a></b></b>(string <i>message</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#metaJobProgress-signal">metaJobProgress</a></b></b>(int <i>progress</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#rootComponentsAdded-signal">rootComponentsAdded</a></b></b>(list&lt;Component&gt; <i>components</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#setAutomatedPageSwitchEnabled-signal">setAutomatedPageSwitchEnabled</a></b></b>(bool <i>request</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#setValidatorForCustomPageRequested-signal">setValidatorForCustomPageRequested</a></b></b>(Component <i>component</i>, string <i>name</i>, string <i>callbackName</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#startAllComponentsReset-signal">startAllComponentsReset</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#startUpdaterComponentsReset-signal">startUpdaterComponentsReset</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#statusChanged-signal">statusChanged</a></b></b>(Status <i>status</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#titleMessageChanged-signal">titleMessageChanged</a></b></b>(string <i>title</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#uninstallationFinished-signal">uninstallationFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#uninstallationStarted-signal">uninstallationStarted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#updateFinished-signal">updateFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#updaterComponentsAdded-signal">updaterComponentsAdded</a></b></b>(list&lt;Component&gt; <i>components</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#valueChanged-signal">valueChanged</a></b></b>(string <i>key</i>, string <i>value</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageInsertionRequested-signal">wizardPageInsertionRequested</a></b></b>(Widget <i>widget</i>, WizardPage <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageRemovalRequested-signal">wizardPageRemovalRequested</a></b></b>(Widget <i>widget</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageVisibilityChangeRequested-signal">wizardPageVisibilityChangeRequested</a></b></b>(bool <i>visible</i>, int <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardWidgetInsertionRequested-signal">wizardWidgetInsertionRequested</a></b></b>(Widget <i>widget</i>, WizardPage <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardWidgetRemovalRequested-signal">wizardWidgetRemovalRequested</a></b></b>(Widget <i>widget</i>)</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="scripting-installer.html#addUserRepositories-method">addUserRepositories</a></b></b>(stringlist <i>repositories</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#addWizardPage-method">addWizardPage</a></b></b>(Component <i>component</i>, string <i>name</i>, int <i>page</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#addWizardPageItem-method">addWizardPageItem</a></b></b>(Component <i>component</i>, string <i>name</i>, int <i>page</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#autoAcceptMessageBoxes-method">autoAcceptMessageBoxes</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#autoRejectMessageBoxes-method">autoRejectMessageBoxes</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#calculateComponentsToInstall-method">calculateComponentsToInstall</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#calculateComponentsToUninstall-method">calculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#cancelMetaInfoJob-method">cancelMetaInfoJob</a></b></b>()</li>
+<li class="fn">array <b><b><a href="scripting-installer.html#components-method">components</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#componentsToInstallNeedsRecalculation-method">componentsToInstallNeedsRecalculation</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#containsValue-method">containsValue</a></b></b>(string <i>key</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#dropAdminRights-method">dropAdminRights</a></b></b>()</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#environmentVariable-method">environmentVariable</a></b></b>(string <i>name</i>)</li>
+<li class="fn">array <b><b><a href="scripting-installer.html#execute-method">execute</a></b></b>(string <i>program</i>, stringlist <i>arguments</i>, string <i>stdin</i>, string <i>stdinCodec</i>, string <i>stdoutCodec</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#executeDetached-method">executeDetached</a></b></b>(string <i>program</i>, stringlist <i>arguments</i>, string <i>workingDirectory</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#fileExists-method">fileExists</a></b></b>(string <i>filePath</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#findLibrary-method">findLibrary</a></b></b>(string <i>name</i>, stringlist <i>paths</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#findPath-method">findPath</a></b></b>(string <i>name</i>, stringlist <i>paths</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#gainAdminRights-method">gainAdminRights</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#interrupt-method">interrupt</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isFileExtensionRegistered-method">isFileExtensionRegistered</a></b></b>(string <i>extension</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isInstaller-method">isInstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isOfflineOnly-method">isOfflineOnly</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isPackageManager-method">isPackageManager</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isProcessRunning-method">isProcessRunning</a></b></b>(string <i>name</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isUninstaller-method">isUninstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isUpdater-method">isUpdater</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#killProcess-method">killProcess</a></b></b>(string <i>absoluteFilePath</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#languageChanged-method">languageChanged</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#localInstallerBinaryUsed-method">localInstallerBinaryUsed</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#performOperation-method">performOperation</a></b></b>(string <i>name</i>, stringlist <i>arguments</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#readFile-method">readFile</a></b></b>(string <i>filePath</i>, string <i>codecName</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#removeWizardPage-method">removeWizardPage</a></b></b>(Component <i>component</i>, string <i>name</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#removeWizardPageItem-method">removeWizardPageItem</a></b></b>(Component <i>component</i>, string <i>name</i>)</li>
+<li class="fn">float <b><b><a href="scripting-installer.html#requiredDiskSpace-method">requiredDiskSpace</a></b></b>()</li>
+<li class="fn">float <b><b><a href="scripting-installer.html#requiredTemporaryDiskSpace-method">requiredTemporaryDiskSpace</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runInstaller-method">runInstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runPackageUpdater-method">runPackageUpdater</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runUninstaller-method">runUninstaller</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setCanceled-method">setCanceled</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setCompleteUninstallation-method">setCompleteUninstallation</a></b></b>(bool <i>complete</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#setDefaultPageVisible-method">setDefaultPageVisible</a></b></b>(int <i>page</i>, boolean <i>visible</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setDependsOnLocalInstallerBinary-method">setDependsOnLocalInstallerBinary</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setInstallerBaseBinary-method">setInstallerBaseBinary</a></b></b>(string <i>path</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">setMessageBoxAutomaticAnswer</a></b></b>(string <i>identifier</i>, int <i>button</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setPackageManager-method">setPackageManager</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setSharedFlag-method">setSharedFlag</a></b></b>(string <i>key</i>, boolean <i>value</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setTemporaryRepositories-method">setTemporaryRepositories</a></b></b>(stringlist <i>repositories</i>, boolean <i>replace</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setUninstaller-method">setUninstaller</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setUpdater-method">setUpdater</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setValidatorForCustomPage-method">setValidatorForCustomPage</a></b></b>(Component <i>component</i>, string <i>name</i>, string <i>callbackName</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setValue-method">setValue</a></b></b>(string <i>key</i>, string <i>value</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#sharedFlag-method">sharedFlag</a></b></b>(string <i>key</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#value-method">value</a></b></b>(string <i>key</i>, string <i>defaultValue</i>)</li>
+<li class="fn">stringlist <b><b><a href="scripting-installer.html#values-method">values</a></b></b>(string <i>key</i>, stringlist <i>defaultValue</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#versionMatches-method">versionMatches</a></b></b>(string <i>version</i>, string <i>requirement</i>)</li>
+</ul>
+<!-- $$$installer-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@installer -->
+<h2>Signal Documentation</h2>
+<!-- $$$aboutCalculateComponentsToInstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="aboutCalculateComponentsToInstall-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="aboutCalculateComponentsToInstall-signal"></a><span class="name">aboutCalculateComponentsToInstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted before the ordered list of components to install is calculated.</p>
+</div></div><!-- @@@aboutCalculateComponentsToInstall -->
+<br/>
+<!-- $$$aboutCalculateComponentsToUninstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="aboutCalculateComponentsToUninstall-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="aboutCalculateComponentsToUninstall-signal"></a><span class="name">aboutCalculateComponentsToUninstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted before the ordered list of components to uninstall is calculated.</p>
+</div></div><!-- @@@aboutCalculateComponentsToUninstall -->
+<br/>
+<!-- $$$componentAdded -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="componentAdded-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="componentAdded-signal"></a><span class="name">componentAdded</span>(<span class="type">Component</span> <i>component</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a new root component is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#rootComponentsAdded-signal">rootComponentsAdded</a> and <a href="scripting-installer.html#updaterComponentsAdded-signal">updaterComponentsAdded</a>.</p>
+</div></div><!-- @@@componentAdded -->
+<br/>
+<!-- $$$coreNetworkSettingsChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="coreNetworkSettingsChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="coreNetworkSettingsChanged-signal"></a><span class="name">coreNetworkSettingsChanged</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the network settings are changed.</p>
+</div></div><!-- @@@coreNetworkSettingsChanged -->
+<br/>
+<!-- $$$currentPageChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="currentPageChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="currentPageChanged-signal"></a><span class="name">currentPageChanged</span>(<span class="type">int</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the current page changes.</p>
+</div></div><!-- @@@currentPageChanged -->
+<br/>
+<!-- $$$finishAllComponentsReset -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishAllComponentsReset-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishAllComponentsReset-signal"></a><span class="name">finishAllComponentsReset</span>(<span class="type">list</span>&lt;<span class="type">Component</span>&gt; <i>rootComponents</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when the list of new root components has been updated.</p>
+<p><b>See also </b><a href="scripting-installer.html#startAllComponentsReset-signal">startAllComponentsReset</a>.</p>
+</div></div><!-- @@@finishAllComponentsReset -->
+<br/>
+<!-- $$$finishButtonClicked -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishButtonClicked-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishButtonClicked-signal"></a><span class="name">finishButtonClicked</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the user clicks the <b>Finish</b> button of the installer.</p>
+</div></div><!-- @@@finishButtonClicked -->
+<br/>
+<!-- $$$finishUpdaterComponentsReset -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishUpdaterComponentsReset-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishUpdaterComponentsReset-signal"></a><span class="name">finishUpdaterComponentsReset</span>(<span class="type">list</span>&lt;<span class="type">Component</span>&gt; <i>componentsWithUpdates</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when the list of available remote updates has been updated.</p>
+</div></div><!-- @@@finishUpdaterComponentsReset -->
+<br/>
+<!-- $$$finishedCalculateComponentsToInstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishedCalculateComponentsToInstall-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishedCalculateComponentsToInstall-signal"></a><span class="name">finishedCalculateComponentsToInstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted after the ordered list of components to install was calculated.</p>
+</div></div><!-- @@@finishedCalculateComponentsToInstall -->
+<br/>
+<!-- $$$finishedCalculateComponentsToUninstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishedCalculateComponentsToUninstall-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishedCalculateComponentsToUninstall-signal"></a><span class="name">finishedCalculateComponentsToUninstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted after the ordered list of components to uninstall was calculated.</p>
+</div></div><!-- @@@finishedCalculateComponentsToUninstall -->
+<br/>
+<!-- $$$installationFinished -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="installationFinished-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="installationFinished-signal"></a><span class="name">installationFinished</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when installation has finished.</p>
+<p><b>See also </b><a href="scripting-installer.html#installationStarted-signal">installationStarted</a> and <a href="scripting-installer.html#installationInterrupted-signal">installationInterrupted</a>.</p>
+</div></div><!-- @@@installationFinished -->
+<br/>
+<!-- $$$installationInterrupted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="installationInterrupted-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="installationInterrupted-signal"></a><span class="name">installationInterrupted</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when installation has been interrupted (cancelled).</p>
+<p><b>See also </b><a href="scripting-installer.html#interrupt-method">interrupt</a>, <a href="scripting-installer.html#installationStarted-signal">installationStarted</a>, and <a href="scripting-installer.html#installationFinished-signal">installationFinished</a>.</p>
+</div></div><!-- @@@installationInterrupted -->
+<br/>
+<!-- $$$installationStarted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="installationStarted-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="installationStarted-signal"></a><span class="name">installationStarted</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when installation has started.</p>
+<p><b>See also </b><a href="scripting-installer.html#installationFinished-signal">installationFinished</a> and <a href="scripting-installer.html#installationInterrupted-signal">installationInterrupted</a>.</p>
+</div></div><!-- @@@installationStarted -->
+<br/>
+<!-- $$$metaJobInfoMessage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="metaJobInfoMessage-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="metaJobInfoMessage-signal"></a><span class="name">metaJobInfoMessage</span>(<span class="type">string</span> <i>message</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered with informative updates of the communication with a remote repository.</p>
+</div></div><!-- @@@metaJobInfoMessage -->
+<br/>
+<!-- $$$metaJobProgress -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="metaJobProgress-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="metaJobProgress-signal"></a><span class="name">metaJobProgress</span>(<span class="type">int</span> <i>progress</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered with progress updates of the communication with a remote repository. Progress ranges from 0 to 100.</p>
+</div></div><!-- @@@metaJobProgress -->
+<br/>
+<!-- $$$rootComponentsAdded -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rootComponentsAdded-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="rootComponentsAdded-signal"></a><span class="name">rootComponentsAdded</span>(<span class="type">list</span>&lt;<span class="type">Component</span>&gt; <i>components</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a new list of root components is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#componentAdded-signal">componentAdded</a> and <a href="scripting-installer.html#updaterComponentsAdded-signal">updaterComponentsAdded</a>.</p>
+</div></div><!-- @@@rootComponentsAdded -->
+<br/>
+<!-- $$$setAutomatedPageSwitchEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setAutomatedPageSwitchEnabled-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="setAutomatedPageSwitchEnabled-signal"></a><span class="name">setAutomatedPageSwitchEnabled</span>(<span class="type">bool</span> <i>request</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when the automatic switching from PerformInstallation to InstallationFinished page is enabled (<i>request</i> = <code>true</code>) or disabled (<i>request</i> = <code>false</code>).</p>
+<p>The automatic switching is disabled automatically when for example the user expands or unexpands the <b>Details</b> section of the PerformInstallation page.</p>
+</div></div><!-- @@@setAutomatedPageSwitchEnabled -->
+<br/>
+<!-- $$$setValidatorForCustomPageRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setValidatorForCustomPageRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="setValidatorForCustomPageRequested-signal"></a><span class="name">setValidatorForCustomPageRequested</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>, <span class="type">string</span> <i>callbackName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when <a href="scripting-installer.html#setValidatorForCustomPage-method">setValidatorForCustomPage</a> is called.</p>
+</div></div><!-- @@@setValidatorForCustomPageRequested -->
+<br/>
+<!-- $$$startAllComponentsReset -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="startAllComponentsReset-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="startAllComponentsReset-signal"></a><span class="name">startAllComponentsReset</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when the list of components starts to get updated.</p>
+<p><b>See also </b><a href="scripting-installer.html#finishAllComponentsReset-signal">finishAllComponentsReset</a>.</p>
+</div></div><!-- @@@startAllComponentsReset -->
+<br/>
+<!-- $$$startUpdaterComponentsReset -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="startUpdaterComponentsReset-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="startUpdaterComponentsReset-signal"></a><span class="name">startUpdaterComponentsReset</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when components start to get updated during a remote update.</p>
+</div></div><!-- @@@startUpdaterComponentsReset -->
+<br/>
+<!-- $$$statusChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="statusChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="statusChanged-signal"></a><span class="name">statusChanged</span>(<span class="type">Status</span> <i>status</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the installer status changes.</p>
+</div></div><!-- @@@statusChanged -->
+<br/>
+<!-- $$$titleMessageChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="titleMessageChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="titleMessageChanged-signal"></a><span class="name">titleMessageChanged</span>(<span class="type">string</span> <i>title</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the text of the installer status (on the PerformInstallation page) changes to <i>title</i>.</p>
+</div></div><!-- @@@titleMessageChanged -->
+<br/>
+<!-- $$$uninstallationFinished -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="uninstallationFinished-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="uninstallationFinished-signal"></a><span class="name">uninstallationFinished</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when uninstallation has finished.</p>
+<p><b>See also </b><a href="scripting-installer.html#uninstallationStarted-signal">uninstallationStarted</a>.</p>
+</div></div><!-- @@@uninstallationFinished -->
+<br/>
+<!-- $$$uninstallationStarted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="uninstallationStarted-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="uninstallationStarted-signal"></a><span class="name">uninstallationStarted</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when uninstallation has started.</p>
+<p><b>See also </b><a href="scripting-installer.html#uninstallationFinished-signal">uninstallationFinished</a>.</p>
+</div></div><!-- @@@uninstallationStarted -->
+<br/>
+<!-- $$$updateFinished -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="updateFinished-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="updateFinished-signal"></a><span class="name">updateFinished</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Triggered when an update has finished.</p>
+</div></div><!-- @@@updateFinished -->
+<br/>
+<!-- $$$updaterComponentsAdded -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="updaterComponentsAdded-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="updaterComponentsAdded-signal"></a><span class="name">updaterComponentsAdded</span>(<span class="type">list</span>&lt;<span class="type">Component</span>&gt; <i>components</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a new list of updater components is added.</p>
+<p><b>See also </b><a href="scripting-installer.html#componentAdded-signal">componentAdded</a> and <a href="scripting-installer.html#rootComponentsAdded-signal">rootComponentsAdded</a>.</p>
+</div></div><!-- @@@updaterComponentsAdded -->
+<br/>
+<!-- $$$valueChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="valueChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="valueChanged-signal"></a><span class="name">valueChanged</span>(<span class="type">string</span> <i>key</i>, <span class="type">string</span> <i>value</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a value changes.</p>
+<p><b>See also </b><a href="scripting-installer.html#setValue-method">setValue</a>.</p>
+</div></div><!-- @@@valueChanged -->
+<br/>
+<!-- $$$wizardPageInsertionRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wizardPageInsertionRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wizardPageInsertionRequested-signal"></a><span class="name">wizardPageInsertionRequested</span>(<span class="type">Widget</span> <i>widget</i>, <span class="type">WizardPage</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a custom <i>widget</i> is about to be inserted into <i>page</i> by <a href="scripting-installer.html#addWizardPage-method">addWizardPage</a>.</p>
+</div></div><!-- @@@wizardPageInsertionRequested -->
+<br/>
+<!-- $$$wizardPageRemovalRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wizardPageRemovalRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wizardPageRemovalRequested-signal"></a><span class="name">wizardPageRemovalRequested</span>(<span class="type">Widget</span> <i>widget</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a <i>widget</i> is removed by <a href="scripting-installer.html#removeWizardPage-method">removeWizardPage</a>.</p>
+</div></div><!-- @@@wizardPageRemovalRequested -->
+<br/>
+<!-- $$$wizardPageVisibilityChangeRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wizardPageVisibilityChangeRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wizardPageVisibilityChangeRequested-signal"></a><span class="name">wizardPageVisibilityChangeRequested</span>(<span class="type">bool</span> <i>visible</i>, <span class="type">int</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when the visibility of the page with id <i>page</i> changes to <i>visible</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#setDefaultPageVisible-method">setDefaultPageVisible</a>.</p>
+</div></div><!-- @@@wizardPageVisibilityChangeRequested -->
+<br/>
+<!-- $$$wizardWidgetInsertionRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wizardWidgetInsertionRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wizardWidgetInsertionRequested-signal"></a><span class="name">wizardWidgetInsertionRequested</span>(<span class="type">Widget</span> <i>widget</i>, <span class="type">WizardPage</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a <i>widget</i> is inserted into <i>page</i> by <a href="scripting-installer.html#addWizardPageItem-method">addWizardPageItem</a>.</p>
+</div></div><!-- @@@wizardWidgetInsertionRequested -->
+<br/>
+<!-- $$$wizardWidgetRemovalRequested -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="wizardWidgetRemovalRequested-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="wizardWidgetRemovalRequested-signal"></a><span class="name">wizardWidgetRemovalRequested</span>(<span class="type">Widget</span> <i>widget</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Emitted when a <i>widget</i> is removed by <a href="scripting-installer.html#removeWizardPageItem-method">removeWizardPageItem</a>.</p>
+</div></div><!-- @@@wizardWidgetRemovalRequested -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$addUserRepositories -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="addUserRepositories-method">
+<td class="tblQmlFuncNode"><p>
+<a name="addUserRepositories-method"></a><span class="type">void</span> <span class="name">addUserRepositories</span>(<span class="type">stringlist</span> <i>repositories</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Registers additional <i>repositories</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#setTemporaryRepositories-method">setTemporaryRepositories</a>.</p>
+</div></div><!-- @@@addUserRepositories -->
+<br/>
+<!-- $$$addWizardPage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="addWizardPage-method">
+<td class="tblQmlFuncNode"><p>
+<a name="addWizardPage-method"></a><span class="type">boolean</span> <span class="name">addWizardPage</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>, <span class="type">int</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Adds the widget with objectName() <i>name</i> registered by <i>component</i> as a new page into the installer's GUI wizard. The widget is added before <i>page</i>.</p>
+<p>See <a href="noninteractive.html">Controller Scripting</a> for the possible values of <i>page</i>.</p>
+<p>Returns <code>true</code> if the operation succeeded.</p>
+<p><b>See also </b><a href="scripting-installer.html#removeWizardPage-method">removeWizardPage</a> and <a href="scripting-installer.html#setDefaultPageVisible-method">setDefaultPageVisible</a>.</p>
+</div></div><!-- @@@addWizardPage -->
+<br/>
+<!-- $$$addWizardPageItem -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="addWizardPageItem-method">
+<td class="tblQmlFuncNode"><p>
+<a name="addWizardPageItem-method"></a><span class="type">boolean</span> <span class="name">addWizardPageItem</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>, <span class="type">int</span> <i>page</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Adds the widget with objectName() <i>name</i> registered by <i>component</i> as a GUI element into the installer's GUI wizard. The widget is added on <i>page</i>.</p>
+<p>See <a href="noninteractive.html">Controller Scripting</a> for the possible values of <i>page</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#removeWizardPageItem-method">removeWizardPageItem</a> and <a href="scripting-installer.html#wizardWidgetInsertionRequested-signal">wizardWidgetInsertionRequested</a>.</p>
+</div></div><!-- @@@addWizardPageItem -->
+<br/>
+<!-- $$$autoAcceptMessageBoxes -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="autoAcceptMessageBoxes-method">
+<td class="tblQmlFuncNode"><p>
+<a name="autoAcceptMessageBoxes-method"></a><span class="type">void</span> <span class="name">autoAcceptMessageBoxes</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Automatically accept all user message boxes.</p>
+<p><b>See also </b><a href="scripting-installer.html#autoRejectMessageBoxes-method">autoRejectMessageBoxes</a> and <a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">setMessageBoxAutomaticAnswer</a>.</p>
+</div></div><!-- @@@autoAcceptMessageBoxes -->
+<br/>
+<!-- $$$autoRejectMessageBoxes -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="autoRejectMessageBoxes-method">
+<td class="tblQmlFuncNode"><p>
+<a name="autoRejectMessageBoxes-method"></a><span class="type">void</span> <span class="name">autoRejectMessageBoxes</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Automatically reject all user message boxes.</p>
+<p><b>See also </b><a href="scripting-installer.html#autoAcceptMessageBoxes-method">autoAcceptMessageBoxes</a> and <a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">setMessageBoxAutomaticAnswer</a>.</p>
+</div></div><!-- @@@autoRejectMessageBoxes -->
+<br/>
+<!-- $$$calculateComponentsToInstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="calculateComponentsToInstall-method">
+<td class="tblQmlFuncNode"><p>
+<a name="calculateComponentsToInstall-method"></a><span class="type">boolean</span> <span class="name">calculateComponentsToInstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Calculates an ordered list of components to install based on the current run mode. Also auto installed dependencies are resolved. The <a href="scripting-installer.html#aboutCalculateComponentsToInstall-signal">aboutCalculateComponentsToInstall()</a> signal is emitted before the calculation starts, the <a href="scripting-installer.html#finishedCalculateComponentsToInstall-signal">finishedCalculateComponentsToInstall()</a> signal once all calculations are done.</p>
+</div></div><!-- @@@calculateComponentsToInstall -->
+<br/>
+<!-- $$$calculateComponentsToUninstall -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="calculateComponentsToUninstall-method">
+<td class="tblQmlFuncNode"><p>
+<a name="calculateComponentsToUninstall-method"></a><span class="type">boolean</span> <span class="name">calculateComponentsToUninstall</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Calculates a list of components to uninstall based on the current run mode. Auto installed dependencies are not yet resolved. The <a href="scripting-installer.html#aboutCalculateComponentsToUninstall-signal">aboutCalculateComponentsToUninstall()</a> signal is emitted before the calculation starts, the <a href="scripting-installer.html#finishedCalculateComponentsToUninstall-signal">finishedCalculateComponentsToUninstall()</a> signal once all calculations are done. Always returns <code>true</code>.</p>
+</div></div><!-- @@@calculateComponentsToUninstall -->
+<br/>
+<!-- $$$cancelMetaInfoJob -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="cancelMetaInfoJob-method">
+<td class="tblQmlFuncNode"><p>
+<a name="cancelMetaInfoJob-method"></a><span class="type">void</span> <span class="name">cancelMetaInfoJob</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Cancels the retrieval of meta information from a remote repository.</p>
+</div></div><!-- @@@cancelMetaInfoJob -->
+<br/>
+<!-- $$$components -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="components-method">
+<td class="tblQmlFuncNode"><p>
+<a name="components-method"></a><span class="type">array</span> <span class="name">components</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns an array of all components currently available. If the repository metadata have not been fetched yet, the array will be empty.</p>
+<p><b>See also </b><a href="scripting-component.html">component</a>, <a href="scripting-installer.html#finishAllComponentsReset-signal">installer::finishAllComponentsReset()</a>, and <a href="scripting-installer.html#finishUpdaterComponentsReset-signal">installer::finishUpdaterComponentsReset()</a>.</p>
+</div></div><!-- @@@components -->
+<br/>
+<!-- $$$componentsToInstallNeedsRecalculation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="componentsToInstallNeedsRecalculation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="componentsToInstallNeedsRecalculation-method"></a><span class="type">void</span> <span class="name">componentsToInstallNeedsRecalculation</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Ensures that component dependencies are re-calculated.</p>
+</div></div><!-- @@@componentsToInstallNeedsRecalculation -->
+<br/>
+<!-- $$$containsValue -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="containsValue-method">
+<td class="tblQmlFuncNode"><p>
+<a name="containsValue-method"></a><span class="type">boolean</span> <span class="name">containsValue</span>(<span class="type">string</span> <i>key</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the installer contains a value for <i>key</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#value-method">value</a>, <a href="scripting-installer.html#setValue-method">setValue</a>, and <a href="scripting-installer.html#valueChanged-signal">valueChanged</a>.</p>
+</div></div><!-- @@@containsValue -->
+<br/>
+<!-- $$$dropAdminRights -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="dropAdminRights-method">
+<td class="tblQmlFuncNode"><p>
+<a name="dropAdminRights-method"></a><span class="type">void</span> <span class="name">dropAdminRights</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Drops admin rights gained by <a href="scripting-installer.html#gainAdminRights-method">gainAdminRights</a>.</p>
+<p><b>See also </b><a href="scripting-installer.html#gainAdminRights-method">gainAdminRights</a>.</p>
+</div></div><!-- @@@dropAdminRights -->
+<br/>
+<!-- $$$environmentVariable -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="environmentVariable-method">
+<td class="tblQmlFuncNode"><p>
+<a name="environmentVariable-method"></a><span class="type">string</span> <span class="name">environmentVariable</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the content of the environment variable <i>name</i>. An empty string is returned if the environment variable is not set.</p>
+</div></div><!-- @@@environmentVariable -->
+<br/>
+<!-- $$$execute -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="execute-method">
+<td class="tblQmlFuncNode"><p>
+<a name="execute-method"></a><span class="type">array</span> <span class="name">execute</span>(<span class="type">string</span> <i>program</i>, <span class="type">stringlist</span> <i>arguments</i> = undefined, <span class="type">string</span> <i>stdin</i> = &quot;&quot;, <span class="type">string</span> <i>stdinCodec</i> = &quot;latin1&quot;, <span class="type">string</span> <i>stdoutCodec</i> = &quot;latin1&quot;)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process and waits for it to finish.</p>
+<p><i>stdin</i> is sent as standard input to the application.</p>
+<p><i>stdInCodec</i> is the name of the codec to use for converting the input string into bytes to write to the standard input of the application.</p>
+<p><i>stdOutCodec</i> is the name of the codec to use for converting data written by the application to standard output into a string.</p>
+<p>Returns an empty array if the program could not be executed, otherwise the output of command as the first item, and the return code as the second.</p>
+<p><b>Note: </b>On Unix, the output is just the output to stdout, not to stderr.</p><p><b>See also </b><a href="scripting-installer.html#executeDetached-method">executeDetached</a>.</p>
+</div></div><!-- @@@execute -->
+<br/>
+<!-- $$$executeDetached -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="executeDetached-method">
+<td class="tblQmlFuncNode"><p>
+<a name="executeDetached-method"></a><span class="type">boolean</span> <span class="name">executeDetached</span>(<span class="type">string</span> <i>program</i>, <span class="type">stringlist</span> <i>arguments</i> = undefined, <span class="type">string</span> <i>workingDirectory</i> = &quot;&quot;)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process, and detaches from it. Returns <code>true</code> on success; otherwise returns <code>false</code>. If the installer exits, the detached process will continue to live.</p>
+<p><b>Note: </b>Arguments that contain spaces are not passed to the process as separate arguments.</p><p><b>Unix:</b> The started process will run in its own session and act like a daemon.</p>
+<p><b>Windows:</b> Arguments that contain spaces are wrapped in quotes. The started process will run as a regular standalone process.</p>
+<p>The process will be started in the directory <i>workingDirectory</i>.</p>
+</div></div><!-- @@@executeDetached -->
+<br/>
+<!-- $$$fileExists -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="fileExists-method">
+<td class="tblQmlFuncNode"><p>
+<a name="fileExists-method"></a><span class="type">boolean</span> <span class="name">fileExists</span>(<span class="type">string</span> <i>filePath</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the <i>filePath</i> exists; otherwise returns <code>false</code>.</p>
+<p><b>Note: </b>If the file is a symlink that points to a non existing file, <code>false</code> is returned.</p></div></div><!-- @@@fileExists -->
+<br/>
+<!-- $$$findLibrary -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="findLibrary-method">
+<td class="tblQmlFuncNode"><p>
+<a name="findLibrary-method"></a><span class="type">string</span> <span class="name">findLibrary</span>(<span class="type">string</span> <i>name</i>, <span class="type">stringlist</span> <i>paths</i> = [])</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Finds a library named <i>name</i> in <i>paths</i>. If <i>paths</i> is empty, it gets filled with platform dependent default paths. The resulting path is returned.</p>
+<p>This method can be used by scripts to check external dependencies.</p>
+<p><b>See also </b><a href="scripting-installer.html#findPath-method">findPath</a>.</p>
+</div></div><!-- @@@findLibrary -->
+<br/>
+<!-- $$$findPath -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="findPath-method">
+<td class="tblQmlFuncNode"><p>
+<a name="findPath-method"></a><span class="type">string</span> <span class="name">findPath</span>(<span class="type">string</span> <i>name</i>, <span class="type">stringlist</span> <i>paths</i> = [])</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Tries to find a file name <i>name</i> in one of <i>paths</i>. The resulting path is returned.</p>
+<p>This method can be used by scripts to check external dependencies.</p>
+<p><b>See also </b><a href="scripting-installer.html#findLibrary-method">findLibrary</a>.</p>
+</div></div><!-- @@@findPath -->
+<br/>
+<!-- $$$gainAdminRights -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="gainAdminRights-method">
+<td class="tblQmlFuncNode"><p>
+<a name="gainAdminRights-method"></a><span class="type">boolean</span> <span class="name">gainAdminRights</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Tries to gain admin rights. On success, it returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#dropAdminRights-method">dropAdminRights</a>.</p>
+</div></div><!-- @@@gainAdminRights -->
+<br/>
+<!-- $$$interrupt -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="interrupt-method">
+<td class="tblQmlFuncNode"><p>
+<a name="interrupt-method"></a><span class="type">void</span> <span class="name">interrupt</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Cancels an ongoing installation.</p>
+<p><b>See also </b><a href="scripting-installer.html#installationInterrupted-signal">installationInterrupted</a>.</p>
+</div></div><!-- @@@interrupt -->
+<br/>
+<!-- $$$isFileExtensionRegistered -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isFileExtensionRegistered-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isFileExtensionRegistered-method"></a><span class="type">boolean</span> <span class="name">isFileExtensionRegistered</span>(<span class="type">string</span> <i>extension</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns whether a file extension is already registered in the Windows registry. Returns <code>false</code> on all other platforms.</p>
+</div></div><!-- @@@isFileExtensionRegistered -->
+<br/>
+<!-- $$$isInstaller -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isInstaller-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isInstaller-method"></a><span class="type">boolean</span> <span class="name">isInstaller</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the application, binary, or executable is executed in installer mode.</p>
+<p><b>See also </b><a href="scripting-installer.html#isUninstaller-method">isUninstaller</a>, <a href="scripting-installer.html#isUpdater-method">isUpdater</a>, and <a href="scripting-installer.html#isPackageManager-method">isPackageManager</a>.</p>
+</div></div><!-- @@@isInstaller -->
+<br/>
+<!-- $$$isOfflineOnly -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isOfflineOnly-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isOfflineOnly-method"></a><span class="type">boolean</span> <span class="name">isOfflineOnly</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if this is an offline-only installer.</p>
+</div></div><!-- @@@isOfflineOnly -->
+<br/>
+<!-- $$$isPackageManager -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isPackageManager-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isPackageManager-method"></a><span class="type">boolean</span> <span class="name">isPackageManager</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the the application, binary, or executable is executed in package manager mode.</p>
+<p><b>See also </b><a href="scripting-installer.html#setPackageManager-method">setPackageManager</a>, <a href="scripting-installer.html#isInstaller-method">isInstaller</a>, <a href="scripting-installer.html#isUninstaller-method">isUninstaller</a>, and <a href="scripting-installer.html#isUpdater-method">isUpdater</a>.</p>
+</div></div><!-- @@@isPackageManager -->
+<br/>
+<!-- $$$isProcessRunning -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isProcessRunning-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isProcessRunning-method"></a><span class="type">boolean</span> <span class="name">isProcessRunning</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if a process with <i>name</i> is running. On Windows, the comparison is case-insensitive.</p>
+</div></div><!-- @@@isProcessRunning -->
+<br/>
+<!-- $$$isUninstaller -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isUninstaller-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isUninstaller-method"></a><span class="type">boolean</span> <span class="name">isUninstaller</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the the application, binary, or executable is executed in uninstaller mode.</p>
+<p><b>See also </b><a href="scripting-installer.html#setUninstaller-method">setUninstaller</a>, <a href="scripting-installer.html#isInstaller-method">isInstaller</a>, <a href="scripting-installer.html#isUpdater-method">isUpdater</a>, and <a href="scripting-installer.html#isPackageManager-method">isPackageManager</a>.</p>
+</div></div><!-- @@@isUninstaller -->
+<br/>
+<!-- $$$isUpdater -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isUpdater-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isUpdater-method"></a><span class="type">boolean</span> <span class="name">isUpdater</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the the application, binary, or executable is executed in updater mode.</p>
+<p><b>See also </b><a href="scripting-installer.html#setUpdater-method">setUpdater</a>, <a href="scripting-installer.html#isInstaller-method">isInstaller</a>, <a href="scripting-installer.html#isUninstaller-method">isUninstaller</a>, and <a href="scripting-installer.html#isPackageManager-method">isPackageManager</a>.</p>
+</div></div><!-- @@@isUpdater -->
+<br/>
+<!-- $$$killProcess -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="killProcess-method">
+<td class="tblQmlFuncNode"><p>
+<a name="killProcess-method"></a><span class="type">boolean</span> <span class="name">killProcess</span>(<span class="type">string</span> <i>absoluteFilePath</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if a process with <i>absoluteFilePath</i> could be killed or is not running.</p>
+<p><b>Note: </b>This is implemented in a semi blocking way (to keep the main thread to paint the UI).</p></div></div><!-- @@@killProcess -->
+<br/>
+<!-- $$$languageChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="languageChanged-method">
+<td class="tblQmlFuncNode"><p>
+<a name="languageChanged-method"></a><span class="type">void</span> <span class="name">languageChanged</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Calls languangeChanged on all components.</p>
+</div></div><!-- @@@languageChanged -->
+<br/>
+<!-- $$$localInstallerBinaryUsed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="localInstallerBinaryUsed-method">
+<td class="tblQmlFuncNode"><p>
+<a name="localInstallerBinaryUsed-method"></a><span class="type">boolean</span> <span class="name">localInstallerBinaryUsed</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>false</code> if the installer is run on Windows, and the installer has been started from a remote file system drive. Otherwise returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#setDependsOnLocalInstallerBinary-method">setDependsOnLocalInstallerBinary</a>.</p>
+</div></div><!-- @@@localInstallerBinaryUsed -->
+<br/>
+<!-- $$$performOperation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="performOperation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="performOperation-method"></a><span class="type">boolean</span> <span class="name">performOperation</span>(<span class="type">string</span> <i>name</i>, <span class="type">stringlist</span> <i>arguments</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Instantly performs the operation <i>name</i> with <i>arguments</i>.</p>
+</div></div><!-- @@@performOperation -->
+<br/>
+<!-- $$$readFile -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readFile-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readFile-method"></a><span class="type">string</span> <span class="name">readFile</span>(<span class="type">string</span> <i>filePath</i>, <span class="type">string</span> <i>codecName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the contents of the file <i>filePath</i> using the encoding specified by <i>codecName</i>. The file is read in the text mode, that is, end-of-line terminators are translated to the local encoding.</p>
+<p><b>Note: </b>If the file does not exist or an error occurs while reading the file, an empty string is returned.</p></div></div><!-- @@@readFile -->
+<br/>
+<!-- $$$removeWizardPage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="removeWizardPage-method">
+<td class="tblQmlFuncNode"><p>
+<a name="removeWizardPage-method"></a><span class="type">boolean</span> <span class="name">removeWizardPage</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Removes the widget with objectName() <i>name</i> previously added to the installer's wizard by <i>component</i>.</p>
+<p>Returns <code>true</code> if the operation succeeded.</p>
+<p><b>See also </b><a href="scripting-installer.html#addWizardPage-method">addWizardPage</a>, <a href="scripting-installer.html#setDefaultPageVisible-method">setDefaultPageVisible</a>, and <a href="scripting-installer.html#wizardPageRemovalRequested-signal">wizardPageRemovalRequested</a>.</p>
+</div></div><!-- @@@removeWizardPage -->
+<br/>
+<!-- $$$removeWizardPageItem -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="removeWizardPageItem-method">
+<td class="tblQmlFuncNode"><p>
+<a name="removeWizardPageItem-method"></a><span class="type">boolean</span> <span class="name">removeWizardPageItem</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Removes the widget with objectName() <i>name</i> previously added to the installer's wizard by <i>component</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#addWizardPageItem-method">addWizardPageItem</a>.</p>
+</div></div><!-- @@@removeWizardPageItem -->
+<br/>
+<!-- $$$requiredDiskSpace -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="requiredDiskSpace-method">
+<td class="tblQmlFuncNode"><p>
+<a name="requiredDiskSpace-method"></a><span class="type">float</span> <span class="name">requiredDiskSpace</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the additional estimated amount of disk space in bytes required after installation.</p>
+<p><b>See also </b><a href="scripting-installer.html#requiredTemporaryDiskSpace-method">requiredTemporaryDiskSpace</a>.</p>
+</div></div><!-- @@@requiredDiskSpace -->
+<br/>
+<!-- $$$requiredTemporaryDiskSpace -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="requiredTemporaryDiskSpace-method">
+<td class="tblQmlFuncNode"><p>
+<a name="requiredTemporaryDiskSpace-method"></a><span class="type">float</span> <span class="name">requiredTemporaryDiskSpace</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the estimated required disk space during installation in bytes.</p>
+<p><b>See also </b><a href="scripting-installer.html#requiredDiskSpace-method">requiredDiskSpace</a>.</p>
+</div></div><!-- @@@requiredTemporaryDiskSpace -->
+<br/>
+<!-- $$$runInstaller -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="runInstaller-method">
+<td class="tblQmlFuncNode"><p>
+<a name="runInstaller-method"></a><span class="type">boolean</span> <span class="name">runInstaller</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Runs the installer. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+</div></div><!-- @@@runInstaller -->
+<br/>
+<!-- $$$runPackageUpdater -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="runPackageUpdater-method">
+<td class="tblQmlFuncNode"><p>
+<a name="runPackageUpdater-method"></a><span class="type">boolean</span> <span class="name">runPackageUpdater</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Runs the package updater. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+</div></div><!-- @@@runPackageUpdater -->
+<br/>
+<!-- $$$runUninstaller -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="runUninstaller-method">
+<td class="tblQmlFuncNode"><p>
+<a name="runUninstaller-method"></a><span class="type">boolean</span> <span class="name">runUninstaller</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Runs the uninstaller. Returns <code>true</code> on success, <code>false</code> otherwise.</p>
+</div></div><!-- @@@runUninstaller -->
+<br/>
+<!-- $$$setCanceled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setCanceled-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setCanceled-method"></a><span class="type">void</span> <span class="name">setCanceled</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Cancels the installation.</p>
+</div></div><!-- @@@setCanceled -->
+<br/>
+<!-- $$$setCompleteUninstallation -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setCompleteUninstallation-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setCompleteUninstallation-method"></a><span class="type">void</span> <span class="name">setCompleteUninstallation</span>(<span class="type">bool</span> <i>complete</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets the uninstallation to be <i>complete</i>. If <i>complete</i> is false, only components deselected by the user will be uninstalled. This option applies only on uninstallation.</p>
+</div></div><!-- @@@setCompleteUninstallation -->
+<br/>
+<!-- $$$setDefaultPageVisible -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setDefaultPageVisible-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setDefaultPageVisible-method"></a><span class="type">boolean</span> <span class="name">setDefaultPageVisible</span>(<span class="type">int</span> <i>page</i>, <span class="type">boolean</span> <i>visible</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets the visibility of the default page with the ID <i>page</i> to <i>visible</i>. That is, removes it from or adds it to the wizard. This works only for pages that were in the installer when it was started.</p>
+<p>Returns <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-installer.html#addWizardPage-method">addWizardPage</a> and <a href="scripting-installer.html#removeWizardPage-method">removeWizardPage</a>.</p>
+</div></div><!-- @@@setDefaultPageVisible -->
+<br/>
+<!-- $$$setDependsOnLocalInstallerBinary -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setDependsOnLocalInstallerBinary-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setDependsOnLocalInstallerBinary-method"></a><span class="type">void</span> <span class="name">setDependsOnLocalInstallerBinary</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Makes sure the installer runs from a local drive. Otherwise the user will get an appropriate error message.</p>
+<p><b>Note: </b>This only works on Windows.</p><p><b>See also </b><a href="scripting-installer.html#localInstallerBinaryUsed-method">localInstallerBinaryUsed</a>.</p>
+</div></div><!-- @@@setDependsOnLocalInstallerBinary -->
+<br/>
+<!-- $$$setInstallerBaseBinary -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setInstallerBaseBinary-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setInstallerBaseBinary-method"></a><span class="type">void</span> <span class="name">setInstallerBaseBinary</span>(<span class="type">string</span> <i>path</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets the <code>installerbase</code> binary to use when writing the maintenance tool. Set the path if an update to the binary is available.</p>
+<p>If not set, the executable segment of the running installer or uninstaller will be used.</p>
+</div></div><!-- @@@setInstallerBaseBinary -->
+<br/>
+<!-- $$$setMessageBoxAutomaticAnswer -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setMessageBoxAutomaticAnswer-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setMessageBoxAutomaticAnswer-method"></a><span class="type">void</span> <span class="name">setMessageBoxAutomaticAnswer</span>(<span class="type">string</span> <i>identifier</i>, <span class="type">int</span> <i>button</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Automatically close the message box with ID <i>identifier</i> as if the user had pressed <i>button</i>.</p>
+<p>This can be used for unattended (automatic) installations.</p>
+<p><b>See also </b><a href="scripting-qmessagebox.html">QMessageBox</a>, <a href="scripting-installer.html#autoAcceptMessageBoxes-method">autoAcceptMessageBoxes</a>, and <a href="scripting-installer.html#autoRejectMessageBoxes-method">autoRejectMessageBoxes</a>.</p>
+</div></div><!-- @@@setMessageBoxAutomaticAnswer -->
+<br/>
+<!-- $$$setPackageManager -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setPackageManager-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setPackageManager-method"></a><span class="type">void</span> <span class="name">setPackageManager</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Forces a package manager context.</p>
+</div></div><!-- @@@setPackageManager -->
+<br/>
+<!-- $$$setSharedFlag -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setSharedFlag-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setSharedFlag-method"></a><span class="type">void</span> <span class="name">setSharedFlag</span>(<span class="type">string</span> <i>key</i>, <span class="type">boolean</span> <i>value</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets a shared flag with name <i>key</i> to <i>value</i>. This is one option to share information between scripts.</p>
+<p>Deprecated since 2.0&#x2e;0&#x2e; Use <a href="scripting-installer.html#setValue-method">setValue</a> instead.</p>
+</div></div><!-- @@@setSharedFlag -->
+<br/>
+<!-- $$$setTemporaryRepositories -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setTemporaryRepositories-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setTemporaryRepositories-method"></a><span class="type">void</span> <span class="name">setTemporaryRepositories</span>(<span class="type">stringlist</span> <i>repositories</i>, <span class="type">boolean</span> <i>replace</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets additional <i>repositories</i> for this instance of the installer or updater. Will be removed after invoking it again.</p>
+<p><b>See also </b><a href="scripting-installer.html#addUserRepositories-method">addUserRepositories</a>.</p>
+</div></div><!-- @@@setTemporaryRepositories -->
+<br/>
+<!-- $$$setUninstaller -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setUninstaller-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setUninstaller-method"></a><span class="type">void</span> <span class="name">setUninstaller</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Forces an uninstaller context.</p>
+<p><b>See also </b><a href="scripting-installer.html#isUninstaller-method">isUninstaller</a>, <a href="scripting-installer.html#setUpdater-method">setUpdater</a>, and <a href="scripting-installer.html#setPackageManager-method">setPackageManager</a>.</p>
+</div></div><!-- @@@setUninstaller -->
+<br/>
+<!-- $$$setUpdater -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setUpdater-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setUpdater-method"></a><span class="type">void</span> <span class="name">setUpdater</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Forces an updater context.</p>
+<p><b>See also </b><a href="scripting-installer.html#isUpdater-method">isUpdater</a>, <a href="scripting-installer.html#setUninstaller-method">setUninstaller</a>, and <a href="scripting-installer.html#setPackageManager-method">setPackageManager</a>.</p>
+</div></div><!-- @@@setUpdater -->
+<br/>
+<!-- $$$setValidatorForCustomPage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setValidatorForCustomPage-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setValidatorForCustomPage-method"></a><span class="type">void</span> <span class="name">setValidatorForCustomPage</span>(<span class="type">Component</span> <i>component</i>, <span class="type">string</span> <i>name</i>, <span class="type">string</span> <i>callbackName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="scripting-installer.html#setValidatorForCustomPageRequested-signal">setValidatorForCustomPageRequested</a>.</p>
+</div></div><!-- @@@setValidatorForCustomPage -->
+<br/>
+<!-- $$$setValue -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setValue-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setValue-method"></a><span class="type">void</span> <span class="name">setValue</span>(<span class="type">string</span> <i>key</i>, <span class="type">string</span> <i>value</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Sets the installer value for <i>key</i> to <i>value</i>.</p>
+<p><b>See also </b><a href="scripting-installer.html#value-method">value</a>, <a href="scripting-installer.html#containsValue-method">containsValue</a>, and <a href="scripting-installer.html#valueChanged-signal">valueChanged</a>.</p>
+</div></div><!-- @@@setValue -->
+<br/>
+<!-- $$$sharedFlag -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sharedFlag-method">
+<td class="tblQmlFuncNode"><p>
+<a name="sharedFlag-method"></a><span class="type">boolean</span> <span class="name">sharedFlag</span>(<span class="type">string</span> <i>key</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns shared flag with name <i>key</i>. This is one option to share information between scripts.</p>
+<p>Deprecated since 2.0&#x2e;0&#x2e; Use <a href="scripting-installer.html#value-method">value</a> or <a href="scripting-installer.html#values-method">values</a> instead.</p>
+</div></div><!-- @@@sharedFlag -->
+<br/>
+<!-- $$$value -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="value-method">
+<td class="tblQmlFuncNode"><p>
+<a name="value-method"></a><span class="type">string</span> <span class="name">value</span>(<span class="type">string</span> <i>key</i>, <span class="type">string</span> <i>defaultValue</i> = &quot;&quot;)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the installer value for <i>key</i>. If <i>key</i> is not known to the system, <i>defaultValue</i> is returned. Additionally, on Windows, <i>key</i> can be a registry key.</p>
+<p><b>See also </b><a href="scripting-installer.html#setValue-method">setValue</a>, <a href="scripting-installer.html#containsValue-method">containsValue</a>, and <a href="scripting-installer.html#valueChanged-signal">valueChanged</a>.</p>
+</div></div><!-- @@@value -->
+<br/>
+<!-- $$$values -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="values-method">
+<td class="tblQmlFuncNode"><p>
+<a name="values-method"></a><span class="type">stringlist</span> <span class="name">values</span>(<span class="type">string</span> <i>key</i>, <span class="type">stringlist</span> <i>defaultValue</i> = [])</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the installer value for <i>key</i>. If <i>key</i> is not known to the system, <i>defaultValue</i> is returned. Additionally, on Windows, <i>key</i> can be a registry key.</p>
+<p><b>See also </b><a href="scripting-installer.html#value-method">value</a>.</p>
+</div></div><!-- @@@values -->
+<br/>
+<!-- $$$versionMatches -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="versionMatches-method">
+<td class="tblQmlFuncNode"><p>
+<a name="versionMatches-method"></a><span class="type">boolean</span> <span class="name">versionMatches</span>(<span class="type">string</span> <i>version</i>, <span class="type">string</span> <i>requirement</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> when <i>version</i> matches the <i>requirement</i>. <i>requirement</i> can be a fixed version number or it can be prefixed by the comparators '&gt;', '&gt;=', '&lt;', '&lt;=' and '='.</p>
+</div></div><!-- @@@versionMatches -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

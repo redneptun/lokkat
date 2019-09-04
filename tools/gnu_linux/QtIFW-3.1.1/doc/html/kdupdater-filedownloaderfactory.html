@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- filedownloaderfactory.cpp -->
+  <title>FileDownloaderFactory Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >FileDownloaderFactory</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">FileDownloaderFactory Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-filedownloaderfactory.html">KDUpdater::FileDownloaderFactory</a>)<br/></span>
+<!-- $$$FileDownloaderFactory-brief -->
+<p>The <a href="kdupdater-filedownloaderfactory.html">FileDownloaderFactory</a> class acts as a factory for <a href="kdupdater-filedownloader.html">KDUpdater::FileDownloader</a>. <a href="#details">More...</a></p>
+<!-- @@@FileDownloaderFactory -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;FileDownloaderFactory&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="genericfactory.html">GenericFactory</a></td></tr></table></div><ul>
+<li><a href="kdupdater-filedownloaderfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#dtor.FileDownloaderFactory">~FileDownloaderFactory</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> FileDownloader *</td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#create">create</a></b>(const QString &amp;<i>scheme</i>, QObject *<i>parent</i> = 0) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#registerFileDownloader">registerFileDownloader</a></b>(const QString &amp;<i>scheme</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">4 public functions inherited from <a href="genericfactory.html#public-functions">GenericFactory</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#followRedirects">followRedirects</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#ignoreSslErrors">ignoreSslErrors</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> FileDownloaderFactory &amp;</td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#instance">instance</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#isSupportedScheme">isSupportedScheme</a></b>(const QString &amp;<i>scheme</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#setFollowRedirects">setFollowRedirects</a></b>(bool <i>val</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#setIgnoreSslErrors">setIgnoreSslErrors</a></b>(bool <i>ignore</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#setProxyFactory">setProxyFactory</a></b>(FileDownloaderProxyFactory *<i>factory</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-filedownloaderfactory.html#supportedSchemes">supportedSchemes</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$FileDownloaderFactory-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="kdupdater-filedownloaderfactory.html">FileDownloaderFactory</a> class acts as a factory for <a href="kdupdater-filedownloader.html">KDUpdater::FileDownloader</a>.</p>
+<p>You can register one or more file downloaders with this factory and query them based on their scheme. The class follows the singleton design pattern. Only one instance of this class can be created and its reference can be fetched from the <a href="kdupdater-filedownloaderfactory.html#instance">instance</a>() method.</p>
+</div>
+<!-- @@@FileDownloaderFactory -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$~FileDownloaderFactory[overload1]$$$~FileDownloaderFactory -->
+<h3 class="fn" id="dtor.FileDownloaderFactory"><a name="dtor.FileDownloaderFactory"></a>FileDownloaderFactory::<span class="name">~FileDownloaderFactory</span>()</h3>
+<p>Destroys the file downloader factory.</p>
+<!-- @@@~FileDownloaderFactory -->
+<!-- $$$create[overload1]$$$createconstQString&QObject* -->
+<h3 class="fn" id="create"><a name="create"></a><span class="type"><a href="kdupdater-filedownloader.html">FileDownloader</a></span> *FileDownloaderFactory::<span class="name">create</span>(const <span class="type">QString</span> &amp;<i>scheme</i>, <span class="type">QObject</span> *<i>parent</i> = 0) const</h3>
+<p>Returns a new instance of a <a href="kdupdater-filedownloader.html">KDUpdater::FileDownloader</a> subclass. The instantiation of a subclass depends on the communication protocol string stored in <i>scheme</i> with the parent <i>parent</i>.</p>
+<p><b>Note: </b>Ownership of the created object remains with the programmer.</p><!-- @@@create -->
+<!-- $$$followRedirects[overload1]$$$followRedirects -->
+<h3 class="fn" id="followRedirects"><a name="followRedirects"></a><code>[static] </code><span class="type">bool</span> FileDownloaderFactory::<span class="name">followRedirects</span>()</h3>
+<p>Returns whether redirects should be followed.</p>
+<p><b>See also </b><a href="kdupdater-filedownloaderfactory.html#setFollowRedirects">setFollowRedirects</a>().</p>
+<!-- @@@followRedirects -->
+<!-- $$$ignoreSslErrors[overload1]$$$ignoreSslErrors -->
+<h3 class="fn" id="ignoreSslErrors"><a name="ignoreSslErrors"></a><code>[static] </code><span class="type">bool</span> FileDownloaderFactory::<span class="name">ignoreSslErrors</span>()</h3>
+<p>Returns <code>true</code> if SSL errors should be ignored.</p>
+<p><b>See also </b><a href="kdupdater-filedownloaderfactory.html#setIgnoreSslErrors">setIgnoreSslErrors</a>().</p>
+<!-- @@@ignoreSslErrors -->
+<!-- $$$instance[overload1]$$$instance -->
+<h3 class="fn" id="instance"><a name="instance"></a><code>[static] </code><span class="type">FileDownloaderFactory</span> &amp;FileDownloaderFactory::<span class="name">instance</span>()</h3>
+<p>Returns the file downloader factory instance.</p>
+<!-- @@@instance -->
+<!-- $$$isSupportedScheme[overload1]$$$isSupportedSchemeconstQString& -->
+<h3 class="fn" id="isSupportedScheme"><a name="isSupportedScheme"></a><code>[static] </code><span class="type">bool</span> FileDownloaderFactory::<span class="name">isSupportedScheme</span>(const <span class="type">QString</span> &amp;<i>scheme</i>)</h3>
+<p>Returns <code>true</code> if <i>scheme</i> is a supported scheme.</p>
+<!-- @@@isSupportedScheme -->
+<!-- $$$registerFileDownloader[overload1]$$$registerFileDownloaderconstQString& -->
+<h3 class="fn" id="registerFileDownloader"><a name="registerFileDownloader"></a><span class="type">void</span> FileDownloaderFactory::<span class="name">registerFileDownloader</span>(const <span class="type">QString</span> &amp;<i>scheme</i>)</h3>
+<p>Registers a new file downloader with the factory based on <i>scheme</i>. If there is already a downloader with the same scheme, the downloader is replaced. When <a href="kdupdater-filedownloaderfactory.html#create">create</a>() is called with that <i>scheme</i>, the file downloader is constructed using its default constructor.</p>
+<!-- @@@registerFileDownloader -->
+<!-- $$$setFollowRedirects[overload1]$$$setFollowRedirectsbool -->
+<h3 class="fn" id="setFollowRedirects"><a name="setFollowRedirects"></a><code>[static] </code><span class="type">void</span> FileDownloaderFactory::<span class="name">setFollowRedirects</span>(<span class="type">bool</span> <i>val</i>)</h3>
+<p>Determines that redirects should be followed if <i>val</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="kdupdater-filedownloaderfactory.html#followRedirects">followRedirects</a>().</p>
+<!-- @@@setFollowRedirects -->
+<!-- $$$setIgnoreSslErrors[overload1]$$$setIgnoreSslErrorsbool -->
+<h3 class="fn" id="setIgnoreSslErrors"><a name="setIgnoreSslErrors"></a><code>[static] </code><span class="type">void</span> FileDownloaderFactory::<span class="name">setIgnoreSslErrors</span>(<span class="type">bool</span> <i>ignore</i>)</h3>
+<p>Determines that SSL errors should be ignored if <i>ignore</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="kdupdater-filedownloaderfactory.html#ignoreSslErrors">ignoreSslErrors</a>().</p>
+<!-- @@@setIgnoreSslErrors -->
+<!-- $$$setProxyFactory[overload1]$$$setProxyFactoryFileDownloaderProxyFactory* -->
+<h3 class="fn" id="setProxyFactory"><a name="setProxyFactory"></a><code>[static] </code><span class="type">void</span> FileDownloaderFactory::<span class="name">setProxyFactory</span>(<span class="type"><a href="kdupdater-filedownloaderproxyfactory.html">FileDownloaderProxyFactory</a></span> *<i>factory</i>)</h3>
+<p>Sets <i>factory</i> as the file downloader proxy factory.</p>
+<!-- @@@setProxyFactory -->
+<!-- $$$supportedSchemes[overload1]$$$supportedSchemes -->
+<h3 class="fn" id="supportedSchemes"><a name="supportedSchemes"></a><code>[static] </code><span class="type">QStringList</span> FileDownloaderFactory::<span class="name">supportedSchemes</span>()</h3>
+<p>Returns a list of supported schemes.</p>
+<!-- @@@supportedSchemes -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

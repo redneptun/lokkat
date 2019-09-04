@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>CopyOperation Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >CopyOperation</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">CopyOperation Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-copyoperation.html">KDUpdater::CopyOperation</a>)<br/></span>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="kdupdater-updateoperation.html">KDUpdater::UpdateOperation</a></td></tr></table></div><ul>
+<li><a href="kdupdater-copyoperation-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#CopyOperation">CopyOperation</a></b>(QInstaller::PackageManagerCore *<i>core</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#dtor.CopyOperation">~CopyOperation</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#backup">backup</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#performOperation">performOperation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#testOperation">testOperation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual QDomDocument </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#toXml">toXml</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-copyoperation.html#undoOperation">undoOperation</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">21 public functions inherited from <a href="kdupdater-updateoperation.html#public-functions">KDUpdater::UpdateOperation</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">7 protected functions inherited from <a href="kdupdater-updateoperation.html#protected-functions">KDUpdater::UpdateOperation</a></li>
+</ul>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$CopyOperation[overload1]$$$CopyOperationQInstaller::PackageManagerCore* -->
+<h3 class="fn" id="CopyOperation"><a name="CopyOperation"></a>CopyOperation::<span class="name">CopyOperation</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">QInstaller::PackageManagerCore</a></span> *<i>core</i> = 0)</h3>
+<p>Default constructs an instance of CopyOperation.</p><!-- @@@CopyOperation -->
+<!-- $$$~CopyOperation[overload1]$$$~CopyOperation -->
+<h3 class="fn" id="dtor.CopyOperation"><a name="dtor.CopyOperation"></a>CopyOperation::<span class="name">~CopyOperation</span>()</h3>
+<p>Destroys the instance of CopyOperation.</p><!-- @@@~CopyOperation -->
+<!-- $$$backup[overload1]$$$backup -->
+<h3 class="fn" id="backup"><a name="backup"></a><code>[virtual] </code><span class="type">void</span> CopyOperation::<span class="name">backup</span>()</h3>
+<!-- @@@backup -->
+<!-- $$$performOperation[overload1]$$$performOperation -->
+<h3 class="fn" id="performOperation"><a name="performOperation"></a><code>[virtual] </code><span class="type">bool</span> CopyOperation::<span class="name">performOperation</span>()</h3>
+<!-- @@@performOperation -->
+<!-- $$$testOperation[overload1]$$$testOperation -->
+<h3 class="fn" id="testOperation"><a name="testOperation"></a><code>[virtual] </code><span class="type">bool</span> CopyOperation::<span class="name">testOperation</span>()</h3>
+<!-- @@@testOperation -->
+<!-- $$$toXml[overload1]$$$toXml -->
+<h3 class="fn" id="toXml"><a name="toXml"></a><code>[virtual] </code><span class="type">QDomDocument</span> CopyOperation::<span class="name">toXml</span>() const</h3>
+<p>Reimplemented from <a href="kdupdater-updateoperation.html#toXml">UpdateOperation::toXml</a>().</p>
+<!-- @@@toXml -->
+<!-- $$$undoOperation[overload1]$$$undoOperation -->
+<h3 class="fn" id="undoOperation"><a name="undoOperation"></a><code>[virtual] </code><span class="type">bool</span> CopyOperation::<span class="name">undoOperation</span>()</h3>
+<!-- @@@undoOperation -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

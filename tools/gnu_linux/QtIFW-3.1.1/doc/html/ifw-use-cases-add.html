@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-using.qdoc -->
+  <title>Adding Components | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Adding Components</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-use-cases-install.html" />
+  <link rel="next" href="ifw-use-cases-remove.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-use-cases-install.html">Initial Installation</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-remove.html">Removing Components</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#starting-package-manager">Starting Package Manager</a></li>
+<li class="level1"><a href="#selecting-additional-components">Selecting Additional Components</a></li>
+<li class="level1"><a href="#installing-selected-components">Installing Selected Components</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Adding Components</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-use-cases-add.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>If end users did not select all the components available for installation during the initial installation, they can use the package manager to install the remaining components from a repository later. The package manager is part of a maintenance tool that is installed together with the application during the initial installation. This only works if a repository that contains the components is available either locally or externally.</p>
+<p>The following image illustrates the default workflow for installing additional components:</p>
+<p class="centerAlign"><img src="images/ifw-user-flow-adding.png" alt="&quot;Add components workflow&quot;" /></p><p>This section uses the <i>Maintenance Tool</i> installed by the Qt 5 installer run on OS X as an example implementation of how end users can add components after the initial installation. The Maintenance Tool contains the package manager, updater, and uninstaller.</p>
+<a name="starting-package-manager"></a>
+<h2 id="starting-package-manager">Starting Package Manager</h2>
+<p>When end users start the Maintenance Tool, the introduction page opens:</p>
+<p class="centerAlign"><img src="images/ifw-add-components-introduction.png" alt="&quot;Introduction page&quot;" /></p><p>When end users select <b>Package manager</b>, and then <b>Continue</b>, the component selection page opens.</p>
+<a name="selecting-additional-components"></a>
+<h2 id="selecting-additional-components">Selecting Additional Components</h2>
+<p>The component selection page lists the components available for installation and a short description of each component. Installed components are displayed selected in the list. End users select additional components to install. They can select <b>Reset</b> to display the currently installed components again.</p>
+<p class="centerAlign"><img src="images/ifw-add-components-selection.png" alt="&quot;Select Components page&quot;" /></p><p>When end users select <b>Continue</b>, the ready to update page opens.</p>
+<a name="installing-selected-components"></a>
+<h2 id="installing-selected-components">Installing Selected Components</h2>
+<p>The ready to update page informs end users that the components are installed when users select <b>Update</b>.</p>
+<p class="centerAlign"><img src="images/ifw-ready-to-update.png" alt="&quot;Ready to Update Packages page&quot;" /></p><p>The update page displays information about how installation is progressing. End users can select <b>Show Details</b> to view more information.</p>
+<p class="centerAlign"><img src="images/ifw-perform-update.png" alt="&quot;Update page&quot;" /></p><p>When the installation is complete, the update finished page opens.</p>
+<p class="centerAlign"><img src="images/ifw-update-finished.png" alt="&quot;Update finished page&quot;" /></p></div>
+<!-- @@@ifw-use-cases-add.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-use-cases-install.html">Initial Installation</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-remove.html">Removing Components</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

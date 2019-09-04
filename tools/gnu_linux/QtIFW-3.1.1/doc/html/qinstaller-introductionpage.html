@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>IntroductionPage Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >IntroductionPage</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-public-functions">Reimplemented Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">IntroductionPage Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-introductionpage.html">QInstaller::IntroductionPage</a>)<br/></span>
+<!-- $$$IntroductionPage-brief -->
+<p>The <a href="qinstaller-introductionpage.html">IntroductionPage</a> class displays information about the product to install. <a href="#details">More...</a></p>
+<!-- @@@IntroductionPage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;IntroductionPage&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></td></tr></table></div><ul>
+<li><a href="qinstaller-introductionpage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#IntroductionPage">IntroductionPage</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#hideAll">hideAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#setMaintenanceToolsEnabled">setMaintenanceToolsEnabled</a></b>(bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#setText">setText</a></b>(const QString &amp;<i>text</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#showAll">showAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#showMaintenanceTools">showMaintenanceTools</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#showMetaInfoUpdate">showMetaInfoUpdate</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#validatePage">validatePage</a></b>()</td></tr>
+</table></div>
+<a name="reimplemented-public-functions"></a>
+<h2 id="reimplemented-public-functions">Reimplemented Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#nextId">nextId</a></b>() const</td></tr>
+</table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="qinstaller-packagemanagerpage.html#public-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#onCoreNetworkSettingsChanged">onCoreNetworkSettingsChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#onProgressChanged">onProgressChanged</a></b>(int <i>progress</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#setErrorMessage">setErrorMessage</a></b>(const QString &amp;<i>error</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#setMessage">setMessage</a></b>(const QString &amp;<i>msg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#setTotalProgress">setTotalProgress</a></b>(int <i>totalProgress</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-introductionpage.html#packageManagerCoreTypeChanged">packageManagerCoreTypeChanged</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">2 signals inherited from <a href="qinstaller-packagemanagerpage.html#signals">QInstaller::PackageManagerPage</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$IntroductionPage-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-introductionpage.html">IntroductionPage</a> class displays information about the product to install.</p>
+</div>
+<!-- @@@IntroductionPage -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$IntroductionPage[overload1]$$$IntroductionPagePackageManagerCore* -->
+<h3 class="fn" id="IntroductionPage"><a name="IntroductionPage"></a>IntroductionPage::<span class="name">IntroductionPage</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Constructs an introduction page with <i>core</i> as parent.</p>
+<!-- @@@IntroductionPage -->
+<!-- $$$hideAll[overload1]$$$hideAll -->
+<h3 class="fn" id="hideAll"><a name="hideAll"></a><span class="type">void</span> IntroductionPage::<span class="name">hideAll</span>()</h3>
+<p>Hides all widgets on the page.</p>
+<!-- @@@hideAll -->
+<!-- $$$nextId[overload1]$$$nextId -->
+<h3 class="fn" id="nextId"><a name="nextId"></a><code>[virtual] </code><span class="type">int</span> IntroductionPage::<span class="name">nextId</span>() const</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#nextId">PackageManagerPage::nextId</a>().</p>
+<p>Determines which page should be shown next depending on whether the application is being installed, updated, or uninstalled.</p>
+<!-- @@@nextId -->
+<!-- $$$onCoreNetworkSettingsChanged[overload1]$$$onCoreNetworkSettingsChanged -->
+<h3 class="fn" id="onCoreNetworkSettingsChanged"><a name="onCoreNetworkSettingsChanged"></a><code>[slot] </code><span class="type">void</span> IntroductionPage::<span class="name">onCoreNetworkSettingsChanged</span>()</h3>
+<p>Resets the internal page state, so that on clicking <b>Next</b> the metadata needs to be fetched again.</p>
+<!-- @@@onCoreNetworkSettingsChanged -->
+<!-- $$$onProgressChanged[overload1]$$$onProgressChangedint -->
+<h3 class="fn" id="onProgressChanged"><a name="onProgressChanged"></a><code>[slot] </code><span class="type">void</span> IntroductionPage::<span class="name">onProgressChanged</span>(<span class="type">int</span> <i>progress</i>)</h3>
+<p>Updates the value of <i>progress</i> on the progress bar.</p>
+<!-- @@@onProgressChanged -->
+<!-- $$$packageManagerCoreTypeChanged[overload1]$$$packageManagerCoreTypeChanged -->
+<h3 class="fn" id="packageManagerCoreTypeChanged"><a name="packageManagerCoreTypeChanged"></a><code>[signal] </code><span class="type">void</span> IntroductionPage::<span class="name">packageManagerCoreTypeChanged</span>()</h3>
+<p>This signal is emitted when the package manager core type changes.</p>
+<!-- @@@packageManagerCoreTypeChanged -->
+<!-- $$$setErrorMessage[overload1]$$$setErrorMessageconstQString& -->
+<h3 class="fn" id="setErrorMessage"><a name="setErrorMessage"></a><code>[slot] </code><span class="type">void</span> IntroductionPage::<span class="name">setErrorMessage</span>(const <span class="type">QString</span> &amp;<i>error</i>)</h3>
+<p>Displays the error message <i>error</i> on the page.</p>
+<!-- @@@setErrorMessage -->
+<!-- $$$setMaintenanceToolsEnabled[overload1]$$$setMaintenanceToolsEnabledbool -->
+<h3 class="fn" id="setMaintenanceToolsEnabled"><a name="setMaintenanceToolsEnabled"></a><span class="type">void</span> IntroductionPage::<span class="name">setMaintenanceToolsEnabled</span>(<span class="type">bool</span> <i>enable</i>)</h3>
+<p>Sets <i>enable</i> to <code>true</code> to enable the options to install, add, and uninstall components on the page.</p>
+<!-- @@@setMaintenanceToolsEnabled -->
+<!-- $$$setMessage[overload1]$$$setMessageconstQString& -->
+<h3 class="fn" id="setMessage"><a name="setMessage"></a><code>[slot] </code><span class="type">void</span> IntroductionPage::<span class="name">setMessage</span>(const <span class="type">QString</span> &amp;<i>msg</i>)</h3>
+<p>Displays the message <i>msg</i> on the page.</p>
+<!-- @@@setMessage -->
+<!-- $$$setText[overload1]$$$setTextconstQString& -->
+<h3 class="fn" id="setText"><a name="setText"></a><span class="type">void</span> IntroductionPage::<span class="name">setText</span>(const <span class="type">QString</span> &amp;<i>text</i>)</h3>
+<p>Displays the text <i>text</i> on the page.</p>
+<!-- @@@setText -->
+<!-- $$$setTotalProgress[overload1]$$$setTotalProgressint -->
+<h3 class="fn" id="setTotalProgress"><a name="setTotalProgress"></a><code>[slot] </code><span class="type">void</span> IntroductionPage::<span class="name">setTotalProgress</span>(<span class="type">int</span> <i>totalProgress</i>)</h3>
+<p>Sets total <i>progress</i> value to progress bar.</p>
+<!-- @@@setTotalProgress -->
+<!-- $$$showAll[overload1]$$$showAll -->
+<h3 class="fn" id="showAll"><a name="showAll"></a><span class="type">void</span> IntroductionPage::<span class="name">showAll</span>()</h3>
+<p>Shows all widgets on the page.</p>
+<!-- @@@showAll -->
+<!-- $$$showMaintenanceTools[overload1]$$$showMaintenanceTools -->
+<h3 class="fn" id="showMaintenanceTools"><a name="showMaintenanceTools"></a><span class="type">void</span> IntroductionPage::<span class="name">showMaintenanceTools</span>()</h3>
+<p>Shows the options to install, add, and unistall components on the page.</p>
+<!-- @@@showMaintenanceTools -->
+<!-- $$$showMetaInfoUpdate[overload1]$$$showMetaInfoUpdate -->
+<h3 class="fn" id="showMetaInfoUpdate"><a name="showMetaInfoUpdate"></a><span class="type">void</span> IntroductionPage::<span class="name">showMetaInfoUpdate</span>()</h3>
+<p>Hides the widgets on the page except a text label and progress bar.</p>
+<!-- @@@showMetaInfoUpdate -->
+<!-- $$$validatePage[overload1]$$$validatePage -->
+<h3 class="fn" id="validatePage"><a name="validatePage"></a><span class="type">bool</span> IntroductionPage::<span class="name">validatePage</span>()</h3>
+<p>For an uninstaller, always returns <code>true</code>. For the package manager and updater, at least one valid repository is required. For the online installer, package manager, and updater, valid meta data has to be fetched successfully to return <code>true</code>.</p>
+<!-- @@@validatePage -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

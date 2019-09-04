@@ -1,0 +1,23 @@
+#!/bin/bash
+# clear dist dir
+rm -rf dist/windows
+mkdir dist/windows
+
+#build dist
+
+wine tools/win/Python37/Scripts/pyinstaller.exe -D --distpath dist/windows windows.spec 
+
+#copy additional files
+
+#help
+mkdir dist/windows/help
+cp help/*.html dist/windows/help
+cp help/*.css dist/windows/help
+mkdir dist/windows/help/img
+cp help/img/*.png dist/windows/help/img
+
+#license
+cp LICENSE dist/windows/LICENSE.txt
+
+#icon
+cp res/icons/lokkat.ico dist/windows

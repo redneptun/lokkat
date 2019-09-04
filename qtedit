@@ -1,0 +1,36 @@
+#!/bin/bash
+
+#use the qt designer to open the ".ui" file
+
+/usr/lib/qt5/bin/designer "$1"
+
+#get names
+filebasename=$(python3 -c "
+import sys
+import os
+print(sys.argv[1].split('.')[0].split(os.sep)[-1])
+
+" "$1")
+targetpyfile=$(python3 -c "
+import sys
+print(sys.argv[1].split('.')[0] + '.py')
+
+" "$1")
+# after your're done run pyuic5
+pyuic5 "$1" -o "$targetpyfile" --resource-suffix _rc --import-from gui
+
+# run lupdate to update the .ts files
+lupdate "$1" -ts res/l10n/"$filebasename"_de.ts res/l10n/"$filebasename"_en.ts
+
+# run linguist to edit .ts files
+linguist res/l10n/"$filebasename"_de.ts res/l10n/"$filebasename"_en.ts
+
+# run lrelease to convert to .ts files to .qm files
+lrelease res/l10n/*.ts
+
+# check the resource file
+#nano res/resources.qrc
+# ..or not.
+
+#convert the qrc file into a .py resource file.
+pyrcc5 res/resources.qrc -o gui/resources_rc.py

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>UpdatesInfo Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >UpdatesInfo</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">UpdatesInfo Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-updatesinfo.html">KDUpdater::UpdatesInfo</a>)<br/></span>
+<ul>
+<li><a href="kdupdater-updatesinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#Error-enum">Error</a></b> { NoError, NotYetReadError, CouldNotReadUpdateInfoFileError, InvalidXmlError, InvalidContentError }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#UpdatesInfo">UpdatesInfo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#dtor.UpdatesInfo">~UpdatesInfo</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#applicationName">applicationName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#applicationVersion">applicationVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Error </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#error">error</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#errorString">errorString</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#fileName">fileName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#setFileName">setFileName</a></b>(const QString &amp;<i>updateXmlFile</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> UpdateInfo </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#updateInfo">updateInfo</a></b>(int <i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#updateInfoCount">updateInfoCount</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;UpdateInfo&gt; </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-updatesinfo.html#updatesInfox">updatesInfo</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Error$$$NoError$$$NotYetReadError$$$CouldNotReadUpdateInfoFileError$$$InvalidXmlError$$$InvalidContentError -->
+<h3 class="fn" id="Error-enum"><a name="Error-enum"></a>enum UpdatesInfo::<span class="name">Error</span></h3>
+<!-- @@@Error -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$UpdatesInfo[overload1]$$$UpdatesInfo -->
+<h3 class="fn" id="UpdatesInfo"><a name="UpdatesInfo"></a>UpdatesInfo::<span class="name">UpdatesInfo</span>()</h3>
+<p>Default constructs an instance of UpdatesInfo.</p><!-- @@@UpdatesInfo -->
+<!-- $$$~UpdatesInfo[overload1]$$$~UpdatesInfo -->
+<h3 class="fn" id="dtor.UpdatesInfo"><a name="dtor.UpdatesInfo"></a>UpdatesInfo::<span class="name">~UpdatesInfo</span>()</h3>
+<p>Destroys the instance of UpdatesInfo.</p><!-- @@@~UpdatesInfo -->
+<!-- $$$applicationName[overload1]$$$applicationName -->
+<h3 class="fn" id="applicationName"><a name="applicationName"></a><span class="type">QString</span> UpdatesInfo::<span class="name">applicationName</span>() const</h3>
+<!-- @@@applicationName -->
+<!-- $$$applicationVersion[overload1]$$$applicationVersion -->
+<h3 class="fn" id="applicationVersion"><a name="applicationVersion"></a><span class="type">QString</span> UpdatesInfo::<span class="name">applicationVersion</span>() const</h3>
+<!-- @@@applicationVersion -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn" id="error"><a name="error"></a><span class="type"><a href="kdupdater-updatesinfo.html#Error-enum">Error</a></span> UpdatesInfo::<span class="name">error</span>() const</h3>
+<!-- @@@error -->
+<!-- $$$errorString[overload1]$$$errorString -->
+<h3 class="fn" id="errorString"><a name="errorString"></a><span class="type">QString</span> UpdatesInfo::<span class="name">errorString</span>() const</h3>
+<!-- @@@errorString -->
+<!-- $$$fileName[overload1]$$$fileName -->
+<h3 class="fn" id="fileName"><a name="fileName"></a><span class="type">QString</span> UpdatesInfo::<span class="name">fileName</span>() const</h3>
+<p><b>See also </b><a href="kdupdater-updatesinfo.html#setFileName">setFileName</a>().</p>
+<!-- @@@fileName -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn" id="isValid"><a name="isValid"></a><span class="type">bool</span> UpdatesInfo::<span class="name">isValid</span>() const</h3>
+<!-- @@@isValid -->
+<!-- $$$setFileName[overload1]$$$setFileNameconstQString& -->
+<h3 class="fn" id="setFileName"><a name="setFileName"></a><span class="type">void</span> UpdatesInfo::<span class="name">setFileName</span>(const <span class="type">QString</span> &amp;<i>updateXmlFile</i>)</h3>
+<p><b>See also </b><a href="kdupdater-updatesinfo.html#fileName">fileName</a>().</p>
+<!-- @@@setFileName -->
+<!-- $$$updateInfo[overload1]$$$updateInfoint -->
+<h3 class="fn" id="updateInfo"><a name="updateInfo"></a><span class="type"><a href="kdupdater-updateinfo.html">UpdateInfo</a></span> UpdatesInfo::<span class="name">updateInfo</span>(<span class="type">int</span> <i>index</i>) const</h3>
+<!-- @@@updateInfo -->
+<!-- $$$updateInfoCount[overload1]$$$updateInfoCount -->
+<h3 class="fn" id="updateInfoCount"><a name="updateInfoCount"></a><span class="type">int</span> UpdatesInfo::<span class="name">updateInfoCount</span>() const</h3>
+<!-- @@@updateInfoCount -->
+<!-- $$$updatesInfo[overload1]$$$updatesInfo -->
+<h3 class="fn" id="updatesInfox"><a name="updatesInfox"></a><span class="type">QList</span>&lt;<span class="type"><a href="kdupdater-updateinfo.html">UpdateInfo</a></span>&gt; UpdatesInfo::<span class="name">updatesInfo</span>() const</h3>
+<!-- @@@updatesInfo -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<Packages>
+    <ApplicationName>Qt Installer Framework</ApplicationName>
+    <ApplicationVersion>1.0.0</ApplicationVersion>
+    <Package>
+        <Name>org.qtproject.ifw</Name>
+        <Title>Qt Installer Framework</Title>
+        <Description>Installs the Qt Installer Framework.</Description>
+        <Version>3.1.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2019-08-31</InstallDate>
+        <Size>0</Size>
+        <Checkable>true</Checkable>
+    </Package>
+    <Package>
+        <Name>org.qtproject.ifw.binaries</Name>
+        <Title>Qt Installer Framework Binaries</Title>
+        <Description>Installs the binaries, examples and help files.</Description>
+        <Version>3.1.1</Version>
+        <LastUpdateDate></LastUpdateDate>
+        <InstallDate>2019-08-31</InstallDate>
+        <Size>142863101</Size>
+        <Checkable>true</Checkable>
+    </Package>
+</Packages>

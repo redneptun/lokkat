@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- gui.qdoc -->
+  <title>gui QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">gui QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$gui-brief -->
+<p>Enables interaction with the installer UI. <a href="#details">More...</a></p>
+<!-- @@@gui -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-gui-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="scripting-gui.html#finishButtonClicked-signal">finishButtonClicked</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-gui.html#gotRestarted-signal">gotRestarted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-gui.html#interrupted-signal">interrupted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-gui.html#languageChanged-signal">languageChanged</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-gui.html#settingsButtonClicked-signal">settingsButtonClicked</a></b></b>()</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="scripting-gui.html#cancelButtonClicked-method">cancelButtonClicked</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#clickButton-method">clickButton</a></b></b>(int <i>wizardButton</i>, int <i>delayInMs</i>)</li>
+<li class="fn">object <b><b><a href="scripting-gui.html#currentPageWidget-method">currentPageWidget</a></b></b>()</li>
+<li class="fn">string <b><b><a href="scripting-gui.html#defaultButtonText-method">defaultButtonText</a></b></b>(int <i>wizardButton</i>)</li>
+<li class="fn">object <b><b><a href="scripting-gui.html#findChild-method">findChild</a></b></b>(object <i>parent</i>, string <i>objectName</i>)</li>
+<li class="fn">object[] <b><b><a href="scripting-gui.html#findChildren-method">findChildren</a></b></b>(object <i>parent</i>, string <i>objectName</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-gui.html#isButtonEnabled-method">isButtonEnabled</a></b></b>(int <i>wizardButton</i>)</li>
+<li class="fn">object <b><b><a href="scripting-gui.html#pageById-method">pageById</a></b></b>(int <i>id</i>)</li>
+<li class="fn">object <b><b><a href="scripting-gui.html#pageByObjectName-method">pageByObjectName</a></b></b>(string <i>name</i>)</li>
+<li class="fn">object <b><b><a href="scripting-gui.html#pageWidgetByObjectName-method">pageWidgetByObjectName</a></b></b>(string <i>name</i>)</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#reject-method">reject</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#rejectWithoutPrompt-method">rejectWithoutPrompt</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#setModified-method">setModified</a></b></b>(boolean <i>value</i>)</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#setSettingsButtonEnabled-method">setSettingsButtonEnabled</a></b></b>(boolean <i>enable</i>)</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#showFinishedPage-method">showFinishedPage</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-gui.html#showSettingsButton-method">showSettingsButton</a></b></b>(boolean <i>show</i>)</li>
+</ul>
+<!-- $$$gui-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@gui -->
+<h2>Signal Documentation</h2>
+<!-- $$$finishButtonClicked -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="finishButtonClicked-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="finishButtonClicked-signal"></a><span class="name">finishButtonClicked</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is emitted when the <b>Finish</b> button is clicked.</p>
+</div></div><!-- @@@finishButtonClicked -->
+<br/>
+<!-- $$$gotRestarted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="gotRestarted-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="gotRestarted-signal"></a><span class="name">gotRestarted</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is emitted when the installer is restarted.</p>
+</div></div><!-- @@@gotRestarted -->
+<br/>
+<!-- $$$interrupted -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="interrupted-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="interrupted-signal"></a><span class="name">interrupted</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is emitted when the end user chooses to cancel the installation and quit the installer.</p>
+</div></div><!-- @@@interrupted -->
+<br/>
+<!-- $$$languageChanged -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="languageChanged-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="languageChanged-signal"></a><span class="name">languageChanged</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is emitted when the application language changes.</p>
+</div></div><!-- @@@languageChanged -->
+<br/>
+<!-- $$$settingsButtonClicked -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="settingsButtonClicked-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="settingsButtonClicked-signal"></a><span class="name">settingsButtonClicked</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is emitted when the <b>Settings</b> button is clicked.</p>
+</div></div><!-- @@@settingsButtonClicked -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$cancelButtonClicked -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="cancelButtonClicked-method">
+<td class="tblQmlFuncNode"><p>
+<a name="cancelButtonClicked-method"></a><span class="type">void</span> <span class="name">cancelButtonClicked</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Asks end users whether they want to cancel the operation and quit the installer, uninstaller, or package manager.</p>
+</div></div><!-- @@@cancelButtonClicked -->
+<br/>
+<!-- $$$clickButton -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="clickButton-method">
+<td class="tblQmlFuncNode"><p>
+<a name="clickButton-method"></a><span class="type">void</span> <span class="name">clickButton</span>(<span class="type">int</span> <i>wizardButton</i>, <span class="type">int</span> <i>delayInMs</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Automatically clicks the button specified by <i>wizardButton</i> after a delay in milliseconds specified by <i>delayInMs</i>.</p>
+</div></div><!-- @@@clickButton -->
+<br/>
+<!-- $$$currentPageWidget -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="currentPageWidget-method">
+<td class="tblQmlFuncNode"><p>
+<a name="currentPageWidget-method"></a><span class="type">object</span> <span class="name">currentPageWidget</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the current wizard page.</p>
+</div></div><!-- @@@currentPageWidget -->
+<br/>
+<!-- $$$defaultButtonText -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="defaultButtonText-method">
+<td class="tblQmlFuncNode"><p>
+<a name="defaultButtonText-method"></a><span class="type">string</span> <span class="name">defaultButtonText</span>(<span class="type">int</span> <i>wizardButton</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the default text for the button specified by <i>wizardButton</i>.</p>
+</div></div><!-- @@@defaultButtonText -->
+<br/>
+<!-- $$$findChild -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="findChild-method">
+<td class="tblQmlFuncNode"><p>
+<a name="findChild-method"></a><span class="type">object</span> <span class="name">findChild</span>(<span class="type">object</span> <i>parent</i>, <span class="type">string</span> <i>objectName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the first descendant of <i>parent</i> that has <i>objectName</i> as name.</p>
+<p><b>See also </b>QObject::findChild.</p>
+</div></div><!-- @@@findChild -->
+<br/>
+<!-- $$$findChildren -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="findChildren-method">
+<td class="tblQmlFuncNode"><p>
+<a name="findChildren-method"></a><span class="type">object</span>[] <span class="name">findChildren</span>(<span class="type">object</span> <i>parent</i>, <span class="type">string</span> <i>objectName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns all descendants of <i>parent</i> that have <i>objectName</i> as name.</p>
+<p><b>See also </b>QObject::findChildren.</p>
+</div></div><!-- @@@findChildren -->
+<br/>
+<!-- $$$isButtonEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="isButtonEnabled-method">
+<td class="tblQmlFuncNode"><p>
+<a name="isButtonEnabled-method"></a><span class="type">boolean</span> <span class="name">isButtonEnabled</span>(<span class="type">int</span> <i>wizardButton</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns <code>true</code> if the button specified by <i>wizardButton</i> is enabled. Returns <code>false</code> if a button of the specified type is not found.</p>
+</div></div><!-- @@@isButtonEnabled -->
+<br/>
+<!-- $$$pageById -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pageById-method">
+<td class="tblQmlFuncNode"><p>
+<a name="pageById-method"></a><span class="type">object</span> <span class="name">pageById</span>(<span class="type">int</span> <i>id</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the installer page specified by <i>id</i>. The values of <code>id</code> for the available installer pages are provided by <a href="scripting-qinstaller.html#WizardPage-prop">QInstaller::WizardPage</a>.</p>
+</div></div><!-- @@@pageById -->
+<br/>
+<!-- $$$pageByObjectName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pageByObjectName-method">
+<td class="tblQmlFuncNode"><p>
+<a name="pageByObjectName-method"></a><span class="type">object</span> <span class="name">pageByObjectName</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the installer page specified by <i>name</i>. The value of <code>name</code> is the object name set in the UI file that defines the installer page.</p>
+</div></div><!-- @@@pageByObjectName -->
+<br/>
+<!-- $$$pageWidgetByObjectName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pageWidgetByObjectName-method">
+<td class="tblQmlFuncNode"><p>
+<a name="pageWidgetByObjectName-method"></a><span class="type">object</span> <span class="name">pageWidgetByObjectName</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>For dynamic pages, returns the widget specified by <i>name</i> read from the UI file.</p>
+</div></div><!-- @@@pageWidgetByObjectName -->
+<br/>
+<!-- $$$reject -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="reject-method">
+<td class="tblQmlFuncNode"><p>
+<a name="reject-method"></a><span class="type">void</span> <span class="name">reject</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Quits the installer, uninstaller, or package manager.</p>
+</div></div><!-- @@@reject -->
+<br/>
+<!-- $$$rejectWithoutPrompt -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="rejectWithoutPrompt-method">
+<td class="tblQmlFuncNode"><p>
+<a name="rejectWithoutPrompt-method"></a><span class="type">void</span> <span class="name">rejectWithoutPrompt</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Quits the installer, uninstaller, or package manager without asking end users for confirmation.</p>
+</div></div><!-- @@@rejectWithoutPrompt -->
+<br/>
+<!-- $$$setModified -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setModified-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setModified-method"></a><span class="type">void</span> <span class="name">setModified</span>(<span class="type">boolean</span> <i>value</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"></div></div><!-- @@@setModified -->
+<br/>
+<!-- $$$setSettingsButtonEnabled -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="setSettingsButtonEnabled-method">
+<td class="tblQmlFuncNode"><p>
+<a name="setSettingsButtonEnabled-method"></a><span class="type">void</span> <span class="name">setSettingsButtonEnabled</span>(<span class="type">boolean</span> <i>enable</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Enables the <b>Settings</b> button by setting <i>enable</i> to <code>true</code>.</p>
+</div></div><!-- @@@setSettingsButtonEnabled -->
+<br/>
+<!-- $$$showFinishedPage -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="showFinishedPage-method">
+<td class="tblQmlFuncNode"><p>
+<a name="showFinishedPage-method"></a><span class="type">void</span> <span class="name">showFinishedPage</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Shows the next page.</p>
+</div></div><!-- @@@showFinishedPage -->
+<br/>
+<!-- $$$showSettingsButton -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="showSettingsButton-method">
+<td class="tblQmlFuncNode"><p>
+<a name="showSettingsButton-method"></a><span class="type">void</span> <span class="name">showSettingsButton</span>(<span class="type">boolean</span> <i>show</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Shows the <b>Settings</b> button if <i>show</i> is <code>true</code>.</p>
+</div></div><!-- @@@showSettingsButton -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

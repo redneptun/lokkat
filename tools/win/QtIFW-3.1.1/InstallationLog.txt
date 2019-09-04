@@ -1,0 +1,29 @@
+************************************* Invoked: Sa Aug 31 19:31:24 2019
+[0] Arguments: Z:\home\pboeckmann\wc\lokkat\tools\setups\QtInstallerFramework-win-x86.exe
+[7] Operations sanity check succeeded.
+[16264] Cannot determine available space on device. Volume descriptor: "\\\\?\\Volume{00000000-0000-0000-0000-000000000043}\\", Mount path: "C:\\". Continue silently.
+[19110] perform  operation: Mkdir
+[19110] 	- arguments: C:/Qt
+[19112] Done
+[19114] backup  operation: Mkdir
+[19114] 	- arguments: C:/Qt/QtIFW-3.1.1
+[19114] Done
+[19114] perform  operation: Mkdir
+[19114] 	- arguments: C:/Qt/QtIFW-3.1.1
+[19115] Done
+[19116] Install size: 2 components
+[19124] backup org.qtproject.ifw operation: License
+[19124] 	- arguments:
+[19124] Done
+[19124] perform org.qtproject.ifw operation: License
+[19124] 	- arguments:
+[19126] Done
+[19127] backup org.qtproject.ifw.binaries operation: Extract
+[19127] 	- arguments: installer://org.qtproject.ifw.binaries/3.1.1data.7z, C:\Qt\QtIFW-3.1.1
+[19127] Done
+[19128] perform org.qtproject.ifw.binaries operation: Extract
+[19128] 	- arguments: installer://org.qtproject.ifw.binaries/3.1.1data.7z, C:\Qt\QtIFW-3.1.1
+[22272] Done
+[22284] Writing maintenance tool: "C:\\Qt\\QtIFW-3.1.1/Uninstaller.exe.new"
+[22322] Wrote permissions for maintenance tool.
+[22612] Maintenance tool restart: false.

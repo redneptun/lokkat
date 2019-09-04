@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Installer>
+    <Name>Lokkat</Name>
+    <Version>0.5.0</Version>
+    <Title>Lokkat</Title>
+    <Publisher>redneptun.net</Publisher>
+    <ProductUrl>http://redneptun.net/lokkat</ProductUrl>
+    <InstallerWindowIcon>installericon</InstallerWindowIcon>
+    <InstallerApplicationIcon>installericon</InstallerApplicationIcon>
+    <WizardStyle>Classic</WizardStyle>
+    <Logo>lokkat_64.png</Logo>
+    <Watermark>watermark.png</Watermark>
+    
+    <WizardDefaultWidth>600</WizardDefaultWidth>
+	<MaintenanceToolName>Uninstall</MaintenanceToolName>
+ 
+    <StartMenuDir>Lokkat</StartMenuDir>
+    <AllowNonAsciiCharacters>true</AllowNonAsciiCharacters>
+
+    <TargetDir>@HomeDir@/AppData/Local/Lokkat</TargetDir>
+    <!-- <RemoteRepositories>
+        <Repository>
+            	<Url>http://redneptun.net/static/repos/lokkat/</Url>
+		<DisplayName>Lokkat repository at redneptun.net</DisplayName>
+        </Repository>
+    </RemoteRepositories>-->
+</Installer>

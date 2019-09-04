@@ -1,0 +1,79 @@
+/****************************************************************************
+**
+** Copyright (C) 2017 The Qt Company Ltd.
+** Contact: http://www.qt.io/licensing/
+**
+** This file is part of the Qt Installer Framework.
+**
+** $QT_BEGIN_LICENSE:FDL$
+** Commercial License Usage
+** Licensees holding valid commercial Qt licenses may use this file in
+** accordance with the commercial license agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and The Qt Company. For licensing terms
+** and conditions see http://www.qt.io/terms-conditions. For further
+** information use the contact form at http://www.qt.io/contact-us.
+**
+** GNU Free Documentation License Usage
+** Alternatively, this file may be used under the terms of the GNU Free
+** Documentation License version 1.3 as published by the Free Software
+** Foundation and appearing in the file included in the packaging of
+** this file. Please review the following information to ensure
+** the GNU Free Documentation License version 1.3 requirements
+** will be met: http://www.gnu.org/copyleft/fdl.html.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/*!
+    \example changeuserinterface
+    \ingroup qtifwexamples
+    \title Change Installer UI Example
+
+    \brief Using a component script to modify the installer UI.
+
+    \image qtifw-examples-changeuserinterface.png
+
+    \e {Change Installer UI} demonstrates how to use the \c Component() function
+    to modify the default text for the radio button labels on the
+    \l{License Agreement Page}{license check page}. This example does not install
+    any components, but we specify a dummy component in the package information
+    file, because installers without components are not allowed.
+
+    \include installerfw-examples-configuring.qdocinc
+
+    \quotefile changeuserinterface/config/config.xml
+
+    \include installerfw-examples-packaging.qdocinc
+
+    \list
+        \li The \c <Default> element specifies whether the component is
+            preselected for installation in the user interface by default.
+        \li The \c <Script> element specifies the file name of the JavaScript
+            file that is loaded to perform operations.
+        \li The \c <Licenses> element specifies the \c name of the license
+            agreement to be accepted by the end user and the filename of the
+            \c file that contains the license.
+    \endlist
+
+    \quotefile changeuserinterface/packages/org.qtproject.ifw.example.changeuserinterface/meta/package.xml
+
+    \section1 Modifying UI Text
+
+    In installscript.qs, we call the \c Component() function to add the license
+    check page and to connect to the \c changeLicenseLabels signal when end
+    users enter the page:
+
+    \quotefromfile changeuserinterface/packages/org.qtproject.ifw.example.changeuserinterface/meta/installscript.qs
+    \skipto Component()
+    \printuntil }
+
+    We use the \c changeLicenseLabels function to change the text labels for the
+    accept and reject license radio buttons on the page:
+
+    \printuntil }
+
+    \note Do not use the \c Component() function to add translations.
+
+    \include installerfw-examples-generating.qdocinc
+*/

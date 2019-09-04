@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="256"
+   height="128"
+   viewBox="0 0 67.733332 33.866668"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="lokkat_help_logo.svg"
+   inkscape:export-filename="/home/pboeckmann/wc/derpotp/icons/catlock_256.png"
+   inkscape:export-xdpi="192.00002"
+   inkscape:export-ydpi="192.00002">
+  <defs
+     id="defs2">
+    <linearGradient
+       id="linearGradient5479"
+       inkscape:collect="always">
+      <stop
+         id="stop5487"
+         offset="0"
+         style="stop-color:#000000;stop-opacity:1" />
+      <stop
+         id="stop5489"
+         offset="1"
+         style="stop-color:#1d1d1d;stop-opacity:0.04149378" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient5479-7">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.99170125"
+         offset="0"
+         id="stop5475" />
+      <stop
+         style="stop-color:#1d1d1d;stop-opacity:1"
+         offset="1"
+         id="stop5477" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1729">
+      <stop
+         style="stop-color:#fcfcfc;stop-opacity:1"
+         offset="0"
+         id="stop1725" />
+      <stop
+         style="stop-color:#6a6a6a;stop-opacity:0.97254902"
+         offset="1"
+         id="stop1727" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1674">
+      <stop
+         style="stop-color:#00ff3d;stop-opacity:1;"
+         offset="0"
+         id="stop1670" />
+      <stop
+         style="stop-color:#00ff3d;stop-opacity:0;"
+         offset="1"
+         id="stop1672" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient1662"
+       inkscape:collect="always">
+      <stop
+         id="stop1658"
+         offset="0"
+         style="stop-color:#00ff3d;stop-opacity:1" />
+      <stop
+         id="stop1660"
+         offset="1"
+         style="stop-color:#005000;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1662"
+       id="radialGradient1625"
+       cx="24.15921"
+       cy="279.13525"
+       fx="24.15921"
+       fy="279.13525"
+       r="2.8871067"
+       gradientTransform="matrix(0.95293409,0.38927033,-0.42510787,1.0406644,120.88177,-19.777883)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1662"
+       id="radialGradient1668"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.95293409,0.38927033,0.42510787,1.0406644,-81.627699,-19.777883)"
+       cx="24.15921"
+       cy="279.13525"
+       fx="24.15921"
+       fy="279.13525"
+       r="2.8871067" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1674"
+       id="radialGradient1676"
+       cx="17.469883"
+       cy="292.40405"
+       fx="17.469883"
+       fy="292.40405"
+       r="1.7987815"
+       gradientTransform="matrix(1.186136,0,0,0.77066295,-1.0266531,65.843122)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1729"
+       id="radialGradient1731"
+       cx="12.151052"
+       cy="281.79477"
+       fx="12.151052"
+       fy="281.79477"
+       r="11.642704"
+       gradientTransform="matrix(0.77541596,0,0,0.72309909,5.8315201,78.387783)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1662"
+       id="radialGradient1749"
+       cx="17.375673"
+       cy="282.79437"
+       fx="17.375673"
+       fy="282.79437"
+       r="1.649286"
+       gradientTransform="matrix(1.1453029,0,0,2.4535108,-0.25693522,-409.34559)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5479-7"
+       id="radialGradient5483"
+       cx="15.43821"
+       cy="260.8161"
+       fx="15.43821"
+       fy="260.8161"
+       r="8.598341"
+       gradientTransform="matrix(1.5187519,-0.21904786,0.06135489,0.42539955,-21.476302,160.0561)"
+       gradientUnits="userSpaceOnUse" />
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5479"
+       id="radialGradient5492"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.3706067,-0.9041032,0.9576228,0.39254526,-253.26676,180.22156)"
+       cx="14.446234"
+       cy="279.81064"
+       fx="14.446234"
+       fy="279.81064"
+       r="8.598341" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="86.510155"
+     inkscape:cy="50.456798"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:snap-global="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-page="true"
+     inkscape:window-width="1600"
+     inkscape:window-height="824"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-263.13332)">
+    <rect
+       style="opacity:1;fill:#1f5f93;fill-opacity:0.9847095;stroke:none;stroke-width:0.26458333;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect886"
+       width="37.75182"
+       height="33.876411"
+       x="1.937704"
+       y="263.1904"
+       ry="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.73514128px;line-height:1;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#fffefd;fill-opacity:1;stroke:none;stroke-width:0.16837853;"
+       x="-131.44675"
+       y="244.57431"
+       id="text885"
+       transform="rotate(-25.163682)"><tspan
+         sodipodi:role="line"
+         id="tspan883"
+         x="-131.44675"
+         y="244.57431"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="251.44963"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan887">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="258.32492"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan889">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="265.20023"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan891">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="272.07556"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan893">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="278.95087"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan895">?????????????????</tspan><tspan
+         sodipodi:role="line"
+         x="-131.44675"
+         y="285.82617"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Ani;-inkscape-font-specification:Ani;fill:#fffefd;stroke-width:0.16837853;fill-opacity:1;"
+         id="tspan897">?????????????????</tspan></text>
+    <path
+       style="fill:url(#radialGradient1731);fill-opacity:1;stroke:#000000;stroke-width:0.22427474px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 17.375276,278.12079 -1.132758,-1.6425 -2.605346,-1.13277 -2.293836,-0.48143 -1.132758,2.54871 c 0,0 0.113272,3.20005 0.169913,3.31333 0.05664,0.11333 0.28319,1.81241 0.28319,1.81241 l -0.6796544,2.77526 0.5097414,4.02128 1.415947,1.52922 2.407112,2.06731 4.502716,1.33097 4.162887,-0.53805 c 0,0 3.143407,-1.64249 3.31332,-1.72745 0.169913,-0.0849 2.492067,-2.60534 2.492067,-2.60534 l 0.707975,-2.35049 -0.02832,-2.6903 -0.877888,-1.81241 0.623016,-1.98232 0.08496,-3.34164 -1.047804,-2.35049 -0.736292,0.1416 -1.840733,0.59471 -1.784095,0.56637 -1.6425,0.99117 -0.339826,1.21771 z"
+       id="path1664"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.08880568;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 19.654686,266.77175 c -4.335806,0 -7.809163,3.61246 -7.992324,8.02013 0.638727,0.0437 1.872786,0.30466 3.080179,0.87517 v -0.5094 c 0,-3.00705 2.213093,-5.29705 4.912145,-5.29705 2.69905,0 4.912598,2.29 4.912598,5.29705 v 0.52992 c 1.195534,-0.57198 2.423177,-0.84043 3.079725,-0.89249 -0.181625,-4.4091 -3.655477,-8.02333 -7.992323,-8.02333 z"
+       id="rect1521"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="opacity:1;fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.11308944;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 11.522776,274.78399 c -0.136889,-0.002 -0.232751,0.007 -0.277536,0.0298 -0.352172,0.17489 -2.172935,3.35974 -0.405879,7.8199 a 9.8080357,8.0881437 0 0 0 -0.9408185,3.43434 9.8080357,8.0881437 0 0 0 9.8083245,8.0881 9.8080357,8.0881437 0 0 0 9.807961,-8.0881 9.8080357,8.0881437 0 0 0 -0.977487,-3.50372 c 1.721008,-4.42385 -0.08321,-7.57653 -0.433561,-7.75052 -0.358273,-0.17795 -3.985699,0.40022 -5.732278,2.49098 -0.243134,0.29105 -0.300907,0.60906 -0.221093,0.94046 a 9.8080357,8.0881437 0 0 0 -2.443542,-0.26566 9.8080357,8.0881437 0 0 0 -2.509693,0.27358 c 0.08268,-0.33429 0.02542,-0.655 -0.219656,-0.94838 -1.528253,-1.8294 -4.49652,-2.50076 -5.454742,-2.52083 z"
+       id="path1379"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59658074;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.349504,287.04407 c 1.115604,-0.37187 1.998794,-0.8367 3.160883,-0.46484"
+       id="path1381"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1383"
+       d="M 10.945022,287.04407 C 9.8294192,286.6722 8.9462295,286.20737 7.7841403,286.57923"
+       style="fill:none;stroke:#000000;stroke-width:0.59658074;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1385"
+       d="m 28.34217,288.48611 c 1.175546,0.0307 2.164301,-0.10518 3.129989,0.64067"
+       style="fill:none;stroke:#000000;stroke-width:0.59658074;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.59658074;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 11.27724,288.43963 c -1.175546,0.0307 -2.1643001,-0.10518 -3.1299887,0.64066"
+       id="path1387"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="fill:url(#radialGradient1625);fill-opacity:1;stroke:#000000;stroke-width:0.54758364;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 27.381421,281.33373 c 1.19315,-2.83888 0.02773,-4.87845 -0.194233,-4.9887 -0.221983,-0.11033 -2.469544,0.24805 -3.551703,1.54347 -1.08216,1.2954 3.745936,3.44523 3.745936,3.44523 z"
+       id="path1394"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="fill:#005000;fill-opacity:1;stroke:none;stroke-width:0.18406555px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 19.695002,289.48443 c -0.276058,0.2828 -1.194125,0.81262 -1.998837,0.66255 0.161627,1.31364 0.940973,2.13311 1.998837,2.1261 1.05805,0.007 1.837192,-0.8123 1.998837,-2.1261 -0.804713,0.15007 -1.722779,-0.37975 -1.998837,-0.66255 z"
+       id="path1495"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       id="path1500"
+       d="m 19.695001,289.80275 c -0.392776,0 -1.593031,-0.0535 -1.98656,0.65849 -0.63629,1.15129 0.935194,2.12001 1.98656,2.11305 1.051549,0.008 2.622841,-0.96159 1.986558,-2.11305 -0.393483,-0.71207 -1.593784,-0.65849 -1.986558,-0.65849 z"
+       style="fill:url(#radialGradient1676);fill-opacity:1;stroke:none;stroke-width:0.18293498px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="sscss"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18406555px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 16.481404,287.76778 c -0.455193,1.22271 -0.04892,1.89711 0.575924,2.15812 0.112366,2.00931 1.301311,3.04667 2.626171,3.04391 v 8.4e-4 c 0.004,5e-5 0.0077,-4e-4 0.0115,-3.6e-4 0.004,-4e-5 0.0079,4.1e-4 0.01186,3.6e-4 v -8.4e-4 c 1.324859,0.002 2.513807,-1.0346 2.62617,-3.04391 0.624853,-0.26101 1.031118,-0.93541 0.575925,-2.15812 0.207572,1.95812 -2.316759,2.10382 -3.213959,0.29876 -0.897199,1.80506 -3.421172,1.65936 -3.213599,-0.29876 z m 3.213598,1.71665 c 0.276058,0.2828 1.194124,0.81262 1.998837,0.66255 -0.161645,1.3138 -0.940787,2.13328 -1.998837,2.1261 -1.057864,0.007 -1.83721,-0.81246 -1.998837,-2.1261 0.804712,0.15007 1.722779,-0.37975 1.998837,-0.66255 z"
+       id="path1440"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.11308944;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 20.672703,287.4973 c 0,0.16337 -0.225658,0.19509 -0.402613,0.30216 -0.176955,0.10709 -0.305209,0.28948 -0.575236,0.28948 -0.270026,0 -0.375039,-0.1708 -0.551993,-0.27786 -0.176956,-0.1071 -0.425856,-0.15039 -0.425855,-0.31378 5e-6,-0.32674 0.4378,-0.59163 0.977848,-0.59163 0.540049,0 0.977845,0.26489 0.977849,0.59163 z"
+       id="path1445"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssscsc"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#radialGradient5483);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.67677999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 19.654686,267.47863 c -3.967451,0 -7.154114,3.31931 -7.288179,7.41131 0.477865,0.0917 1.059916,0.24484 1.669154,0.47567 v -0.20796 c 0,-3.36473 2.518561,-6.00166 5.619025,-6.00166 3.100463,0 5.61948,2.63693 5.61948,6.00166 v 0.22391 c 0.605578,-0.23228 1.188821,-0.39019 1.669153,-0.48478 -0.130746,-4.09512 -3.318976,-7.41815 -7.288633,-7.41815 z"
+       id="rect1531"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.59580165;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 19.615157,279.47493 a 1.618617,1.618617 0 0 0 -1.618486,1.61849 1.618617,1.618617 0 0 0 0.930175,1.46314 l -0.219399,2.58595 h 2.044378 l -0.34272,-2.64091 a 1.618617,1.618617 0 0 0 0.824538,-1.40818 1.618617,1.618617 0 0 0 -1.618486,-1.61849 z"
+       id="circle1556"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <g
+       id="g1588"
+       transform="matrix(0.88251579,0,0,0.88251579,4.5296972,33.649897)"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137">
+      <circle
+         style="opacity:1;fill:#000000;fill-opacity:0.99585063;stroke:none;stroke-width:1.21985495;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1485"
+         cx="11.282221"
+         cy="285.15738"
+         r="3.3139849" />
+      <circle
+         r="2.7170613"
+         cy="285.15738"
+         cx="11.282221"
+         id="circle1487"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.00013149;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <ellipse
+         ry="2.345839"
+         rx="1.9206158"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.7813164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="circle1489"
+         cx="11.282221"
+         cy="285.18057" />
+      <ellipse
+         cy="285.18057"
+         cx="11.282221"
+         id="ellipse1565"
+         style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.7813164;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         rx="1.9206158"
+         ry="2.345839" />
+    </g>
+    <circle
+       style="opacity:1;fill:#000000;fill-opacity:0.99585063;stroke:none;stroke-width:1.07654119;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="circle1590"
+       cx="24.953148"
+       cy="285.30582"
+       r="2.9246438"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <circle
+       r="2.3978496"
+       cy="285.30582"
+       cx="24.953148"
+       id="circle1592"
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.88263172;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <ellipse
+       ry="2.07024"
+       rx="1.6949738"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.68952411;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="ellipse1594"
+       cx="24.953148"
+       cy="285.32626"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1666"
+       d="m 11.872633,281.33373 c -1.193149,-2.83888 -0.02773,-4.87845 0.194235,-4.9887 0.221982,-0.11033 2.469544,0.24805 3.551704,1.54347 1.082158,1.2954 -3.745939,3.44523 -3.745939,3.44523 z"
+       style="fill:url(#radialGradient1668);fill-opacity:1;stroke:#000000;stroke-width:0.54758364;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <ellipse
+       cy="285.32626"
+       cx="24.953148"
+       id="ellipse1690"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.68952411;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       rx="1.6949738"
+       ry="2.07024"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path1733"
+       d="m 19.643476,279.91759 a 1.4628368,1.4628368 0 0 0 -1.462718,1.46272 1.4628368,1.4628368 0 0 0 0.840654,1.32231 l -0.198284,2.33706 h 1.847621 l -0.309739,-2.38673 a 1.4628368,1.4628368 0 0 0 0.745184,-1.27264 1.4628368,1.4628368 0 0 0 -1.462718,-1.46272 z"
+       style="opacity:1;fill:url(#radialGradient1749);fill-opacity:1;stroke:none;stroke-width:0.53846002;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5485"
+       d="m 19.654686,267.47863 c -3.967451,0 -7.154114,3.31931 -7.288179,7.41131 0.477865,0.0917 1.059916,0.24484 1.669154,0.47567 v -0.20796 c 0,-3.36473 2.518561,-6.00166 5.619025,-6.00166 3.100463,0 5.61948,2.63693 5.61948,6.00166 v 0.22391 c 0.605578,-0.23228 1.188821,-0.39019 1.669153,-0.48478 -0.130746,-4.09512 -3.318976,-7.41815 -7.288633,-7.41815 z"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:url(#radialGradient5492);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.67677999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:start;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:start;white-space:normal;shape-padding:0;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:0.48132779;fill-rule:nonzero;stroke:none;stroke-width:1.67677999;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       d="m 19.695316,267.79767 c -3.821912,0 -6.843109,3.14694 -7.076481,7.14612 0.245319,0.0541 0.510414,0.12376 0.789342,0.20938 v -0.11129 c 0,-3.37529 3.286596,-6.37036 6.328753,-6.37036 3.020663,0 6.116494,3.14693 6.160109,6.49564 0.300463,-0.094 0.585492,-0.16919 0.847602,-0.2269 -0.28165,-3.95139 -3.263227,-7.14263 -7.049325,-7.14263 z"
+       id="path5498"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <path
+       style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.44077936;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 34.055034,268.52041 a 2.9451719,7.6178009 0 0 0 -2.944919,7.61791 2.9451719,7.6178009 0 0 0 1.623803,6.79876 c -0.724787,0.73017 -2.181423,1.38507 -2.181423,1.38507 1.440117,0.034 2.331531,-0.32017 2.885347,-0.73897 a 2.9451719,7.6178009 0 0 0 0.617192,0.17303 2.9451719,7.6178009 0 0 0 2.945359,-7.61789 2.9451719,7.6178009 0 0 0 -2.945359,-7.61791 z"
+       id="path864"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot871"
+       style="font-style:normal;font-weight:normal;font-size:5.33333349px;line-height:1.25;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.82206268,0,0,0.82206268,-72.394293,254.08426)"
+       inkscape:export-filename="/home/pboeckmann/wc/lokkat/res/img/lokkat_help_logo.png"
+       inkscape:export-xdpi="299.9137"
+       inkscape:export-ydpi="299.9137"><flowRegion
+         id="flowRegion873"
+         style="text-align:center;text-anchor:middle"><rect
+           id="rect875"
+           width="11.607142"
+           height="50"
+           x="123.75"
+           y="20.321428"
+           style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle"
+         id="flowPara884">何</flowPara><flowPara
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';text-align:center;text-anchor:middle"
+         id="flowPara873">?!</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot875"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       transform="matrix(0.26458333,0,0,0.26458333,0,263.13332)"><flowRegion
+         id="flowRegion877"><rect
+           id="rect879"
+           width="155.81602"
+           height="129.29953"
+           x="12.374369"
+           y="-9.6332836" /></flowRegion><flowPara
+         id="flowPara881">???????????????????</flowPara></flowRoot>  </g>
+</svg>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>ReadyForInstallationPage Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ReadyForInstallationPage</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#reimplemented-protected-functions">Reimplemented Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ReadyForInstallationPage Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-readyforinstallationpage.html">QInstaller::ReadyForInstallationPage</a>)<br/></span>
+<!-- $$$ReadyForInstallationPage-brief -->
+<p>The <a href="qinstaller-readyforinstallationpage.html">ReadyForInstallationPage</a> class informs end users that the installation can begin. <a href="#details">More...</a></p>
+<!-- @@@ReadyForInstallationPage -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;ReadyForInstallationPage&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></td></tr></table></div><ul>
+<li><a href="qinstaller-readyforinstallationpage-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-readyforinstallationpage.html#ReadyForInstallationPage">ReadyForInstallationPage</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+</table></div>
+<ul>
+<li class="fn">14 public functions inherited from <a href="qinstaller-packagemanagerpage.html#public-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="reimplemented-protected-functions"></a>
+<h2 id="reimplemented-protected-functions">Reimplemented Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-readyforinstallationpage.html#entering">entering</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-readyforinstallationpage.html#leaving">leaving</a></b>()</td></tr>
+</table></div>
+<ul>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li class="fn">2 signals inherited from <a href="qinstaller-packagemanagerpage.html#signals">QInstaller::PackageManagerPage</a></li>
+<li class="fn">6 protected functions inherited from <a href="qinstaller-packagemanagerpage.html#protected-functions">QInstaller::PackageManagerPage</a></li>
+</ul>
+<a name="details"></a>
+<!-- $$$ReadyForInstallationPage-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-readyforinstallationpage.html">ReadyForInstallationPage</a> class informs end users that the installation can begin.</p>
+</div>
+<!-- @@@ReadyForInstallationPage -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ReadyForInstallationPage[overload1]$$$ReadyForInstallationPagePackageManagerCore* -->
+<h3 class="fn" id="ReadyForInstallationPage"><a name="ReadyForInstallationPage"></a>ReadyForInstallationPage::<span class="name">ReadyForInstallationPage</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Constructs a ready for installation page with <i>core</i> as parent.</p>
+<!-- @@@ReadyForInstallationPage -->
+<!-- $$$entering[overload1]$$$entering -->
+<h3 class="fn" id="entering"><a name="entering"></a><code>[virtual protected] </code><span class="type">void</span> ReadyForInstallationPage::<span class="name">entering</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#entering">PackageManagerPage::entering</a>().</p>
+<p>Initializes the page's fields based on values from fields on previous pages. The text to display depends on whether the page is being used in an installer, updater, or uninstaller.</p>
+<!-- @@@entering -->
+<!-- $$$leaving[overload1]$$$leaving -->
+<h3 class="fn" id="leaving"><a name="leaving"></a><code>[virtual protected] </code><span class="type">void</span> ReadyForInstallationPage::<span class="name">leaving</span>()</h3>
+<p>Reimplemented from <a href="qinstaller-packagemanagerpage.html#leaving">PackageManagerPage::leaving</a>().</p>
+<p>Called when end users leave the page and the <a href="qinstaller-packagemanagergui.html">PackageManagerGui</a>:currentPageChanged() signal is triggered.</p>
+<!-- @@@leaving -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

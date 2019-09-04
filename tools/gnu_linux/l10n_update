@@ -1,0 +1,2 @@
+lupdate gui/gui.ui -ts res/l10n/gui_de.ts res/l10n/gui_en.ts
+lupdate gui/about.ui -ts res/l10n/about_de.ts res/l10n/about_en.ts

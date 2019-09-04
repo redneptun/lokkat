@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-using.qdoc -->
+  <title>Initial Installation | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Initial Installation</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-use-cases.html" />
+  <link rel="next" href="ifw-use-cases-add.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-use-cases.html">End User Workflows</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-add.html">Adding Components</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#starting-installer">Starting Installer</a></li>
+<li class="level1"><a href="#selecting-target-directory">Selecting Target Directory</a></li>
+<li class="level1"><a href="#selecting-components">Selecting Components</a></li>
+<li class="level1"><a href="#accepting-license-agreements">Accepting License Agreements</a></li>
+<li class="level1"><a href="#selecting-windows-program-group">Selecting Windows Program Group</a></li>
+<li class="level1"><a href="#installing-components">Installing Components</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Initial Installation</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-use-cases-install.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The following image illustrates the default workflow for installing applications:</p>
+<p class="centerAlign"><img src="images/ifw-user-flow-installing.png" alt="&quot;Installation workflow&quot;" /></p><p>This section uses the <i>Your Application Installer</i> example run on OS X to illustrate the default workflow for end users. The installers have the native look and feel on each supported desktop platform, and therefore they look and feel different when run on Linux and Windows.</p>
+<p>The example files are stored in the <code>examples\tutorial</code> directory in the Qt Installer Framework repository. You can use the <code>binarycreator</code> tool to create <i>Your Application Installer</i>.</p>
+<a name="starting-installer"></a>
+<h2 id="starting-installer">Starting Installer</h2>
+<p>When end users start the installer, the introduction page opens:</p>
+<p class="centerAlign"><img src="images/ifw-introduction-page.png" alt="&quot;Introduction page&quot;" /></p><p>You specify the name of the installer and the product to install in the <code>config.xml</code> configuration file.</p>
+<p>When end users select <b>Continue</b>, the target directory selection page opens.</p>
+<a name="selecting-target-directory"></a>
+<h2 id="selecting-target-directory">Selecting Target Directory</h2>
+<p>End users must specify the target directory for the installation. You can specify a default value in the <code>config.xml</code> configuration file.</p>
+<p class="centerAlign"><img src="images/ifw-target-directory-page.png" alt="&quot;Target directory selection page&quot;" /></p><p>When end users select <b>Continue</b>, the component selection page opens.</p>
+<p>If the directory already contains files, a warning page opens:</p>
+<p class="centerAlign"><img src="images/ifw-warning-existing-installation.png" alt="&quot;Warning page&quot;" /></p><a name="selecting-components"></a>
+<h2 id="selecting-components">Selecting Components</h2>
+<p>The component selection page lists the components available for installation and a short description of each component. End users select the components to install. They can select <b>Select All</b> to select all components, <b>Deselect All</b> to deselect them, or <b>Default</b> to revert to the default selection.</p>
+<p class="centerAlign"><img src="images/ifw-select-components.png" alt="&quot;Component selection page&quot;" /></p><p>You add the installable components to the <code>data</code> directory in the package directory. You specify information about the components in the <code>package.xml</code> file in the <code>meta</code> directory.</p>
+<p>You can use a boolean operator or a script to specify whether a component is selected by default.</p>
+<p>When end users select <b>Continue</b>, the license check page opens.</p>
+<a name="accepting-license-agreements"></a>
+<h2 id="accepting-license-agreements">Accepting License Agreements</h2>
+<p>On the license check page, end users must accept the terms of the license agreement for the installation to continue.</p>
+<p class="centerAlign"><img src="images/ifw-license-check-page.png" alt="&quot;License check page&quot;" /></p><p>The license check page is displayed, if you specify a license file in the <code>package.xml</code> file and copy the file to the <code>meta</code> directory.</p>
+<a name="selecting-windows-program-group"></a>
+<h2 id="selecting-windows-program-group">Selecting Windows Program Group</h2>
+<p>On Windows, the Start menu directory selection page enables end users to select the program group for the product in the Windows <b>Start</b> menu.</p>
+<p class="centerAlign"><img src="images/ifw-win-program-group.png" alt="&quot;Start menu directory selection page&quot;" /></p><p>You specify a default value for the program group in the <code>config.xml</code> configuration file.</p>
+<p>When end users select <b>Next</b>, the ready for installation page opens.</p>
+<a name="installing-components"></a>
+<h2 id="installing-components">Installing Components</h2>
+<p>The ready for installation page informs end users that the installation can begin when users select <b>Install</b>.</p>
+<p class="centerAlign"><img src="images/ifw-ready-for-installation.png" alt="&quot;Ready for installation page&quot;" /></p><p>During the installation, the perform installation page displays information about how the installation is progressing. End users can select <b>Show Details</b> to view more information.</p>
+<p class="centerAlign"><img src="images/ifw-perform-installation.png" alt="&quot;Perform installation page&quot;" /></p><p>When the installation is complete, the installation finished page opens.</p>
+<p class="centerAlign"><img src="images/ifw-installation-finished.png" alt="&quot;Installation finished page&quot;" /></p><p>To this page, you can add the option to start the installed product upon closing the installer. You specify the product to start and the text to display in the <code>config.xml</code> configuration file.</p>
+</div>
+<!-- @@@ifw-use-cases-install.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-use-cases.html">End User Workflows</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-add.html">Adding Components</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagergui.cpp -->
+  <title>PackageManagerGui Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >PackageManagerGui</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#protected-slots">Protected Slots</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">PackageManagerGui Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-packagemanagergui.html">QInstaller::PackageManagerGui</a>)<br/></span>
+<!-- $$$PackageManagerGui-brief -->
+<p>The <a href="qinstaller-packagemanagergui.html">PackageManagerGui</a> class provides the core functionality for non-interactive installations. <a href="#details">More...</a></p>
+<!-- @@@PackageManagerGui -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;PackageManagerGui&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-packagemanagergui-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#PackageManagerGui">PackageManagerGui</a></b>(PackageManagerCore *<i>core</i>, QWidget *<i>parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#dtor.PackageManagerGui">~PackageManagerGui</a></b>() = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#callControlScriptMethod">callControlScriptMethod</a></b>(const QString &amp;<i>methodName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#clickButton">clickButton</a></b>(int <i>wb</i>, int <i>delay</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#currentPageWidget">currentPageWidget</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#defaultButtonText">defaultButtonText</a></b>(int <i>wizardButton</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#isButtonEnabled">isButtonEnabled</a></b>(int <i>wb</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#isSilent">isSilent</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#loadControlScript">loadControlScript</a></b>(const QString &amp;<i>scriptPath</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#pageById">pageById</a></b>(int <i>id</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#pageByObjectName">pageByObjectName</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#pageWidgetByObjectName">pageWidgetByObjectName</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setSettingsButtonEnabled">setSettingsButtonEnabled</a></b>(bool <i>enabled</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setSilent">setSilent</a></b>(bool <i>silent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setTextItems">setTextItems</a></b>(QObject *<i>object</i>, const QStringList &amp;<i>items</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#showSettingsButton">showSettingsButton</a></b>(bool <i>show</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#updateButtonLayout">updateButtonLayout</a></b>()</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#cancelButtonClicked">cancelButtonClicked</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#reject">reject</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#rejectWithoutPrompt">rejectWithoutPrompt</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setMaxSize">setMaxSize</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#showFinishedPage">showFinishedPage</a></b>()</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#finishButtonClicked">finishButtonClicked</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#gotRestarted">gotRestarted</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#interrupted">interrupted</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#languageChanged">languageChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#settingsButtonClicked">settingsButtonClicked</a></b>()</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QWizard::WizardStyle </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#getStyle">getStyle</a></b>(const QString &amp;<i>name</i>)</td></tr>
+</table></div>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#event">event</a></b>(QEvent *<i>event</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#executeControlScript">executeControlScript</a></b>(int <i>pageId</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PackageManagerCore *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#packageManagerCore">packageManagerCore</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#showEvent">showEvent</a></b>(QShowEvent *<i>event</i>)</td></tr>
+</table></div>
+<a name="protected-slots"></a>
+<h2 id="protected-slots">Protected Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setAutomatedPageSwitchEnabled">setAutomatedPageSwitchEnabled</a></b>(bool <i>request</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#setValidatorForCustomPageRequested">setValidatorForCustomPageRequested</a></b>(QInstaller::Component *<i>component</i>, const QString &amp;<i>name</i>, const QString &amp;<i>callbackName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#wizardPageInsertionRequested">wizardPageInsertionRequested</a></b>(QWidget *<i>widget</i>, QInstaller::PackageManagerCore::WizardPage <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#wizardPageRemovalRequested">wizardPageRemovalRequested</a></b>(QWidget *<i>widget</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#wizardPageVisibilityChangeRequested">wizardPageVisibilityChangeRequested</a></b>(bool <i>visible</i>, int <i>p</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#wizardWidgetInsertionRequested">wizardWidgetInsertionRequested</a></b>(QWidget *<i>widget</i>, QInstaller::PackageManagerCore::WizardPage <i>page</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-packagemanagergui.html#wizardWidgetRemovalRequested">wizardWidgetRemovalRequested</a></b>(QWidget *<i>widget</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$PackageManagerGui-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-packagemanagergui.html">PackageManagerGui</a> class provides the core functionality for non-interactive installations.</p>
+</div>
+<!-- @@@PackageManagerGui -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$PackageManagerGui[overload1]$$$PackageManagerGuiPackageManagerCore*QWidget* -->
+<h3 class="fn" id="PackageManagerGui"><a name="PackageManagerGui"></a>PackageManagerGui::<span class="name">PackageManagerGui</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>, <span class="type">QWidget</span> *<i>parent</i> = 0)</h3>
+<p>Constructs a package manager UI with package manager specified by <i>core</i> and <i>parent</i> as parent.</p>
+<!-- @@@PackageManagerGui -->
+<!-- $$$~PackageManagerGui[overload1]$$$~PackageManagerGui -->
+<h3 class="fn" id="dtor.PackageManagerGui"><a name="dtor.PackageManagerGui"></a><code>[pure virtual] </code>PackageManagerGui::<span class="name">~PackageManagerGui</span>()</h3>
+<p>Destructs a package manager UI.</p>
+<!-- @@@~PackageManagerGui -->
+<!-- $$$callControlScriptMethod[overload1]$$$callControlScriptMethodconstQString& -->
+<h3 class="fn" id="callControlScriptMethod"><a name="callControlScriptMethod"></a><span class="type">void</span> PackageManagerGui::<span class="name">callControlScriptMethod</span>(const <span class="type">QString</span> &amp;<i>methodName</i>)</h3>
+<p>Calls the control script method specified by <i>methodName</i>.</p>
+<!-- @@@callControlScriptMethod -->
+<!-- $$$cancelButtonClicked[overload1]$$$cancelButtonClicked -->
+<h3 class="fn" id="cancelButtonClicked"><a name="cancelButtonClicked"></a><code>[slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">cancelButtonClicked</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#cancelButtonClicked-method">gui.cancelButtonClicked</a>.</p>
+<!-- @@@cancelButtonClicked -->
+<!-- $$$clickButton[overload1]$$$clickButtonintint -->
+<h3 class="fn" id="clickButton"><a name="clickButton"></a><span class="type">void</span> PackageManagerGui::<span class="name">clickButton</span>(<span class="type">int</span> <i>wb</i>, <span class="type">int</span> <i>delay</i> = 0)</h3>
+<p>Clicks the button specified by <i>wb</i> after the delay specified by <i>delay</i>.</p>
+<p><b>See also </b><a href="scripting-gui.html#clickButton-method">gui.clickButton</a>.</p>
+<!-- @@@clickButton -->
+<!-- $$$currentPageWidget[overload1]$$$currentPageWidget -->
+<h3 class="fn" id="currentPageWidget"><a name="currentPageWidget"></a><span class="type">QWidget</span> *PackageManagerGui::<span class="name">currentPageWidget</span>() const</h3>
+<p><b>See also </b><a href="scripting-gui.html#currentPageWidget-method">gui.currentPageWidget</a>.</p>
+<!-- @@@currentPageWidget -->
+<!-- $$$defaultButtonText[overload1]$$$defaultButtonTextint -->
+<h3 class="fn" id="defaultButtonText"><a name="defaultButtonText"></a><span class="type">QString</span> PackageManagerGui::<span class="name">defaultButtonText</span>(<span class="type">int</span> <i>wizardButton</i>) const</h3>
+<p>Returns the default text for the button specified by <i>wizardButton</i>.</p>
+<p><b>See also </b><a href="scripting-gui.html#defaultButtonText-method">gui.defaultButtonText</a>.</p>
+<!-- @@@defaultButtonText -->
+<!-- $$$event[overload1]$$$eventQEvent* -->
+<h3 class="fn" id="event"><a name="event"></a><code>[protected] </code><span class="type">bool</span> PackageManagerGui::<span class="name">event</span>(<span class="type">QEvent</span> *<i>event</i>)</h3>
+<!-- @@@event -->
+<!-- $$$executeControlScript[overload1]$$$executeControlScriptint -->
+<h3 class="fn" id="executeControlScript"><a name="executeControlScript"></a><code>[protected] </code><span class="type">void</span> PackageManagerGui::<span class="name">executeControlScript</span>(<span class="type">int</span> <i>pageId</i>)</h3>
+<p>Executes the control script on the page specified by <i>pageId</i>.</p>
+<!-- @@@executeControlScript -->
+<!-- $$$finishButtonClicked[overload1]$$$finishButtonClicked -->
+<h3 class="fn" id="finishButtonClicked"><a name="finishButtonClicked"></a><code>[signal] </code><span class="type">void</span> PackageManagerGui::<span class="name">finishButtonClicked</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#finishButtonClicked-signal">gui.finishButtonClicked</a>.</p>
+<!-- @@@finishButtonClicked -->
+<!-- $$$getStyle[overload1]$$$getStyleconstQString& -->
+<h3 class="fn" id="getStyle"><a name="getStyle"></a><code>[static] </code><span class="type">QWizard::WizardStyle</span> PackageManagerGui::<span class="name">getStyle</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Returns the style of the package manager UI depending on <i>name</i>:</p>
+<ul>
+<li><code>Classic</code> - Classic UI style for Windows 7 and earlier.</li>
+<li><code>Modern</code> - Modern UI style for Windows 8.</li>
+<li><code>Mac</code> - UI style for OS X.</li>
+<li><code>Aero</code> - Aero Peek for Windows 7.</li>
+</ul>
+<!-- @@@getStyle -->
+<!-- $$$gotRestarted[overload1]$$$gotRestarted -->
+<h3 class="fn" id="gotRestarted"><a name="gotRestarted"></a><code>[signal] </code><span class="type">void</span> PackageManagerGui::<span class="name">gotRestarted</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#gotRestarted-signal">gui.gotRestarted</a>.</p>
+<!-- @@@gotRestarted -->
+<!-- $$$interrupted[overload1]$$$interrupted -->
+<h3 class="fn" id="interrupted"><a name="interrupted"></a><code>[signal] </code><span class="type">void</span> PackageManagerGui::<span class="name">interrupted</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#interrupted-signal">gui.interrupted</a>.</p>
+<!-- @@@interrupted -->
+<!-- $$$isButtonEnabled[overload1]$$$isButtonEnabledint -->
+<h3 class="fn" id="isButtonEnabled"><a name="isButtonEnabled"></a><span class="type">bool</span> PackageManagerGui::<span class="name">isButtonEnabled</span>(<span class="type">int</span> <i>wb</i>)</h3>
+<p>Returns <code>true</code> if the button specified by <i>wb</i> is enabled. Returns <code>false</code> if a button of the specified type is not found.</p>
+<p><b>See also </b><a href="scripting-gui.html#isButtonEnabled-method">gui.isButtonEnabled</a>.</p>
+<!-- @@@isButtonEnabled -->
+<!-- $$$isSilent[overload1]$$$isSilent -->
+<h3 class="fn" id="isSilent"><a name="isSilent"></a><span class="type">bool</span> PackageManagerGui::<span class="name">isSilent</span>() const</h3>
+<p>Returns the current silent state.</p>
+<!-- @@@isSilent -->
+<!-- $$$languageChanged[overload1]$$$languageChanged -->
+<h3 class="fn" id="languageChanged"><a name="languageChanged"></a><code>[signal] </code><span class="type">void</span> PackageManagerGui::<span class="name">languageChanged</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#languageChanged-signal">gui.languageChanged</a>.</p>
+<!-- @@@languageChanged -->
+<!-- $$$loadControlScript[overload1]$$$loadControlScriptconstQString& -->
+<h3 class="fn" id="loadControlScript"><a name="loadControlScript"></a><span class="type">void</span> PackageManagerGui::<span class="name">loadControlScript</span>(const <span class="type">QString</span> &amp;<i>scriptPath</i>)</h3>
+<p>Loads the script specified by <i>scriptPath</i> to perform the installation non-interactively. Throws QInstaller::Error if the script is not readable or it cannot be parsed.</p>
+<!-- @@@loadControlScript -->
+<!-- $$$packageManagerCore[overload1]$$$packageManagerCore -->
+<h3 class="fn" id="packageManagerCore"><a name="packageManagerCore"></a><code>[protected] </code><span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *PackageManagerGui::<span class="name">packageManagerCore</span>() const</h3>
+<p>Returns the package manager core.</p>
+<!-- @@@packageManagerCore -->
+<!-- $$$pageById[overload1]$$$pageByIdint -->
+<h3 class="fn" id="pageById"><a name="pageById"></a><span class="type">QWidget</span> *PackageManagerGui::<span class="name">pageById</span>(<span class="type">int</span> <i>id</i>) const</h3>
+<p>Returns the page specified by <i>id</i>.</p>
+<p><b>See also </b><a href="scripting-gui.html#pageById-method">gui.pageById</a>.</p>
+<!-- @@@pageById -->
+<!-- $$$pageByObjectName[overload1]$$$pageByObjectNameconstQString& -->
+<h3 class="fn" id="pageByObjectName"><a name="pageByObjectName"></a><span class="type">QWidget</span> *PackageManagerGui::<span class="name">pageByObjectName</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Returns the page specified by the object name <i>name</i> from a UI file.</p>
+<p><b>See also </b><a href="scripting-gui.html#pageByObjectName-method">gui.pageByObjectName</a>.</p>
+<!-- @@@pageByObjectName -->
+<!-- $$$pageWidgetByObjectName[overload1]$$$pageWidgetByObjectNameconstQString& -->
+<h3 class="fn" id="pageWidgetByObjectName"><a name="pageWidgetByObjectName"></a><span class="type">QWidget</span> *PackageManagerGui::<span class="name">pageWidgetByObjectName</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>For dynamic pages, returns the widget specified by <i>name</i> read from the UI file.</p>
+<p><b>See also </b><a href="scripting-gui.html#pageWidgetByObjectName-method">gui.pageWidgetByObjectName</a>.</p>
+<!-- @@@pageWidgetByObjectName -->
+<!-- $$$reject[overload1]$$$reject -->
+<h3 class="fn" id="reject"><a name="reject"></a><code>[slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">reject</span>()</h3>
+<!-- @@@reject -->
+<!-- $$$rejectWithoutPrompt[overload1]$$$rejectWithoutPrompt -->
+<h3 class="fn" id="rejectWithoutPrompt"><a name="rejectWithoutPrompt"></a><code>[slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">rejectWithoutPrompt</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#rejectWithoutPrompt-method">gui.rejectWithoutPrompt</a>.</p>
+<!-- @@@rejectWithoutPrompt -->
+<!-- $$$setAutomatedPageSwitchEnabled[overload1]$$$setAutomatedPageSwitchEnabledbool -->
+<h3 class="fn" id="setAutomatedPageSwitchEnabled"><a name="setAutomatedPageSwitchEnabled"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">setAutomatedPageSwitchEnabled</span>(<span class="type">bool</span> <i>request</i>)</h3>
+<p>Enables automatic page switching when <i>request</i> is <code>true</code>.</p>
+<!-- @@@setAutomatedPageSwitchEnabled -->
+<!-- $$$setMaxSize[overload1]$$$setMaxSize -->
+<h3 class="fn" id="setMaxSize"><a name="setMaxSize"></a><code>[slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">setMaxSize</span>()</h3>
+<!-- @@@setMaxSize -->
+<!-- $$$setSettingsButtonEnabled[overload1]$$$setSettingsButtonEnabledbool -->
+<h3 class="fn" id="setSettingsButtonEnabled"><a name="setSettingsButtonEnabled"></a><span class="type">void</span> PackageManagerGui::<span class="name">setSettingsButtonEnabled</span>(<span class="type">bool</span> <i>enabled</i>)</h3>
+<p>Enables the <b>Settings</b> button by setting <i>enabled</i> to <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-gui.html#setSettingsButtonEnabled-method">gui.setSettingsButtonEnabled</a>.</p>
+<!-- @@@setSettingsButtonEnabled -->
+<!-- $$$setSilent[overload1]$$$setSilentbool -->
+<h3 class="fn" id="setSilent"><a name="setSilent"></a><span class="type">void</span> PackageManagerGui::<span class="name">setSilent</span>(<span class="type">bool</span> <i>silent</i>)</h3>
+<p>Hides the GUI when <i>silent</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="qinstaller-packagemanagergui.html#isSilent">isSilent</a>().</p>
+<!-- @@@setSilent -->
+<!-- $$$setTextItems[overload1]$$$setTextItemsQObject*constQStringList& -->
+<h3 class="fn" id="setTextItems"><a name="setTextItems"></a><span class="type">void</span> PackageManagerGui::<span class="name">setTextItems</span>(<span class="type">QObject</span> *<i>object</i>, const <span class="type">QStringList</span> &amp;<i>items</i>)</h3>
+<p>Updates the model of <i>object</i> (which must be a QComboBox or QAbstractItemView) such that it contains the given <i>items</i>.</p>
+<!-- @@@setTextItems -->
+<!-- $$$setValidatorForCustomPageRequested[overload1]$$$setValidatorForCustomPageRequestedQInstaller::Component*constQString&constQString& -->
+<h3 class="fn" id="setValidatorForCustomPageRequested"><a name="setValidatorForCustomPageRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">setValidatorForCustomPageRequested</span>(<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *<i>component</i>, const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QString</span> &amp;<i>callbackName</i>)</h3>
+<p>Sets a validator for the custom page specified by <i>name</i> and <i>callbackName</i> requested by <i>component</i>.</p>
+<!-- @@@setValidatorForCustomPageRequested -->
+<!-- $$$settingsButtonClicked[overload1]$$$settingsButtonClicked -->
+<h3 class="fn" id="settingsButtonClicked"><a name="settingsButtonClicked"></a><code>[signal] </code><span class="type">void</span> PackageManagerGui::<span class="name">settingsButtonClicked</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#settingsButtonClicked-signal">gui.settingsButtonClicked</a>.</p>
+<!-- @@@settingsButtonClicked -->
+<!-- $$$showEvent[overload1]$$$showEventQShowEvent* -->
+<h3 class="fn" id="showEvent"><a name="showEvent"></a><code>[protected] </code><span class="type">void</span> PackageManagerGui::<span class="name">showEvent</span>(<span class="type">QShowEvent</span> *<i>event</i>)</h3>
+<!-- @@@showEvent -->
+<!-- $$$showFinishedPage[overload1]$$$showFinishedPage -->
+<h3 class="fn" id="showFinishedPage"><a name="showFinishedPage"></a><code>[slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">showFinishedPage</span>()</h3>
+<p><b>See also </b><a href="scripting-gui.html#showFinishedPage-method">gui.showFinishedPage</a>.</p>
+<!-- @@@showFinishedPage -->
+<!-- $$$showSettingsButton[overload1]$$$showSettingsButtonbool -->
+<h3 class="fn" id="showSettingsButton"><a name="showSettingsButton"></a><span class="type">void</span> PackageManagerGui::<span class="name">showSettingsButton</span>(<span class="type">bool</span> <i>show</i>)</h3>
+<p>Shows the <b>Settings</b> button if <i>show</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="scripting-gui.html#showSettingsButton-method">gui.showSettingsButton</a>.</p>
+<!-- @@@showSettingsButton -->
+<!-- $$$updateButtonLayout[overload1]$$$updateButtonLayout -->
+<h3 class="fn" id="updateButtonLayout"><a name="updateButtonLayout"></a><span class="type">void</span> PackageManagerGui::<span class="name">updateButtonLayout</span>()</h3>
+<p>Forces an update of our own button layout. Needs to be called whenever a button option has been set.</p>
+<!-- @@@updateButtonLayout -->
+<!-- $$$wizardPageInsertionRequested[overload1]$$$wizardPageInsertionRequestedQWidget*QInstaller::PackageManagerCore::WizardPage -->
+<h3 class="fn" id="wizardPageInsertionRequested"><a name="wizardPageInsertionRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">wizardPageInsertionRequested</span>(<span class="type">QWidget</span> *<i>widget</i>, <span class="type"><a href="qinstaller-packagemanagercore.html#WizardPage-enum">QInstaller::PackageManagerCore::WizardPage</a></span> <i>page</i>)</h3>
+<p>Requests the insertion of the page specified by <i>widget</i> at the position specified by <i>page</i>. If that position is already occupied by another page, the value is decremented until an empty slot is found.</p>
+<!-- @@@wizardPageInsertionRequested -->
+<!-- $$$wizardPageRemovalRequested[overload1]$$$wizardPageRemovalRequestedQWidget* -->
+<h3 class="fn" id="wizardPageRemovalRequested"><a name="wizardPageRemovalRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">wizardPageRemovalRequested</span>(<span class="type">QWidget</span> *<i>widget</i>)</h3>
+<p>Requests the removal of the page specified by <i>widget</i>.</p>
+<!-- @@@wizardPageRemovalRequested -->
+<!-- $$$wizardPageVisibilityChangeRequested[overload1]$$$wizardPageVisibilityChangeRequestedboolint -->
+<h3 class="fn" id="wizardPageVisibilityChangeRequested"><a name="wizardPageVisibilityChangeRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">wizardPageVisibilityChangeRequested</span>(<span class="type">bool</span> <i>visible</i>, <span class="type">int</span> <i>p</i>)</h3>
+<p>Requests changing the visibility of the page specified by <i>p</i> to <i>visible</i>.</p>
+<!-- @@@wizardPageVisibilityChangeRequested -->
+<!-- $$$wizardWidgetInsertionRequested[overload1]$$$wizardWidgetInsertionRequestedQWidget*QInstaller::PackageManagerCore::WizardPage -->
+<h3 class="fn" id="wizardWidgetInsertionRequested"><a name="wizardWidgetInsertionRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">wizardWidgetInsertionRequested</span>(<span class="type">QWidget</span> *<i>widget</i>, <span class="type"><a href="qinstaller-packagemanagercore.html#WizardPage-enum">QInstaller::PackageManagerCore::WizardPage</a></span> <i>page</i>)</h3>
+<p>Requests the insertion of <i>widget</i> on <i>page</i>.</p>
+<!-- @@@wizardWidgetInsertionRequested -->
+<!-- $$$wizardWidgetRemovalRequested[overload1]$$$wizardWidgetRemovalRequestedQWidget* -->
+<h3 class="fn" id="wizardWidgetRemovalRequested"><a name="wizardWidgetRemovalRequested"></a><code>[protected slot] </code><span class="type">void</span> PackageManagerGui::<span class="name">wizardWidgetRemovalRequested</span>(<span class="type">QWidget</span> *<i>widget</i>)</h3>
+<p>Requests the removal of <i>widget</i> from installer pages.</p>
+<!-- @@@wizardWidgetRemovalRequested -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

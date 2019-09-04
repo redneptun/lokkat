@@ -1,0 +1,77 @@
+html {
+  background-color: #1f5f93;
+  font-family: "Tahoma", Geneva, sans-serif;
+  padding: 10px;
+  color: #20232b;
+}
+
+body {
+  border: 2px #20232b solid;
+  background-color: #e5dcd0;
+  margin: auto;
+  max-width: 800px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+img {
+  border: 2px #20232b solid;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#toc {
+  background-color: #1f5f93;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 2px #20232b solid;
+}
+
+#toc a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 18px;
+
+}
+
+h1 {
+  background-color: #20232b;
+  color: #eee;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  font-size: 26px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+h2 {
+  background-color: #20232b;
+  color: #eee;
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 10px;
+  font-size: 22px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+h3 {
+  background-color: #20232b;
+  color: #eee;
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- componentmodel.cpp -->
+  <title>ComponentModel Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ComponentModel</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ComponentModel Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-componentmodel.html">QInstaller::ComponentModel</a>)<br/></span>
+<!-- $$$ComponentModel-brief -->
+<p>The <a href="qinstaller-componentmodel.html">ComponentModel</a> class holds a data model for visual representation of available components to install. <a href="#details">More...</a></p>
+<!-- @@@ComponentModel -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;ComponentModel&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-componentmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> flags </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">ModelState</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">ModelStateFlag</a></b> { AllChecked, AllUnchecked, DefaultChecked, PartiallyChecked }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#ComponentModel">ComponentModel</a></b>(int <i>columns</i>, PackageManagerCore *<i>core</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#dtor.ComponentModel">~ComponentModel</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#checked">checked</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> ComponentModel::ModelState </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#checkedState">checkedState</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#columnCount">columnCount</a></b>(const QModelIndex &amp;<i>parent</i> = QModelIndex()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Component *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#componentFromIndex">componentFromIndex</a></b>(const QModelIndex &amp;<i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PackageManagerCore *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#core">core</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#data">data</a></b>(const QModelIndex &amp;<i>index</i>, int <i>role</i> = Qt::DisplayRole) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Qt::ItemFlags </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#flags">flags</a></b>(const QModelIndex &amp;<i>index</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QVariant </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#headerData">headerData</a></b>(int <i>section</i>, Qt::Orientation <i>orientation</i>, int <i>role</i> = Qt::DisplayRole) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QModelIndex </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#index">index</a></b>(int <i>row</i>, int <i>column</i>, const QModelIndex &amp;<i>parent</i> = QModelIndex()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QModelIndex </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#indexFromComponentName">indexFromComponentName</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QModelIndex </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#parent">parent</a></b>(const QModelIndex &amp;<i>child</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#partially">partially</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#rowCount">rowCount</a></b>(const QModelIndex &amp;<i>parent</i> = QModelIndex()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#setData">setData</a></b>(const QModelIndex &amp;<i>index</i>, const QVariant &amp;<i>value</i>, int <i>role</i> = Qt::EditRole)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#setHeaderData">setHeaderData</a></b>(int <i>section</i>, Qt::Orientation <i>orientation</i>, const QVariant &amp;<i>value</i>, int <i>role</i> = Qt::EditRole)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#uncheckable">uncheckable</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSet&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#unchecked">unchecked</a></b>() const</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#setCheckedState">setCheckedState</a></b>(QInstaller::ComponentModel::ModelStateFlag <i>state</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#setRootComponents">setRootComponents</a></b>(QList&lt;QInstaller::Component *&gt; <i>rootComponents</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#checkStateChanged">checkStateChanged</a></b>(const QModelIndex &amp;<i>index</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentmodel.html#checkStateChanged-1">checkStateChanged</a></b>(QInstaller::ComponentModel::ModelState <i>state</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$ComponentModel-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-componentmodel.html">ComponentModel</a> class holds a data model for visual representation of available components to install.</p>
+</div>
+<!-- @@@ComponentModel -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$ModelStateFlag$$$AllChecked$$$AllUnchecked$$$DefaultChecked$$$PartiallyChecked -->
+<h3 class="flags" id="ModelStateFlag-enum"><a name="ModelStateFlag-enum"></a>enum ComponentModel::<span class="name">ModelStateFlag</span><br/>flags ComponentModel::<span class="name">ModelState</span></h3>
+<p>This enum value holds the checked state of the components available for installation.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::ComponentModel::AllChecked</code></td><td class="topAlign tblval"><code>0x01</code></td><td class="topAlign">All components are checked.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::ComponentModel::AllUnchecked</code></td><td class="topAlign tblval"><code>0x02</code></td><td class="topAlign">No components are checked.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::ComponentModel::DefaultChecked</code></td><td class="topAlign tblval"><code>0x04</code></td><td class="topAlign">The components to be installed by default are checked.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::ComponentModel::PartiallyChecked</code></td><td class="topAlign tblval"><code>0x08</code></td><td class="topAlign">Some components are checked.</td></tr>
+</table></div>
+<p>The ModelState type is a typedef for <a href="">QFlags</a>&lt;ModelStateFlag&gt;. It stores an OR combination of ModelStateFlag values.</p>
+<!-- @@@ModelStateFlag -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ComponentModel[overload1]$$$ComponentModelintPackageManagerCore* -->
+<h3 class="fn" id="ComponentModel"><a name="ComponentModel"></a>ComponentModel::<span class="name">ComponentModel</span>(<span class="type">int</span> <i>columns</i>, <span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i> = 0)</h3>
+<p>Constructs a component model with the given number of <i>columns</i> and <i>core</i> as parent.</p>
+<!-- @@@ComponentModel -->
+<!-- $$$~ComponentModel[overload1]$$$~ComponentModel -->
+<h3 class="fn" id="dtor.ComponentModel"><a name="dtor.ComponentModel"></a>ComponentModel::<span class="name">~ComponentModel</span>()</h3>
+<p>Destroys the component model.</p>
+<!-- @@@~ComponentModel -->
+<!-- $$$checkStateChanged[overload1]$$$checkStateChangedconstQModelIndex& -->
+<h3 class="fn" id="checkStateChanged"><a name="checkStateChanged"></a><code>[signal] </code><span class="type">void</span> ComponentModel::<span class="name">checkStateChanged</span>(const <span class="type">QModelIndex</span> &amp;<i>index</i>)</h3>
+<p>This signal is emitted whenever the checked state of a component is changed. The <i>index</i> value indicates the QModelIndex representation of the component as seen from the model.</p>
+<p><b>Note:</b> Signal <i>checkStateChanged</i> is overloaded in this class. To connect to this one using the function pointer syntax, you must specify the signal type in a static cast, as shown in this example:<pre class="cpp">
+
+  connect(componentModel<span class="operator">,</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type">void</span>(ComponentModel<span class="operator">::</span><span class="operator">*</span>)(<span class="keyword">const</span> <span class="type">QModelIndex</span> <span class="operator">&amp;</span>)<span class="operator">&gt;</span>(<span class="operator">&amp;</span>ComponentModel<span class="operator">::</span>checkStateChanged)<span class="operator">,</span>
+      <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="keyword">const</span> <span class="type">QModelIndex</span> <span class="operator">&amp;</span>index){ <span class="comment">/* ... */</span> });
+
+</pre>
+<!-- @@@checkStateChanged -->
+<!-- $$$checkStateChanged$$$checkStateChangedQInstaller::ComponentModel::ModelState -->
+<h3 class="fn" id="checkStateChanged-1"><a name="checkStateChanged-1"></a><code>[signal] </code><span class="type">void</span> ComponentModel::<span class="name">checkStateChanged</span>(<span class="type"><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">QInstaller::ComponentModel::ModelState</a></span> <i>state</i>)</h3>
+<p>This signal is emitted whenever the checked state of a model is changed after all state calculations have taken place. The <i>state</i> is a combination of <code>ModelStateFlag</code> values indicating whether the model has its default checked state, all components are checked or unchecked, or some individual component's checked state has changed.</p>
+<p><b>Note:</b> Signal <i>checkStateChanged</i> is overloaded in this class. To connect to this one using the function pointer syntax, you must specify the signal type in a static cast, as shown in this example:<pre class="cpp">
+
+  connect(componentModel<span class="operator">,</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type">void</span>(ComponentModel<span class="operator">::</span><span class="operator">*</span>)(<span class="type"><a href="qinstaller.html">QInstaller</a></span><span class="operator">::</span>ComponentModel<span class="operator">::</span>ModelState)<span class="operator">&gt;</span>(<span class="operator">&amp;</span>ComponentModel<span class="operator">::</span>checkStateChanged)<span class="operator">,</span>
+      <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="type"><a href="qinstaller.html">QInstaller</a></span><span class="operator">::</span>ComponentModel<span class="operator">::</span>ModelState state){ <span class="comment">/* ... */</span> });
+
+</pre>
+<!-- @@@checkStateChanged -->
+<!-- $$$checked[overload1]$$$checked -->
+<h3 class="fn" id="checked"><a name="checked"></a><span class="type">QSet</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; ComponentModel::<span class="name">checked</span>() const</h3>
+<p>Returns a list of checked components.</p>
+<!-- @@@checked -->
+<!-- $$$checkedState[overload1]$$$checkedState -->
+<h3 class="fn" id="checkedState"><a name="checkedState"></a><span class="type"><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">ComponentModel::ModelState</a></span> ComponentModel::<span class="name">checkedState</span>() const</h3>
+<p>Returns the current checked state of the model.</p>
+<p><b>See also </b><a href="qinstaller-componentmodel.html#setCheckedState">setCheckedState</a>().</p>
+<!-- @@@checkedState -->
+<!-- $$$columnCount[overload1]$$$columnCountconstQModelIndex& -->
+<h3 class="fn" id="columnCount"><a name="columnCount"></a><span class="type">int</span> ComponentModel::<span class="name">columnCount</span>(const <span class="type">QModelIndex</span> &amp;<i>parent</i> = QModelIndex()) const</h3>
+<p>Returns the number of columns of the given <i>parent</i>.</p>
+<!-- @@@columnCount -->
+<!-- $$$componentFromIndex[overload1]$$$componentFromIndexconstQModelIndex& -->
+<h3 class="fn" id="componentFromIndex"><a name="componentFromIndex"></a><span class="type"><a href="qinstaller-component.html">Component</a></span> *ComponentModel::<span class="name">componentFromIndex</span>(const <span class="type">QModelIndex</span> &amp;<i>index</i>) const</h3>
+<p>Translates between a given QModelIndex <i>index</i> and its associated Component. Returns the component if the index is valid or <code>0</code> if an invalid QModelIndex is given.</p>
+<!-- @@@componentFromIndex -->
+<!-- $$$core[overload1]$$$core -->
+<h3 class="fn" id="core"><a name="core"></a><span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *ComponentModel::<span class="name">core</span>() const</h3>
+<p>Returns a pointer to the <a href="qinstaller-packagemanagercore.html">PackageManagerCore</a> this model belongs to.</p>
+<!-- @@@core -->
+<!-- $$$data[overload1]$$$dataconstQModelIndex&int -->
+<h3 class="fn" id="data"><a name="data"></a><span class="type">QVariant</span> ComponentModel::<span class="name">data</span>(const <span class="type">QModelIndex</span> &amp;<i>index</i>, <span class="type">int</span> <i>role</i> = Qt::DisplayRole) const</h3>
+<p>Returns the data stored under the given <i>role</i> for the item referred to by the <i>index</i>.</p>
+<p><b>Note: </b>An <i>invalid</i> QVariant is returned if the given index is invalid. Qt::CheckStateRole is only supported for the first column of the model. Qt::EditRole, Qt::DisplayRole and Qt::ToolTipRole are specifically handled for columns greater than the first column and translate to <code>Qt::UserRole + index.column()</code>.</p><p><b>See also </b><a href="qinstaller-componentmodel.html#setData">setData</a>().</p>
+<!-- @@@data -->
+<!-- $$$flags[overload1]$$$flagsconstQModelIndex& -->
+<h3 class="fn" id="flags"><a name="flags"></a><span class="type">Qt::ItemFlags</span> ComponentModel::<span class="name">flags</span>(const <span class="type">QModelIndex</span> &amp;<i>index</i>) const</h3>
+<p>Returns the item flags for the given <i>index</i>.</p>
+<p>Returns a combination of flags that enables the item (Qt::ItemIsEnabled) and allows it to be selected (Qt::ItemIsSelectable) and to be checked (Qt::ItemIsUserCheckable).</p>
+<!-- @@@flags -->
+<!-- $$$headerData[overload1]$$$headerDataintQt::Orientationint -->
+<h3 class="fn" id="headerData"><a name="headerData"></a><span class="type">QVariant</span> ComponentModel::<span class="name">headerData</span>(<span class="type">int</span> <i>section</i>, <span class="type">Qt::Orientation</span> <i>orientation</i>, <span class="type">int</span> <i>role</i> = Qt::DisplayRole) const</h3>
+<p>Returns the data for the given <i>role</i> and <i>section</i> in the header with the specified <i>orientation</i>. An <i>invalid</i> QVariant is returned if <i>section</i> is out of bounds, <i>orientation</i> is not Qt::Horizontal or <i>role</i> is anything else than Qt::DisplayRole.</p>
+<p><b>See also </b><a href="qinstaller-componentmodel.html#setHeaderData">setHeaderData</a>().</p>
+<!-- @@@headerData -->
+<!-- $$$index[overload1]$$$indexintintconstQModelIndex& -->
+<h3 class="fn" id="index"><a name="index"></a><span class="type">QModelIndex</span> ComponentModel::<span class="name">index</span>(<span class="type">int</span> <i>row</i>, <span class="type">int</span> <i>column</i>, const <span class="type">QModelIndex</span> &amp;<i>parent</i> = QModelIndex()) const</h3>
+<p>Returns the index of the item in the model specified by the given <i>row</i>, <i>column</i>, and <i>parent</i> index.</p>
+<!-- @@@index -->
+<!-- $$$indexFromComponentName[overload1]$$$indexFromComponentNameconstQString& -->
+<h3 class="fn" id="indexFromComponentName"><a name="indexFromComponentName"></a><span class="type">QModelIndex</span> ComponentModel::<span class="name">indexFromComponentName</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Translates between a given component <i>name</i> and its associated QModelIndex. Returns the QModelIndex that represents the component or an invalid QModelIndex if the component does not exist in the model.</p>
+<!-- @@@indexFromComponentName -->
+<!-- $$$parent[overload1]$$$parentconstQModelIndex& -->
+<h3 class="fn" id="parent"><a name="parent"></a><span class="type">QModelIndex</span> ComponentModel::<span class="name">parent</span>(const <span class="type">QModelIndex</span> &amp;<i>child</i>) const</h3>
+<p>Returns the parent item of the given <i>child</i>. If the item has no parent, an invalid QModelIndex is returned.</p>
+<!-- @@@parent -->
+<!-- $$$partially[overload1]$$$partially -->
+<h3 class="fn" id="partially"><a name="partially"></a><span class="type">QSet</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; ComponentModel::<span class="name">partially</span>() const</h3>
+<p>Returns a list of partially checked components.</p>
+<!-- @@@partially -->
+<!-- $$$rowCount[overload1]$$$rowCountconstQModelIndex& -->
+<h3 class="fn" id="rowCount"><a name="rowCount"></a><span class="type">int</span> ComponentModel::<span class="name">rowCount</span>(const <span class="type">QModelIndex</span> &amp;<i>parent</i> = QModelIndex()) const</h3>
+<p>Returns the number of items under the given <i>parent</i>. When the parent index is invalid, the returned value is the root item count.</p>
+<!-- @@@rowCount -->
+<!-- $$$setCheckedState[overload1]$$$setCheckedStateQInstaller::ComponentModel::ModelStateFlag -->
+<h3 class="fn" id="setCheckedState"><a name="setCheckedState"></a><code>[slot] </code><span class="type">void</span> ComponentModel::<span class="name">setCheckedState</span>(<span class="type"><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">QInstaller::ComponentModel::ModelStateFlag</a></span> <i>state</i>)</h3>
+<p>Sets the checked state of every component in the model to be <i>state</i>.</p>
+<p>The <a href="qinstaller-componentmodel.html#ModelStateFlag-enum">ComponentModel::PartiallyChecked</a> flag is ignored by this function. Note that components are not changed if they are not checkable. The dataChanged() and <a href="qinstaller-componentmodel.html#checkStateChanged">checkStateChanged</a>() signals are emitted.</p>
+<p><b>See also </b><a href="qinstaller-componentmodel.html#checkedState">checkedState</a>().</p>
+<!-- @@@setCheckedState -->
+<!-- $$$setData[overload1]$$$setDataconstQModelIndex&constQVariant&int -->
+<h3 class="fn" id="setData"><a name="setData"></a><span class="type">bool</span> ComponentModel::<span class="name">setData</span>(const <span class="type">QModelIndex</span> &amp;<i>index</i>, const <span class="type">QVariant</span> &amp;<i>value</i>, <span class="type">int</span> <i>role</i> = Qt::EditRole)</h3>
+<p>Sets the <i>role</i> data for the item at <i>index</i> to <i>value</i>. Returns true if successful; otherwise returns false. The dataChanged() signal is emitted if the data was successfully set. The <a href="qinstaller-componentmodel.html#checkStateChanged">checkStateChanged</a>() signals are emitted in addition if the checked state of the item is set.</p>
+<p><b>See also </b><a href="qinstaller-componentmodel.html#data">data</a>().</p>
+<!-- @@@setData -->
+<!-- $$$setHeaderData[overload1]$$$setHeaderDataintQt::OrientationconstQVariant&int -->
+<h3 class="fn" id="setHeaderData"><a name="setHeaderData"></a><span class="type">bool</span> ComponentModel::<span class="name">setHeaderData</span>(<span class="type">int</span> <i>section</i>, <span class="type">Qt::Orientation</span> <i>orientation</i>, const <span class="type">QVariant</span> &amp;<i>value</i>, <span class="type">int</span> <i>role</i> = Qt::EditRole)</h3>
+<p>Sets the data for the given <i>role</i> and <i>section</i> in the header with the specified <i>orientation</i> to the <i>value</i> supplied. Returns <code>true</code> if the header's data was updated; otherwise returns <code>false</code>. The headerDataChanged() signal is emitted if the data was successfully set.</p>
+<p><b>Note: </b>Only Qt::Horizontal orientation is supported.</p><p><b>See also </b><a href="qinstaller-componentmodel.html#headerData">headerData</a>().</p>
+<!-- @@@setHeaderData -->
+<!-- $$$setRootComponents[overload1]$$$setRootComponentsQList<QInstaller::Component*> -->
+<h3 class="fn" id="setRootComponents"><a name="setRootComponents"></a><code>[slot] </code><span class="type">void</span> ComponentModel::<span class="name">setRootComponents</span>(<span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html">QInstaller::Component</a></span> *&gt; <i>rootComponents</i>)</h3>
+<p>Sets <i>rootComponents</i> to be the list of currently shown components.</p>
+<p>The model is repopulated and the individual component's checked state is used to show the check mark in front of the visual component representation. The modelAboutToBeReset() and modelReset() signals are emitted.</p>
+<!-- @@@setRootComponents -->
+<!-- $$$uncheckable[overload1]$$$uncheckable -->
+<h3 class="fn" id="uncheckable"><a name="uncheckable"></a><span class="type">QSet</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; ComponentModel::<span class="name">uncheckable</span>() const</h3>
+<p>Returns a list of components whose checked state cannot be changed. If package manager core is run with no forced installation argument, the list will always be empty.</p>
+<!-- @@@uncheckable -->
+<!-- $$$unchecked[overload1]$$$unchecked -->
+<h3 class="fn" id="unchecked"><a name="unchecked"></a><span class="type">QSet</span>&lt;<span class="type"><a href="qinstaller-component.html">Component</a></span> *&gt; ComponentModel::<span class="name">unchecked</span>() const</h3>
+<p>Returns a list of unchecked components.</p>
+<!-- @@@unchecked -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

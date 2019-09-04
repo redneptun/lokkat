@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- hidecheckbox.qdoc -->
+  <title>Hide Checkbox Example | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qtifwexamples.html">Qt Installer Framework Examples</a></td><td >Hide Checkbox Example</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#configuring-the-example-installer">Configuring the Example Installer</a></li>
+<li class="level1"><a href="#creating-the-example-package-information-file">Creating the Example Package Information File</a></li>
+<li class="level1"><a href="#generating-the-example-installer">Generating the Example Installer</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Hide Checkbox Example</h1>
+<span class="subtitle"></span>
+<!-- $$$hidecheckbox-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/qtifw-examples-hidecheckbox.png" alt="" /></p><p><i>Hide Checkbox</i> illustrates how to hide the checkbox for an item.</p>
+<a name="configuring-the-example-installer"></a>
+<h2 id="configuring-the-example-installer">Configuring the Example Installer</h2>
+<p>The installer configuration file, config.xml, in the <code>config</code> directory specifies the text and default values used in the installer:</p>
+<ul>
+<li>The <code>&lt;Name&gt;</code> element specifies the application name that is added to the page name and introduction text.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the application version number.</li>
+<li>The <code>&lt;Title&gt;</code> element specifies the installer name displayed on the title bar.</li>
+<li>The <code>&lt;Publisher&gt;</code> element specifies the publisher of the software (as shown in the Windows Control Panel, for example).</li>
+<li>The <code>&lt;StartMenuDir&gt;</code> element specifies the name of the default program group for the product in the Windows <b>Start</b> menu.</li>
+<li>The <code>&lt;TargetDir&gt;</code> element specifies that the default target directory is located in the <code>IfwExamples</code> directory in the home directory of the current user (because the predefined variable<code>@HomeDir@</code> is used as a part of the value). For more information, see <a href="scripting.html#predefined-variables">Predefined Variables</a>.</li>
+</ul>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;Installer&gt;
+      &lt;Name&gt;Hide item checkbox&lt;/Name&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;Title&gt;Hide checkbox&lt;/Title&gt;
+      &lt;Publisher&gt;The Qt Company&lt;/Publisher&gt;
+      &lt;StartMenuDir&gt;Qt IFW Examples&lt;/StartMenuDir&gt;
+      &lt;TargetDir&gt;@HomeDir@/IfwExamples/hidecheckbox&lt;/TargetDir&gt;
+  &lt;/Installer&gt;
+
+</pre>
+<a name="creating-the-example-package-information-file"></a>
+<h2 id="creating-the-example-package-information-file">Creating the Example Package Information File</h2>
+<p>The installer package information file, package.xml, in the <code>meta</code> directory specifies the components that are available for installation:</p>
+<ul>
+<li>The <code>&lt;DisplayName&gt;</code> element specifies the human-readable name of the component.</li>
+<li>The <code>&lt;Description&gt;</code> element specifies the human-readable description of the component.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the version number of the component.</li>
+<li>The <code>&lt;ReleaseDate&gt;</code> element specifies the date when this component version was released.</li>
+</ul>
+<ul>
+<li>The <code>&lt;Checkable&gt;</code> element specifies whether a checkbox is displayed next to an item. Set to <code>false</code> to hide the checkbox for the item.</li>
+</ul>
+<p>This example attempts to install three components, so we create a package.xml file in each component directory: componentF, componentF.subcomponent1, and componentF.subcomponent1.subcomponent1. We also specify the component name and description in each of them. The top level item, componentF, has <code>&lt;Checkable&gt;</code> set to <code>false</code>, so it cannot be selected.</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;Uncheckable component&lt;/DisplayName&gt;
+      &lt;Description&gt;This component is uncheckable.&lt;/Description&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2015-12-01&lt;/ReleaseDate&gt;
+      &lt;SortingPriority&gt;40&lt;/SortingPriority&gt;
+      &lt;Checkable&gt;false&lt;/Checkable&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="generating-the-example-installer"></a>
+<h2 id="generating-the-example-installer">Generating the Example Installer</h2>
+<p>To create the example installer, switch to the example source directory on the command line and enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>c config\config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer<span class="operator">.</span>exe
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>binarycreator <span class="operator">-</span>c config<span class="operator">/</span>config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer
+
+</pre>
+</li>
+</ul>
+<p>The installer is created in the current directory.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qt-installer-framework-hidecheckbox-config-config-xml.html">hidecheckbox/config/config.xml</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-data-testf-txt.html">hidecheckbox/packages/componentF/data/testF.txt</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-meta-package-xml.html">hidecheckbox/packages/componentF/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-subcomponent1-data-testf-sub1-txt.html">hidecheckbox/packages/componentF.subcomponent1/data/testF_sub1.txt</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-subcomponent1-meta-package-xml.html">hidecheckbox/packages/componentF.subcomponent1/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-subcomponent1-subsubcomponent1-data-testf-sub1-sub1-txt.html">hidecheckbox/packages/componentF.subcomponent1.subsubcomponent1/data/testF_sub1_sub1.txt</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-packages-componentf-subcomponent1-subsubcomponent1-meta-package-xml.html">hidecheckbox/packages/componentF.subcomponent1.subsubcomponent1/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-hidecheckbox-hidecheckbox-pro.html">hidecheckbox/hidecheckbox.pro</a></li>
+</ul>
+</div>
+<!-- @@@hidecheckbox -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

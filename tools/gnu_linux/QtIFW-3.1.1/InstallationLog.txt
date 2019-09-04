@@ -1,0 +1,30 @@
+************************************* Invoked: Sa. Aug. 31 17:55:36 2019
+[0] Arguments: /media/ntfs/dl/QtInstallerFramework-linux-x64.run
+[0] Operations sanity check succeeded.
+[55847] Tmp is on a different volume than the installation directory. Tmp volume mount point: "/" Free space available: "21.66 GB" Install volume mount point: "/home" Free space available: "14.71 GB"
+[55847] Installation space required: "149.87 MB" Temporary space required: "0.00 Bytes" Local repository size: "0.00 Bytes"
+[62572] perform  operation: Mkdir
+[62572] 	- arguments: /home/pboeckmann/apps/Qt
+[62572] Done
+[62572] backup  operation: Mkdir
+[62572] 	- arguments: /home/pboeckmann/apps/Qt/QtIFW-3.1.1
+[62572] Done
+[62573] perform  operation: Mkdir
+[62573] 	- arguments: /home/pboeckmann/apps/Qt/QtIFW-3.1.1
+[62573] Done
+[62573] Install size: 2 components
+[62579] backup org.qtproject.ifw operation: License
+[62579] 	- arguments:
+[62579] Done
+[62579] perform org.qtproject.ifw operation: License
+[62579] 	- arguments:
+[62581] Done
+[62582] backup org.qtproject.ifw.binaries operation: Extract
+[62582] 	- arguments: installer://org.qtproject.ifw.binaries/3.1.1data.7z, /home/pboeckmann/apps/Qt/QtIFW-3.1.1
+[62582] Done
+[62582] perform org.qtproject.ifw.binaries operation: Extract
+[62582] 	- arguments: installer://org.qtproject.ifw.binaries/3.1.1data.7z, /home/pboeckmann/apps/Qt/QtIFW-3.1.1
+[66058] Done
+[66061] Writing maintenance tool: "/home/pboeckmann/apps/Qt/QtIFW-3.1.1/Uninstaller.new"
+[67275] Wrote permissions for maintenance tool.
+[67818] Maintenance tool restart: false.

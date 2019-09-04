@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- abstractfiletask.cpp -->
+  <title>AbstractFileTask Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >AbstractFileTask</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">AbstractFileTask Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-abstractfiletask.html">QInstaller::AbstractFileTask</a>)<br/></span>
+<!-- $$$AbstractFileTask-brief -->
+<p>The <a href="qinstaller-abstractfiletask.html">AbstractFileTask</a> class is the base class of file related tasks. <a href="#details">More...</a></p>
+<!-- @@@AbstractFileTask -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;AbstractFileTask&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-abstractfiletask-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#AbstractFileTask">AbstractFileTask</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#AbstractFileTask-1">AbstractFileTask</a></b>(const QString &amp;<i>source</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#AbstractFileTask-2">AbstractFileTask</a></b>(const FileTaskItem &amp;<i>item</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#AbstractFileTask-3">AbstractFileTask</a></b>(const QString &amp;<i>source</i>, const QString &amp;<i>target</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#dtor.AbstractFileTask">~AbstractFileTask</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#setTaskItem">setTaskItem</a></b>(const FileTaskItem &amp;<i>item</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;FileTaskItem&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-abstractfiletask.html#taskItems">taskItems</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$AbstractFileTask-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-abstractfiletask.html">AbstractFileTask</a> class is the base class of file related tasks.</p>
+<p>The class is not usable as a standalone class but provides common functionality when subclassed.</p>
+</div>
+<!-- @@@AbstractFileTask -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$AbstractFileTask[overload1]$$$AbstractFileTask -->
+<h3 class="fn" id="AbstractFileTask"><a name="AbstractFileTask"></a>AbstractFileTask::<span class="name">AbstractFileTask</span>()</h3>
+<p>Constructs an empty abstract file task object.</p>
+<!-- @@@AbstractFileTask -->
+<!-- $$$AbstractFileTask$$$AbstractFileTaskconstQString& -->
+<h3 class="fn" id="AbstractFileTask-1"><a name="AbstractFileTask-1"></a>AbstractFileTask::<span class="name">AbstractFileTask</span>(const <span class="type">QString</span> &amp;<i>source</i>)</h3>
+<p>Constructs a new abstract file task object with <i>source</i>.</p>
+<!-- @@@AbstractFileTask -->
+<!-- $$$AbstractFileTask$$$AbstractFileTaskconstFileTaskItem& -->
+<h3 class="fn" id="AbstractFileTask-2"><a name="AbstractFileTask-2"></a>AbstractFileTask::<span class="name">AbstractFileTask</span>(const <span class="type"><a href="qinstaller-filetaskitem.html">FileTaskItem</a></span> &amp;<i>item</i>)</h3>
+<p>Constructs a new abstract file task object with <i>item</i>.</p>
+<!-- @@@AbstractFileTask -->
+<!-- $$$AbstractFileTask$$$AbstractFileTaskconstQString&constQString& -->
+<h3 class="fn" id="AbstractFileTask-3"><a name="AbstractFileTask-3"></a>AbstractFileTask::<span class="name">AbstractFileTask</span>(const <span class="type">QString</span> &amp;<i>source</i>, const <span class="type">QString</span> &amp;<i>target</i>)</h3>
+<p>Constructs a new abstract file task object with <i>source</i> and <i>target</i>.</p>
+<!-- @@@AbstractFileTask -->
+<!-- $$$~AbstractFileTask[overload1]$$$~AbstractFileTask -->
+<h3 class="fn" id="dtor.AbstractFileTask"><a name="dtor.AbstractFileTask"></a><code>[virtual] </code>AbstractFileTask::<span class="name">~AbstractFileTask</span>()</h3>
+<p>Destroys the abstract file task object.</p>
+<!-- @@@~AbstractFileTask -->
+<!-- $$$setTaskItem[overload1]$$$setTaskItemconstFileTaskItem& -->
+<h3 class="fn" id="setTaskItem"><a name="setTaskItem"></a><span class="type">void</span> AbstractFileTask::<span class="name">setTaskItem</span>(const <span class="type"><a href="qinstaller-filetaskitem.html">FileTaskItem</a></span> &amp;<i>item</i>)</h3>
+<p>Sets a file task <i>item</i> this task is working on.</p>
+<!-- @@@setTaskItem -->
+<!-- $$$taskItems[overload1]$$$taskItems -->
+<h3 class="fn" id="taskItems"><a name="taskItems"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-filetaskitem.html">FileTaskItem</a></span>&gt; AbstractFileTask::<span class="name">taskItems</span>() const</h3>
+<p>Returns a list of file task items this task is working on.</p>
+<!-- @@@taskItems -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

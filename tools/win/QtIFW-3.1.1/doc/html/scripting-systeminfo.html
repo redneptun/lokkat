@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- systeminfo.qdoc -->
+  <title>systemInfo QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">systemInfo QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$systemInfo-brief -->
+<p>Provides information about the operating system. <a href="#details">More...</a></p>
+<!-- @@@systemInfo -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-systeminfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#currentCpuArchitecture-prop">currentCpuArchitecture</a></b></b> : string</li>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#kernelType-prop">kernelType</a></b></b> : string</li>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#kernelVersion-prop">kernelVersion</a></b></b> : string</li>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#prettyProductName-prop">prettyProductName</a></b></b> : string</li>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#productType-prop">productType</a></b></b> : string</li>
+<li class="fn"><b><b><a href="scripting-systeminfo.html#productVersion-prop">productVersion</a></b></b> : string</li>
+</ul>
+<!-- $$$systemInfo-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@systemInfo -->
+<h2>Property Documentation</h2>
+<!-- $$$currentCpuArchitecture -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="currentCpuArchitecture-prop">
+<td class="tblQmlPropNode"><p>
+<a name="currentCpuArchitecture-prop"></a><span class="name">currentCpuArchitecture</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The architecture of the CPU that the application is running on, in text format.</p>
+<p>Possible values include</p>
+<ul>
+<li>&quot;i386&quot;</li>
+<li>&quot;x86_64&quot;</li>
+</ul>
+<p>Note that this function depends on what the OS will report and may not detect the actual CPU architecture if the OS hides that information or is unable to provide it. For example, a 32-bit OS running on a 64-bit CPU is usually unable to determine whether the CPU is actually capable of running 64-bit programs.</p>
+<p><b>See also </b>QSysInfo::currentCpuArchitecture().</p>
+</div></div><!-- @@@currentCpuArchitecture -->
+<br/>
+<!-- $$$kernelType -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="kernelType-prop">
+<td class="tblQmlPropNode"><p>
+<a name="kernelType-prop"></a><span class="name">kernelType</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The type of the operating system kernel the installer was compiled for. It is also the kernel the installer is running on, unless the host operating system is running a form of compatibility or virtualization layer.</p>
+<p>For Windows, Linux, and OS X this will return</p>
+<ul>
+<li>&quot;winnt&quot;</li>
+<li>&quot;linux&quot;</li>
+<li>&quot;darwin&quot;</li>
+</ul>
+<p>On Unix systems, it returns the same as the output of <code>uname -s</code> (lowercased).</p>
+<p><b>See also </b>QSysInfo::kernelType().</p>
+</div></div><!-- @@@kernelType -->
+<br/>
+<!-- $$$kernelVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="kernelVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="kernelVersion-prop"></a><span class="name">kernelVersion</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Example values are</p>
+<ul>
+<li>&quot;6.1&#x2e;7601&quot; for Windows 7 with Service Pack 1</li>
+<li>&quot;3.16.6-2-desktop&quot; for openSUSE 13.2 kernel 3.16.6-2</li>
+<li>&quot;12.5&#x2e;0&quot; last release of OS X &quot;Mountain Lion&quot;</li>
+</ul>
+<p>The release version of the operating system kernel. On Windows, it returns the version of the NT or CE kernel. On Unix systems, including OS X, it returns the same as the <code>uname -r</code> command would return.</p>
+<p><b>See also </b>QSysInfo::kernelVersion().</p>
+</div></div><!-- @@@kernelVersion -->
+<br/>
+<!-- $$$prettyProductName -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="prettyProductName-prop">
+<td class="tblQmlPropNode"><p>
+<a name="prettyProductName-prop"></a><span class="name">prettyProductName</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>A prettier form of <a href="scripting-systeminfo.html#productType-prop">systemInfo::productType</a> and <a href="scripting-systeminfo.html#productVersion-prop">systemInfo::productVersion</a>, containing other tokens like the operating system type, codenames and other information. The result of this function is suitable for displaying to the user.</p>
+<p>Example values are</p>
+<ul>
+<li>&quot;Windows 7&quot;</li>
+<li>&quot;openSUSE 13.2 (Harlequin) (x86_64)&quot;</li>
+<li>&quot;OS X Mountain Lion (10.8)&quot;</li>
+</ul>
+<p><b>See also </b>QSysInfo::prettyProductName().</p>
+</div></div><!-- @@@prettyProductName -->
+<br/>
+<!-- $$$productType -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="productType-prop">
+<td class="tblQmlPropNode"><p>
+<a name="productType-prop"></a><span class="name">productType</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The product name of the operating system this application is running in.</p>
+<p>Example values are</p>
+<ul>
+<li>&quot;windows&quot;</li>
+<li>&quot;opensuse&quot; (for the Linux openSUSE distribution)</li>
+<li>&quot;osx&quot;</li>
+</ul>
+<p><b>See also </b>QSysInfo::productType().</p>
+</div></div><!-- @@@productType -->
+<br/>
+<!-- $$$productVersion -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="productVersion-prop">
+<td class="tblQmlPropNode"><p>
+<a name="productVersion-prop"></a><span class="name">productVersion</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The product version of the operating system in string form. If the version could not be determined, this function returns &quot;unknown&quot;.</p>
+<p>Example values are</p>
+<ul>
+<li>&quot;7&quot; for Windows 7</li>
+<li>&quot;13.2&quot; for openSUSE 13.2</li>
+<li>&quot;10.8&quot; for OS X Mountain Lion</li>
+</ul>
+<p><b>See also </b>QSysInfo::productVersion().</p>
+</div></div><!-- @@@productVersion -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

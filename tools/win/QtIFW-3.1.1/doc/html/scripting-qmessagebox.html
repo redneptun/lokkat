@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- messageboxhandler.qdoc -->
+  <title>QMessageBox QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#buttons-in-message-boxes">Buttons in Message Boxes</a></li>
+<li class="level2"><a href="#scripted-installations">Scripted Installations</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QMessageBox QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$QMessageBox-brief -->
+<p>Provides a modal dialog for informing the user or asking the user a question and receiving an answer. <a href="#details">More...</a></p>
+<!-- @@@QMessageBox -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-qmessagebox-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">Button <b><b><a href="scripting-qmessagebox.html#critical-method">critical</a></b></b>(string <i>identifier</i>, string <i>title</i>, string <i>text</i>, Buttons <i>buttons</i>, Button <i>button</i>)</li>
+<li class="fn">Button <b><b><a href="scripting-qmessagebox.html#information-method">information</a></b></b>(string <i>identifier</i>, string <i>title</i>, string <i>text</i>, Buttons <i>buttons</i>, Button <i>button</i>)</li>
+<li class="fn">Button <b><b><a href="scripting-qmessagebox.html#question-method">question</a></b></b>(string <i>identifier</i>, string <i>title</i>, string <i>text</i>, Buttons <i>buttons</i>, Button <i>button</i>)</li>
+<li class="fn">Button <b><b><a href="scripting-qmessagebox.html#warning-method">warning</a></b></b>(string <i>identifier</i>, string <i>title</i>, string <i>text</i>, Buttons <i>buttons</i>, Button <i>button</i>)</li>
+</ul>
+<!-- $$$QMessageBox-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<pre class="cpp">
+
+  var result <span class="operator">=</span> <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>question(<span class="string">&quot;quit.question&quot;</span><span class="operator">,</span> <span class="string">&quot;Installer&quot;</span><span class="operator">,</span> <span class="string">&quot;Do you want to quit the installer?&quot;</span><span class="operator">,</span>
+                                    <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>Yes <span class="operator">|</span> <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>No);
+  <span class="keyword">if</span> (result <span class="operator">=</span><span class="operator">=</span> <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>Yes) {
+     <span class="comment">// ...</span>
+  }
+
+</pre>
+<a name="buttons-in-message-boxes"></a>
+<h3 >Buttons in Message Boxes</h3>
+<p><a href="scripting-qmessagebox.html">QMessageBox</a> defines a list of common buttons:</p>
+<ul>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Ok</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Open</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Save</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Cancel</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Close</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Discard</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Apply</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Reset</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.RestoreDefaults</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Help</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.SaveAll</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Yes</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.YesToAll</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.No</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.NoToAll</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Abort</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Retry</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.Ignore</li>
+<li><a href="scripting-qmessagebox.html">QMessageBox</a>.NoButton</li>
+</ul>
+<a name="scripted-installations"></a>
+<h3 >Scripted Installations</h3>
+<p>Sometimes it is useful to automatically close message boxes, for example during a scripted installation. This can be achieved by calling <a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">installer::setMessageBoxAutomaticAnswer</a>, <a href="scripting-installer.html#autoAcceptMessageBoxes-method">installer::autoAcceptMessageBoxes</a> or <a href="scripting-installer.html#autoRejectMessageBoxes-method">installer::autoRejectMessageBoxes</a>. The <code>identifier</code> argument in the method calls allows to identify specific message boxes for this purpose.</p>
+<!-- @@@QMessageBox -->
+<h2>Method Documentation</h2>
+<!-- $$$critical -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="critical-method">
+<td class="tblQmlFuncNode"><p>
+<a name="critical-method"></a><span class="type">Button</span> <span class="name">critical</span>(<span class="type">string</span> <i>identifier</i>, <span class="type">string</span> <i>title</i>, <span class="type">string</span> <i>text</i>, <span class="type">Buttons</span> <i>buttons</i> = QMessageBox.Ok, <span class="type">Button</span> <i>button</i> = QMessageBox.NoButton)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Opens a critical message box with the given <i>title</i> and <i>text</i>.</p>
+</div></div><!-- @@@critical -->
+<br/>
+<!-- $$$information -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="information-method">
+<td class="tblQmlFuncNode"><p>
+<a name="information-method"></a><span class="type">Button</span> <span class="name">information</span>(<span class="type">string</span> <i>identifier</i>, <span class="type">string</span> <i>title</i>, <span class="type">string</span> <i>text</i>, <span class="type">Buttons</span> <i>buttons</i> = QMessageBox.Ok, <span class="type">Button</span> <i>button</i> = QMessageBox.NoButton)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Opens an information message box with the given <i>title</i> and <i>text</i>.</p>
+</div></div><!-- @@@information -->
+<br/>
+<!-- $$$question -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="question-method">
+<td class="tblQmlFuncNode"><p>
+<a name="question-method"></a><span class="type">Button</span> <span class="name">question</span>(<span class="type">string</span> <i>identifier</i>, <span class="type">string</span> <i>title</i>, <span class="type">string</span> <i>text</i>, <span class="type">Buttons</span> <i>buttons</i> = QMessageBox.Yes | QMessageBox.No, <span class="type">Button</span> <i>button</i> = QMessageBox.NoButton)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Opens a question message box with the given <i>title</i> and <i>text</i>.</p>
+</div></div><!-- @@@question -->
+<br/>
+<!-- $$$warning -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="warning-method">
+<td class="tblQmlFuncNode"><p>
+<a name="warning-method"></a><span class="type">Button</span> <span class="name">warning</span>(<span class="type">string</span> <i>identifier</i>, <span class="type">string</span> <i>title</i>, <span class="type">string</span> <i>text</i>, <span class="type">Buttons</span> <i>buttons</i> = QMessageBox.Ok, <span class="type">Button</span> <i>button</i> = QMessageBox.NoButton)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Opens a warning message box with the given <i>title</i> and <i>text</i>.</p>
+</div></div><!-- @@@warning -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

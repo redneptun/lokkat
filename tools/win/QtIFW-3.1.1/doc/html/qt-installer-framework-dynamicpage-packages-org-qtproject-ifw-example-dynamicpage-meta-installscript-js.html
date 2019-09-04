@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>installscript.js Example File | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qt-installer-framework-dynamicpage-example.html">Dynamic Page Installer Example</a></td><td >installscript.js Example File</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">installscript.js Example File</h1>
+<span class="subtitle">dynamicpage/packages/org.qtproject.ifw.example.dynamicpage/meta/installscript.js</span>
+<!-- $$$dynamicpage/packages/org.qtproject.ifw.example.dynamicpage/meta/installscript.js-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="js">
+
+  <span class="comment">/**************************************************************************
+  **
+  ** Copyright (C) 2017 The Qt Company Ltd.
+  ** Contact: https://www.qt.io/licensing/
+  **
+  ** This file is part of the Qt Installer Framework.
+  **
+  ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see https://www.qt.io/terms-conditions. For further
+  ** information use the contact form at https://www.qt.io/contact-us.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+  ** included in the packaging of this file. Please review the following
+  ** information to ensure the GNU General Public License requirements will
+  ** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  **************************************************************************/</span>
+
+  var <span class="name">ComponentSelectionPage</span> = <span class="number">null</span>;
+
+  var <span class="name">Dir</span> = new <span class="keyword">function</span> () {
+      this.<span class="name">toNativeSparator</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">path</span>) {
+          <span class="keyword">if</span> (<span class="name">systemInfo</span>.<span class="name">productType</span> <span class="operator">===</span> <span class="string">&quot;windows&quot;</span>)
+              <span class="keyword">return</span> <span class="name">path</span>.<span class="name">replace</span>(/\//g, <span class="string">'\\'</span>);
+          <span class="keyword">return</span> <span class="name">path</span>;
+      }
+  };
+
+  <span class="keyword">function</span> <span class="name">Component</span>() {
+      <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">isInstaller</span>()) {
+          <span class="name">component</span>.<span class="name">loaded</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">installerLoaded</span>);
+          <span class="name">ComponentSelectionPage</span> <span class="operator">=</span> <span class="name">gui</span>.<span class="name">pageById</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>);
+
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">TargetDirectory</span>, <span class="number">false</span>);
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>, <span class="number">false</span>);
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">LicenseCheck</span>, <span class="number">false</span>);
+          <span class="keyword">if</span> (<span class="name">systemInfo</span>.<span class="name">productType</span> <span class="operator">===</span> <span class="string">&quot;windows&quot;</span>)
+              <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">StartMenuSelection</span>, <span class="number">false</span>);
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ReadyForInstallation</span>, <span class="number">false</span>);
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">installerLoaded</span> <span class="operator">=</span> <span class="keyword">function</span> () {
+      <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">addWizardPage</span>(<span class="name">component</span>, <span class="string">&quot;TargetWidget&quot;</span>, <span class="name">QInstaller</span>.<span class="name">TargetDirectory</span>)) {
+          var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicTargetWidget&quot;</span>);
+          <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+              <span class="name">widget</span>.<span class="name">targetChooser</span>.<span class="name">clicked</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">chooseTarget</span>);
+              <span class="name">widget</span>.<span class="name">targetDirectory</span>.<span class="name">textChanged</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">targetChanged</span>);
+
+              <span class="name">widget</span>.<span class="name">windowTitle</span> <span class="operator">=</span> <span class="string">&quot;Installation Folder&quot;</span>;
+              <span class="name">widget</span>.<span class="name">targetDirectory</span>.<span class="name">text</span> <span class="operator">=</span> <span class="name">Dir</span>.<span class="name">toNativeSparator</span>(<span class="name">installer</span>.<span class="name">value</span>(<span class="string">&quot;TargetDir&quot;</span>));
+          }
+      }
+
+      <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">addWizardPage</span>(<span class="name">component</span>, <span class="string">&quot;InstallationWidget&quot;</span>, <span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>)) {
+          var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicInstallationWidget&quot;</span>);
+          <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+              <span class="name">widget</span>.<span class="name">customInstall</span>.<span class="name">toggled</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">customInstallToggled</span>);
+              <span class="name">widget</span>.<span class="name">defaultInstall</span>.<span class="name">toggled</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">defaultInstallToggled</span>);
+              <span class="name">widget</span>.<span class="name">completeInstall</span>.<span class="name">toggled</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">completeInstallToggled</span>);
+
+              <span class="name">widget</span>.<span class="name">defaultInstall</span>.<span class="name">checked</span> <span class="operator">=</span> <span class="number">true</span>;
+              <span class="name">widget</span>.<span class="name">windowTitle</span> <span class="operator">=</span> <span class="string">&quot;Select Installation Type&quot;</span>;
+          }
+
+          <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">addWizardPage</span>(<span class="name">component</span>, <span class="string">&quot;LicenseWidget&quot;</span>, <span class="name">QInstaller</span>.<span class="name">LicenseCheck</span>)) {
+              var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicLicenseWidget&quot;</span>);
+              <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+                  <span class="name">widget</span>.<span class="name">acceptLicense</span>.<span class="name">toggled</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">checkAccepted</span>);
+
+                  <span class="name">widget</span>.<span class="name">complete</span> <span class="operator">=</span> <span class="number">false</span>;
+                  <span class="name">widget</span>.<span class="name">declineLicense</span>.<span class="name">checked</span> <span class="operator">=</span> <span class="number">true</span>;
+                  <span class="name">widget</span>.<span class="name">windowTitle</span> <span class="operator">=</span> <span class="string">&quot;License Agreement&quot;</span>;
+              }
+          }
+
+          <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">addWizardPage</span>(<span class="name">component</span>, <span class="string">&quot;ReadyToInstallWidget&quot;</span>, <span class="name">QInstaller</span>.<span class="name">ReadyForInstallation</span>)) {
+              var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicReadyToInstallWidget&quot;</span>);
+              <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+                  <span class="name">widget</span>.<span class="name">showDetails</span>.<span class="name">checked</span> <span class="operator">=</span> <span class="number">false</span>;
+                  <span class="name">widget</span>.<span class="name">windowTitle</span> <span class="operator">=</span> <span class="string">&quot;Ready to Install&quot;</span>;
+              }
+              var <span class="name">page</span> = <span class="name">gui</span>.<span class="name">pageByObjectName</span>(<span class="string">&quot;DynamicReadyToInstallWidget&quot;</span>);
+              <span class="keyword">if</span> (<span class="name">page</span> <span class="operator">!=</span> <span class="number">null</span>) {
+                  <span class="name">page</span>.<span class="name">entered</span>.<span class="name">connect</span>(this, <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">readyToInstallWidgetEntered</span>);
+              }
+          }
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">targetChanged</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">text</span>) {
+      var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicTargetWidget&quot;</span>);
+      <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+          <span class="keyword">if</span> (<span class="name">text</span> <span class="operator">!=</span> <span class="string">&quot;&quot;</span>) {
+              <span class="keyword">if</span> (!<span class="name">installer</span>.<span class="name">fileExists</span>(<span class="name">text</span> <span class="operator">+</span> <span class="string">&quot;/components.xml&quot;</span>)) {
+                  <span class="name">widget</span>.<span class="name">complete</span> <span class="operator">=</span> <span class="number">true</span>;
+                  <span class="name">installer</span>.<span class="name">setValue</span>(<span class="string">&quot;TargetDir&quot;</span>, <span class="name">text</span>);
+                  <span class="keyword">return</span>;
+              }
+          }
+          <span class="name">widget</span>.<span class="name">complete</span> <span class="operator">=</span> <span class="number">false</span>;
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">chooseTarget</span> <span class="operator">=</span> <span class="keyword">function</span> () {
+      var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicTargetWidget&quot;</span>);
+      <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+          var <span class="name">newTarget</span> = <span class="name">QFileDialog</span>.<span class="name">getExistingDirectory</span>(<span class="string">&quot;Choose your target directory.&quot;</span>, <span class="name">widget</span>
+              .<span class="name">targetDirectory</span>.<span class="name">text</span>);
+          <span class="keyword">if</span> (<span class="name">newTarget</span> <span class="operator">!=</span> <span class="string">&quot;&quot;</span>)
+              <span class="name">widget</span>.<span class="name">targetDirectory</span>.<span class="name">text</span> <span class="operator">=</span> <span class="name">Dir</span>.<span class="name">toNativeSparator</span>(<span class="name">newTarget</span>);
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">customInstallToggled</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">checked</span>) {
+      <span class="keyword">if</span> (<span class="name">checked</span>) {
+          <span class="keyword">if</span> (<span class="name">ComponentSelectionPage</span> <span class="operator">!=</span> <span class="number">null</span>)
+              <span class="name">ComponentSelectionPage</span>.<span class="name">selectDefault</span>();
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>, <span class="number">true</span>);
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">defaultInstallToggled</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">checked</span>) {
+      <span class="keyword">if</span> (<span class="name">checked</span>) {
+          <span class="keyword">if</span> (<span class="name">ComponentSelectionPage</span> <span class="operator">!=</span> <span class="number">null</span>)
+              <span class="name">ComponentSelectionPage</span>.<span class="name">selectDefault</span>();
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>, <span class="number">false</span>);
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">completeInstallToggled</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">checked</span>) {
+      <span class="keyword">if</span> (<span class="name">checked</span>) {
+          <span class="keyword">if</span> (<span class="name">ComponentSelectionPage</span> <span class="operator">!=</span> <span class="number">null</span>)
+              <span class="name">ComponentSelectionPage</span>.<span class="name">selectAll</span>();
+          <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>, <span class="number">false</span>);
+      }
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">checkAccepted</span> <span class="operator">=</span> <span class="keyword">function</span> (<span class="name">checked</span>) {
+      var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicLicenseWidget&quot;</span>);
+      <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>)
+          <span class="name">widget</span>.<span class="name">complete</span> <span class="operator">=</span> <span class="name">checked</span>;
+  }
+
+  <span class="name">Component</span>.<span class="name">prototype</span>.<span class="name">readyToInstallWidgetEntered</span> <span class="operator">=</span> <span class="keyword">function</span> () {
+      var <span class="name">widget</span> = <span class="name">gui</span>.<span class="name">pageWidgetByObjectName</span>(<span class="string">&quot;DynamicReadyToInstallWidget&quot;</span>);
+      <span class="keyword">if</span> (<span class="name">widget</span> <span class="operator">!=</span> <span class="number">null</span>) {
+          var <span class="name">html</span> = <span class="string">&quot;&lt;b&gt;Components to install:&lt;/b&gt;&lt;ul&gt;&quot;</span>;
+          var <span class="name">components</span> = <span class="name">installer</span>.<span class="name">components</span>();
+          <span class="keyword">for</span> (<span class="name">i</span> <span class="operator">=</span> <span class="number">0</span>; <span class="name">i</span> <span class="operator">&lt;</span> <span class="name">components</span>.<span class="name">length</span>; ++<span class="name">i</span>) {
+              <span class="keyword">if</span> (<span class="name">components</span>[<span class="name">i</span>].<span class="name">installationRequested</span>())
+                  <span class="name">html</span> <span class="operator">=</span> <span class="name">html</span> <span class="operator">+</span> <span class="string">&quot;&lt;li&gt;&quot;</span> <span class="operator">+</span> <span class="name">components</span>[<span class="name">i</span>].<span class="name">displayName</span> <span class="operator">+</span> <span class="string">&quot;&lt;/li&gt;&quot;</span>
+          }
+          <span class="name">html</span> <span class="operator">=</span> <span class="name">html</span> <span class="operator">+</span> <span class="string">&quot;&lt;/ul&gt;&quot;</span>;
+          <span class="name">widget</span>.<span class="name">showDetailsBrowser</span>.<span class="name">html</span> <span class="operator">=</span> <span class="name">html</span>;
+      }
+  }
+
+</pre>
+</div>
+<!-- @@@dynamicpage/packages/org.qtproject.ifw.example.dynamicpage/meta/installscript.js -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

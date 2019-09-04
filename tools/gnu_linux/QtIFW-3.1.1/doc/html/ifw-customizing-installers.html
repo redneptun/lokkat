@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Customizing Installers | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Customizing Installers</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-updates.html" />
+  <link rel="next" href="qtifwexamples.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-updates.html">Promoting Updates</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="qtifwexamples.html">Qt Installer Framework Examples</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#adding-operations">Adding Operations</a></li>
+<li class="level1"><a href="#adding-pages">Adding Pages</a></li>
+<li class="level2"><a href="#using-component-scripts-to-add-pages">Using Component Scripts to Add Pages</a></li>
+<li class="level2"><a href="#using-control-scripts-to-add-pages">Using Control Scripts to Add Pages</a></li>
+<li class="level1"><a href="#adding-widgets">Adding Widgets</a></li>
+<li class="level1"><a href="#interacting-with-installer-functionality">Interacting with Installer Functionality</a></li>
+<li class="level1"><a href="#translating-pages">Translating Pages</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Customizing Installers</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-customizing-installers.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>You can use scripting to customize installers by:</p>
+<ul>
+<li>Adding Qt Installer Framework <i>operations</i> that are prepared by the scripts and performed by the installer.</li>
+<li>Adding new pages that you specify in the package.xml file and place in the <code>packages</code> directory.</li>
+<li>Modifying existing pages by inserting custom user interface elements into them as single widgets.</li>
+<li>Adding language variants.</li>
+</ul>
+<p>You can use both <i>component scripts</i> and a <i>control script</i> to customize installers. A component script is associated with a particular component by specifying it in the <code>Script</code> element of the package.xml file of the component. The script is loaded when the component's metadata is fetched. For more information about component scripts, see <a href="scripting.html">Component Scripting</a>.</p>
+<p>A control script is associated with the whole installer by specifying it in the <code>ControlScript</code> element of the control.xml file of the installer. Control scripts can be part of the installer resources or be passed on the command line. They can be used to modify the installer pages that are presented to users before components are loaded. Also, you can use them to modify pages in the uninstaller. For more information, see <a href="noninteractive.html">Controller Scripting</a>.</p>
+<p>For more information about the global JavaScript objects that can be used in component and control scripts, see <a href="scripting-qmlmodule.html">Scripting API</a>.</p>
+<a name="adding-operations"></a>
+<h2 id="adding-operations">Adding Operations</h2>
+<p>You can use component scripts to perform Qt Installer Framework operations during the installation process. Typically, operations manipulate files by moving, copying, or patching them. Use the <a href="qinstaller-component.html#addOperation">QInstaller::Component::addOperation</a> or <a href="qinstaller-component.html#addElevatedOperation">QInstaller::Component::addElevatedOperation</a> function to add operations. For more information, see <a href="scripting.html#adding-operations-to-components">Adding Operations to Components</a>.</p>
+<p>In addition, you can implement methods to register custom installation operations in the installer by deriving <a href="kdupdater-updateoperation.html">KDUpdater::UpdateOperation</a>. For more information, see <a href="scripting.html#registering-custom-operations">Registering Custom Operations</a>.</p>
+<p>For a summary of available operations, see <a href="operations.html">Operations</a>.</p>
+<a name="adding-pages"></a>
+<h2 id="adding-pages">Adding Pages</h2>
+<p>A component can contain one or more user interface files, which are placed into the installer by a component or control script. The installer automatically loads all user interface files listed in the <code>UserInterfaces</code> element of the package.xml file.</p>
+<a name="using-component-scripts-to-add-pages"></a>
+<h3 >Using Component Scripts to Add Pages</h3>
+<p>To add a new page to the installer, use the <a href="scripting-installer.html#addWizardPage-method">installer::addWizardPage</a>() method and specify the location of the new page. For example, the following code adds an instance of <code>MyPage</code> before the ready for installation page:</p>
+<pre class="cpp">
+
+  installer<span class="operator">.</span>addWizardPage( component<span class="operator">,</span> <span class="string">&quot;MyPage&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qinstaller.html">QInstaller</a></span><span class="operator">.</span>ReadyForInstallation );
+
+</pre>
+<p>You can use component scripts to access the loaded widgets by calling the <a href="scripting-component.html#userInterface-method">component::userInterface</a>() method with the class name of the widget, as illustrated by the following code snippet:</p>
+<pre class="cpp">
+
+  component<span class="operator">.</span>userInterface( <span class="string">&quot;MyPage&quot;</span> )<span class="operator">.</span>checkbox<span class="operator">.</span>checked <span class="operator">=</span> <span class="keyword">true</span>;
+
+</pre>
+<a name="using-control-scripts-to-add-pages"></a>
+<h3 >Using Control Scripts to Add Pages</h3>
+<p>To register a custom page, use the <a href="scripting-installer.html#addWizardPage-method">installer::addWizardPage</a>() method and the object name set in the UI file (for example, <code>&quot;MyPage&quot;</code>). Then call the <code>Dynamic${ObjectName}Callback()</code> function (for example, <code>DynamicMyPageCallback()</code>):</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+      installer<span class="operator">.</span>addWizardPage(component<span class="operator">,</span> <span class="string">&quot;MyPage&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qinstaller.html">QInstaller</a></span><span class="operator">.</span>TargetDirectory)
+  }
+
+  Controller<span class="operator">.</span>prototype<span class="operator">.</span>DynamicMyPageCallback()
+  {
+      var page <span class="operator">=</span> gui<span class="operator">.</span>pageWidgetByObjectName(<span class="string">&quot;DynamicMyPage&quot;</span>);
+      page<span class="operator">.</span>myButton<span class="operator">.</span>click<span class="operator">,</span>
+      page<span class="operator">.</span>myWidget<span class="operator">.</span>subWidget<span class="operator">.</span>setText(<span class="string">&quot;hello&quot;</span>)
+  }
+
+</pre>
+<p>You can access widgets by using their object names that are set in the UI file. For example, <code>myButton</code> and <code>myWidget</code> are widget object names in the code above.</p>
+<a name="adding-widgets"></a>
+<h2 id="adding-widgets">Adding Widgets</h2>
+<p>You can use component or control scripts to insert custom user interface elements into the installer as single widgets (such as a check box).</p>
+<p>To insert a single widget, use the <a href="scripting-installer.html#addWizardPageItem-method">installer::addWizardPageItem</a> method. For example, the following code snippet adds an instance of <code>MyWidget</code> to the component selection page from within a script:</p>
+<pre class="cpp">
+
+  installer<span class="operator">.</span>addWizardPageItem( component<span class="operator">,</span> <span class="string">&quot;MyWidget&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qinstaller.html">QInstaller</a></span><span class="operator">.</span>ComponentSelection );
+
+</pre>
+<a name="interacting-with-installer-functionality"></a>
+<h2 id="interacting-with-installer-functionality">Interacting with Installer Functionality</h2>
+<p>You can use control scripts to execute installer functions automatically in tests, for example. The following snippet illustrates how to automatically click the <b>Next</b> button on the target directory selection page:</p>
+<pre class="cpp">
+
+  Controller<span class="operator">.</span>prototype<span class="operator">.</span>TargetDirectoryPageCallback <span class="operator">=</span> function()
+  {
+      gui<span class="operator">.</span>clickButton(buttons<span class="operator">.</span>NextButton);
+  }
+
+</pre>
+<a name="translating-pages"></a>
+<h2 id="translating-pages">Translating Pages</h2>
+<p>The installer uses the Qt Translation system to support the translation of user-readable output to several languages. To provide end users with localized versions of strings contained in the component scripts and user interfaces, create QTranslator files that the installation system loads along with the component. The installer loads the translation file that matches the current system locale. For example, if the system locale is German, the de.qm file is loaded. In addition, a localized <code>license_de.txt</code> is shown instead of the default <code>license.txt</code> if it is found.</p>
+<p>Translations need to be added to the <code>package.xml</code> file to be activated for a component:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>Translations<span class="operator">&gt;</span>
+      <span class="operator">&lt;</span>Translation<span class="operator">&gt;</span>de<span class="operator">.</span>qm<span class="operator">&lt;</span><span class="operator">/</span>Translation<span class="operator">&gt;</span>
+  <span class="operator">&lt;</span><span class="operator">/</span>Translations<span class="operator">&gt;</span>
+
+</pre>
+<p>Use the <code>qsTr()</code> function for literal text within scripts. Additionally, you can add the <code>Component.prototype.retranslateUi</code> method to the script. It is called when the language of the installer changes and the translation file is loaded.</p>
+<p>The context being used for translation is the basename of the script file when using <code>qsTr</code> or the class name of the UI file when translating a user interface. For example, if the script file is called <code>installscript.qs</code>, the context will be installscript.</p>
+<p><b>Note: </b>The translation system can also be used to customize the UI. Use e.g&#x2e; an <code>en.ts</code> file to replace any text in the installer with a custom English version.</p></div>
+<!-- @@@ifw-customizing-installers.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-updates.html">Promoting Updates</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="qtifwexamples.html">Qt Installer Framework Examples</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

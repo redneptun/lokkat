@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Promoting Updates | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Promoting Updates</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-online-installers.html" />
+  <link rel="next" href="ifw-customizing-installers.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-online-installers.html">Creating Online Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-customizing-installers.html">Customizing Installers</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#configuring-updates">Configuring Updates</a></li>
+<li class="level1"><a href="#recreating-repositories">Recreating Repositories</a></li>
+<li class="level1"><a href="#partially-updating-repositories">Partially Updating Repositories</a></li>
+<li class="level2"><a href="#creating-partial-updates">Creating Partial Updates</a></li>
+<li class="level2"><a href="#uploading-partial-updates">Uploading Partial Updates</a></li>
+<li class="level1"><a href="#changing-repositories">Changing Repositories</a></li>
+<li class="level2"><a href="#adding-repositories">Adding Repositories</a></li>
+<li class="level2"><a href="#removing-repositories">Removing Repositories</a></li>
+<li class="level2"><a href="#replacing-repositories">Replacing Repositories</a></li>
+<li class="level1"><a href="#relocatable-repositories">Relocatable Repositories</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Promoting Updates</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-updates.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Create online installers to be able to promote updates to end users who install your product.</p>
+<p>The following steps are needed to promote updates:</p>
+<ol class="1" type="1"><li>Copy the updated content to the package directory.</li>
+<li>Increase the value of the <code>&lt;Version&gt;</code> element for the updated components in the package.xml file.</li>
+<li>Use the <code>repogen</code> tool to recreate the online repository with the updated contents and to generate the Updates.xml file in the root directory of the repository.</li>
+<li>Upload the repository to the web server.</li>
+<li>Use the <code>binarycreator</code> tool to create the installer.</li>
+</ol>
+<a name="configuring-updates"></a>
+<h2 id="configuring-updates">Configuring Updates</h2>
+<p>The installer downloads the Updates.xml file on startup and compares the installed version with the version in the file. If the online version number in the file is greater than the local one, the installer displays it in the list of available updates.</p>
+<p>Increase the value of the <code>&lt;Version&gt;</code> element for the component in the package.xml file.</p>
+<a name="recreating-repositories"></a>
+<h2 id="recreating-repositories">Recreating Repositories</h2>
+<p>The easiest way to provide an update is to recreate the repository and upload it to the web server. For more information, see <a href="ifw-online-installers.html#creating-repositories">Creating Repositories</a>.</p>
+<a name="partially-updating-repositories"></a>
+<h2 id="partially-updating-repositories">Partially Updating Repositories</h2>
+<p>A full update of the whole repository might not be optimal if:</p>
+<ul>
+<li>The repository is very large, as uploading would take a long time.</li>
+<li>You want to deliver only the changed components.</li>
+</ul>
+<p><b>Note: </b>repogen recreates the 7zip archives each time it is being called. As 7zip stores the timestamps of the included files (which are moved or copied during this process), the SHA sum of each archive changes. SHA sums are used to verify the download of the archive and hence the SHA needs to match the 7zip. As the SHAs are stored in the Updates.xml file you will be forced to upload the full repository. This can be circumvented by using the <code>--update</code> option of repogen.</p><a name="creating-partial-updates"></a>
+<h3 >Creating Partial Updates</h3>
+<p>When recreating the online repository, use the <code>--update</code> parameter. It takes an existing repository as input and only changes the components that are specified as additional parameters. Only those SHA sums are changed in the global configuration as well.</p>
+<a name="uploading-partial-updates"></a>
+<h3 >Uploading Partial Updates</h3>
+<p>Upload the following items to the web server:</p>
+<ul>
+<li>The component directory (usually something like <code>com.vendor.product.updatedpart</code>).</li>
+<li>The global <code>Updates.xml</code> stored in the root directory of the online repository.</li>
+</ul>
+<p><b>Note: </b>The order of uploading items is very important. If you update the repository on a live server, first update the component and then Updates.xml. The package names include version numbers, and therefore, end users receive old packages until the new ones are fully uploaded.</p><a name="changing-repositories"></a>
+<h2 id="changing-repositories">Changing Repositories</h2>
+<p>To have the current update repository point to other repositories, edit the Updates.xml file in the current repository. You can add, replace, or remove repositories.</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>RepositoryUpdate<span class="operator">&gt;</span>
+    <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;...&quot;</span> OPTIONS <span class="operator">/</span><span class="operator">&gt;</span>
+    <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;...&quot;</span> OPTIONS <span class="operator">/</span><span class="operator">&gt;</span>
+  <span class="operator">&lt;</span><span class="operator">/</span>RepositoryUpdate<span class="operator">&gt;</span>
+
+</pre>
+<a name="adding-repositories"></a>
+<h3 >Adding Repositories</h3>
+<p>To update a repository, add a <code>&lt;Repository&gt;</code> child element to the <code>&lt;RepositoryUpdate&gt;</code> element with the following options:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;add&quot;</span> url<span class="operator">=</span><span class="string">&quot;http://www.example.com/repository&quot;</span> name<span class="operator">=</span><span class="string">&quot;user&quot;</span> password<span class="operator">=</span><span class="string">&quot;password&quot;</span>
+               displayname<span class="operator">=</span><span class="string">&quot;Example Repository&quot;</span> <span class="operator">/</span><span class="operator">&gt;</span>
+
+</pre>
+<p><code>url</code> will be used as a base URL to resolve an <code>Updates.xml</code> file against. If <code>url</code> is itself relative, it will be resolved against the base URL of the current document.</p>
+<p><code>displayname</code> specifies how the repository should be named in the <b>Settings</b> page of the Maintenance Tool.</p>
+<p><code>name</code> and <code>password</code> optionally specify credentials for a protected repository.</p>
+<a name="removing-repositories"></a>
+<h3 >Removing Repositories</h3>
+<p>To remove a repository, add a <code>&lt;Repository&gt;</code> child element to the <code>&lt;RepositoryUpdate&gt;</code> element with the following options:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;remove&quot;</span> url<span class="operator">=</span><span class="string">&quot;http://www.example.com/repository&quot;</span> <span class="operator">/</span><span class="operator">&gt;</span>
+
+</pre>
+<p><code>url</code> must match exactly the URL that is to be removed.</p>
+<a name="replacing-repositories"></a>
+<h3 >Replacing Repositories</h3>
+<p>To replace one repository with another, add a <code>&lt;Repository&gt;</code> child element to the <code>&lt;RepositoryUpdate&gt;</code> element with the following options:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;replace&quot;</span> oldUrl<span class="operator">=</span><span class="string">&quot;http://www.example.com/repository&quot;</span>
+              newUrl<span class="operator">=</span><span class="string">&quot;http://www.example.com/newrepository&quot;</span> name<span class="operator">=</span><span class="string">&quot;user&quot;</span> password<span class="operator">=</span><span class="string">&quot;password&quot;</span>
+              displayname<span class="operator">=</span><span class="string">&quot;New Example Repository&quot;</span> <span class="operator">/</span><span class="operator">&gt;</span>
+
+</pre>
+<p><code>oldUrl</code> must match exactly the URL that is to be replaced.</p>
+<p><code>newUrl</code> must match exactly the URL that it is replaced with.</p>
+<a name="relocatable-repositories"></a>
+<h2 id="relocatable-repositories">Relocatable Repositories</h2>
+<p>Some projects contain multiple repositories. To create a relocatable set of repositories you should use relative paths.</p>
+<p>So if the generic repository available at the address <code>http://www.example.com/repositories/generic</code> and <code>Updates.xml</code> contains <code>&lt;Repository&gt;</code> element with the following options:</p>
+<pre class="cpp">
+
+  <span class="operator">&lt;</span>Repository action<span class="operator">=</span><span class="string">&quot;add&quot;</span> url<span class="operator">=</span><span class="string">&quot;../module&quot;</span> name<span class="operator">=</span><span class="string">&quot;user&quot;</span> password<span class="operator">=</span><span class="string">&quot;password&quot;</span>
+               displayname<span class="operator">=</span><span class="string">&quot;Module Repository&quot;</span> <span class="operator">/</span><span class="operator">&gt;</span>
+
+</pre>
+<p>Then the resolved address of the added repository will be <code>http://www.example.com/repositories/module</code>, so that the repository does not contain information about their absolute location.</p>
+<p>If you want to change the address, you can simply copy a set of repositories as is. It is recommended to maintain the old generic repository for some time and replace the addresses as described above. You can also provide the updated installer with the new generic address.</p>
+<p>You can use relative paths for the arguments <code>url</code>, <code>oldUrl</code>, and <code>newUrl</code> in the <code>&lt;Repository&gt;</code> element.</p>
+</div>
+<!-- @@@ifw-updates.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-online-installers.html">Creating Online Installers</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-customizing-installers.html">Customizing Installers</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

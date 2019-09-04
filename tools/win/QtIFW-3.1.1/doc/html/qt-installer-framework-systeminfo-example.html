@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- systeminfo.qdoc -->
+  <title>System Information Example | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qtifwexamples.html">Qt Installer Framework Examples</a></td><td >System Information Example</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#helper-functions">Helper Functions</a></li>
+<li class="level1"><a href="#checking-the-operating-system-type">Checking the Operating System Type</a></li>
+<li class="level1"><a href="#checking-the-operating-system-architecture">Checking the Operating System Architecture</a></li>
+<li class="level1"><a href="#generating-the-example-installer">Generating the Example Installer</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">System Information Example</h1>
+<span class="subtitle"></span>
+<!-- $$$systeminfo-description -->
+<div class="descr"> <a name="details"></a>
+<p>The <i>System Information Example</i> demonstrates how to use the <a href="scripting-systeminfo.html">systemInfo</a> API to detect details about the target operating system.</p>
+<p>The example installer consists of three packages: <code>root</code>, <code>root.i386</code> and <code>root.x86_64</code>. The <code>root.i386</code> and <code>root.x86_64</code> packages are assumed to contain binaries specific to the architecture. The <code>root</code> package contains logic to check for minimum operating system version. It also hides either the <code>root.i386</code> or <code>root.x86_64</code> package, based on the operating system architecture.</p>
+<p>The logic to detect the operating system features is scripted in the <code>root</code>'s <a href="qt-installer-framework-systeminfo-packages-root-meta-installscript-qs.html">installscript.qs</a> file.</p>
+<a name="helper-functions"></a>
+<h2 id="helper-functions">Helper Functions</h2>
+<p>The <a href="qt-installer-framework-systeminfo-packages-root-meta-installscript-qs.html">installscript.qs</a> file first declares two helper functions: <code>cancelInstaller()</code> and <code>majorVersion()</code>.</p>
+<pre class="qml">
+
+  function cancelInstaller(message)
+  {
+      installer.setDefaultPageVisible(QInstaller.Introduction, false);
+      installer.setDefaultPageVisible(QInstaller.TargetDirectory, false);
+      installer.setDefaultPageVisible(QInstaller.ComponentSelection, false);
+      installer.setDefaultPageVisible(QInstaller.ReadyForInstallation, false);
+      installer.setDefaultPageVisible(QInstaller.StartMenuSelection, false);
+      installer.setDefaultPageVisible(QInstaller.PerformInstallation, false);
+      installer.setDefaultPageVisible(QInstaller.LicenseCheck, false);
+
+      var abortText = &quot;&lt;font color='red'&gt;&quot; + message +&quot;&lt;/font&gt;&quot;;
+      installer.setValue(&quot;FinishedText&quot;, abortText);
+  }
+
+</pre>
+<p><code>cancelInstaller()</code> sets all except the last installer page to invisible, and shows an error message on the last one. This is a technique also demonstrated in the <a href="qt-installer-framework-componenterror-example.html">componenterror</a> and <a href="qt-installer-framework-quitinstaller-example.html">quitinstaller</a> examples.</p>
+<pre class="qml">
+
+  function majorVersion(str)
+  {
+      return parseInt(str.split(&quot;.&quot;, 1));
+  }
+
+</pre>
+<p><code>majorVersion()</code> takes a string of the format <code>&lt;number&gt;.&lt;number&gt;.&lt;number&gt;.[&#x2e;.&#x2e;]</code>. It uses the built-in JavaScript functions <code>string.split()</code> and <code>parseInt()</code> to return the first <code>&lt;number&gt;</code> as an integer.</p>
+<a name="checking-the-operating-system-type"></a>
+<h2 id="checking-the-operating-system-type">Checking the Operating System Type</h2>
+<p>The actual checks are executed as soon as the package is loaded, in the <code>Component</code> constructor function.</p>
+<pre class="qml">
+
+  function Component()
+  {
+
+</pre>
+<p>The function uses the built-in <a href="scripting-systeminfo.html#kernelType-prop">systemInfo.kernelType</a>, <a href="scripting-systeminfo.html#kernelVersion-prop">systemInfo.kernelVersion</a>, <a href="scripting-systeminfo.html#productType-prop">systemInfo::productType</a>, and <a href="scripting-systeminfo.html#productVersion-prop">systemInfo.productVersion</a> properties to check the minimum system requirements.</p>
+<pre class="qml">
+
+      var validOs = false;
+
+      if (systemInfo.kernelType === &quot;winnt&quot;) {
+          if (majorVersion(systemInfo.kernelVersion) &gt;= 6)
+              validOs = true;
+      } else if (systemInfo.kernelType === &quot;darwin&quot;) {
+          if (majorVersion(systemInfo.kernelVersion) &gt;= 11)
+              validOs = true;
+      } else {
+          if (systemInfo.productType !== &quot;opensuse&quot;
+                  || systemInfo.productVersion !== &quot;13.2&quot;) {
+              QMessageBox[&quot;warning&quot;](&quot;os.warning&quot;, &quot;Installer&quot;,
+                                     &quot;Note that the binaries are only tested on OpenSUSE 13.2.&quot;,
+                                     QMessageBox.Ok);
+          }
+          validOs = true;
+      }
+
+</pre>
+<p>The script uses <a href="scripting-systeminfo.html#productType-prop">systemInfo.productType</a> to differentiate between Windows, OS X, and individual Linux distributions.</p>
+<p>For OS X and Windows, the script checks the operating system kernel version. For a mapping of kernel to operating system versions, see <a href="http://en.wikipedia.org/wiki/Darwin_%28operating_system%29">Darwin</a> and <a href="http://en.wikipedia.org/wiki/Windows_NT">Windows NT</a>.</p>
+<p>In the case of Linux, it checks the distribution name and version. If it does not match the specific distribution and version the binaries are presumably built for, the installer shows a warning in a modal dialog, but allows installation.</p>
+<p>If the Windows or OS X version is too old, though, the script calls the <code>cancelInstaller()</code> helper function to prevent an actual installation:</p>
+<pre class="qml">
+
+      if (!validOs) {
+          cancelInstaller(&quot;Installation on &quot; + systemInfo.prettyProductName + &quot; is not supported&quot;);
+          return;
+      }
+
+</pre>
+<a name="checking-the-operating-system-architecture"></a>
+<h2 id="checking-the-operating-system-architecture">Checking the Operating System Architecture</h2>
+<p>The next section demonstrates the use of <a href="scripting-systeminfo.html#currentCpuArchitecture-prop">systemInfo.currentCpuArchitecture</a> to choose the appropriate sub-package for a particular architecture:</p>
+<pre class="qml">
+
+      installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Virtual&quot;, &quot;true&quot;);
+      installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Virtual&quot;, &quot;true&quot;);
+
+      if ( systemInfo.currentCpuArchitecture === &quot;i386&quot;) {
+          installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Virtual&quot;, &quot;false&quot;);
+          installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Default&quot;, &quot;true&quot;);
+      }
+      if ( systemInfo.currentCpuArchitecture === &quot;x86_64&quot;) {
+          installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Virtual&quot;, &quot;false&quot;);
+          installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Default&quot;, &quot;true&quot;);
+      }
+  }
+
+</pre>
+<p>Depending on the operating system architecture, either the package <code>root.i386</code> or <code>root.x86_64</code> is marked <code>Virtual</code>, hiding it from the user. For the package that matches the local architecture, the <code>Default</code> property is set to check the package by default.</p>
+<a name="generating-the-example-installer"></a>
+<h2 id="generating-the-example-installer">Generating the Example Installer</h2>
+<p>To create the example installer, switch to the example source directory on the command line and enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>c config\config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer<span class="operator">.</span>exe
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>binarycreator <span class="operator">-</span>c config<span class="operator">/</span>config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer
+
+</pre>
+</li>
+</ul>
+<p>The installer is created in the current directory.</p>
+<p>Files:</p>
+<ul>
+<li><a href="qt-installer-framework-systeminfo-config-config-xml.html">systeminfo/config/config.xml</a></li>
+<li><a href="qt-installer-framework-systeminfo-packages-root-meta-installscript-qs.html">systeminfo/packages/root/meta/installscript.qs</a></li>
+<li><a href="qt-installer-framework-systeminfo-packages-root-meta-package-xml.html">systeminfo/packages/root/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-systeminfo-packages-root-i386-meta-package-xml.html">systeminfo/packages/root.i386/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-systeminfo-packages-root-x86-64-meta-package-xml.html">systeminfo/packages/root.x86_64/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-systeminfo-systeminfo-pro.html">systeminfo/systeminfo.pro</a></li>
+</ul>
+</div>
+<!-- @@@systeminfo -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+#!/bin/bash
+# clear dist dir
+shopt -s extglob
+cd dist/gnu_linux
+rm -rf !(.*)
+cd ../..
+
+#build dist
+source venv/bin/activate
+pyinstaller -F --distpath dist/gnu_linux/ gnu_linux.spec
+deactivate
+
+#copy additional files
+
+#help
+mkdir dist/gnu_linux/help
+cp help/*.html dist/gnu_linux/help
+cp help/*.css dist/gnu_linux/help
+mkdir dist/gnu_linux/help/img
+cp help/img/*.png dist/gnu_linux/help/img
+
+#license
+cp LICENSE dist/gnu_linux/
+
+#links
+cp etc/open_project_website.sh dist/gnu_linux/

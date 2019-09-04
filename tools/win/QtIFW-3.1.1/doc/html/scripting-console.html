@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- console.qdoc -->
+  <title>console QML Type | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">console QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$console-brief -->
+<p>Provides methods for logging and debugging. <a href="#details">More...</a></p>
+<!-- @@@console -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import scripting .</td></tr></table></div><ul>
+<li><a href="scripting-console-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="scripting-console.html#log-method">log</a></b></b>(string <i>value</i>)</li>
+</ul>
+<!-- $$$console-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>You can use the <code>console</code> object to print log information about installer functions to the console. The following example uses the <code>console</code> object <a href="scripting-console.html#log-method">log</a> method and <a href="scripting-installer.html">installer</a> object <a href="scripting-installer.html#isUpdater-method">installer::isUpdater()</a>, <a href="scripting-installer.html#isUninstaller-method">installer::isUninstaller()</a>, and <a href="scripting-installer.html#isPackageManager-method">installer::isPackageManager()</a> methods to display a message that indicates whether the maintenance tool is currently being used to update, remove, or add components.</p>
+<pre class="cpp">
+
+  onPackageManagerCoreTypeChanged <span class="operator">=</span> function()
+  {
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Updater: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isUpdater());
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Uninstaller: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isUninstaller());
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Package Manager: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isPackageManager());
+  }
+
+</pre>
+<!-- @@@console -->
+<h2>Method Documentation</h2>
+<!-- $$$log -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="log-method">
+<td class="tblQmlFuncNode"><p>
+<a name="log-method"></a><span class="type">void</span> <span class="name">log</span>(<span class="type">string</span> <i>value</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Prints the string specified by <i>value</i> to the console.</p>
+</div></div><!-- @@@log -->
+<br/>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

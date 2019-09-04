@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Environment Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Environment</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Environment Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-environment.html">KDUpdater::Environment</a>)<br/></span>
+<ul>
+<li><a href="kdupdater-environment-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#dtor.Environment">~Environment</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QProcessEnvironment </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#applyTo">applyTo</a></b>(const QProcessEnvironment &amp;<i>qpe</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#applyTo-1">applyTo</a></b>(QProcess *<i>process</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#setTemporaryValue">setTemporaryValue</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#value">value</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>defaultValue</i> = QString()) const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Environment &amp;</td><td class="memItemRight bottomAlign"><b><a href="kdupdater-environment.html#instance">instance</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$~Environment[overload1]$$$~Environment -->
+<h3 class="fn" id="dtor.Environment"><a name="dtor.Environment"></a>Environment::<span class="name">~Environment</span>()</h3>
+<p>Destroys the instance of Environment.</p><!-- @@@~Environment -->
+<!-- $$$applyTo[overload1]$$$applyToconstQProcessEnvironment& -->
+<h3 class="fn" id="applyTo"><a name="applyTo"></a><span class="type">QProcessEnvironment</span> Environment::<span class="name">applyTo</span>(const <span class="type">QProcessEnvironment</span> &amp;<i>qpe</i>) const</h3>
+<!-- @@@applyTo -->
+<!-- $$$applyTo$$$applyToQProcess* -->
+<h3 class="fn" id="applyTo-1"><a name="applyTo-1"></a><span class="type">void</span> Environment::<span class="name">applyTo</span>(<span class="type">QProcess</span> *<i>process</i>)</h3>
+<!-- @@@applyTo -->
+<!-- $$$instance[overload1]$$$instance -->
+<h3 class="fn" id="instance"><a name="instance"></a><code>[static] </code><span class="type">Environment</span> &amp;Environment::<span class="name">instance</span>()</h3>
+<!-- @@@instance -->
+<!-- $$$setTemporaryValue[overload1]$$$setTemporaryValueconstQString&constQString& -->
+<h3 class="fn" id="setTemporaryValue"><a name="setTemporaryValue"></a><span class="type">void</span> Environment::<span class="name">setTemporaryValue</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>value</i>)</h3>
+<!-- @@@setTemporaryValue -->
+<!-- $$$value[overload1]$$$valueconstQString&constQString& -->
+<h3 class="fn" id="value"><a name="value"></a><span class="type">QString</span> Environment::<span class="name">value</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>defaultValue</i> = QString()) const</h3>
+<!-- @@@value -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

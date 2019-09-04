@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- task.cpp -->
+  <title>Task Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Task</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Task Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-task.html">KDUpdater::Task</a>)<br/></span>
+<!-- $$$Task-brief -->
+<p>The Task class is the base class for all tasks in <a href="kdupdater.html">KDUpdater</a>. <a href="#details">More...</a></p>
+<!-- @@@Task -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;Task&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="kdupdater-updatefinder.html">KDUpdater::UpdateFinder</a></p>
+</td></tr></table></div><ul>
+<li><a href="kdupdater-task-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#Capability-enum">Capability</a></b> { NoCapability, Pausable, Stoppable }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#autoDelete">autoDelete</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#capabilities">capabilities</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#error">error</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#errorString">errorString</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#isFinished">isFinished</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#isPaused">isPaused</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#isRunning">isRunning</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#isStopped">isStopped</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#name">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#progressPercent">progressPercent</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#progressText">progressText</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#setAutoDelete">setAutoDelete</a></b>(bool <i>autoDelete</i>)</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#pause">pause</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#resume">resume</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#run">run</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#stop">stop</a></b>()</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#error-1">error</a></b>(int <i>code</i>, const QString &amp;<i>errorText</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#finished">finished</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#paused">paused</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#progressText-1">progressText</a></b>(const QString &amp;<i>progressText</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#progressValue">progressValue</a></b>(int <i>percent</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#resumed">resumed</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#started">started</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#stopped">stopped</a></b>()</td></tr>
+</table></div>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#doPause">doPause</a></b>() = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#doResume">doResume</a></b>() = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#doRun">doRun</a></b>() = 0</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-task.html#doStop">doStop</a></b>() = 0</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$Task-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The Task class is the base class for all tasks in <a href="kdupdater.html">KDUpdater</a>.</p>
+<p>This class is the base class for all task classes in <a href="kdupdater.html">KDUpdater</a>. Task is an activity that occupies certain amount of execution time. It can be started, stopped (or canceled), paused and resumed. Tasks can report progress and error messages which an application can show in any sort of UI. The <a href="kdupdater-task.html">KDUpdater::Task</a> class provides a common interface for dealing with all kinds of tasks in <a href="kdupdater.html">KDUpdater</a>.</p>
+<p>User should be careful of these points:</p>
+<ul>
+<li>Task classes can be started only once.</li>
+<li>Instances of this class cannot be created. Only instances of the subclasses can.</li>
+</ul>
+</div>
+<!-- @@@Task -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Capability$$$NoCapability$$$Pausable$$$Stoppable -->
+<h3 class="fn" id="Capability-enum"><a name="Capability-enum"></a>enum Task::<span class="name">Capability</span></h3>
+<p>This enum value sets the capabilities of the task.</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>KDUpdater::Task::NoCapability</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">The task has no capabilities, so it cannot be paused or stopped.</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::Task::Pausable</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The task can be paused.</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::Task::Stoppable</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The task can be stopped.</td></tr>
+</table></div>
+<!-- @@@Capability -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$autoDelete[overload1]$$$autoDelete -->
+<h3 class="fn" id="autoDelete"><a name="autoDelete"></a><span class="type">bool</span> Task::<span class="name">autoDelete</span>() const</h3>
+<p>Returns <code>true</code> if the task will be automatically deleted.</p>
+<p><b>See also </b><a href="kdupdater-task.html#setAutoDelete">setAutoDelete</a>().</p>
+<!-- @@@autoDelete -->
+<!-- $$$capabilities[overload1]$$$capabilities -->
+<h3 class="fn" id="capabilities"><a name="capabilities"></a><span class="type">int</span> Task::<span class="name">capabilities</span>() const</h3>
+<p>Returns the capabilities of the task. It is a combination of one or more <a href="kdupdater-task.html#Capability-enum">Task::Capability</a> flags.</p>
+<!-- @@@capabilities -->
+<!-- $$$doPause[overload1]$$$doPause -->
+<h3 class="fn" id="doPause"><a name="doPause"></a><code>[pure virtual protected] </code><span class="type">bool</span> Task::<span class="name">doPause</span>()</h3>
+<p>Returns <code>true</code> if the task is paused.</p>
+<!-- @@@doPause -->
+<!-- $$$doResume[overload1]$$$doResume -->
+<h3 class="fn" id="doResume"><a name="doResume"></a><code>[pure virtual protected] </code><span class="type">bool</span> Task::<span class="name">doResume</span>()</h3>
+<p>Returns <code>true</code> if the task is resumed.</p>
+<!-- @@@doResume -->
+<!-- $$$doRun[overload1]$$$doRun -->
+<h3 class="fn" id="doRun"><a name="doRun"></a><code>[pure virtual protected] </code><span class="type">void</span> Task::<span class="name">doRun</span>()</h3>
+<p>Returns <code>0</code> if the task is run.</p>
+<!-- @@@doRun -->
+<!-- $$$doStop[overload1]$$$doStop -->
+<h3 class="fn" id="doStop"><a name="doStop"></a><code>[pure virtual protected] </code><span class="type">bool</span> Task::<span class="name">doStop</span>()</h3>
+<p>Returns <code>true</code> if the task is stopped.</p>
+<!-- @@@doStop -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn" id="error"><a name="error"></a><span class="type">int</span> Task::<span class="name">error</span>() const</h3>
+<p>Returns the last reported error code.</p>
+<!-- @@@error -->
+<!-- $$$error$$$errorintconstQString& -->
+<h3 class="fn" id="error-1"><a name="error-1"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">error</span>(<span class="type">int</span> <i>code</i>, const <span class="type">QString</span> &amp;<i>errorText</i>)</h3>
+<p>This signal is emitted to notify an error during the execution of this task.</p>
+<p>The <i>code</i> parameter indicates the error that was found during the execution of the task, while the <i>errorText</i> is the human-readable description of the last error that occurred.</p>
+<p><b>Note:</b> Signal <i>error</i> is overloaded in this class. To connect to this one using the function pointer syntax, you must specify the signal type in a static cast, as shown in this example:<pre class="cpp">
+
+  connect(task<span class="operator">,</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type">void</span>(Task<span class="operator">::</span><span class="operator">*</span>)(<span class="type">int</span><span class="operator">,</span> <span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>)<span class="operator">&gt;</span>(<span class="operator">&amp;</span>Task<span class="operator">::</span>error)<span class="operator">,</span>
+      <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="type">int</span> code<span class="operator">,</span> <span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>errorText){ <span class="comment">/* ... */</span> });
+
+</pre>
+<!-- @@@error -->
+<!-- $$$errorString[overload1]$$$errorString -->
+<h3 class="fn" id="errorString"><a name="errorString"></a><span class="type">QString</span> Task::<span class="name">errorString</span>() const</h3>
+<p>Returns the last reported error message text.</p>
+<!-- @@@errorString -->
+<!-- $$$finished[overload1]$$$finished -->
+<h3 class="fn" id="finished"><a name="finished"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">finished</span>()</h3>
+<p>This signal is emitted when the task has finished.</p>
+<!-- @@@finished -->
+<!-- $$$isFinished[overload1]$$$isFinished -->
+<h3 class="fn" id="isFinished"><a name="isFinished"></a><span class="type">bool</span> Task::<span class="name">isFinished</span>() const</h3>
+<p>Returns whether the task has finished or not.</p>
+<p><b>Note: </b>Stopped (or canceled) tasks are not finished tasks.</p><!-- @@@isFinished -->
+<!-- $$$isPaused[overload1]$$$isPaused -->
+<h3 class="fn" id="isPaused"><a name="isPaused"></a><span class="type">bool</span> Task::<span class="name">isPaused</span>() const</h3>
+<p>Returns whether the task is paused or not.</p>
+<!-- @@@isPaused -->
+<!-- $$$isRunning[overload1]$$$isRunning -->
+<h3 class="fn" id="isRunning"><a name="isRunning"></a><span class="type">bool</span> Task::<span class="name">isRunning</span>() const</h3>
+<p>Returns whether the task has started and is running.</p>
+<!-- @@@isRunning -->
+<!-- $$$isStopped[overload1]$$$isStopped -->
+<h3 class="fn" id="isStopped"><a name="isStopped"></a><span class="type">bool</span> Task::<span class="name">isStopped</span>() const</h3>
+<p>Returns whether the task is stopped or not.</p>
+<p><b>Note: </b>Finished tasks are not stopped classes.</p><!-- @@@isStopped -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn" id="name"><a name="name"></a><span class="type">QString</span> Task::<span class="name">name</span>() const</h3>
+<p>Returns the name of the task.</p>
+<!-- @@@name -->
+<!-- $$$pause[overload1]$$$pause -->
+<h3 class="fn" id="pause"><a name="pause"></a><code>[slot] </code><span class="type">void</span> Task::<span class="name">pause</span>()</h3>
+<p>Pauses the task, provided the task has the <a href="kdupdater-task.html#Capability-enum">Task::Pausable</a> capability.</p>
+<!-- @@@pause -->
+<!-- $$$paused[overload1]$$$paused -->
+<h3 class="fn" id="paused"><a name="paused"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">paused</span>()</h3>
+<p>This signal is emitted when the task has paused.</p>
+<!-- @@@paused -->
+<!-- $$$progressPercent[overload1]$$$progressPercent -->
+<h3 class="fn" id="progressPercent"><a name="progressPercent"></a><span class="type">int</span> Task::<span class="name">progressPercent</span>() const</h3>
+<p>Returns the progress in percentage made by this task.</p>
+<!-- @@@progressPercent -->
+<!-- $$$progressText[overload1]$$$progressText -->
+<h3 class="fn" id="progressText"><a name="progressText"></a><span class="type">QString</span> Task::<span class="name">progressText</span>() const</h3>
+<p>Returns a string that describes the progress made by this task as a string.</p>
+<!-- @@@progressText -->
+<!-- $$$progressText$$$progressTextconstQString& -->
+<h3 class="fn" id="progressText-1"><a name="progressText-1"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">progressText</span>(const <span class="type">QString</span> &amp;<i>progressText</i>)</h3>
+<p>This signal is emitted to report the progress made by the task. The <i>progressText</i> parameter represents the progress made in a human-readable form.</p>
+<p><b>Note:</b> Signal <i>progressText</i> is overloaded in this class. To connect to this one using the function pointer syntax, you must specify the signal type in a static cast, as shown in this example:<pre class="cpp">
+
+  connect(task<span class="operator">,</span> <span class="keyword">static_cast</span><span class="operator">&lt;</span><span class="type">void</span>(Task<span class="operator">::</span><span class="operator">*</span>)(<span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>)<span class="operator">&gt;</span>(<span class="operator">&amp;</span>Task<span class="operator">::</span>progressText)<span class="operator">,</span>
+      <span class="operator">[</span><span class="operator">=</span><span class="operator">]</span>(<span class="keyword">const</span> <span class="type">QString</span> <span class="operator">&amp;</span>progressText){ <span class="comment">/* ... */</span> });
+
+</pre>
+<!-- @@@progressText -->
+<!-- $$$progressValue[overload1]$$$progressValueint -->
+<h3 class="fn" id="progressValue"><a name="progressValue"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">progressValue</span>(<span class="type">int</span> <i>percent</i>)</h3>
+<p>This signal is emitted to report progress made by the task. The <i>percent</i> parameter gives the progress made as a percentage.</p>
+<!-- @@@progressValue -->
+<!-- $$$resume[overload1]$$$resume -->
+<h3 class="fn" id="resume"><a name="resume"></a><code>[slot] </code><span class="type">void</span> Task::<span class="name">resume</span>()</h3>
+<p>Resumes the task if it was paused.</p>
+<!-- @@@resume -->
+<!-- $$$resumed[overload1]$$$resumed -->
+<h3 class="fn" id="resumed"><a name="resumed"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">resumed</span>()</h3>
+<p>This signal is emitted when the task has resumed.</p>
+<!-- @@@resumed -->
+<!-- $$$run[overload1]$$$run -->
+<h3 class="fn" id="run"><a name="run"></a><code>[slot] </code><span class="type">void</span> Task::<span class="name">run</span>()</h3>
+<p>Starts the task.</p>
+<!-- @@@run -->
+<!-- $$$setAutoDelete[overload1]$$$setAutoDeletebool -->
+<h3 class="fn" id="setAutoDelete"><a name="setAutoDelete"></a><span class="type">void</span> Task::<span class="name">setAutoDelete</span>(<span class="type">bool</span> <i>autoDelete</i>)</h3>
+<p>Automatically deletes the task if <i>autoDelete</i> is <code>true</code>.</p>
+<p><b>See also </b><a href="kdupdater-task.html#autoDelete">autoDelete</a>().</p>
+<!-- @@@setAutoDelete -->
+<!-- $$$started[overload1]$$$started -->
+<h3 class="fn" id="started"><a name="started"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">started</span>()</h3>
+<p>This signal is emitted when the task has started.</p>
+<!-- @@@started -->
+<!-- $$$stop[overload1]$$$stop -->
+<h3 class="fn" id="stop"><a name="stop"></a><code>[slot] </code><span class="type">void</span> Task::<span class="name">stop</span>()</h3>
+<p>Stops the task, provided the task has the <a href="kdupdater-task.html#Capability-enum">Task::Stoppable</a> capability.</p>
+<p><b>Note: </b>Once the task is stopped, it cannot be restarted.</p><!-- @@@stop -->
+<!-- $$$stopped[overload1]$$$stopped -->
+<h3 class="fn" id="stopped"><a name="stopped"></a><code>[signal] </code><span class="type">void</span> Task::<span class="name">stopped</span>()</h3>
+<p>This signal is emitted when the task has stopped (or canceled).</p>
+<!-- @@@stopped -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

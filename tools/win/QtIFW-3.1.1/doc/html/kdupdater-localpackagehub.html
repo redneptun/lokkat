@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- localpackagehub.cpp -->
+  <title>LocalPackageHub Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >LocalPackageHub</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">LocalPackageHub Class</h1>
+<span class="small-subtitle">(<a href="kdupdater-localpackagehub.html">KDUpdater::LocalPackageHub</a>)<br/></span>
+<!-- $$$LocalPackageHub-brief -->
+<p>The <a href="kdupdater-localpackagehub.html">LocalPackageHub</a> class provides access to information about packages installed on the application side. <a href="#details">More...</a></p>
+<!-- @@@LocalPackageHub -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;LocalPackageHub&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="kdupdater-localpackagehub-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#Error-enum">Error</a></b> { NoError, NotYetReadError, CouldNotReadPackageFileError, InvalidXmlError, InvalidContentError }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#LocalPackageHub">LocalPackageHub</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#dtor.LocalPackageHub">~LocalPackageHub</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#addPackage">addPackage</a></b>(const QString &amp;<i>name</i>, const QString &amp;<i>version</i>, const QString &amp;<i>title</i>, const QString &amp;<i>description</i>, const QStringList &amp;<i>dependencies</i>, const QStringList &amp;<i>autoDependencies</i>, bool <i>forcedInstallation</i>, bool <i>virtualComp</i>, quint64 <i>uncompressedSize</i>, const QString &amp;<i>inheritVersionFrom</i>, bool <i>checkable</i>, bool <i>expandedByDefault</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#applicationName">applicationName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#applicationVersion">applicationVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#clearPackageInfos">clearPackageInfos</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Error </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#error">error</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#errorString">errorString</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#fileName">fileName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#isValid">isValid</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> LocalPackage </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#packageInfo">packageInfo</a></b>(const QString &amp;<i>pkgName</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#packageInfoCount">packageInfoCount</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;LocalPackage&gt; </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#packageInfos">packageInfos</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#packageNames">packageNames</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#refresh">refresh</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#removePackage">removePackage</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#setApplicationName">setApplicationName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#setApplicationVersion">setApplicationVersion</a></b>(const QString &amp;<i>version</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#setFileName">setFileName</a></b>(const QString &amp;<i>fileName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="kdupdater-localpackagehub.html#writeToDisk">writeToDisk</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$LocalPackageHub-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="kdupdater-localpackagehub.html">LocalPackageHub</a> class provides access to information about packages installed on the application side.</p>
+<p>This class parses the <i>installation information</i> XML file specified via the <a href="kdupdater-localpackagehub.html#setFileName">setFileName</a>() method and provides access to the information defined within the file through an API. You can:</p>
+<ul>
+<li>Get the application name via the <a href="kdupdater-localpackagehub.html#applicationName">applicationName</a>() method.</li>
+<li>Get the application version via the <a href="kdupdater-localpackagehub.html#applicationVersion">applicationVersion</a>() method.</li>
+<li>Get information about the number of packages installed and their meta-data via the <a href="kdupdater-localpackagehub.html#packageInfoCount">packageInfoCount</a>() and <a href="kdupdater-localpackagehub.html#packageInfo">packageInfo</a>() methods.</li>
+</ul>
+</div>
+<!-- @@@LocalPackageHub -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$Error$$$NoError$$$NotYetReadError$$$CouldNotReadPackageFileError$$$InvalidXmlError$$$InvalidContentError -->
+<h3 class="fn" id="Error-enum"><a name="Error-enum"></a>enum LocalPackageHub::<span class="name">Error</span></h3>
+<p>Error codes related to retrieving information about installed packages:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>KDUpdater::LocalPackageHub::NoError</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">No error occurred.</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::LocalPackageHub::NotYetReadError</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">The installation information was not parsed yet from the XML file.</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::LocalPackageHub::CouldNotReadPackageFileError</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">The specified installation information file could not be read (does not exist or is not readable).</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::LocalPackageHub::InvalidXmlError</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">The installation information file contains invalid XML.</td></tr>
+<tr><td class="topAlign"><code>KDUpdater::LocalPackageHub::InvalidContentError</code></td><td class="topAlign tblval"><code>4</code></td><td class="topAlign">The installation information file contains valid XML, but does not match the expected format for package descriptions.</td></tr>
+</table></div>
+<!-- @@@Error -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$LocalPackageHub[overload1]$$$LocalPackageHub -->
+<h3 class="fn" id="LocalPackageHub"><a name="LocalPackageHub"></a>LocalPackageHub::<span class="name">LocalPackageHub</span>()</h3>
+<p>Constructs a local package hub. To fully setup the class you have to call <a href="kdupdater-localpackagehub.html#setFileName">setFileName</a>().</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#setFileName">setFileName</a>.</p>
+<!-- @@@LocalPackageHub -->
+<!-- $$$~LocalPackageHub[overload1]$$$~LocalPackageHub -->
+<h3 class="fn" id="dtor.LocalPackageHub"><a name="dtor.LocalPackageHub"></a>LocalPackageHub::<span class="name">~LocalPackageHub</span>()</h3>
+<p>Destructor</p>
+<!-- @@@~LocalPackageHub -->
+<!-- $$$addPackage[overload1]$$$addPackageconstQString&constQString&constQString&constQString&constQStringList&constQStringList&boolboolquint64constQString&boolbool -->
+<h3 class="fn" id="addPackage"><a name="addPackage"></a><span class="type">void</span> LocalPackageHub::<span class="name">addPackage</span>(const <span class="type">QString</span> &amp;<i>name</i>, const <span class="type">QString</span> &amp;<i>version</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>description</i>, const <span class="type">QStringList</span> &amp;<i>dependencies</i>, const <span class="type">QStringList</span> &amp;<i>autoDependencies</i>, <span class="type">bool</span> <i>forcedInstallation</i>, <span class="type">bool</span> <i>virtualComp</i>, <span class="type">quint64</span> <i>uncompressedSize</i>, const <span class="type">QString</span> &amp;<i>inheritVersionFrom</i>, <span class="type">bool</span> <i>checkable</i>, <span class="type">bool</span> <i>expandedByDefault</i>)</h3>
+<p>Marks the package specified by <i>name</i> as installed. Sets the values of <i>version</i>, <i>title</i>, <i>description</i>, <i>dependencies</i>, <i>autoDependencies</i>, <i>forcedInstallation</i>, <i>virtualComp</i>, <i>uncompressedSize</i>, <i>inheritVersionFrom</i>, and <i>checkable</i> for the package.</p>
+<!-- @@@addPackage -->
+<!-- $$$applicationName[overload1]$$$applicationName -->
+<h3 class="fn" id="applicationName"><a name="applicationName"></a><span class="type">QString</span> LocalPackageHub::<span class="name">applicationName</span>() const</h3>
+<p>Returns the application name.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#setApplicationName">setApplicationName</a>().</p>
+<!-- @@@applicationName -->
+<!-- $$$applicationVersion[overload1]$$$applicationVersion -->
+<h3 class="fn" id="applicationVersion"><a name="applicationVersion"></a><span class="type">QString</span> LocalPackageHub::<span class="name">applicationVersion</span>() const</h3>
+<p>Returns the application version.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#setApplicationVersion">setApplicationVersion</a>().</p>
+<!-- @@@applicationVersion -->
+<!-- $$$clearPackageInfos[overload1]$$$clearPackageInfos -->
+<h3 class="fn" id="clearPackageInfos"><a name="clearPackageInfos"></a><span class="type">void</span> LocalPackageHub::<span class="name">clearPackageInfos</span>()</h3>
+<p>Clears the installed package list.</p>
+<!-- @@@clearPackageInfos -->
+<!-- $$$error[overload1]$$$error -->
+<h3 class="fn" id="error"><a name="error"></a><span class="type"><a href="kdupdater-localpackagehub.html#Error-enum">Error</a></span> LocalPackageHub::<span class="name">error</span>() const</h3>
+<p>Returns the error that was found during the processing of the installation information XML file. If no error was found, returns <a href="kdupdater-localpackagehub.html#Error-enum">NoError</a>.</p>
+<!-- @@@error -->
+<!-- $$$errorString[overload1]$$$errorString -->
+<h3 class="fn" id="errorString"><a name="errorString"></a><span class="type">QString</span> LocalPackageHub::<span class="name">errorString</span>() const</h3>
+<p>Returns a human-readable description of the last error that occurred.</p>
+<!-- @@@errorString -->
+<!-- $$$fileName[overload1]$$$fileName -->
+<h3 class="fn" id="fileName"><a name="fileName"></a><span class="type">QString</span> LocalPackageHub::<span class="name">fileName</span>() const</h3>
+<p>Returns the name of the installation information XML file that this class refers to.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#setFileName">setFileName</a>().</p>
+<!-- @@@fileName -->
+<!-- $$$isValid[overload1]$$$isValid -->
+<h3 class="fn" id="isValid"><a name="isValid"></a><span class="type">bool</span> LocalPackageHub::<span class="name">isValid</span>() const</h3>
+<p>Returns <code>true</code> if <a href="kdupdater-localpackagehub.html">LocalPackageHub</a> is valid; otherwise returns <code>false</code>. You can use the <a href="kdupdater-localpackagehub.html#errorString">errorString</a>() method to receive a descriptive error message.</p>
+<!-- @@@isValid -->
+<!-- $$$packageInfo[overload1]$$$packageInfoconstQString& -->
+<h3 class="fn" id="packageInfo"><a name="packageInfo"></a><span class="type"><a href="kdupdater-localpackage.html">LocalPackage</a></span> LocalPackageHub::<span class="name">packageInfo</span>(const <span class="type">QString</span> &amp;<i>pkgName</i>) const</h3>
+<p>Returns the package info structure whose name is <i>pkgName</i>. If no such package was found, this function returns a default-constructed value.</p>
+<!-- @@@packageInfo -->
+<!-- $$$packageInfoCount[overload1]$$$packageInfoCount -->
+<h3 class="fn" id="packageInfoCount"><a name="packageInfoCount"></a><span class="type">int</span> LocalPackageHub::<span class="name">packageInfoCount</span>() const</h3>
+<p>Returns the number of <a href="kdupdater-localpackage.html">KDUpdater::LocalPackage</a> objects contained in this class.</p>
+<!-- @@@packageInfoCount -->
+<!-- $$$packageInfos[overload1]$$$packageInfos -->
+<h3 class="fn" id="packageInfos"><a name="packageInfos"></a><span class="type">QList</span>&lt;<span class="type"><a href="kdupdater-localpackage.html">LocalPackage</a></span>&gt; LocalPackageHub::<span class="name">packageInfos</span>() const</h3>
+<p>Returns all package info structures.</p>
+<!-- @@@packageInfos -->
+<!-- $$$packageNames[overload1]$$$packageNames -->
+<h3 class="fn" id="packageNames"><a name="packageNames"></a><span class="type">QStringList</span> LocalPackageHub::<span class="name">packageNames</span>() const</h3>
+<p>Returns a list of all local installed packages.</p>
+<!-- @@@packageNames -->
+<!-- $$$refresh[overload1]$$$refresh -->
+<h3 class="fn" id="refresh"><a name="refresh"></a><span class="type">void</span> LocalPackageHub::<span class="name">refresh</span>()</h3>
+<p>Re-reads the installation information XML file and updates itself. Changes to <a href="kdupdater-localpackagehub.html#applicationName">applicationName</a>() and <a href="kdupdater-localpackagehub.html#applicationVersion">applicationVersion</a>() are lost after this function returns. The function emits a reset() signal after completion.</p>
+<!-- @@@refresh -->
+<!-- $$$removePackage[overload1]$$$removePackageconstQString& -->
+<h3 class="fn" id="removePackage"><a name="removePackage"></a><span class="type">bool</span> LocalPackageHub::<span class="name">removePackage</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Removes the package specified by <i>name</i>. Returns <code>false</code> if the package is not found.</p>
+<!-- @@@removePackage -->
+<!-- $$$setApplicationName[overload1]$$$setApplicationNameconstQString& -->
+<h3 class="fn" id="setApplicationName"><a name="setApplicationName"></a><span class="type">void</span> LocalPackageHub::<span class="name">setApplicationName</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Sets the application name to <i>name</i>. By default, this is the name specified in the <code>&lt;ApplicationName&gt;</code> element of the installation information XML file.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#applicationName">applicationName</a>().</p>
+<!-- @@@setApplicationName -->
+<!-- $$$setApplicationVersion[overload1]$$$setApplicationVersionconstQString& -->
+<h3 class="fn" id="setApplicationVersion"><a name="setApplicationVersion"></a><span class="type">void</span> LocalPackageHub::<span class="name">setApplicationVersion</span>(const <span class="type">QString</span> &amp;<i>version</i>)</h3>
+<p>Sets the application version to <i>version</i>. By default, this is the version specified in the <code>&lt;ApplicationVersion&gt;</code> element of the installation information XML file.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#applicationVersion">applicationVersion</a>().</p>
+<!-- @@@setApplicationVersion -->
+<!-- $$$setFileName[overload1]$$$setFileNameconstQString& -->
+<h3 class="fn" id="setFileName"><a name="setFileName"></a><span class="type">void</span> LocalPackageHub::<span class="name">setFileName</span>(const <span class="type">QString</span> &amp;<i>fileName</i>)</h3>
+<p>Sets the complete file name of the installation information XML file to <i>fileName</i>. The function also issues a call to <a href="kdupdater-localpackagehub.html#refresh">refresh</a>() to reload installation information from the XML file.</p>
+<p><b>See also </b><a href="kdupdater-localpackagehub.html#fileName">fileName</a>().</p>
+<!-- @@@setFileName -->
+<!-- $$$writeToDisk[overload1]$$$writeToDisk -->
+<h3 class="fn" id="writeToDisk"><a name="writeToDisk"></a><span class="type">void</span> LocalPackageHub::<span class="name">writeToDisk</span>()</h3>
+<p>Writes the installation information file to disk.</p>
+<!-- @@@writeToDisk -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

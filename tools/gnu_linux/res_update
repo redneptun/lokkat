@@ -1,0 +1,2 @@
+lrelease res/l10n/*.ts
+pyrcc5 res/resources.qrc -o gui/resources_rc.py

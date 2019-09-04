@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- online.qdoc -->
+  <title>Online Installer Example | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qtifwexamples.html">Qt Installer Framework Examples</a></td><td >Online Installer Example</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#configuring-the-example-installer">Configuring the Example Installer</a></li>
+<li class="level1"><a href="#creating-the-example-package-information-file">Creating the Example Package Information File</a></li>
+<li class="level1"><a href="#generating-the-online-repository">Generating the Online Repository</a></li>
+<li class="level1"><a href="#generating-the-example-installer">Generating the Example Installer</a></li>
+<li class="level1"><a href="#providing-updates">Providing Updates</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Online Installer Example</h1>
+<span class="subtitle"></span>
+<!-- $$$online-description -->
+<div class="descr"> <a name="details"></a>
+<p class="centerAlign"><img src="images/qtifw-examples-online.png" alt="" /></p><p><i>Online Installer</i> illustrates how to set up an online installer that fetches the original packages and updates to them from a server.</p>
+<a name="configuring-the-example-installer"></a>
+<h2 id="configuring-the-example-installer">Configuring the Example Installer</h2>
+<p>The installer configuration file, config.xml, in the <code>config</code> directory specifies the text and default values used in the installer:</p>
+<ul>
+<li>The <code>&lt;Name&gt;</code> element specifies the application name that is added to the page name and introduction text.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the application version number.</li>
+<li>The <code>&lt;Title&gt;</code> element specifies the installer name displayed on the title bar.</li>
+<li>The <code>&lt;Publisher&gt;</code> element specifies the publisher of the software (as shown in the Windows Control Panel, for example).</li>
+<li>The <code>&lt;StartMenuDir&gt;</code> element specifies the name of the default program group for the product in the Windows <b>Start</b> menu.</li>
+<li>The <code>&lt;TargetDir&gt;</code> element specifies that the default target directory is located in the <code>IfwExamples</code> directory in the home directory of the current user (because the predefined variable<code>@HomeDir@</code> is used as a part of the value). For more information, see <a href="scripting.html#predefined-variables">Predefined Variables</a>.</li>
+</ul>
+<ul>
+<li>The <code>&lt;RemoteRepositories&gt;</code> element is specific to an online installer. It can contain one or several <code>&lt;Repository&gt;</code> child elements that specify a connection to an online repository. For more information about the available options, see <a href="ifw-online-installers.html#configuring-repositories">Configuring Repositories</a>.</li>
+</ul>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;Installer&gt;
+      &lt;Name&gt;Online Installer Example&lt;/Name&gt;
+      &lt;Version&gt;1.0.0&lt;/Version&gt;
+      &lt;Title&gt;Online Installer Example&lt;/Title&gt;
+      &lt;Publisher&gt;The Qt Company&lt;/Publisher&gt;
+      &lt;StartMenuDir&gt;Qt IFW Examples&lt;/StartMenuDir&gt;
+      &lt;TargetDir&gt;@HomeDir@/IfwExamples/online&lt;/TargetDir&gt;
+      &lt;RemoteRepositories&gt;
+          &lt;Repository&gt;
+              &lt;Url&gt;http://localhost/repository&lt;/Url&gt;
+          &lt;/Repository&gt;
+      &lt;/RemoteRepositories&gt;
+  &lt;/Installer&gt;
+
+</pre>
+<a name="creating-the-example-package-information-file"></a>
+<h2 id="creating-the-example-package-information-file">Creating the Example Package Information File</h2>
+<p>The installer package information file, package.xml, in the <code>meta</code> directory specifies the components that are available for installation:</p>
+<ul>
+<li>The <code>&lt;DisplayName&gt;</code> element specifies the human-readable name of the component.</li>
+<li>The <code>&lt;Description&gt;</code> element specifies the human-readable description of the component.</li>
+<li>The <code>&lt;Version&gt;</code> element specifies the version number of the component.</li>
+<li>The <code>&lt;ReleaseDate&gt;</code> element specifies the date when this component version was released.</li>
+</ul>
+<ul>
+<li>The <code>&lt;Default&gt;</code> element is set to <code>true</code> to preselect the component in the installer.</li>
+</ul>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;A&lt;/DisplayName&gt;
+      &lt;Description&gt;Example component A&lt;/Description&gt;
+      &lt;Version&gt;1.0.2-1&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2015-01-01&lt;/ReleaseDate&gt;
+      &lt;Default&gt;true&lt;/Default&gt;
+  &lt;/Package&gt;
+
+</pre>
+<p>This installer contains two components, A and B, that each have their own package information file with slightly different contents.</p>
+<a name="generating-the-online-repository"></a>
+<h2 id="generating-the-online-repository">Generating the Online Repository</h2>
+<p>The packages need to be converted to a file structure that the installer can fetch at runtime. To use the <code>repogen</code> tool to convert the packages, switch to the example source directory on the command line and enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\repogen<span class="operator">.</span>exe <span class="operator">-</span>p packages repository
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>repogen <span class="operator">-</span>p packages repository
+
+</pre>
+</li>
+</ul>
+<p>The generated <code>repository</code> directory will now contain a full copy of the package data and some additionally generated metadata, such as SHA checksums.</p>
+<p>The directory now needs to be made available at the URL set in <code>config.xml</code>: <code>http://localhost/repository</code>. How this is done depends on the platform and web server used. If you do not have a running web server yet, but have Python available, you should be able to start a minimal web server from the command line. Make sure you are in the example directory, and then enter:</p>
+<pre class="cpp">
+
+  python <span class="operator">-</span>m SimpleHTTPServer <span class="number">80</span>
+
+</pre>
+<p>You should now be able to open and explore <a href="http://localhost/repository">http://localhost/repository</a> in your web browser.</p>
+<p><b>Note: </b>If you do not have enough permissions to set up a web server locally, you can also specify an absolute <code>file:///</code> URL as the value of the <code>URL</code> element in <code>config.xml</code>. For example, <code>file:///C:/Qt/QtIFW/examples/online/repository</code> would be a valid URL on Windows if <code>repository</code> is located in <code>C:\Qt\QtIFW\examples\online</code>.</p><a name="generating-the-example-installer"></a>
+<h2 id="generating-the-example-installer">Generating the Example Installer</h2>
+<p>To create the example installer, switch to the example source directory on the command line and enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\binarycreator<span class="operator">.</span>exe <span class="operator">-</span><span class="operator">-</span>online<span class="operator">-</span>only <span class="operator">-</span>c config\config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer<span class="operator">.</span>exe
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>binarycreator <span class="operator">-</span><span class="operator">-</span>online<span class="operator">-</span>only <span class="operator">-</span>c config<span class="operator">/</span>config<span class="operator">.</span>xml <span class="operator">-</span>p packages installer
+
+</pre>
+</li>
+</ul>
+<p>You should now be able to run the installer and install from the repository.</p>
+<a name="providing-updates"></a>
+<h2 id="providing-updates">Providing Updates</h2>
+<p>A benefit of using an online installer is that you can add new packages over time or update the existing ones. During new installations, the new and updated packages are automatically used, and existing installations can be upgraded to use them.</p>
+<p>To update a package, you need to increase its <code>&lt;Version&gt;</code> element in <code>package.xml</code>. The <code>packages_update</code> directory in the example folder is a copy of <code>the</code> package directory, with an updated component A. To deploy an update, you again use <code>repogen</code>:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span>\<span class="operator">.</span><span class="operator">.</span>\bin\repogen<span class="operator">.</span>exe <span class="operator">-</span><span class="operator">-</span>update<span class="operator">-</span><span class="keyword">new</span><span class="operator">-</span>components <span class="operator">-</span>p packages_update repository
+
+</pre>
+</li>
+<li>On Linux or OS X:<pre class="cpp">
+
+  <span class="operator">.</span><span class="operator">.</span><span class="operator">/</span><span class="operator">.</span><span class="operator">.</span><span class="operator">/</span>bin<span class="operator">/</span>repogen <span class="operator">-</span><span class="operator">-</span>update<span class="operator">-</span><span class="keyword">new</span><span class="operator">-</span>components <span class="operator">-</span>p packages_update repository
+
+</pre>
+</li>
+</ul>
+<p><code>--update-new-components</code> lets <code>repogen</code> compare the version numbers of components in the repository and the packages directory, and only updates packages that are new, or have a higher version number. See also the <a href="ifw-tools.html#summary-of-repogen-parameters">Summary of repogen Parameters</a>.</p>
+<p>If you then run the maintenance tool from the previous installation and select <b>Update Components</b>, you should see that an update of package <code>A</code> is available.</p>
+<p>For more information on providing updates, see <a href="ifw-updates.html">Promoting Updates</a>.</p>
+<p class="centerAlign"><img src="images/qtifw-examples-online-1.png" alt="" /></p><p>Files:</p>
+<ul>
+<li><a href="qt-installer-framework-online-config-config-xml.html">online/config/config.xml</a></li>
+<li><a href="qt-installer-framework-online-packages-a-data-a-txt.html">online/packages/A/data/A.txt</a></li>
+<li><a href="qt-installer-framework-online-packages-a-meta-package-xml.html">online/packages/A/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-online-packages-b-data-b-txt.html">online/packages/B/data/B.txt</a></li>
+<li><a href="qt-installer-framework-online-packages-b-meta-package-xml.html">online/packages/B/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-online-packages-update-a-data-a-txt.html">online/packages_update/A/data/A.txt</a></li>
+<li><a href="qt-installer-framework-online-packages-update-a-meta-package-xml.html">online/packages_update/A/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-online-packages-update-b-data-b-txt.html">online/packages_update/B/data/B.txt</a></li>
+<li><a href="qt-installer-framework-online-packages-update-b-meta-package-xml.html">online/packages_update/B/meta/package.xml</a></li>
+<li><a href="qt-installer-framework-online-online-pro.html">online/online.pro</a></li>
+</ul>
+</div>
+<!-- @@@online -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>installscript.qs Example File | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qt-installer-framework-systeminfo-example.html">System Information Example</a></td><td >installscript.qs Example File</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">installscript.qs Example File</h1>
+<span class="subtitle">systeminfo/packages/root/meta/installscript.qs</span>
+<!-- $$$systeminfo/packages/root/meta/installscript.qs-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp">
+
+  /****************************************************************************
+  **
+  ** Copyright (C) 2017 The Qt Company Ltd.
+  ** Contact: https://www.qt.io/licensing/
+  **
+  ** This file is part of the FOO module of the Qt Toolkit.
+  **
+  ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see https://www.qt.io/terms-conditions. For further
+  ** information use the contact form at https://www.qt.io/contact-us.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+  ** included in the packaging of this file. Please review the following
+  ** information to ensure the GNU General Public License requirements will
+  ** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  ****************************************************************************/
+
+  // Skip all pages and go directly to finished page.
+  // (see also componenterror example)
+  function cancelInstaller(message)
+  {
+      installer.setDefaultPageVisible(QInstaller.Introduction, false);
+      installer.setDefaultPageVisible(QInstaller.TargetDirectory, false);
+      installer.setDefaultPageVisible(QInstaller.ComponentSelection, false);
+      installer.setDefaultPageVisible(QInstaller.ReadyForInstallation, false);
+      installer.setDefaultPageVisible(QInstaller.StartMenuSelection, false);
+      installer.setDefaultPageVisible(QInstaller.PerformInstallation, false);
+      installer.setDefaultPageVisible(QInstaller.LicenseCheck, false);
+
+      var abortText = &quot;&lt;font color='red'&gt;&quot; + message +&quot;&lt;/font&gt;&quot;;
+      installer.setValue(&quot;FinishedText&quot;, abortText);
+  }
+
+  // Returns the major version number as int
+  //   string.split(&quot;.&quot;, 1) returns the string before the first '.',
+  //   parseInt() converts it to an int.
+  function majorVersion(str)
+  {
+      return parseInt(str.split(&quot;.&quot;, 1));
+  }
+
+  function Component()
+  {
+      //
+      // Check whether OS is supported.
+      //
+      // For Windows and OS X we check the kernel version:
+      //  - Require at least Windows Vista (winnt kernel version 6.0.x)
+      //  - Require at least OS X 10.7 (Lion) (darwin kernel version 11.x)
+      //
+      // If the kernel version is older we move directly
+      // to the final page &amp; show an error.
+      //
+      // For Linux, we check the distribution and version, but only
+      // show a warning if it does not match our preferred distribution.
+      //
+
+      // start installer with -v to see debug output
+      console.log(&quot;OS: &quot; + systemInfo.productType);
+      console.log(&quot;Kernel: &quot; + systemInfo.kernelType + &quot;/&quot; + systemInfo.kernelVersion);
+
+      var validOs = false;
+
+      if (systemInfo.kernelType === &quot;winnt&quot;) {
+          if (majorVersion(systemInfo.kernelVersion) &gt;= 6)
+              validOs = true;
+      } else if (systemInfo.kernelType === &quot;darwin&quot;) {
+          if (majorVersion(systemInfo.kernelVersion) &gt;= 11)
+              validOs = true;
+      } else {
+          if (systemInfo.productType !== &quot;opensuse&quot;
+                  || systemInfo.productVersion !== &quot;13.2&quot;) {
+              QMessageBox[&quot;warning&quot;](&quot;os.warning&quot;, &quot;Installer&quot;,
+                                     &quot;Note that the binaries are only tested on OpenSUSE 13.2.&quot;,
+                                     QMessageBox.Ok);
+          }
+          validOs = true;
+      }
+
+      if (!validOs) {
+          cancelInstaller(&quot;Installation on &quot; + systemInfo.prettyProductName + &quot; is not supported&quot;);
+          return;
+      }
+
+      //
+      // Hide/select packages based on architecture
+      //
+      // Marking a component as &quot;Virtual&quot; will hide it in the UI.
+      // Marking a component with &quot;Default&quot; will check it.
+      //
+      console.log(&quot;CPU Architecture: &quot; +  systemInfo.currentCpuArchitecture);
+
+      installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Virtual&quot;, &quot;true&quot;);
+      installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Virtual&quot;, &quot;true&quot;);
+
+      if ( systemInfo.currentCpuArchitecture === &quot;i386&quot;) {
+          installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Virtual&quot;, &quot;false&quot;);
+          installer.componentByName(&quot;root.i386&quot;).setValue(&quot;Default&quot;, &quot;true&quot;);
+      }
+      if ( systemInfo.currentCpuArchitecture === &quot;x86_64&quot;) {
+          installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Virtual&quot;, &quot;false&quot;);
+          installer.componentByName(&quot;root.x86_64&quot;).setValue(&quot;Default&quot;, &quot;true&quot;);
+      }
+  }
+
+</pre>
+</div>
+<!-- @@@systeminfo/packages/root/meta/installscript.qs -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

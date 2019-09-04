@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>506</width>
+    <height>637</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lokkat 0.5</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>16</width>
+    <height>16</height>
+   </size>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>3</number>
+    </property>
+    <property name="leftMargin">
+     <number>3</number>
+    </property>
+    <property name="topMargin">
+     <number>3</number>
+    </property>
+    <property name="rightMargin">
+     <number>3</number>
+    </property>
+    <property name="bottomMargin">
+     <number>3</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="page">
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="toolTipDuration">
+           <number>-2</number>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tabEncrypt">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Auf diesem Reiter kannst du Dateien verschlüsseln.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <attribute name="title">
+            <string comment="tabEncrypt">Verschlüsselung</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="grpInputFilesEnc">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hier kannst du die Dateien auswählen, die verschlüsselt werden sollen. Benutze hierzu die Schaltlfläche &amp;quot;Dateien hinzufügen&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="title">
+               <string comment="grpInputFilesEnc">1. &quot;Klartext&quot;-Dateien auswählen</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_2">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QListWidget" name="lsInputFilesEnc">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hier kannst du die Dateien auswählen, die verschlüsselt werden sollen. Benutze hierzu die Schaltlfläche &amp;quot;Dateien hinzufügen&amp;quot;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::ExtendedSelection</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="_12">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SetMinimumSize</enum>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" name="_2">
+                   <item>
+                    <widget class="QPushButton" name="btnAddInputFilesEnc">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Füge mit dieser Schaltfläche Dateien hinzu die verschlüsselt werden sollen. Ein Klick auf sie öffnet ein Auswahlfenster. &lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Tipp: &lt;/span&gt;Du kannst im Auswahlfenster auch mehrere Dateien auswählen und anschließend hinzufügen. Ziehe hierzu entweder einen Rahmen mit der linken Maustaste oder verwende die Tastenkombinationen Strg+Linksklick oder Umschalt+Linksklick auf die Dateien.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="btnAddInputFiles">Dateien hinzufügen</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../res/resources.qrc">
+                       <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+                     </property>
+                     <property name="shortcut">
+                      <string>Ctrl+S</string>
+                     </property>
+                     <property name="checkable">
+                      <bool>false</bool>
+                     </property>
+                     <property name="flat">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnRemoveInputFilesEnc">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Schaltfläche erlaubt es dir, in der oberen Ansicht markierte Dateien wieder zu entfernen, damit sie &lt;span style=&quot; font-weight:600;&quot;&gt;nicht&lt;/span&gt; verschlüsselt werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="btnRemoveInputFiles">Ausgewählte entfernen</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../res/resources.qrc">
+                       <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpRandom">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hier hast du die Auswahl zwischen zwei verschiedenen Quellen für die beim Verschlüsselungsvorgang genutzten Zufallszahlen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="title">
+               <string>2. Quelle für Zufallszahlen auswählen</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="_5">
+                   <item>
+                    <widget class="QRadioButton" name="rbANU">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option gewählt ist, dann wird die Internetseite &amp;quot;http://qrng.anu.edu.au&amp;quot; als Quelle für die beim Verschlüsselungsvorgang benötigten Zufallszahlen verwendet.&lt;/p&gt;&lt;p&gt;Die Australian National University verwendet Quantenfluktuation im Vakuum als Quelle für &amp;quot;echten&amp;quot; Zufall (meint: Zufall aus physikalischen Vorgängen).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Vorteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Physischer Zufall sorgt für erhöhte Sicherheit (da er schlichtweg nicht vorhersehbar oder nachträglich rekonstruierbar ist)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Nachteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Internetverbindung wird benötigt&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nur für geringe Datenmengen nutzbar, da wir die ANU nicht mit zu vielen Anfragen überfluten und ihre kostenlos bereitgestellte Serverleistung und Bandbreite übermäßig beanspruchen möchten&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="rbRandomOrg">Physikalischer Zufall aus Quantenfluktuation (max. Gesamtdatengröße: 1MiB)</string>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="rbCSPRNG">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option gewählt ist, dann wird der systemeigene Pseudozufallsgenerator für kryptografische Zwecke (CSPRNG) verwendet. Je nach verwendetem Betriebssystem gibt es hier Unterschiede, aber in der Regel wird versucht, echten physischen Zufall zu nutzen, um einen Algorithmus zu füttern, der Pseudozufallszahlen ausgibt.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Vorteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Schneller als Zufallszahlen von der ANU, da keine Anfrage an einen Server gesendet werden muss&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Benötigt keine Internetverbindung&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Kein Limit für Dateigrößen, daher für große Dateien zu empfehlen&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Nachteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;ETWAS weniger Sicherheit als &amp;quot;echter&amp;quot; Zufall. Es besteht die Möglichkeit (sofern das benutzte System kompromittiert wurde), dass ein potenzieller Angreifer die Initialisierung des Pseudozufallsgenerators mitbekommt oder nachkonstruieren kann. Dieser Fall ist je nach System mehr oder weniger gefährlich für die tatsächliche Sicherheit des Gesamtschlüssels.&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="rbCSPRNG">Systemeigener CSPRNG (Pseudozufallsgenerator)</string>
+                     </property>
+                     <property name="checked">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QStackedWidget" name="stackEnc">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="pageEncButton">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_8">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>3</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="btnEncrypt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:9pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Ein Klick auf diese Schaltfläche sorgt dafür, dass der Verschlüsselungsvorgang angestoßen wird.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Je nach Erfolg oder Misserfolg wird das Ergebnis in der Textbox unter dieser Schaltfläche ausgegeben.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;HINWEIS&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Nach abgeschlossener Verschlüsselung werden die Klartext-Dateien &lt;/span&gt;gelöscht&lt;span style=&quot; font-weight:400;&quot;&gt;. An ihrer Stelle befinden sich nun zwei Arten von Dateien.:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-weight:400; font-style:italic;&quot;&gt;crypt&lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;-Datei: Dies ist die verschlüsselte Datei.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;- &lt;/span&gt;&lt;span style=&quot; font-weight:400; font-style:italic;&quot;&gt;otp&lt;/span&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;-Datei: Dies ist der Schlüssel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Es ist wichtig, dass nach Abschluss des Verschlüsselungsvorgangs entweder die OTP-Dateien oder die CRYPT-Dateien ausgeschnitten und an einem anderen Speicherort (bspw. einem USB-Stick) eingefügt werden, damit sich verschlüsselte Dateien und ihre jeweligen Schlüssel &lt;/span&gt;NICHT AUF DER GLEICHEN MASCHINE BEFINDEN&lt;span style=&quot; font-weight:400;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Sonst besteht natürlich &lt;/span&gt;keine&lt;span style=&quot; font-weight:400;&quot;&gt; Sicherheit, da ein Angreifer mit Zugriff auf den Rechner ja über die verschlüsselten Dateien UND die zugehörigen Schlüssel verfügen würde.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Später müssen sie dann wieder zurück an den selben Speicherort kopiert werden, wenn eine Entschlüsselung erfolgen soll.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="text">
+                   <string comment="btnEncrypt">3. Verschlüsselung durchführen!</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../res/resources.qrc">
+                    <normaloff>:/icons/lock.png</normaloff>:/icons/lock.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="pageEncProgress">
+               <layout class="QVBoxLayout" name="_10">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>6</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QProgressBar" name="prgEnc">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="palette">
+                   <palette>
+                    <active>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>115</red>
+                        <green>210</green>
+                        <blue>22</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </active>
+                    <inactive>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>115</red>
+                        <green>210</green>
+                        <blue>22</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </inactive>
+                    <disabled>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>145</red>
+                        <green>141</green>
+                        <blue>126</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </disabled>
+                   </palette>
+                  </property>
+                  <property name="value">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpEncryptionResult">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dieses Feld zeigt die Ausgabe des Verschlüsselungsvorgangs an. Fehler- oder Erfolgsmeldungen sind hier zu finden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="title">
+               <string comment="grpEncryptionResult">4. Ausgabe des Verschlüsselungsvorgangs</string>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QTextEdit" name="txtEncryptionResult">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dieses Feld zeigt die Ausgabe des Verschlüsselungsvorgangs an. Fehler- oder Erfolgsmeldungen sind hier zu finden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="undoRedoEnabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="acceptRichText">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tabDecrypt">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Auf diesem Reiter kannst du Dateien entschlüsseln.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <attribute name="title">
+            <string comment="tabDecrypt">Entschlüsselung</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <property name="leftMargin">
+             <number>6</number>
+            </property>
+            <property name="topMargin">
+             <number>6</number>
+            </property>
+            <property name="rightMargin">
+             <number>6</number>
+            </property>
+            <property name="bottomMargin">
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="grpInputFilesDec">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Dateien mit der Endung &amp;quot;.crypt&amp;quot; werden von Lokkat beim Verschlüsselungsvorgang erstellt. Sie sind sind die verschlüsselten Dateien. &lt;/p&gt;&lt;p&gt;Bitte darauf achten, dass sich zum Entschlüsselungsvorgang die &amp;quot;.otp&amp;quot;-Schlüsseldateien in den selben Verzeichnissen befinden, wie ihre &amp;quot;.crypt&amp;quot;-Dateien.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="title">
+               <string comment="grpInputFilesDec">1. Zu entschlüsselnde Dateien (&quot;.crypt&quot;-Dateien) auswählen</string>
+              </property>
+              <layout class="QVBoxLayout" name="_8">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QListWidget" name="lsInputFilesDec">
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Dateien mit der Endung &amp;quot;.crypt&amp;quot; werden von Lokkat beim Verschlüsselungsvorgang erstellt. Sie sind sind die verschlüsselten Dateien. &lt;/p&gt;&lt;p&gt;Bitte darauf achten, dass sich zum Entschlüsselungsvorgang die &amp;quot;.otp&amp;quot;-Schlüsseldateien in den selben Verzeichnissen befinden, wie ihre &amp;quot;.crypt&amp;quot;-Dateien.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="selectionMode">
+                  <enum>QAbstractItemView::ExtendedSelection</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QVBoxLayout" name="_7">
+                 <property name="spacing">
+                  <number>6</number>
+                 </property>
+                 <property name="sizeConstraint">
+                  <enum>QLayout::SetMinimumSize</enum>
+                 </property>
+                 <property name="leftMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" name="_3">
+                   <item>
+                    <widget class="QPushButton" name="btnAddInputFilesDec">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Schaltfläche kannst du benutzen, um Dateien, die entschlüsselt werden sollen, hinzuzufügen. Nach einem Klick öffnet sich ein Auswahlfenster, indem du die &amp;quot;.crypt&amp;quot;-Dateien auswählen kannst.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Tipp: &lt;/span&gt;Du kannst im Auswahlfenster auch mehrere Dateien auswählen und anschließend hinzufügen. Ziehe hierzu entweder einen Rahmen mit der linken Maustaste oder verwende die Tastenkombinationen Strg+Linksklick oder Umschalt+Linksklick auf die Dateien.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="grpAddInputFiles">Dateien hinzufügen</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../res/resources.qrc">
+                       <normaloff>:/icons/plus.png</normaloff>:/icons/plus.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnRemoveInputFilesDec">
+                     <property name="toolTip">
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Diese Schaltfläche erlaubt es dir, die oberhalb markierten &amp;quot;.crypt&amp;quot;-Dateien wieder zu entfernen, damit sie &lt;span style=&quot; font-weight:600;&quot;&gt;nicht&lt;/span&gt; entschlüsselt werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                     </property>
+                     <property name="text">
+                      <string comment="grpRemoveInputFiles">Ausgewählte entfernen</string>
+                     </property>
+                     <property name="icon">
+                      <iconset resource="../res/resources.qrc">
+                       <normaloff>:/icons/delete.png</normaloff>:/icons/delete.png</iconset>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QStackedWidget" name="stackDec">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>25</height>
+               </size>
+              </property>
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
+              <widget class="QWidget" name="pageDecButton">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>3</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>3</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="btnDecrypt">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="toolTip">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Startet den Entschlüsselungsvorgang.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Damit dieser erfolgreich sein kann, werden zwei Arten von Dateien benötigt:&lt;/span&gt;&lt;/p&gt;&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;crypt-Dateien: Beinhalten das Kryptat, also die verschlüsselten Dateien.&lt;/span&gt;&lt;/li&gt;&lt;li style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;otp-Dateien: Beinhalten die Schlüssel.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Es ist wichtig, dass die otp-Dateien in den selben Ordnern liegen, wie die jeweiligen crypt-Dateien.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                  <property name="text">
+                   <string comment="btnDecrypt">2. Entschlüsselung durchführen!</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../res/resources.qrc">
+                    <normaloff>:/icons/lock_open.png</normaloff>:/icons/lock_open.png</iconset>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+              <widget class="QWidget" name="pageDecProgress">
+               <layout class="QVBoxLayout" name="_11">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>6</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QProgressBar" name="prgDec">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>25</height>
+                   </size>
+                  </property>
+                  <property name="palette">
+                   <palette>
+                    <active>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>115</red>
+                        <green>210</green>
+                        <blue>22</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </active>
+                    <inactive>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>115</red>
+                        <green>210</green>
+                        <blue>22</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </inactive>
+                    <disabled>
+                     <colorrole role="Highlight">
+                      <brush brushstyle="SolidPattern">
+                       <color alpha="255">
+                        <red>145</red>
+                        <green>141</green>
+                        <blue>126</blue>
+                       </color>
+                      </brush>
+                     </colorrole>
+                    </disabled>
+                   </palette>
+                  </property>
+                  <property name="value">
+                   <number>0</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpDecryptionResult">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hier werden die Ergebnisse des Entschlüsselungsvorgangs als Textmeldungen angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="title">
+               <string comment="grpDecryptionResult">3. Ausgabe des Entschlüsselungsvorgangs</string>
+              </property>
+              <layout class="QVBoxLayout" name="_4">
+               <property name="spacing">
+                <number>3</number>
+               </property>
+               <property name="leftMargin">
+                <number>3</number>
+               </property>
+               <property name="topMargin">
+                <number>3</number>
+               </property>
+               <property name="rightMargin">
+                <number>3</number>
+               </property>
+               <property name="bottomMargin">
+                <number>3</number>
+               </property>
+               <item>
+                <widget class="QTextEdit" name="txtDecryptionResult">
+                 <property name="enabled">
+                  <bool>true</bool>
+                 </property>
+                 <property name="toolTip">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Hier werden die Ergebnisse des Entschlüsselungsvorgangs als Textmeldungen angezeigt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                 <property name="undoRedoEnabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="acceptRichText">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <widget class="QLabel" name="trWhichFilesEnc">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Welche Dateien sollen verschlüsselt werden?</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trWhichFilesEncFileTypes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Alle Dateien (*.*);; Wirklich ALLE Dateien (*)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trWhichFilesDecFileTypes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>90</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>.crypt-Dateien (*.crypt)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trWhichFilesDec">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>60</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Welche Dateien sollen entschlüsselt werden?</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trSuccessEnc">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>310</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:green;font-weight:bold;&quot;&gt;ERFOLG&lt;/div&gt;: Verschlüsselung erfolgreich beendet! Du findest die verschlüsselten Dateien (Dateiendung: &quot;.crpyt&quot;) und die Schlüsseldateien (Dateiendung: &quot;.otp&quot;) dort, wo sich zuvor die Klartextdateien befanden.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorNoEncFiles">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>150</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Keine Dateien zur Verschlüsselung ausgewählt ;-)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trInfoLetsGo">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>180</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Los geht's.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trRetrievingANUData">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>210</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Besorge mir Quantenfluktuationszufallsdaten von der Australian National University. Das dauert (wenn es klappt) in der Regel so etwa 20-30 Sekunden...
+Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorTooBigForANU">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>240</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Deine Dateien sind insg. größer als 1 Megabyte. Probier's stattdessen mit dem CSPRNG. Der ist für große Datenmengen besser geeignet.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trInfoStartingEnc">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>270</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Beginne mit der Verschlüsselung der Dateien.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trInfoAfterSuccess">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>340</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Damit nicht IRGENDJEMAND deine Dateien entschlüsseln kann, musst du die Schlüsseldateien (*.otp) an einen anderen Speicherort verschieben, der sich am besten nicht ungesichert auf diesem Computer befindet; einen USB-Stick zum Beispiel, den du an einem gesicherten Ort aufbewahren kannst.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorEncMissingKeys">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>370</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Nicht alle Schlüssel befinden sich in den Verzeichnissen ihrer zugehörigen verschlüsselten Dateien. Es fehlen:</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trInfoDecryptExample">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>400</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Um eine crypt-Datei wieder zu entschlüsseln, muss sich im gleichen Ordner eine passende otp-Datei befinden. Beispiel: 'Geheim.txt.crypt' ist die verschlüsselte Datei. Im gleichen Ordner muss sich die Datei 'Geheim.txt.otp' befinden. Diese ist der Schlüssel. Anschließend kann die Entschlüsselung erfolgen und heraus kommt: 'Geheim.txt' - die ursprünglich verschlüsselte Datei wieder im Klartext.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorNoDecFiles">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>440</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Keine Dateien zur Entschlüsselung ausgewählt ;-)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trStartingDec">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>470</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Beginne mit der Entschlüsselung der Dateien.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trSuccessDec">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>490</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:green;font-weight:bold;&quot;&gt;ERFOLG&lt;/div&gt;: Die Dateien wurden erfolgreich wieder entschlüsselt! Sie befinden sich dort, wo sich zuvor die crypt-Dateien befanden.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorANUNoConnection">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>150</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Konnte keine Quantenzufallsdaten von den Servern der Australian National University anfordern. Probier' es später noch einmal oder wähle den CSPRNG als Zufallsdatenquelle aus. Der ist nicht auf externe Server angewiesen und bietet ebenfalls nahezu perfekte Sicherheit für die OTP-Verschlüsselung.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trInfoANUSuccess">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>170</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:#3A3A3A;font-weight:bold;&quot;&gt;INFO&lt;/div&gt;: Quantenfluktuationszufallsdaten von der Australian National University erhalten! Abfragedauer: {} Sekunden.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorANUTooMuchData">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>190</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Die angeforderte Datenmenge übersteigt 1MiB. Benutze einfach den CSPRNG für große Datenmengen.</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="trErrorANUUnknown">
+        <property name="geometry">
+         <rect>
+          <x>280</x>
+          <y>210</y>
+          <width>261</width>
+          <height>17</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;FEHLER&lt;/div&gt;: Unbekannter Fehler bei der Anfrage der Zufallsdaten von der ANU.</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>506</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuDatei">
+    <property name="title">
+     <string comment="menuFile">Datei</string>
+    </property>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string comment="menuHelp">Hilfe</string>
+    </property>
+    <addaction name="actionOpenHelpFile"/>
+    <addaction name="actionOpenOnlineHelp"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Sprache/Language</string>
+    </property>
+    <addaction name="actionGerman"/>
+    <addaction name="actionEnglish"/>
+   </widget>
+   <addaction name="menuDatei"/>
+   <addaction name="menuLanguage"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionOpenHelpFile">
+   <property name="icon">
+    <iconset resource="../res/resources.qrc">
+     <normaloff>:/icons/help.png</normaloff>:/icons/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hilfedatei öffnen</string>
+   </property>
+   <property name="shortcut">
+    <string comment="actionOpenHelpFile">F1</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>true</bool>
+   </property>
+  </action>
+  <action name="actionOpenOnlineHelp">
+   <property name="icon">
+    <iconset resource="../res/resources.qrc">
+     <normaloff>:/icons/globe_network.png</normaloff>:/icons/globe_network.png</iconset>
+   </property>
+   <property name="text">
+    <string>Projektwebseite aufrufen</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="../res/resources.qrc">
+     <normaloff>:/icons/information.png</normaloff>:/icons/information.png</iconset>
+   </property>
+   <property name="text">
+    <string>Über Lokkat...</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset resource="../res/resources.qrc">
+     <normaloff>:/icons/bomb.png</normaloff>:/icons/bomb.png</iconset>
+   </property>
+   <property name="text">
+    <string>Schließen</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Schließt Lokkat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="shortcut">
+    <string comment="actionClose">Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionGerman">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Deutsch</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Englisch</string>
+   </property>
+   <property name="autoRepeat">
+    <bool>false</bool>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

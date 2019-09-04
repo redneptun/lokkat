@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- component.cpp -->
+  <title>Component Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Component</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Component Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-component.html">QInstaller::Component</a>)<br/></span>
+<!-- $$$Component-brief -->
+<p>The Component class represents the current component. <a href="#details">More...</a></p>
+<!-- @@@Component -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;Component&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-component-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component-sortingprioritygreaterthan.html">SortingPriorityGreaterThan</a></b></td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> class </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component-sortingprioritylessthan.html">SortingPriorityLessThan</a></b></td></tr>
+</table></div>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="qinstaller-component.html#archives-prop">archives</a></b> : const QStringList</li>
+<li class="fn"><b><a href="qinstaller-component.html#autoCreateOperations-prop">autoCreateOperations</a></b> : bool</li>
+<li class="fn"><b><a href="qinstaller-component.html#autoDependencies-prop">autoDependencies</a></b> : const QStringList</li>
+<li class="fn"><b><a href="qinstaller-component.html#default-prop">default</a></b> : const bool</li>
+<li class="fn"><b><a href="qinstaller-component.html#dependencies-prop">dependencies</a></b> : const QStringList</li>
+<li class="fn"><b><a href="qinstaller-component.html#displayName-prop">displayName</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-component.html#enabled-prop">enabled</a></b> : const bool</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="qinstaller-component.html#fromOnlineRepository-prop">fromOnlineRepository</a></b> : const bool</li>
+<li class="fn"><b><a href="qinstaller-component.html#installed-prop">installed</a></b> : const bool</li>
+<li class="fn"><b><a href="qinstaller-component.html#name-prop">name</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-component.html#repositoryUrl-prop">repositoryUrl</a></b> : const QUrl</li>
+<li class="fn"><b><a href="qinstaller-component.html#unstable-prop">unstable</a></b> : const bool</li>
+<li class="fn"><b><a href="qinstaller-component.html#userInterfaces-prop">userInterfaces</a></b> : const QStringList</li>
+</ul>
+</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#Component">Component</a></b>(PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#dtor.Component">~Component</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addAutoDependOn">addAutoDependOn</a></b>(const QString &amp;<i>newDependOn</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addDependency">addDependency</a></b>(const QString &amp;<i>newDependency</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addElevatedOperation">addElevatedOperation</a></b>(Operation *<i>operation</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addElevatedOperation-2">addElevatedOperation</a></b>(const QString &amp;<i>operation</i>, const QStringList &amp;<i>parameters</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addOperation">addOperation</a></b>(Operation *<i>operation</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addOperation-2">addOperation</a></b>(const QString &amp;<i>operation</i>, const QStringList &amp;<i>parameters</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#addStopProcessForUpdateRequest">addStopProcessForUpdateRequest</a></b>(const QString &amp;<i>process</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#appendComponent">appendComponent</a></b>(Component *<i>component</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#archives">archives</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#autoCreateOperations">autoCreateOperations</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#autoDependencies-prop">autoDependencies</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#beginInstallation">beginInstallation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#componentChangeRequested">componentChangeRequested</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#createOperations">createOperations</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#createOperationsForArchive">createOperationsForArchive</a></b>(const QString &amp;<i>archive</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> virtual void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#createOperationsForPath">createOperationsForPath</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#dependencies-prop">dependencies</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;Component *&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#descendantComponents">descendantComponents</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#displayName">displayName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#downloadableArchives">downloadableArchives</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#forcedInstallation">forcedInstallation</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#installationRequested">installationRequested</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isAutoDependOn">isAutoDependOn</a></b>(const QSet&lt;QString&gt; &amp;<i>componentsToInstall</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#default-prop">isDefault</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isFromOnlineRepository">isFromOnlineRepository</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#installed-prop">isInstalled</a></b>(const QString <i>version</i> = QString()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isSelected">isSelected</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isSelectedForInstallation">isSelectedForInstallation</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isUninstalled">isUninstalled</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#unstable-prop">isUnstable</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#isVirtual">isVirtual</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHash&lt;QString, QPair&lt;QString, QString&gt; &gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#licenses">licenses</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadComponentScript">loadComponentScript</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadComponentScript-1">loadComponentScript</a></b>(const QString &amp;<i>fileName</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadDataFromPackage">loadDataFromPackage</a></b>(const Package &amp;<i>package</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadDataFromPackage-1">loadDataFromPackage</a></b>(const KDUpdater::LocalPackage &amp;<i>package</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadLicenses">loadLicenses</a></b>(const QString &amp;<i>directory</i>, const QHash&lt;QString, QVariant&gt; &amp;<i>licenseHash</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadTranslations">loadTranslations</a></b>(const QDir &amp;<i>directory</i>, const QStringList &amp;<i>qms</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loadUserInterfaces">loadUserInterfaces</a></b>(const QDir &amp;<i>directory</i>, const QStringList &amp;<i>uis</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#localTempPath">localTempPath</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#markAsPerformedInstallation">markAsPerformedInstallation</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#name">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> OperationList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#operations">operations</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#operationsCreatedSuccessfully">operationsCreatedSuccessfully</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> PackageManagerCore *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#packageManagerCore">packageManagerCore</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Component *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#parentComponent">parentComponent</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QPair&lt;QString, bool&gt; &gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#pathsForUninstallation">pathsForUninstallation</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#registerPathForUninstallation">registerPathForUninstallation</a></b>(const QString &amp;<i>path</i>, bool <i>wipe</i> = false)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#removeComponent">removeComponent</a></b>(Component *<i>component</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#removeDownloadableArchive">removeDownloadableArchive</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#removeStopProcessForUpdateRequest">removeStopProcessForUpdateRequest</a></b>(const QString &amp;<i>process</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QUrl </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#repositoryUrl">repositoryUrl</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setInstalled">setInstalled</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setRepositoryUrl">setRepositoryUrl</a></b>(const QUrl &amp;<i>url</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setStopProcessForUpdateRequest">setStopProcessForUpdateRequest</a></b>(const QString &amp;<i>process</i>, bool <i>requested</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setUninstalled">setUninstalled</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setUnstable">setUnstable</a></b>(PackageManagerCore::UnstableError <i>error</i>, const QString &amp;<i>errorMessage</i> = QString())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setUpdateAvailable">setUpdateAvailable</a></b>(bool <i>isUpdateAvailable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setValidatorCallbackName">setValidatorCallbackName</a></b>(const QString &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#setValue">setValue</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#stopProcessForUpdateRequests">stopProcessForUpdateRequests</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#uninstallationRequested">uninstallationRequested</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#updateRequested">updateRequested</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> quint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#updateUncompressedSize">updateUncompressedSize</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#userInterface">userInterface</a></b>(const QString &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QStringList </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#userInterfaces-prop">userInterfaces</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#validatePage">validatePage</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#value">value</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>defaultValue</i> = QString()) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QHash&lt;QString, QString&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#variables">variables</a></b>() const</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#autoCreateOperations-prop">setAutoCreateOperations</a></b>(bool <i>autoCreateOperations</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#loaded">loaded</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#valueChanged">valueChanged</a></b>(const QString &amp;<i>key</i>, const QString &amp;<i>value</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-component.html#virtualStateChanged">virtualStateChanged</a></b>()</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$Component-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The Component class represents the current component.</p>
+</div>
+<!-- @@@Component -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$archives-prop$$$archives -->
+<h3 class="fn" id="archives-prop"><a name="archives-prop"></a><span class="name">archives</span> : const <span class="type">QStringList</span></h3>
+<p>This property holds the list of archive URLs registered for the component.</p>
+<p>The URLs are prefixed with <code>installer://</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#archives">archives</a></b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b><a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a>() and <a href="qinstaller-component.html#removeDownloadableArchive">removeDownloadableArchive</a>().</p>
+<!-- @@@archives -->
+<!-- $$$autoCreateOperations-prop$$$autoCreateOperations$$$setAutoCreateOperationsbool -->
+<h3 class="fn" id="autoCreateOperations-prop"><a name="autoCreateOperations-prop"></a><span class="name">autoCreateOperations</span> : <span class="type">bool</span></h3>
+<p>This property holds whether some standard operations for the component should be automatically created when the installation starts.</p>
+<p>The default is <code>true</code>.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#autoCreateOperations">autoCreateOperations</a></b></span>() const</td></tr>
+<tr><td class="memItemLeft topAlign rightAlign"> void </td><td class="memItemRight bottomAlign"><span class="name"><b>setAutoCreateOperations</b></span>(bool <i>autoCreateOperations</i>)</td></tr>
+</table></div>
+<!-- @@@autoCreateOperations -->
+<!-- $$$autoDependencies-prop$$$autoDependencies -->
+<h3 class="fn" id="autoDependencies-prop"><a name="autoDependencies-prop"></a><span class="name">autoDependencies</span> : const <span class="type">QStringList</span></h3>
+<p>This property holds the value of the <code>&lt;AutoDependOn&gt;</code> element in the package information file.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b>autoDependencies</b></span>() const</td></tr>
+</table></div>
+<!-- @@@autoDependencies -->
+<!-- $$$default-prop$$$isDefault -->
+<h3 class="fn" id="default-prop"><a name="default-prop"></a><span class="name">default</span> : const <span class="type">bool</span></h3>
+<p>This property holds whether the component is a default one. This is a read-only property.</p>
+<p><b>Note: </b>Always <code>false</code> for virtual components.</p><p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isDefault</b></span>() const</td></tr>
+</table></div>
+<!-- @@@default -->
+<!-- $$$dependencies-prop$$$dependencies -->
+<h3 class="fn" id="dependencies-prop"><a name="dependencies-prop"></a><span class="name">dependencies</span> : const <span class="type">QStringList</span></h3>
+<p>This property holds the components this component depends on. This is a read-only property.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b>dependencies</b></span>() const</td></tr>
+</table></div>
+<!-- @@@dependencies -->
+<!-- $$$displayName-prop$$$displayName -->
+<h3 class="fn" id="displayName-prop"><a name="displayName-prop"></a><span class="name">displayName</span> : const <span class="type">QString</span></h3>
+<p>This property holds the name of the component as shown in the user interface.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#displayName">displayName</a></b></span>() const</td></tr>
+</table></div>
+<!-- @@@displayName -->
+<!-- $$$enabled-prop -->
+<h3 class="fn" id="enabled-prop"><a name="enabled-prop"></a><span class="name">enabled</span> : const <span class="type">bool</span></h3>
+<p>This property holds whether the component is currently enabled. The property is both readable and writable.</p>
+<!-- @@@enabled -->
+<!-- $$$fromOnlineRepository-prop$$$isFromOnlineRepository -->
+<h3 class="fn" id="fromOnlineRepository-prop"><a name="fromOnlineRepository-prop"></a><span class="name">fromOnlineRepository</span> : const <span class="type">bool</span></h3>
+<p>This property holds whether this component has been loaded from an online repository.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#isFromOnlineRepository">isFromOnlineRepository</a></b></span>() const</td></tr>
+</table></div>
+<!-- @@@fromOnlineRepository -->
+<!-- $$$installed-prop$$$isInstalledconstQString -->
+<h3 class="fn" id="installed-prop"><a name="installed-prop"></a><span class="name">installed</span> : const <span class="type">bool</span></h3>
+<p>This property holds whether the component is installed. This is a read-only property.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isInstalled</b></span>(const QString <i>version</i> = QString()) const</td></tr>
+</table></div>
+<!-- @@@installed -->
+<!-- $$$name-prop$$$name -->
+<h3 class="fn" id="name-prop"><a name="name-prop"></a><span class="name">name</span> : const <span class="type">QString</span></h3>
+<p>This property holds the name of the component as set in the <code>&lt;Name&gt;</code> tag of the package information file.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#name">name</a></b></span>() const</td></tr>
+</table></div>
+<!-- @@@name -->
+<!-- $$$repositoryUrl-prop$$$repositoryUrl -->
+<h3 class="fn" id="repositoryUrl-prop"><a name="repositoryUrl-prop"></a><span class="name">repositoryUrl</span> : const <span class="type">QUrl</span></h3>
+<p>This property holds the repository URL the component is downloaded from.</p>
+<p>If this component is not downloaded from an online repository, returns an empty QUrl.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QUrl </td><td class="memItemRight bottomAlign"><span class="name"><b><a href="qinstaller-component.html#repositoryUrl">repositoryUrl</a></b></span>() const</td></tr>
+</table></div>
+<!-- @@@repositoryUrl -->
+<!-- $$$unstable-prop$$$isUnstable -->
+<h3 class="fn" id="unstable-prop"><a name="unstable-prop"></a><span class="name">unstable</span> : const <span class="type">bool</span></h3>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> bool </td><td class="memItemRight bottomAlign"><span class="name"><b>isUnstable</b></span>() const</td></tr>
+</table></div>
+<!-- @@@unstable -->
+<!-- $$$userInterfaces-prop$$$userInterfaces -->
+<h3 class="fn" id="userInterfaces-prop"><a name="userInterfaces-prop"></a><span class="name">userInterfaces</span> : const <span class="type">QStringList</span></h3>
+<p>This property holds a list of all user interface class names known to this component.</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QStringList </td><td class="memItemRight bottomAlign"><span class="name"><b>userInterfaces</b></span>() const</td></tr>
+</table></div>
+<!-- @@@userInterfaces -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Component[overload1]$$$ComponentPackageManagerCore* -->
+<h3 class="fn" id="Component"><a name="Component"></a>Component::<span class="name">Component</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Creates a new component in the package manager specified by <i>core</i>.</p>
+<!-- @@@Component -->
+<!-- $$$~Component[overload1]$$$~Component -->
+<h3 class="fn" id="dtor.Component"><a name="dtor.Component"></a>Component::<span class="name">~Component</span>()</h3>
+<p>Destroys the component.</p>
+<!-- @@@~Component -->
+<!-- $$$addAutoDependOn[overload1]$$$addAutoDependOnconstQString& -->
+<h3 class="fn" id="addAutoDependOn"><a name="addAutoDependOn"></a><span class="type">void</span> Component::<span class="name">addAutoDependOn</span>(const <span class="type">QString</span> &amp;<i>newDependOn</i>)</h3>
+<p>Adds the component specified by <i>newDependOn</i> to the automatic depend-on list.</p>
+<p><b>See also </b>component.addAutoDependOn and <a href="qinstaller-component.html#dependencies-prop">dependencies</a>.</p>
+<!-- @@@addAutoDependOn -->
+<!-- $$$addDependency[overload1]$$$addDependencyconstQString& -->
+<h3 class="fn" id="addDependency"><a name="addDependency"></a><span class="type">void</span> Component::<span class="name">addDependency</span>(const <span class="type">QString</span> &amp;<i>newDependency</i>)</h3>
+<p>Adds the component specified by <i>newDependency</i> to the list of dependencies.</p>
+<p><b>See also </b><a href="scripting-component.html#addDependency-method">component.addDependency</a> and <a href="qinstaller-component.html#dependencies-prop">dependencies</a>.</p>
+<!-- @@@addDependency -->
+<!-- $$$addDownloadableArchive[overload1]$$$addDownloadableArchiveconstQString& -->
+<h3 class="fn" id="addDownloadableArchive"><a name="addDownloadableArchive"></a><span class="type">void</span> Component::<span class="name">addDownloadableArchive</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p>Adds the archive <i>path</i> to this component. This can only be called if this component was downloaded from an online repository. When adding <i>path</i>, it will be downloaded from the repository when the installation starts.</p>
+<p><b>See also </b><a href="scripting-component.html#addDownloadableArchive-method">component.addDownloadableArchive</a>, <a href="qinstaller-component.html#removeDownloadableArchive">removeDownloadableArchive</a>(), <a href="qinstaller-component.html#fromOnlineRepository-prop">fromOnlineRepository</a>, and <a href="qinstaller-component.html#archives-prop">archives</a>.</p>
+<!-- @@@addDownloadableArchive -->
+<!-- $$$addElevatedOperation[overload1]$$$addElevatedOperationOperation* -->
+<h3 class="fn" id="addElevatedOperation"><a name="addElevatedOperation"></a><span class="type">void</span> Component::<span class="name">addElevatedOperation</span>(<span class="type">Operation</span> *<i>operation</i>)</h3>
+<p>Adds <i>operation</i> to the list of operations needed to install this component. <i>operation</i> is executed with elevated rights.</p>
+<!-- @@@addElevatedOperation -->
+<!-- $$$addElevatedOperation$$$addElevatedOperationconstQString&constQStringList& -->
+<h3 class="fn" id="addElevatedOperation-2"><a name="addElevatedOperation-2"></a><span class="type">bool</span> Component::<span class="name">addElevatedOperation</span>(const <span class="type">QString</span> &amp;<i>operation</i>, const <span class="type">QStringList</span> &amp;<i>parameters</i>)</h3>
+<p>Creates and adds the installation operation <i>operation</i>. Add any number of <i>parameters</i>. The variables that the parameters contain, such as <code>@TargetDir@</code>, are replaced with their values. The operation is executed with elevated rights.</p>
+<p><b>See also </b><a href="scripting-component.html#addElevatedOperation-method">component.addElevatedOperation</a>.</p>
+<!-- @@@addElevatedOperation -->
+<!-- $$$addOperation[overload1]$$$addOperationOperation* -->
+<h3 class="fn" id="addOperation"><a name="addOperation"></a><span class="type">void</span> Component::<span class="name">addOperation</span>(<span class="type">Operation</span> *<i>operation</i>)</h3>
+<p>Adds <i>operation</i> to the list of operations needed to install this component.</p>
+<!-- @@@addOperation -->
+<!-- $$$addOperation$$$addOperationconstQString&constQStringList& -->
+<h3 class="fn" id="addOperation-2"><a name="addOperation-2"></a><span class="type">bool</span> Component::<span class="name">addOperation</span>(const <span class="type">QString</span> &amp;<i>operation</i>, const <span class="type">QStringList</span> &amp;<i>parameters</i>)</h3>
+<p>Creates and adds an installation operation for <i>operation</i>. Add any number of <i>parameters</i>. The variables that the parameters contain, such as <code>@TargetDir@</code>, are replaced with their values.</p>
+<p><b>See also </b><a href="scripting-component.html#addOperation-method">component.addOperation</a>.</p>
+<!-- @@@addOperation -->
+<!-- $$$addStopProcessForUpdateRequest[overload1]$$$addStopProcessForUpdateRequestconstQString& -->
+<h3 class="fn" id="addStopProcessForUpdateRequest"><a name="addStopProcessForUpdateRequest"></a><span class="type">void</span> Component::<span class="name">addStopProcessForUpdateRequest</span>(const <span class="type">QString</span> &amp;<i>process</i>)</h3>
+<p>Adds a request for quitting the process <i>process</i> before installing, updating, or uninstalling the component.</p>
+<p><b>See also </b><a href="scripting-component.html#addStopProcessForUpdateRequest-method">component.addStopProcessForUpdateRequest</a>.</p>
+<!-- @@@addStopProcessForUpdateRequest -->
+<!-- $$$appendComponent[overload1]$$$appendComponentComponent* -->
+<h3 class="fn" id="appendComponent"><a name="appendComponent"></a><span class="type">void</span> Component::<span class="name">appendComponent</span>(<span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *<i>component</i>)</h3>
+<p>Appends <i>component</i> as a child of this component. If <i>component</i> already has a parent, it is removed from the previous parent. If the <i>component</i> contains several children and has the SortingPriorityGreaterThan() sorting priority set, the child list is sorted so that the child component with the highest priority is placed on top.</p>
+<!-- @@@appendComponent -->
+<!-- $$$archives -->
+<h3 class="fn" id="archives"><a name="archives"></a><span class="type">QStringList</span> Component::<span class="name">archives</span>() const</h3>
+<p>Contains the names of all archives known to this component. Even downloaded archives are mapped to the <code>installer://</code> URL through the used QFileEngineHandler during the download process.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#archives-prop">archives</a>. </p><!-- @@@archives -->
+<!-- $$$autoCreateOperations -->
+<h3 class="fn" id="autoCreateOperations"><a name="autoCreateOperations"></a><span class="type">bool</span> Component::<span class="name">autoCreateOperations</span>() const</h3>
+<p>Specifies whether operations should be automatically created when the installation starts. This would be done by calling <a href="qinstaller-component.html#createOperations">createOperations</a>(). If you set this to <code>false</code>, it is completely up to the component's script to create all operations.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#autoCreateOperations-prop">autoCreateOperations</a>. </p><p><b>See also </b><a href="qinstaller-component.html#autoCreateOperations-prop">setAutoCreateOperations</a>() and <a href="scripting-component.html#autoCreateOperations-prop">component.autoCreateOperations</a>.</p>
+<!-- @@@autoCreateOperations -->
+<!-- $$$beginInstallation[overload1]$$$beginInstallation -->
+<h3 class="fn" id="beginInstallation"><a name="beginInstallation"></a><code>[virtual] </code><span class="type">void</span> Component::<span class="name">beginInstallation</span>()</h3>
+<p><b>See also </b><a href="scripting-component.html#beginInstallation-method">component.beginInstallation</a>.</p>
+<!-- @@@beginInstallation -->
+<!-- $$$componentChangeRequested[overload1]$$$componentChangeRequested -->
+<h3 class="fn" id="componentChangeRequested"><a name="componentChangeRequested"></a><span class="type">bool</span> Component::<span class="name">componentChangeRequested</span>()</h3>
+<p>Returns <code>true</code> if that component will be changed (update, installation, or uninstallation).</p>
+<p><b>See also </b><a href="scripting-component.html#componentChangeRequested-method">component.componentChangeRequested</a>.</p>
+<!-- @@@componentChangeRequested -->
+<!-- $$$createOperations[overload1]$$$createOperations -->
+<h3 class="fn" id="createOperations"><a name="createOperations"></a><code>[virtual] </code><span class="type">void</span> Component::<span class="name">createOperations</span>()</h3>
+<p><b>See also </b><a href="scripting-component.html#createOperations-method">component.createOperations</a> and <a href="qinstaller-component.html#createOperationsForArchive">createOperationsForArchive</a>().</p>
+<!-- @@@createOperations -->
+<!-- $$$createOperationsForArchive[overload1]$$$createOperationsForArchiveconstQString& -->
+<h3 class="fn" id="createOperationsForArchive"><a name="createOperationsForArchive"></a><code>[virtual] </code><span class="type">void</span> Component::<span class="name">createOperationsForArchive</span>(const <span class="type">QString</span> &amp;<i>archive</i>)</h3>
+<p>Creates all operations needed to install this component's <i>archive</i>. This method gets called from <a href="qinstaller-component.html#createOperations">createOperations</a>. You can override this method by providing a method with the same name in the component script.</p>
+<p><b>Note: </b>If you call this method from a script, it will not call the script's method with the same name.</p><p>The default implementation calls <a href="qinstaller-component.html#createOperationsForPath">createOperationsForPath</a> for everything contained in the archive. If <i>archive</i> is a compressed archive known to the installer system, an Extract operation is created, instead.</p>
+<p><b>See also </b><a href="scripting-component.html#createOperationsForArchive-method">component.createOperationsForArchive</a>.</p>
+<!-- @@@createOperationsForArchive -->
+<!-- $$$createOperationsForPath[overload1]$$$createOperationsForPathconstQString& -->
+<h3 class="fn" id="createOperationsForPath"><a name="createOperationsForPath"></a><code>[virtual] </code><span class="type">void</span> Component::<span class="name">createOperationsForPath</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p>Creates all operations needed to install this component's <i>path</i>. <i>path</i> is a fully qualified filename including the component's name. This method gets called from <a href="qinstaller-component.html#createOperationsForArchive">createOperationsForArchive</a>. You can override it by providing a method with the same name in the component script.</p>
+<p><b>Note: </b>RSA signature files are omitted by this method.</p><p><b>Note: </b>If you call this method from a script, it will not call the script's method with the same name.</p><p>The default implementation is recursively creating Copy and Mkdir operations for all files and folders within <i>path</i>.</p>
+<p><b>See also </b><a href="scripting-component.html#createOperationsForPath-method">component.createOperationsForPath</a>.</p>
+<!-- @@@createOperationsForPath -->
+<!-- $$$descendantComponents[overload1]$$$descendantComponents -->
+<h3 class="fn" id="descendantComponents"><a name="descendantComponents"></a><span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *&gt; Component::<span class="name">descendantComponents</span>() const</h3>
+<p>Returns a list of child components, including all descendants of the component's children.</p>
+<p><b>Note: </b>The returned list does include all children; non-virtual components as well as virtual components.</p><!-- @@@descendantComponents -->
+<!-- $$$displayName -->
+<h3 class="fn" id="displayName"><a name="displayName"></a><span class="type">QString</span> Component::<span class="name">displayName</span>() const</h3>
+<p>Contains this component's display name as visible to the user.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#displayName-prop">displayName</a>. </p><!-- @@@displayName -->
+<!-- $$$downloadableArchives[overload1]$$$downloadableArchives -->
+<h3 class="fn" id="downloadableArchives"><a name="downloadableArchives"></a><span class="type">QStringList</span> Component::<span class="name">downloadableArchives</span>() const</h3>
+<p>Returns the archives to be downloaded from the online repository before installation.</p>
+<!-- @@@downloadableArchives -->
+<!-- $$$forcedInstallation[overload1]$$$forcedInstallation -->
+<h3 class="fn" id="forcedInstallation"><a name="forcedInstallation"></a><span class="type">bool</span> Component::<span class="name">forcedInstallation</span>() const</h3>
+<p>Returns whether this component should always be installed.</p>
+<!-- @@@forcedInstallation -->
+<!-- $$$installationRequested[overload1]$$$installationRequested -->
+<h3 class="fn" id="installationRequested"><a name="installationRequested"></a><span class="type">bool</span> Component::<span class="name">installationRequested</span>() const</h3>
+<p>Returns whether the user wants to install the component.</p>
+<p><b>See also </b><a href="scripting-component.html#installationRequested-method">component.installationRequested</a>.</p>
+<!-- @@@installationRequested -->
+<!-- $$$isAutoDependOn[overload1]$$$isAutoDependOnconstQSet<QString>& -->
+<h3 class="fn" id="isAutoDependOn"><a name="isAutoDependOn"></a><span class="type">bool</span> Component::<span class="name">isAutoDependOn</span>(const <span class="type">QSet</span>&lt;<span class="type">QString</span>&gt; &amp;<i>componentsToInstall</i>) const</h3>
+<p>Determines whether the component comes as an auto dependency. Returns <code>true</code> if all components in <i>componentsToInstall</i> are already installed or selected for installation and this component thus needs to be installed as well.</p>
+<p><b>See also </b><a href="scripting-component.html#isAutoDependOn-method">component.isAutoDependOn</a>.</p>
+<!-- @@@isAutoDependOn -->
+<!-- $$$isFromOnlineRepository -->
+<h3 class="fn" id="isFromOnlineRepository"><a name="isFromOnlineRepository"></a><span class="type">bool</span> Component::<span class="name">isFromOnlineRepository</span>() const</h3>
+<p>Returns whether this component has been loaded from an online repository.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#fromOnlineRepository-prop">fromOnlineRepository</a>. </p><p><b>See also </b><a href="scripting-component.html#isFromOnlineRepository-method">component.isFromOnlineRepository</a>, <a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a>(), and <a href="qinstaller-component.html#fromOnlineRepository-prop">fromOnlineRepository</a>.</p>
+<!-- @@@isFromOnlineRepository -->
+<!-- $$$isSelected[overload1]$$$isSelected -->
+<h3 class="fn" id="isSelected"><a name="isSelected"></a><span class="type">bool</span> Component::<span class="name">isSelected</span>() const</h3>
+<p>Returns whether the component is selected.</p>
+<!-- @@@isSelected -->
+<!-- $$$isSelectedForInstallation[overload1]$$$isSelectedForInstallation -->
+<h3 class="fn" id="isSelectedForInstallation"><a name="isSelectedForInstallation"></a><span class="type">bool</span> Component::<span class="name">isSelectedForInstallation</span>() const</h3>
+<p>Returns whether the component is selected for installation.</p>
+<!-- @@@isSelectedForInstallation -->
+<!-- $$$isUninstalled[overload1]$$$isUninstalled -->
+<h3 class="fn" id="isUninstalled"><a name="isUninstalled"></a><span class="type">bool</span> Component::<span class="name">isUninstalled</span>() const</h3>
+<p>Returns whether the component is uninstalled.</p>
+<p><b>See also </b><a href="scripting-component.html#isUninstalled-method">component.isUninstalled</a>.</p>
+<!-- @@@isUninstalled -->
+<!-- $$$isVirtual[overload1]$$$isVirtual -->
+<h3 class="fn" id="isVirtual"><a name="isVirtual"></a><span class="type">bool</span> Component::<span class="name">isVirtual</span>() const</h3>
+<p>Returns whether this component is virtual.</p>
+<!-- @@@isVirtual -->
+<!-- $$$licenses[overload1]$$$licenses -->
+<h3 class="fn" id="licenses"><a name="licenses"></a><span class="type">QHash</span>&lt;<span class="type">QString</span>, <span class="type">QPair</span>&lt;<span class="type">QString</span>, <span class="type">QString</span>&gt; &gt; Component::<span class="name">licenses</span>() const</h3>
+<p>Returns a hash that contains the file names and text of license files for the component.</p>
+<!-- @@@licenses -->
+<!-- $$$loadComponentScript[overload1]$$$loadComponentScript -->
+<h3 class="fn" id="loadComponentScript"><a name="loadComponentScript"></a><span class="type">void</span> Component::<span class="name">loadComponentScript</span>()</h3>
+<p>Loads the component script into the script engine.</p>
+<!-- @@@loadComponentScript -->
+<!-- $$$loadComponentScript$$$loadComponentScriptconstQString& -->
+<h3 class="fn" id="loadComponentScript-1"><a name="loadComponentScript-1"></a><span class="type">void</span> Component::<span class="name">loadComponentScript</span>(const <span class="type">QString</span> &amp;<i>fileName</i>)</h3>
+<p>Loads the script at <i>fileName</i> into the script engine. The installer and all its components as well as other useful things are being exported into the script. For more information, see <a href="scripting.html">Component Scripting</a>.</p>
+<p>Throws an error when either the script at <i>fileName</i> could not be opened, or QScriptEngine could not evaluate the script.</p>
+<!-- @@@loadComponentScript -->
+<!-- $$$loadDataFromPackage[overload1]$$$loadDataFromPackageconstPackage& -->
+<h3 class="fn" id="loadDataFromPackage"><a name="loadDataFromPackage"></a><span class="type">void</span> Component::<span class="name">loadDataFromPackage</span>(const <span class="type">Package</span> &amp;<i>package</i>)</h3>
+<p>Sets variables according to the values set in the package.xml file of <i>package</i>. Also loads UI files, licenses and translations if they are referenced in the package.xml.</p>
+<!-- @@@loadDataFromPackage -->
+<!-- $$$loadDataFromPackage$$$loadDataFromPackageconstKDUpdater::LocalPackage& -->
+<h3 class="fn" id="loadDataFromPackage-1"><a name="loadDataFromPackage-1"></a><span class="type">void</span> Component::<span class="name">loadDataFromPackage</span>(const <span class="type"><a href="kdupdater-localpackage.html">KDUpdater::LocalPackage</a></span> &amp;<i>package</i>)</h3>
+<p>Sets variables according to the values set in the package.xml file of a local <i>package</i>.</p>
+<!-- @@@loadDataFromPackage -->
+<!-- $$$loadLicenses[overload1]$$$loadLicensesconstQString&constQHash<QString,QVariant>& -->
+<h3 class="fn" id="loadLicenses"><a name="loadLicenses"></a><span class="type">void</span> Component::<span class="name">loadLicenses</span>(const <span class="type">QString</span> &amp;<i>directory</i>, const <span class="type">QHash</span>&lt;<span class="type">QString</span>, <span class="type">QVariant</span>&gt; &amp;<i>licenseHash</i>)</h3>
+<p>Loads the text of the licenses contained in <i>licenseHash</i> from <i>directory</i>. This is saved into a new hash containing the filename and the text of that file.</p>
+<!-- @@@loadLicenses -->
+<!-- $$$loadTranslations[overload1]$$$loadTranslationsconstQDir&constQStringList& -->
+<h3 class="fn" id="loadTranslations"><a name="loadTranslations"></a><span class="type">void</span> Component::<span class="name">loadTranslations</span>(const <span class="type">QDir</span> &amp;<i>directory</i>, const <span class="type">QStringList</span> &amp;<i>qms</i>)</h3>
+<p>Loads the translations matching the name filters <i>qms</i> inside <i>directory</i>. Only translations with a base name matching the current locale's name are loaded. For more information, see <a href="ifw-customizing-installers.html#translating-pages">Translating Pages</a>.</p>
+<!-- @@@loadTranslations -->
+<!-- $$$loadUserInterfaces[overload1]$$$loadUserInterfacesconstQDir&constQStringList& -->
+<h3 class="fn" id="loadUserInterfaces"><a name="loadUserInterfaces"></a><span class="type">void</span> Component::<span class="name">loadUserInterfaces</span>(const <span class="type">QDir</span> &amp;<i>directory</i>, const <span class="type">QStringList</span> &amp;<i>uis</i>)</h3>
+<p>Loads the user interface files matching the name filters <i>uis</i> inside <i>directory</i>. The loaded interface can be accessed via <a href="qinstaller-component.html#userInterfaces-prop">userInterfaces</a>() by using the class name set in the UI file.</p>
+<!-- @@@loadUserInterfaces -->
+<!-- $$$loaded[overload1]$$$loaded -->
+<h3 class="fn" id="loaded"><a name="loaded"></a><code>[signal] </code><span class="type">void</span> Component::<span class="name">loaded</span>()</h3>
+<p><b>See also </b><a href="scripting-component.html#loaded-signal">component.loaded</a>.</p>
+<!-- @@@loaded -->
+<!-- $$$localTempPath[overload1]$$$localTempPath -->
+<h3 class="fn" id="localTempPath"><a name="localTempPath"></a><span class="type">QString</span> Component::<span class="name">localTempPath</span>() const</h3>
+<p>Returns the path to the local directory where the component is temporarily stored.</p>
+<!-- @@@localTempPath -->
+<!-- $$$markAsPerformedInstallation[overload1]$$$markAsPerformedInstallation -->
+<h3 class="fn" id="markAsPerformedInstallation"><a name="markAsPerformedInstallation"></a><span class="type">void</span> Component::<span class="name">markAsPerformedInstallation</span>()</h3>
+<p>Marks the component as installed.</p>
+<!-- @@@markAsPerformedInstallation -->
+<!-- $$$name -->
+<h3 class="fn" id="name"><a name="name"></a><span class="type">QString</span> Component::<span class="name">name</span>() const</h3>
+<p>Contains the unique identifier of this component.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#name-prop">name</a>. </p><!-- @@@name -->
+<!-- $$$operations[overload1]$$$operations -->
+<h3 class="fn" id="operations"><a name="operations"></a><span class="type">OperationList</span> Component::<span class="name">operations</span>() const</h3>
+<p>Returns the operations needed to install this component. If <a href="qinstaller-component.html#autoCreateOperations">autoCreateOperations</a>() is <code>true</code>, <a href="qinstaller-component.html#createOperations">createOperations</a>() is called if no operations have been automatically created yet.</p>
+<!-- @@@operations -->
+<!-- $$$operationsCreatedSuccessfully[overload1]$$$operationsCreatedSuccessfully -->
+<h3 class="fn" id="operationsCreatedSuccessfully"><a name="operationsCreatedSuccessfully"></a><span class="type">bool</span> Component::<span class="name">operationsCreatedSuccessfully</span>() const</h3>
+<p>Returns whether the operations needed to install this component were created successfully.</p>
+<!-- @@@operationsCreatedSuccessfully -->
+<!-- $$$packageManagerCore[overload1]$$$packageManagerCore -->
+<h3 class="fn" id="packageManagerCore"><a name="packageManagerCore"></a><span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *Component::<span class="name">packageManagerCore</span>() const</h3>
+<p>Returns the installer this component belongs to.</p>
+<!-- @@@packageManagerCore -->
+<!-- $$$parentComponent[overload1]$$$parentComponent -->
+<h3 class="fn" id="parentComponent"><a name="parentComponent"></a><span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *Component::<span class="name">parentComponent</span>() const</h3>
+<p>Returns the parent of this component. For example, the parent of a component called <code>org.qt-project.sdk.qt</code> is <code>org.qt-project.sdk</code> if it exists.</p>
+<!-- @@@parentComponent -->
+<!-- $$$pathsForUninstallation[overload1]$$$pathsForUninstallation -->
+<h3 class="fn" id="pathsForUninstallation"><a name="pathsForUninstallation"></a><span class="type">QList</span>&lt;<span class="type">QPair</span>&lt;<span class="type">QString</span>, <span class="type">bool</span>&gt; &gt; Component::<span class="name">pathsForUninstallation</span>() const</h3>
+<p>Returns the list of paths previously registered for uninstallation with <a href="qinstaller-component.html#registerPathForUninstallation">registerPathForUninstallation</a>().</p>
+<!-- @@@pathsForUninstallation -->
+<!-- $$$registerPathForUninstallation[overload1]$$$registerPathForUninstallationconstQString&bool -->
+<h3 class="fn" id="registerPathForUninstallation"><a name="registerPathForUninstallation"></a><span class="type">void</span> Component::<span class="name">registerPathForUninstallation</span>(const <span class="type">QString</span> &amp;<i>path</i>, <span class="type">bool</span> <i>wipe</i> = false)</h3>
+<p>Registers the file or directory at <i>path</i> for being removed when this component gets uninstalled. In case of a directory, this will be recursive. If <i>wipe</i> is set to <code>true</code>, the directory will also be deleted if it contains changes made by the user after installation.</p>
+<p><b>See also </b><a href="scripting-component.html#registerPathForUninstallation-method">component.registerPathForUninstallation</a>.</p>
+<!-- @@@registerPathForUninstallation -->
+<!-- $$$removeComponent[overload1]$$$removeComponentComponent* -->
+<h3 class="fn" id="removeComponent"><a name="removeComponent"></a><span class="type">void</span> Component::<span class="name">removeComponent</span>(<span class="type"><a href="qinstaller-component.html#Component">Component</a></span> *<i>component</i>)</h3>
+<p>Removes <i>component</i> if it is a child of this component. The component object still exists after the function returns. It is up to the caller to delete the passed <i>component</i>.</p>
+<!-- @@@removeComponent -->
+<!-- $$$removeDownloadableArchive[overload1]$$$removeDownloadableArchiveconstQString& -->
+<h3 class="fn" id="removeDownloadableArchive"><a name="removeDownloadableArchive"></a><span class="type">void</span> Component::<span class="name">removeDownloadableArchive</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p>Removes the archive <i>path</i> previously added via <a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a>() from this component. This can only be called if this component was downloaded from an online repository.</p>
+<p><b>See also </b><a href="scripting-component.html#removeDownloadableArchive-method">component.removeDownloadableArchive</a>, <a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a>(), <a href="qinstaller-component.html#fromOnlineRepository-prop">fromOnlineRepository</a>, and <a href="qinstaller-component.html#archives-prop">archives</a>.</p>
+<!-- @@@removeDownloadableArchive -->
+<!-- $$$removeStopProcessForUpdateRequest[overload1]$$$removeStopProcessForUpdateRequestconstQString& -->
+<h3 class="fn" id="removeStopProcessForUpdateRequest"><a name="removeStopProcessForUpdateRequest"></a><span class="type">void</span> Component::<span class="name">removeStopProcessForUpdateRequest</span>(const <span class="type">QString</span> &amp;<i>process</i>)</h3>
+<p>Removes the request for quitting the process <i>process</i> again.</p>
+<p><b>See also </b><a href="scripting-component.html#removeStopProcessForUpdateRequest-method">component.removeStopProcessForUpdateRequest</a>.</p>
+<!-- @@@removeStopProcessForUpdateRequest -->
+<!-- $$$repositoryUrl -->
+<h3 class="fn" id="repositoryUrl"><a name="repositoryUrl"></a><span class="type">QUrl</span> Component::<span class="name">repositoryUrl</span>() const</h3>
+<p>Contains the repository URL this component is downloaded from. If this component is not downloaded from an online repository, returns an empty QUrl.</p>
+<p><b>Note:</b> Getter function for property <a href="qinstaller-component.html#repositoryUrl-prop">repositoryUrl</a>. </p><p><b>See also </b><a href="qinstaller-component.html#setRepositoryUrl">setRepositoryUrl</a>().</p>
+<!-- @@@repositoryUrl -->
+<!-- $$$setInstalled[overload1]$$$setInstalled -->
+<h3 class="fn" id="setInstalled"><a name="setInstalled"></a><span class="type">void</span> Component::<span class="name">setInstalled</span>()</h3>
+<p><b>See also </b><a href="qinstaller-component.html#installed-prop">isInstalled</a>() and <a href="scripting-component.html#setInstalled-method">component.setInstalled</a>.</p>
+<!-- @@@setInstalled -->
+<!-- $$$setRepositoryUrl[overload1]$$$setRepositoryUrlconstQUrl& -->
+<h3 class="fn" id="setRepositoryUrl"><a name="setRepositoryUrl"></a><span class="type">void</span> Component::<span class="name">setRepositoryUrl</span>(const <span class="type">QUrl</span> &amp;<i>url</i>)</h3>
+<p>Sets this component's repository URL as <i>url</i>.</p>
+<p><b>See also </b><a href="qinstaller-component.html#repositoryUrl">repositoryUrl</a>().</p>
+<!-- @@@setRepositoryUrl -->
+<!-- $$$setStopProcessForUpdateRequest[overload1]$$$setStopProcessForUpdateRequestconstQString&bool -->
+<h3 class="fn" id="setStopProcessForUpdateRequest"><a name="setStopProcessForUpdateRequest"></a><span class="type">void</span> Component::<span class="name">setStopProcessForUpdateRequest</span>(const <span class="type">QString</span> &amp;<i>process</i>, <span class="type">bool</span> <i>requested</i>)</h3>
+<p>A convenience function for adding or removing the request for stopping <i>process</i> depending on whether <i>requested</i> is <code>true</code> (add) or <code>false</code> (remove).</p>
+<p><b>See also </b><a href="scripting-component.html#setStopProcessForUpdateRequest-method">component.addStopProcessForUpdateReques</a>.</p>
+<!-- @@@setStopProcessForUpdateRequest -->
+<!-- $$$setUninstalled[overload1]$$$setUninstalled -->
+<h3 class="fn" id="setUninstalled"><a name="setUninstalled"></a><span class="type">void</span> Component::<span class="name">setUninstalled</span>()</h3>
+<p><b>See also </b><a href="qinstaller-component.html#isUninstalled">isUninstalled</a>() and <a href="scripting-component.html#setUninstalled-method">component.setUninstalled</a>.</p>
+<!-- @@@setUninstalled -->
+<!-- $$$setUnstable[overload1]$$$setUnstablePackageManagerCore::UnstableErrorconstQString& -->
+<h3 class="fn" id="setUnstable"><a name="setUnstable"></a><span class="type">void</span> Component::<span class="name">setUnstable</span>(<span class="type"><a href="qinstaller-packagemanagercore.html#UnstableError-enum">PackageManagerCore::UnstableError</a></span> <i>error</i>, const <span class="type">QString</span> &amp;<i>errorMessage</i> = QString())</h3>
+<p><b>See also </b><a href="qinstaller-component.html#unstable-prop">isUnstable</a>().</p>
+<!-- @@@setUnstable -->
+<!-- $$$setUpdateAvailable[overload1]$$$setUpdateAvailablebool -->
+<h3 class="fn" id="setUpdateAvailable"><a name="setUpdateAvailable"></a><span class="type">void</span> Component::<span class="name">setUpdateAvailable</span>(<span class="type">bool</span> <i>isUpdateAvailable</i>)</h3>
+<p>Sets the <i>isUpdateAvailable</i> flag to <code>true</code> to indicate that the core found an update.</p>
+<p><b>See also </b><a href="scripting-component.html#setUpdateAvailable-method">component.setUpdateAvailable</a>.</p>
+<!-- @@@setUpdateAvailable -->
+<!-- $$$setValidatorCallbackName[overload1]$$$setValidatorCallbackNameconstQString& -->
+<h3 class="fn" id="setValidatorCallbackName"><a name="setValidatorCallbackName"></a><span class="type">void</span> Component::<span class="name">setValidatorCallbackName</span>(const <span class="type">QString</span> &amp;<i>name</i>)</h3>
+<p>Sets the validator callback name to <i>name</i>.</p>
+<!-- @@@setValidatorCallbackName -->
+<!-- $$$setValue[overload1]$$$setValueconstQString&constQString& -->
+<h3 class="fn" id="setValue"><a name="setValue"></a><span class="type">void</span> Component::<span class="name">setValue</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>value</i>)</h3>
+<p>Sets the value of the variable with <i>key</i> to <i>value</i>.</p>
+<p><b>See also </b><a href="qinstaller-component.html#value">value</a>() and <a href="scripting-component.html#setValue-method">component.setValue</a>.</p>
+<!-- @@@setValue -->
+<!-- $$$stopProcessForUpdateRequests[overload1]$$$stopProcessForUpdateRequests -->
+<h3 class="fn" id="stopProcessForUpdateRequests"><a name="stopProcessForUpdateRequests"></a><span class="type">QStringList</span> Component::<span class="name">stopProcessForUpdateRequests</span>() const</h3>
+<p>The list of processes that need to be closed before installing, updating, or uninstalling this component.</p>
+<!-- @@@stopProcessForUpdateRequests -->
+<!-- $$$uninstallationRequested[overload1]$$$uninstallationRequested -->
+<h3 class="fn" id="uninstallationRequested"><a name="uninstallationRequested"></a><span class="type">bool</span> Component::<span class="name">uninstallationRequested</span>() const</h3>
+<p>Returns whether the user wants to uninstall the component.</p>
+<p><b>See also </b><a href="scripting-component.html#uninstallationRequested-method">component.uninstallationRequested</a>.</p>
+<!-- @@@uninstallationRequested -->
+<!-- $$$updateRequested[overload1]$$$updateRequested -->
+<h3 class="fn" id="updateRequested"><a name="updateRequested"></a><span class="type">bool</span> Component::<span class="name">updateRequested</span>()</h3>
+<p>Returns whether the user wants to install the update for this component.</p>
+<p><b>See also </b><a href="scripting-component.html#updateRequested-method">component.updateRequested</a>.</p>
+<!-- @@@updateRequested -->
+<!-- $$$updateUncompressedSize[overload1]$$$updateUncompressedSize -->
+<h3 class="fn" id="updateUncompressedSize"><a name="updateUncompressedSize"></a><span class="type">quint64</span> Component::<span class="name">updateUncompressedSize</span>()</h3>
+<p>Returns the size of a compressed archive.</p>
+<!-- @@@updateUncompressedSize -->
+<!-- $$$userInterface[overload1]$$$userInterfaceconstQString& -->
+<h3 class="fn" id="userInterface"><a name="userInterface"></a><span class="type">QWidget</span> *Component::<span class="name">userInterface</span>(const <span class="type">QString</span> &amp;<i>name</i>) const</h3>
+<p>Returns the QWidget created for <i>name</i> or <code>0</code> if the widget has been deleted or cannot be found.</p>
+<p><b>See also </b><a href="scripting-component.html#userInterface-method">component.userInterface</a>.</p>
+<!-- @@@userInterface -->
+<!-- $$$validatePage[overload1]$$$validatePage -->
+<h3 class="fn" id="validatePage"><a name="validatePage"></a><span class="type">bool</span> Component::<span class="name">validatePage</span>()</h3>
+<p>Calls the script method with the validator callback name. Returns <code>true</code> if the method returns <code>true</code>. Always returns <code>true</code> if the validator callback name is empty.</p>
+<!-- @@@validatePage -->
+<!-- $$$value[overload1]$$$valueconstQString&constQString& -->
+<h3 class="fn" id="value"><a name="value"></a><span class="type">QString</span> Component::<span class="name">value</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>defaultValue</i> = QString()) const</h3>
+<p>Returns the value of variable name <i>key</i>. If <i>key</i> is not known yet, <i>defaultValue</i> is returned.</p>
+<p><b>Note: </b>If a component is virtual and you ask for the component value with the key <code>Default</code>, it will always return <code>false</code>.</p><p><b>See also </b><a href="qinstaller-component.html#setValue">setValue</a>().</p>
+<!-- @@@value -->
+<!-- $$$valueChanged[overload1]$$$valueChangedconstQString&constQString& -->
+<h3 class="fn" id="valueChanged"><a name="valueChanged"></a><code>[signal] </code><span class="type">void</span> Component::<span class="name">valueChanged</span>(const <span class="type">QString</span> &amp;<i>key</i>, const <span class="type">QString</span> &amp;<i>value</i>)</h3>
+<p>Emitted when the value of the variable with the name <i>key</i> changes to <i>value</i>.</p>
+<p><b>See also </b><a href="scripting-component.html#valueChanged-signal">component.valueChanged</a> and <a href="qinstaller-component.html#setValue">setValue</a>().</p>
+<!-- @@@valueChanged -->
+<!-- $$$variables[overload1]$$$variables -->
+<h3 class="fn" id="variables"><a name="variables"></a><span class="type">QHash</span>&lt;<span class="type">QString</span>, <span class="type">QString</span>&gt; Component::<span class="name">variables</span>() const</h3>
+<p>Returns a key and value based hash of all variables set for this component.</p>
+<!-- @@@variables -->
+<!-- $$$virtualStateChanged[overload1]$$$virtualStateChanged -->
+<h3 class="fn" id="virtualStateChanged"><a name="virtualStateChanged"></a><code>[signal] </code><span class="type">void</span> Component::<span class="name">virtualStateChanged</span>()</h3>
+<p><b>See also </b><a href="scripting-component.html#virtualStateChanged-signal">component.virtualStateChanged</a>.</p>
+<!-- @@@virtualStateChanged -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

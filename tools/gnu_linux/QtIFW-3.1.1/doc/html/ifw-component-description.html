@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Package Directory | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Package Directory</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-globalconfig.html" />
+  <link rel="next" href="noninteractive.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-globalconfig.html">Configuration File</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="noninteractive.html">Controller Scripting</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#package-directory-structure">Package Directory Structure</a></li>
+<li class="level1"><a href="#meta-directory">Meta Directory</a></li>
+<li class="level2"><a href="#package-information-file-syntax">Package Information File Syntax</a></li>
+<li class="level2"><a href="#summary-of-package-information-file-elements">Summary of Package Information File Elements</a></li>
+<li class="level2"><a href="#component-dependencies">Component Dependencies</a></li>
+<li class="level1"><a href="#data-directory">Data Directory</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Package Directory</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-component-description.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Installers contain components that are either embedded to the installer or loaded from a remote repository. In both cases, you need to use a file format and structure for the components that the installer can read.</p>
+<a name="package-directory-structure"></a>
+<h2 id="package-directory-structure">Package Directory Structure</h2>
+<p>Place all components in the same root directory, which is called the <i>package directory</i>. The directory name acts as a domain-like identifier, which identifies all components. For example, <code>com.vendor.root</code>.</p>
+<p>Within the root directory, create subdirectories called <code>data</code> and <code>meta</code>.</p>
+<p>A package directory can look as follows:</p>
+<pre class="cpp">
+
+  <span class="operator">-</span>packages
+      <span class="operator">-</span> com<span class="operator">.</span>vendor<span class="operator">.</span>root
+          <span class="operator">-</span> data
+          <span class="operator">-</span> meta
+      <span class="operator">-</span> com<span class="operator">.</span>vendor<span class="operator">.</span>root<span class="operator">.</span>component1
+          <span class="operator">-</span> data
+          <span class="operator">-</span> meta
+      <span class="operator">-</span> com<span class="operator">.</span>vendor<span class="operator">.</span>root<span class="operator">.</span>component1<span class="operator">.</span>subcomponent1
+          <span class="operator">-</span> data
+          <span class="operator">-</span> meta
+      <span class="operator">-</span> com<span class="operator">.</span>vendor<span class="operator">.</span>root<span class="operator">.</span>component2
+          <span class="operator">-</span> data
+          <span class="operator">-</span> meta
+
+</pre>
+<a name="meta-directory"></a>
+<h2 id="meta-directory">Meta Directory</h2>
+<p>The <code>meta</code> directory contains files that specify settings for deployment and the installation process. The files are not extracted by the installer. The directory must contain at least a package information file and all files that you refer to in the package information file, such as scripts, user interface files, and translations.</p>
+<a name="package-information-file-syntax"></a>
+<h3 >Package Information File Syntax</h3>
+<p>The package.xml file is the main source of information about a component. The following is an example of a package file:</p>
+<pre class="cpp">
+
+  &lt;?xml version=&quot;1.0&quot;?&gt;
+  &lt;Package&gt;
+      &lt;DisplayName&gt;QtGui&lt;/DisplayName&gt;
+      &lt;Description&gt;Qt gui libraries&lt;/Description&gt;
+      &lt;Description xml:lang=&quot;de_de&quot;&gt;Qt GUI Bibliotheken&lt;/Description&gt;
+      &lt;Version&gt;1.2.3&lt;/Version&gt;
+      &lt;ReleaseDate&gt;2009-04-23&lt;/ReleaseDate&gt;
+      &lt;Name&gt;com.vendor.root.component2&lt;/Name&gt;
+      &lt;Dependencies&gt;com.vendor.root.component1&lt;/Dependencies&gt;
+      &lt;Virtual&gt;false&lt;/Virtual&gt;
+      &lt;Licenses&gt;
+          &lt;License name=&quot;License Agreement&quot; file=&quot;license.txt&quot; /&gt;
+      &lt;/Licenses&gt;
+      &lt;Script&gt;installscript.qs&lt;/Script&gt;
+      &lt;UserInterfaces&gt;
+          &lt;UserInterface&gt;specialpage.ui&lt;/UserInterface&gt;
+          &lt;UserInterface&gt;errorpage.ui&lt;/UserInterface&gt;
+      &lt;/UserInterfaces&gt;
+      &lt;Translations&gt;
+          &lt;Translation&gt;sv_se.qm&lt;/Translation&gt;
+          &lt;Translation&gt;de_de.qm&lt;/Translation&gt;
+      &lt;/Translations&gt;
+      &lt;DownloadableArchives&gt;component2.7z, component2a.7z&lt;/DownloadableArchives&gt;
+      &lt;AutoDependOn&gt;com.vendor.root.component3&lt;/AutoDependOn&gt;
+      &lt;SortingPriority&gt;123&lt;/SortingPriority&gt;
+      &lt;UpdateText&gt;This changed compared to the last release&lt;/UpdateText&gt;
+      &lt;Default&gt;false&lt;/Default&gt;
+      &lt;ForcedInstallation&gt;false&lt;/ForcedInstallation&gt;
+      &lt;Essential&gt;false&lt;/Essential&gt;
+      &lt;Replaces&gt;com.vendor.root.component2old&lt;/Replaces&gt;
+  &lt;/Package&gt;
+
+</pre>
+<a name="summary-of-package-information-file-elements"></a>
+<h3 >Summary of Package Information File Elements</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Element</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >DisplayName</td><td >Human-readable name of the component. Required. Specify translations for the name of the component as values of additional DisplayName tags, with the xml:lang attribute set to the correct locale.</td></tr>
+<tr valign="top" class="even"><td >Description</td><td >Human-readable description of the component. Required. Translations may be specified similarly to DisplayName tag. If a localization that matches the locale is not found and an untranslated version exists, that one will be used. Otherwise no Description will be shown for that locale. User clickable external links, for example a component's homepage, can be included in component description by specifying a URL address like this: {external-link}='https://www.qt.io/'. The URL must be valid and contain a full path to the desired resource.</td></tr>
+<tr valign="top" class="odd"><td >Version</td><td >Version number of the component in the following format: [0-9]+((\.|-)[0-9]+)* such as 1-1; 1.2-2; 3.4&#x2e;7&#x2e; Required. If a package needs to show the version number from a child rather than it's own (due to grouping of child packages) one can specify the attribute inheritVersionFrom with the package name the version needs to be inherited from.</td></tr>
+<tr valign="top" class="even"><td >ReleaseDate</td><td >Date when this component version was released. Required.</td></tr>
+<tr valign="top" class="odd"><td >Name</td><td >Domain-like identification for this component. Required.</td></tr>
+<tr valign="top" class="even"><td >Dependencies</td><td >Comma-separated list of identifiers of components that this component depends on. Optionally, you can specify version numbers, separated by a dash (-). You can prefix version numbers with a comparison operator (=, &gt;, &lt;, &gt;= or &lt;=). Keep in mind that you have to use the character reference &quot;&amp;lt;&quot; to escape the left angle bracket (use &quot;&amp;lt;&quot; instead of &quot;&lt;&quot; and &quot;&amp;lt;=&quot; instead of &quot;&lt;=&quot;). Optional. For more information, see <a href="ifw-component-description.html#component-dependencies">Component Dependencies</a>.</td></tr>
+<tr valign="top" class="odd"><td >AutoDependOn</td><td >Comma-separated list of identifiers of components that this component has an automatic dependency on. The component is installed if and only if all of the specified dependencies are fulfilled. If a component has an automatic dependency on other components, the check box will not be visible next to the component in the component tree. The selection will be performed automatically. If the component was not installed before, it will be selected for installation only when all components from this list are also selected for installation. If the component was already installed, it will be selected for uninstallation when at least one of the components from this list is also selected for uninstallation. For more information, see <a href="ifw-component-description.html#component-dependencies">Component Dependencies</a>.</td></tr>
+<tr valign="top" class="even"><td >Virtual</td><td >Set to <code>true</code> to hide the component from the installer. Note that setting this on a root component does not work.</td></tr>
+<tr valign="top" class="odd"><td >SortingPriority</td><td >Priority of the component in the tree. The tree is sorted from highest to lowest priority, with the highest priority on the top.</td></tr>
+<tr valign="top" class="even"><td >Licenses</td><td >List of license agreements to be accepted by the installing user. To add several licenses, add several <code>&lt;License&gt;</code> child elements that each specify the license <code>name</code> and <code>file</code>. ASCII and UTF8 file formats are supported for license files.<p>If there are translations listed for this component, the installer will also look for translated licenses. These need to have the same name as the original license file but with an added locale identifier. If for example the license file is called license.txt and there is German translation specified, the installer will also include a license_de_de.txt file (and show that when installing on a German system).</p>
+</td></tr>
+<tr valign="top" class="odd"><td >Script</td><td >File name of a script being loaded. Optional. For more information, see <a href="ifw-customizing-installers.html#adding-operations">Adding Operations</a>.</td></tr>
+<tr valign="top" class="even"><td >UserInterfaces</td><td >List of pages to load. To add several pages, add several <code>&lt;UserInterface&gt;</code> child elements that each specify the filename of a page. Optional. For more information, see <a href="ifw-customizing-installers.html#adding-pages">Adding Pages</a>.</td></tr>
+<tr valign="top" class="odd"><td >Translations</td><td >List of translation files to load. To add several language variants, specify several <code>&lt;Translation&gt;</code> child elements that each specify the filename of a language variant. Optional. For more information, see <a href="ifw-customizing-installers.html#translating-pages">Translating Pages</a>.</td></tr>
+<tr valign="top" class="even"><td >UpdateText</td><td >Description added to the component description if this is an update to the component. Optional.</td></tr>
+<tr valign="top" class="odd"><td >Default</td><td >Possible values are: <code>true</code>, <code>false</code>, and <code>script</code>. Set to <code>true</code> to preselect the component in the installer. This takes effect only on components that have no visible child components. The boolean values are evaluated directly, while <code>script</code> is resolved during runtime. Add the name of the script as a value of the <code>&lt;Script&gt;</code> element in this file. For an example script, see <a href="ifw-tutorial.html#selecting-default-contents">Selecting Default Contents</a>.</td></tr>
+<tr valign="top" class="even"><td >Essential</td><td >Marks the package as essential to force a restart of the <code>MaintenanceTool</code>. If there are updates available for an essential component, the package manager stays disabled until that component is updated. Newly introduced essential components are automatically installed when running the updater.</td></tr>
+<tr valign="top" class="odd"><td >ForcedInstallation</td><td >Determines that the package must always be installed. End users cannot deselect it in the installer.</td></tr>
+<tr valign="top" class="even"><td >Replaces</td><td >Comma-separated list of components to replace. Optional.</td></tr>
+<tr valign="top" class="odd"><td >DownloadableArchives</td><td >Lists the data files (separated by commas) for an online installer to download. If there is some data inside the component and the package.xml and/or the script has no DownloadableArchives value, the repogen tool registers the found data automatically.</td></tr>
+<tr valign="top" class="even"><td >RequiresAdminRights</td><td >Set to <code>true</code> if the package needs to be installed with elevated permissions. Optional.</td></tr>
+<tr valign="top" class="odd"><td >Checkable</td><td >Set to <code>false</code> if you want to hide the checkbox for an item. This is useful when only a few subcomponents should be selected instead of all. Optional.</td></tr>
+<tr valign="top" class="even"><td >ExpandedByDefault</td><td >Set to <code>true</code> if you want this item to be expanded by default. Optional.</td></tr>
+</table></div>
+<a name="component-dependencies"></a>
+<h3 >Component Dependencies</h3>
+<p>Components can depend on one or several real or virtual components. Dependencies are defined by using the component identifier and, optionally, component version. Use a dash (-) to separate version numbers from identifiers.</p>
+<p>You can prefix version numbers with a comparison operator (=, &gt;, &amp;lt; (&lt;), &gt;= or &amp;lt;= (&lt;=)) to indicate that the version number of the package is compared to the required version and has to be equal to, greater than, less than, greater than or equal to, or less than or equal to the version number specified in the dependency. If no comparison operator is given, it defaults to =.</p>
+<a name="data-directory"></a>
+<h2 id="data-directory">Data Directory</h2>
+<p>The <code>data</code> directory contains the content that the installer extracts during the installation. You must package the data as a 7zip archive (.7z). You can use either the <a href="ifw-tools.html#archivegen">archivegen</a> tool that is delivered with the Qt Installer Framework or some other tool that generates 7zip archives.</p>
+</div>
+<!-- @@@ifw-component-description.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-globalconfig.html">Configuration File</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="noninteractive.html">Controller Scripting</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

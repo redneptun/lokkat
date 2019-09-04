@@ -1,0 +1,167 @@
+<html><head><link href="design.css" rel="stylesheet"><title>Lokkat: Bedienunganleitung
+</title></head><body><h1>Lokkat: Bedienunganleitung
+</h1>
+
+<p><img alt="Lokkat-Logo" src="img/lokkat_help_logo.png" /></p>
+<div id="toc"><a href="#1">1 Was ist Lokkat?
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_1">1.1 Wie verschlüssele ich Dateien?
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_1_1">1.1.1 Auswahl der "Klartextdateien"
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_1_2">1.1.2 Auswahl der Zufallsdatenquelle
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_1_3">1.1.3 Starten des Verschlüsselungsvorgangs
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_1_4">1.1.4 Ausgabe des Verschlüsselungsvorgangs
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_2">1.2 Wie entschlüssele ich meine Dateien wieder?
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_2_1">1.2.1 Auswahl der verschlüsselten Dateien (Dateiendung: .crypt)
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_2_2">1.2.2 Starten des Entschlüsselungsvorgangs
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#1_2_3">1.2.3 Ausgabe des Entschlüsselungsvorgangs
+</a><br><a href="#2">2 Wie sicher ist Lokkat?
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_1">2.1 Verifikation von Downloads
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_2">2.2 Nutzung des offenen Quellcodes
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_3">2.3 Das One-Time-Pad-Verfahren
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_4">2.4 Nutzung des CSPRNG
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_4">2.4 "Unsicher" gelöschte Schlüsseldateien
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_5">2.5 "Echter" Zufall
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_6">2.6 Zufall aus dem "kochenden" Vakuum
+</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#2_7">2.7 PERFEKTE SICHERHEIT?
+</a></div>
+
+<h1>1 Was ist Lokkat?</h1>
+<p><a name="1"></a>
+Lokkat ist eine Software zur Ver- und Entschlüsselung von Dateien. Der hierfür genutzte Verschlüsselungsalgorithmus ist das sogenannte <a href="https://de.wikipedia.org/wiki/One-Time-Pad">"One-Time-Pad"-Verfahren</a>. Dieses bietet die Möglichkeit <a href="https://de.wikipedia.org/wiki/Perfekte_Sicherheit">perfekte Sicherheit</a> für die verschlüsselten Dateien zu erreichen. Lokkat ist <a href="https://de.wikipedia.org/wiki/Freie_Software">freie Software</a>.</p>
+<p>Lokkat hat hauptsächlich zwei Verwendungsweisen: Verschlüsselung und Entschlüsselung.</p>
+<h2>1.1 Wie verschlüssele ich Dateien?</h2>
+<p><a name="1_1"></a>
+Auf dem Reiter "Verschlüsselung" in der Benutzoberfläche gibt es vier durchnummerierte Schritte. Der erste dieser Schritte ist die Auswahl von Dateien, die verschlüsselt werden sollen. </p>
+<h3>1.1.1 Auswahl der "Klartextdateien"</h3>
+<p><a name="1_1_1"></a>
+Diese Dateien werden in einer Listenansicht dargestellt. Um dieser Listenansicht Dateien hinzuzufügen oder wieder zu entfernen, befinden sich unterhalb der Listenansicht zwei Schaltflächen.</p>
+<p><img alt="Auswahl der zu verschlüsselnden Dateien" src="img/enc_1_de.png" /></p>
+<h3>1.1.2 Auswahl der Zufallsdatenquelle</h3>
+<p><a name="1_1_2"></a>
+Nachdem alle zu verschlüsselnden Dateien ausgewählt und der Listenansicht hinzugefügt wurden, muss ausgewählt werden, welche Quelle für die Zufallsdaten verwendet werden soll. Zufallsdaten werden für die Verschlüsselung benötigt.</p>
+<p><img alt="Auswahl der Zufallsdatenquelle" src="img/enc_2_de.png" /></p>
+<p>Es gibt zwei Auswahlmöglichkeiten:</p>
+<ul>
+<li>
+<p><strong>Physikalischer Zufall aus Quantenfluktuation</strong>: diese Option sorgt dafür, dass die für die Verschlüsselung verwendeten Zufallsdaten von den Servern der Australian National University stammen. Die ANU verwendet <a href="https://qrng.anu.edu.au/">Quantenfluktuation im Vakuum</a> für diese Zufallsdaten. Für perfekte Sicherheit werden Zufallsdaten aus physikalischen Vorgängen benötigt. Da diese ohne spezielles Equipment auf den meisten Computern nicht ausreichender Menge generiert werden können, besteht die Möglichkeit die Dienste der ANU zu nutzen. Die maximale Datengröße (kombiniert aus den einzelnen Dateigrößen der zu verschlüsselnden Dateien) darf 1 Mibibyte (1024* 1024 Byte) nicht überschreiten. Der Grund für dieses Limit ist, dass die ANU ihre Dienste und Bandbreite der Allgemeinheit kostenfrei bereitstellt und wir diese Großzügigkeit nicht ausnutzen möchten.</p>
+</li>
+<li>
+<p><strong>Systemeigener CSPRNG</strong>: diese Option nutzt den systemeigenen <a href="https://de.wikipedia.org/wiki/Kryptographisch_sicherer_Zufallszahlengenerator">kryptografisch sicheren Pseudo-Zufallszahlengenerator</a>. Je nach verwendetem Betriebssystem (und dessen Einstellung) sorgt dies für mehr oder weniger sichere Pseudozufallsdaten.</p>
+</li>
+</ul>
+<p><em>Anmerkung: Im Abschnitt [Wie sicher ist Lokkat?] wird näher auf die Sicherheit der Verschlüsselung eingegangen.</em></p>
+<h3>1.1.3 Starten des Verschlüsselungsvorgangs</h3>
+<p><a name="1_1_3"></a>
+<img alt="Schaltfläche zum Starten des Verschlüsselungsvorgangs" src="img/enc_3_de.png" /></p>
+<p>Der Verschlüsselungsvorgang wird durch das Klicken der entsprechenden Schaltfläche gestartet. Die Schaltfläche verschwindet anschließend und wird durch einen Fortschrittsbalken ersetzt, die den Fortschritt der Verschlüsselungsoperation darstellt. Nach Abschluss der Operation erscheint die ursprüngliche Schaltfläche wieder.</p>
+<h3>1.1.4 Ausgabe des Verschlüsselungsvorgangs</h3>
+<p><a name="1_1_4"></a>
+<img alt="Ausgabefenster für Verschlüsselungsvorgänge" src="img/enc_4_de.png" /></p>
+<p>Unterhalb der Schaltfläche befindet sich eine Ausgabefläche für Text. Hier werden Meldungen über den Fortschritt des Verschlüsselungsvorgangs angezeigt. Ob der Vorgang erfolgreich abgeschlossen werden konnte oder nicht, kann diesen Meldungen entnommen werden.</p>
+<h2>1.2 Wie entschlüssele ich meine Dateien wieder?</h2>
+<p><a name="1_2"></a>
+Auf dem Reiter "Entschlüsselung" in der Benutzoberfläche gibt es drei durchnummerierte Schritte. Der erste dieser Schritte ist die Auswahl von Dateien, die entschlüsselt werden sollen. </p>
+<h3>1.2.1 Auswahl der verschlüsselten Dateien (Dateiendung: .crypt)</h3>
+<p><a name="1_2_1"></a>
+Diese Dateien werden in einer Listenansicht dargestellt. Um dieser Listenansicht Dateien hinzuzufügen oder wieder zu entfernen, befinden sich unterhalb der Listenansicht zwei Schaltflächen.</p>
+<p><img alt="Auswahl der zu verschlüsselnden Dateien" src="img/dec_1_de.png" /></p>
+<p><strong>HINWEIS:</strong> <em>Damit die Dateien erfolgreich wieder entschlüsselt werden können, müssen sich die zugehörigen Schlüsseldateien (Dateiendung: <code>.otp</code>) in den jeweils gleichen Verzeichnissen befinden. Ein Beispiel wäre: um die Datei <code>geheim.txt.crypt</code> wieder zu entschlüsseln, muss sich im selben Verzeichnis die Schlüsseldatei <code>geheim.txt.otp</code> befinden.</em></p>
+<h3>1.2.2 Starten des Entschlüsselungsvorgangs</h3>
+<p><a name="1_2_2"></a>
+<img alt="Schaltfläche zum Starten des Entschlüsselungsvorgangs" src="img/dec_2_de.png" /></p>
+<p>Der Entschlüsselungsvorgang wird durch das Klicken der entsprechenden Schaltfläche gestartet. Die Schaltfläche verschwindet anschließend und wird durch einen Fortschrittsbalken ersetzt, die den Fortschritt der Entschlüsselungsoperation darstellt. Nach Abschluss der Operation erscheint die ursprüngliche Schaltfläche wieder.</p>
+<h3>1.2.3 Ausgabe des Entschlüsselungsvorgangs</h3>
+<p><a name="1_2_3"></a>
+<img alt="Ausgabefenster für Entschlüsselungsvorgänge" src="img/dec_3_de.png" /></p>
+<p>Unterhalb der Schaltfläche befindet sich eine Ausgabefläche für Text. Hier werden Meldungen über den Fortschritt des Entschlüsselungsvorgangs angezeigt. Ob der Vorgang erfolgreich abgeschlossen werden konnte oder nicht, kann diesen Meldungen entnommen werden.</p>
+<h1>2 Wie sicher ist Lokkat?</h1>
+<p><a name="2"></a>
+Die kurze Antwort lautet: <em>ziemlich bis sehr sicher</em>.</p>
+<p>Die lange wäre dann- das hängt der Verwendung und den Umgebungsfaktoren ab:</p>
+<h2>2.1 Verifikation von Downloads</h2>
+<p><a name="2_1"></a>
+Wenn du deinen Download von Lokkat mit Hilfe des öffentlichen Schlüssels verifiziert hast, dann kannst du dir ziemlich sicher sein, dass er nicht manipuliert wurde, bevor er auf deinem Rechner landete. Das ist gut- es erhöht die Sicherheit.</p>
+<h2>2.2 Nutzung des offenen Quellcodes</h2>
+<p><a name="2_2"></a>
+Wenn du den Quellcode von Lokkat heruntergeladen hast, statt eine vorkompilierte Version, dann kannst du selbst überprüfen, ob sich Sicherheitslücken oder Hintertüren im Programm befinden, sofern du Python-Quellcode verstehst. Selbst wenn nicht, kannst du annehmen, <em>dass</em> jemand der es kann, dies bereits getan hat und hoffen, dass diese Person die Allgemeinheit über mögliche gefundene Schwachstellen informiert, oder besser noch: diese gleich gefixt hat. Diese Möglichkeit besteht bei nicht offen gelegtem Quellcode nicht. Somit ist es gut, dass der Quellcode von Lokkat offen gelegt ist- es erhöht die Sicherheit.</p>
+<h2>2.3 Das One-Time-Pad-Verfahren</h2>
+<p><a name="2_3"></a>
+Da Lokkat das <a href="https://de.wikipedia.org/wiki/One-Time-Pad">"One-Time-Pad"-Verfahren</a> zur Verschlüsselung von Daten verwendet, ist eine Entschlüsselung durch <a href="https://de.wikipedia.org/wiki/Brute-Force-Methode#Kryptologie">Brute-Force-Angriffe</a> nicht möglich. Die Schlüssel sind so lang wie die Klartexte. Keine zwei Stellen im Klartext werden mit dem gleichen Teil des Schlüssels verschlüsselt. Das ist sogar sehr gut- es erhöht die Sicherheit ungemein. Es hat allerdings auch den Nachteil, dass die Schlüssel immer genau soviel Speicher schlucken, wie die zu verschlüsselnden Daten. Das bedeutet, dass Daten in ihrem verschlüsselten Zustand immer <em>doppelt</em> so viel Platz beanspruchen, wie sie unverschlüsselt bräuchten. Dies ist ein Preis für die erhöhte Sicherheit im Vergleich zu anderen gängigeren Verschlüsselungsverfahren.</p>
+<h2>2.4 Nutzung des CSPRNG</h2>
+<p><a name="2_4"></a>
+Wenn du deine Daten mit Hilfe des <a href="https://de.wikipedia.org/wiki/Kryptographisch_sicherer_Zufallszahlengenerator">CSPRNG</a> deines Betriebssystems verschlüsselt hast, dann kommt es darauf an, ob du deinem Betriebssystem trauen kannst: Windows und MacOS verfügen über Hintertüren. Die meisten Linux-Distributionen wahrscheinlich nicht. Schlussendlich ist es eine Vertrauensfrage. Gehen wir ein potenzielles Angriffsszenario durch:</p>
+<ol>
+<li>
+<p>Du hast deine Daten mit Hilfe des CSPRNG deines Betriebssystems verschlüsselt</p>
+</li>
+<li>
+<p>Du hast die Schlüsseldateien sicher von deinem System entfernt (mehr dazu <a href="#2_4">später</a>) und bewahrst sie an einem sicheren Ort auf, der für den Angreifer nicht zugänglich ist (bspw. ein USB-Stick in einem nur dir bekannten Schließfach)</p>
+</li>
+<li>
+<p>Der Angreifer hat die verschlüsselten Dateien (Endung: <code>.crypt</code>) in die Finger bekommen. Welche Informationen kann er aus ihnen ziehen?</p>
+<ul>
+<li>
+<p>er weiß, <em>wie groß</em> die Dateien sind</p>
+</li>
+<li>
+<p>er weiß wahrscheinlich. wann sie das letzte Mal geändert wurden</p>
+</li>
+<li>
+<p>er weiß wahrscheinlich, wann sie erstellt wurden</p>
+</li>
+<li>
+<p>es ist gut möglich, dass er weiß, welcher Benutzer sie erstellt hat</p>
+</li>
+<li>
+<p>er weiß nicht, was sich in ihnen befindet und es macht keinen Sinn, dass er einen Brute-Force-Angriff startet, um an die Daten zu gelangen, da dieser keine Erfolgschance hat</p>
+</li>
+<li>
+<p>er kann eine Vermutung darüber anstellen, mit welcher Art von Zufallszahlen die Daten verschlüsselt wurden; eine Dateigröße über 1 MiB bedeutet automatisch, dass der CSPRNG verwendet wurde</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Es gibt nun min. folgende Wege für den Angreifer an die verschlüsselten Daten zu kommen:</p>
+<ol>
+<li>
+<p>Er hatte schon zum Zeitpunkt der Verschlüsselung Zugriff auf das System- das bedeutet, die Klartextdateien standen ihm dann schon zur Verfügung. Das ist natürlich extrem schlecht. Man sollte nach allen bekannten Möglichkeiten sicherstellen, dass das verwendete System nicht kompromittiert ist, wenn man Daten vor fremden Zugriff sichern will.</p>
+</li>
+<li>
+<p>Er hat sich erst nach dem Verschlüsselungsvorgang Zugang zum System mit den verschlüsselten Daten verschafft. Die Schlüsseldateien wurden jedoch nicht "sicher" gelöscht und Teile von ihnen oder gar die ganzen Schlüssel lassen sich durch Spezialwerkzeuge wiederherstellen. Das ist natürlich schlecht. Wie dieser Fall verhindert werden kann, wird <a href="#2_4">weiter unten</a> erklärt.</p>
+</li>
+<li>
+<p>Wie im Fall zuvor hat erst später Zugriff auf das System, hat aber keine Möglichkeit die Schlüsseldateien wiederherzustellen. Das ist gut! Sollte das System allerdings einen zu schwachen CSPRNG verwenden, oder der sich der Zustand des CSPRNG zum Verschlüsselungszeitpunkt rekonstruieren lassen, dann ist das sehr schlecht, weil der Angreifer einfach den CSPRNG mit diesen Parametern erneut starten kann und sich auf diese Weise die Schlüssel rekonstruieren kann.</p>
+</li>
+<li>
+<p>Androhung oder Einsatz von Gewalt gegen Personen, die über die Schlüssel verfügen</p>
+</li>
+</ol>
+</li>
+</ol>
+<h2>2.4 "Unsicher" gelöschte Schlüsseldateien</h2>
+<p><a name="2_4"></a>
+Wenn Dateien üblicherweise gelöscht werden, so werden sie in aller Regel nicht <em>wirklich</em> gelöscht. Vielmehr "vergisst" das Betriebssystem, dass sich an jener Stellen auf dem Laufwerk eine Datei befindet und gibt den Platz somit für die Speicherung anderer Dateien frei. Solange allerdings noch keine neuen Dateien an die <strong>gleiche</strong> Stelle geschrieben wurden, bleiben die Bits, aus denen die alte Datei bestand, unangetastet an der gleiche Stelle gespeichert. Nur ein <em>wiederholtes</em> Überschreiben dieser Stelle auf dem Laufwerk verhindert eine Rekonstruktion nahezu so zuverlässig, wie die physische Zerstörung des Laufwerks.</p>
+<p>Es gibt Werkzeuge, um Dateien auf diese Weise sicher zu löschen und sich nicht darauf verlassen zu müssen, dass die Spuren gelöschter Dateien mit andauernder Nutzung des Systems langsam verblassen. Lokkat bietet momentan noch keine eingebaute Möglichkeit vor diesem Risiko zu schützen. Eine zukünftige Version könnte die Möglichkeit bieten, dass Schlüsseldateien sofort auf ein separates Laufwerk, wie bspw. einen USB-Stick geschrieben werden könnten, so dass sie bspw. nie auf der Festplatte des verwendeten Computers landen und somit auch keine Rückstände auf ihr hinterlassen können.</p>
+<h2>2.5 "Echter" Zufall</h2>
+<p><a name="2_5"></a>
+Aber wie steht es mit "echtem" physikalischem Zufall? Schließlich gilt: das One-Time-Pad-Verfahren erlaubt perfekte Sicherheit, wenn es nur mit hinreichend "zufälligem" Zufall genutzt wird. Und was wäre eine bessere Quelle für Zufall, als physikalische Phänomene, die sich unserem Verständnis für Vorhersagbarkeit entziehen und sich aller Wahrscheinlichkeit nach vollkommen chaotisch verhalten?</p>
+<p>Gute Frage. Wahrscheinlich nichts. Wenn wir in einer deterministischen Welt leben sollten, dann gibt es so etwas wie Zufall natürlich nicht. <a href="https://de.wikipedia.org/wiki/Indeterminismus#Objektiver_Zufall">Das scheint allerdings nicht der Fall zu sein.</a></p>
+<p>Ohne das entsprechende Equipment allerdings an Zufallsdaten aus Quellen wie radioaktivem Zerfall, Atmosphärenrauschen oder Quantenfluktuation im Vakuum zu kommen - und das in ausreichenden Mengen - ist schwierig. Daher nutzt Lokkat derzeit die Dienste der Australian National University.</p>
+<h2>2.6 Zufall aus dem "kochenden" Vakuum</h2>
+<p><a name="2_6"></a>
+Die Australian National University stellt über ihre Webseite <a href="https://qrng.anu.edu.au/">https://qrng.anu.edu.au/</a> Zufallsdaten aus einem ihrer Experimente zur Verfügung. Das ganze ist kostenlos, vielversprechend, bietet jedoch auch eigene Risiken.</p>
+<ul>
+<li>
+<p>Diese Zufallsdatenquelle könnte ein Fake sein. In diesem Fall wären dem Anbieter dieser Fake-Datenquelle alle versendeten Zufallsdaten (sowie wahrscheinlich auch ihre Empfänger-IP-Adressen) bekannt und würden in einer Datenbank angespeichert werden, damit sie später dazu verwendet werden könnten, um potenzielle Geheimnisse und Verschlüsselungen zu brechen. Sehr unwahrscheinlich, aber nicht komplett auszuschließen.</p>
+</li>
+<li>
+<p>Die sichere Kommunikation mit der ANU könnte kompromittiert sein. Jemand könnte sich als die ANU ausgeben oder die Kommunikation abhören und protokollieren. Die Kommunikation mit der ANU ist über TLS gesichert (wenn auch nur Version 1.0). Das ist nicht optimal, da TLS 1.0 von vielen <a href="https://en.wikipedia.org/wiki/Transport_Layer_Security#TLS_1.0">nicht mehr als sicher genug angesehen wird</a>.</p>
+</li>
+</ul>
+<p>Da TLS ein Verschlüsselungsverfahren ist, das schlussendlich darauf vertraut, dass ein geheimer Schlüssel <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">hinreichend schwierig zu erraten ist</a>, so ist mittels TLS verschlüsselte Kommunikation natürlich nicht <em>ewig</em> sicher. Sollte jemand die Nachricht in verschlüsseltem Zustand mitlesen (so wie es beispielsweise Internetanbieter oder im Grunde genommen jede Station zwischen dir und der ANU kann, so wird es irgendwann in der Zukunft möglich sein, diese Nachricht zu knacken. Die Frage ist halt nur: <a href="https://en.wikipedia.org/wiki/Public-key_cryptography#Weaknesses">wann?</a></p>
+<p>Für viele Einsatzgebiete von TLS, wie bspw. die sichere Kommunikation beim Online Banking ist dies ausreichend. Für unseren Fall des Einsatzes von One-Time-Pad-Kryptographie, einer Verschlüsselungsmethode mit deren Einsatz die meisten Anwender dieses Programms eh "mit Kanonen auf Spatzen" schießen werden, besteht allerdings die besondere Situation, dass der Anwender ja vielleicht <strong>wirklich</strong> und mit <strong>möglichst absoluter Sicherheit</strong> will, dass die verschlüsselten Daten <strong>auf ewig</strong> sicher sind, solange man nicht über die richten Schlüssel verfügt.</p>
+<h2>2.7 PERFEKTE SICHERHEIT?</h2>
+<p><a name="2_7"></a>
+Du siehst also, dass hauptsächlich Umgebungsfaktoren, wie das verwendete Betriebssystem, dessen CSPRNG, das unsichere Löschen von Dateien, sowie nicht zu vergessen: <em>der Faktor Mensch</em> die effektive Sicherheit der Verschlüsselung mit Lokkat verringern können. Auch wenn das natürlich nicht schön ist, so ist es <strong>dennoch</strong> gut, da sich die meisten dieser Risiken umgehen lassen, um die effektive Sicherheit zu steigern.</p>
+<p>Dem vorhin genannten Anspruch an perfekte und ewige Sicherheit kann Lokkat derzeit allerdings (noch!) nicht gerecht werden. Auch wenn alle äußeren Faktoren, wie unsichere Verwendung, unsichere Betriebssysteme usw. ausgeschlossen wurden, so ist die beste Quelle für "echten" Zufall bisher der Server der ANU- und TLS kann nun einmal früher oder später geknackt werden. Sollte die Kommunikation also aufgezeichnet worden sein, so wird es irgendwann möglich sein, sie zu überwinden und herauszufinden, welche Zufallsdaten verschickt wurden.</p>
+<p>Aber es gibt Hoffnung. Eine zukünftige Version könnte die Möglichkeit beinhalten "echten" Zufall aus <em>eigenen</em> Quellen, wie bspw. geeigneten Sensoren zu nutzen. Kombiniert mit allen anderen Vorsichtsmaßnahmen wäre dies das letzte Puzzleteil, um die durch das OTP-Verfahren ermöglichte, <strong>PERFEKTE</strong> Sicherheit zu erreichen.</p>
+<p>Somit muss - um der Wahrheit zu entsprechen - gesagt sein, dass Lokkat keine perfekte Verschlüsselung bieten kann. Aber wir sind schon verdammt nah dran- deutlich näher, als nahezu alle anderen zumindest. Das hat seinen <a href="https://de.wikipedia.org/wiki/One-Time-Pad#Nachteile">Preis</a>, aber für viele Anwendungsfälle kann dies immer noch die beste Lösung sein.</p></body></html>

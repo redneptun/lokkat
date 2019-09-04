@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- filedownloader.cpp -->
+  <title>List of All Members for FileDownloader | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >FileDownloader</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">List of All Members for FileDownloader</h1>
+<p>This is the complete list of members for <a href="kdupdater-filedownloader.html">KDUpdater::FileDownloader</a>, including inherited members.</p>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#FileDownloader">FileDownloader</a></b></span>(const QString &amp;, QObject *)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#dtor.FileDownloader">~FileDownloader</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#addCheckSumData">addCheckSumData</a></b></span>(const char *, int )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#addCheckSumData-1">addCheckSumData</a></b></span>(const QByteArray &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#addSample">addSample</a></b></span>(qint64 )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#assumedSha1Sum">assumedSha1Sum</a></b></span>() const : QByteArray</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#authenticator">authenticator</a></b></span>() const : QAuthenticator</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#authenticatorChanged">authenticatorChanged</a></b></span>(const QAuthenticator &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#bytesDownloadedBeforeResume">bytesDownloadedBeforeResume</a></b></span>() : qint64</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#canDownload">canDownload</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#cancelDownload">cancelDownload</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#clearBytesDownloadedBeforeResume">clearBytesDownloadedBeforeResume</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#clone">clone</a></b></span>(QObject *) const : FileDownloader *</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#download">download</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadAborted">downloadAborted</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadCanceled">downloadCanceled</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadCompleted">downloadCompleted</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadDeadlineTimerId">downloadDeadlineTimerId</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadProgress">downloadProgress</a></b></span>(double )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadProgress-1">downloadProgress</a></b></span>(qint64 , qint64 )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadSpeed">downloadSpeed</a></b></span>(qint64 )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadSpeedTimerId">downloadSpeedTimerId</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadStarted">downloadStarted</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadStatus">downloadStatus</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#downloadedFileName">downloadedFileName</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#emitDownloadProgress">emitDownloadProgress</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#emitDownloadSpeed">emitDownloadSpeed</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#emitDownloadStatus">emitDownloadStatus</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#emitEstimatedDownloadTime">emitEstimatedDownloadTime</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#errorString">errorString</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#estimatedDownloadTime">estimatedDownloadTime</a></b></span>(int )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#followRedirects">followRedirects</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#ignoreSslErrors">ignoreSslErrors</a></b></span>() : bool</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#autoRemoveDownloadedFile-prop">isAutoRemoveDownloadedFile</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#isDownloadPaused">isDownloadPaused</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#isDownloadResumed">isDownloadResumed</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#isDownloaded">isDownloaded</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#onError">onError</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#onSuccess">onSuccess</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#proxyFactory">proxyFactory</a></b></span>() const : FileDownloaderProxyFactory *</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#resetCheckSumData">resetCheckSumData</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#runDownloadDeadlineTimer">runDownloadDeadlineTimer</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#runDownloadSpeedTimer">runDownloadSpeedTimer</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#scheme-prop">scheme</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setAssumedSha1Sum">setAssumedSha1Sum</a></b></span>(const QByteArray &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setAuthenticator">setAuthenticator</a></b></span>(const QAuthenticator &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#autoRemoveDownloadedFile-prop">setAutoRemoveDownloadedFile</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadAborted">setDownloadAborted</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadCanceled">setDownloadCanceled</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadCompleted">setDownloadCompleted</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadPaused">setDownloadPaused</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadResumed">setDownloadResumed</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setDownloadedFileName">setDownloadedFileName</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setFollowRedirects">setFollowRedirects</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setIgnoreSslErrors">setIgnoreSslErrors</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setProgress">setProgress</a></b></span>(qint64 , qint64 )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#setProxyFactory">setProxyFactory</a></b></span>(FileDownloaderProxyFactory *)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#scheme-prop">setScheme</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#url-prop">setUrl</a></b></span>(const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#sha1Sum">sha1Sum</a></b></span>() const : QByteArray</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#stopDownloadDeadlineTimer">stopDownloadDeadlineTimer</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#stopDownloadSpeedTimer">stopDownloadSpeedTimer</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#totalBytesDownloadedBeforeResume">totalBytesDownloadedBeforeResume</a></b></span>() : qint64</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#updateBytesDownloadedBeforeResume">updateBytesDownloadedBeforeResume</a></b></span>(qint64 )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#updateTotalBytesDownloadedBeforeResume">updateTotalBytesDownloadedBeforeResume</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-filedownloader.html#url-prop">url</a></b></span>() const : QUrl</li>
+</ul>
+</td></tr>
+</table></div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

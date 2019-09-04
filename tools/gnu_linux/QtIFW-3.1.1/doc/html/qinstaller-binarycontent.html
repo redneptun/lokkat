@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- binarycontent.cpp -->
+  <title>BinaryContent Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >BinaryContent</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">BinaryContent Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-binarycontent.html">QInstaller::BinaryContent</a>)<br/></span>
+<!-- $$$BinaryContent-brief -->
+<p>The <a href="qinstaller-binarycontent.html">BinaryContent</a> class handles binary information embedded into executables. <a href="#details">More...</a></p>
+<!-- @@@BinaryContent -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;BinaryContent&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-binarycontent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> BinaryLayout </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-binarycontent.html#binaryLayout">binaryLayout</a></b>(QFile *<i>file</i>, quint64 <i>magicCookie</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-binarycontent.html#findMagicCookie">findMagicCookie</a></b>(QFile *<i>in</i>, quint64 <i>magicCookie</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-binarycontent.html#readBinaryContent">readBinaryContent</a></b>(QFile *<i>file</i>, QList&lt;OperationBlob&gt; *<i>operations</i>, ResourceCollectionManager *<i>manager</i>, qint64 *<i>magicMarker</i>, quint64 <i>magicCookie</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-binarycontent.html#writeBinaryContent">writeBinaryContent</a></b>(QFile *<i>out</i>, const QList&lt;OperationBlob&gt; &amp;<i>operations</i>, const ResourceCollectionManager &amp;<i>manager</i>, qint64 <i>magicMarker</i>, quint64 <i>magicCookie</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$BinaryContent-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-binarycontent.html">BinaryContent</a> class handles binary information embedded into executables.</p>
+<p>The following types of binary information can be embedded into executable files: Qt resources, performed operations, and resource collections.</p>
+<p>The magic marker is a <code>quint64</code> that identifies the kind of the binary: <code>installer</code> or <code>uninstaller</code> (maintenance tool).</p>
+<p>The magic cookie is a <code>quint64</code> describing whether the binary is the file holding just data or whether it includes the executable as well.</p>
+</div>
+<!-- @@@BinaryContent -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$binaryLayout[overload1]$$$binaryLayoutQFile*quint64 -->
+<h3 class="fn" id="binaryLayout"><a name="binaryLayout"></a><code>[static] </code><span class="type"><a href="qinstaller-binarylayout.html">BinaryLayout</a></span> BinaryContent::<span class="name">binaryLayout</span>(<span class="type">QFile</span> *<i>file</i>, <span class="type">quint64</span> <i>magicCookie</i>)</h3>
+<p>Tries to read the binary layout of the file <i>file</i>. It starts searching from the end of the file <i>file</i> for the given <i>magicCookie</i> using <a href="qinstaller-binarycontent.html#findMagicCookie">findMagicCookie</a>(). If the cookie was found, it fills a <a href="qinstaller-binarylayout.html">BinaryLayout</a> structure and returns it. Throws Error on failure.</p>
+<!-- @@@binaryLayout -->
+<!-- $$$findMagicCookie[overload1]$$$findMagicCookieQFile*quint64 -->
+<h3 class="fn" id="findMagicCookie"><a name="findMagicCookie"></a><code>[static] </code><span class="type">qint64</span> BinaryContent::<span class="name">findMagicCookie</span>(<span class="type">QFile</span> *<i>in</i>, <span class="type">quint64</span> <i>magicCookie</i>)</h3>
+<p>Searches for the given magic cookie <i>magicCookie</i> starting from the end of the file <i>in</i>. Returns the position of the magic cookie inside the binary. Throws Error on failure.</p>
+<p><b>Note: </b>Searches through up to 1MB of data, if smaller, through the whole file.</p><!-- @@@findMagicCookie -->
+<!-- $$$readBinaryContent[overload1]$$$readBinaryContentQFile*QList<OperationBlob>*ResourceCollectionManager*qint64*quint64 -->
+<h3 class="fn" id="readBinaryContent"><a name="readBinaryContent"></a><code>[static] </code><span class="type">void</span> BinaryContent::<span class="name">readBinaryContent</span>(<span class="type">QFile</span> *<i>file</i>, <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-operationblob.html">OperationBlob</a></span>&gt; *<i>operations</i>, <span class="type"><a href="qinstaller-resourcecollectionmanager.html">ResourceCollectionManager</a></span> *<i>manager</i>, <span class="type">qint64</span> *<i>magicMarker</i>, <span class="type">quint64</span> <i>magicCookie</i>)</h3>
+<p>Reads the binary content of the given file <i>file</i>. It starts by reading the binary layout of the file using <a href="qinstaller-binarycontent.html#binaryLayout">binaryLayout</a>() using <i>magicCookie</i>. Throws Error on failure.</p>
+<p>If <i>operations</i> is not 0, it is set to the performed operations from a previous run of for example the maintenance tool.</p>
+<p>If <i>manager</i> is not 0, it is first cleared and then set to the resource collections embedded into the binary.</p>
+<p>If <i>magicMarker</i> is not 0, it is set to the magic marker found in the binary.</p>
+<!-- @@@readBinaryContent -->
+<!-- $$$writeBinaryContent[overload1]$$$writeBinaryContentQFile*constQList<OperationBlob>&constResourceCollectionManager&qint64quint64 -->
+<h3 class="fn" id="writeBinaryContent"><a name="writeBinaryContent"></a><code>[static] </code><span class="type">void</span> BinaryContent::<span class="name">writeBinaryContent</span>(<span class="type">QFile</span> *<i>out</i>, const <span class="type">QList</span>&lt;<span class="type"><a href="qinstaller-operationblob.html">OperationBlob</a></span>&gt; &amp;<i>operations</i>, const <span class="type"><a href="qinstaller-resourcecollectionmanager.html">ResourceCollectionManager</a></span> &amp;<i>manager</i>, <span class="type">qint64</span> <i>magicMarker</i>, <span class="type">quint64</span> <i>magicCookie</i>)</h3>
+<p>Writes the binary content to the given file <i>out</i>. Throws Error on failure.</p>
+<p>The binary content is written in the following order:</p>
+<ul>
+<li>Meta resources <i>manager</i></li>
+<li>Operations <i>operations</i></li>
+<li>Resource collections <i>manager</i></li>
+<li>Magic marker <i>magicMarker</i></li>
+<li>Magic cookie <i>magicCookie</i></li>
+</ul>
+<p>For more information see the <a href="qinstaller-binarylayout.html">BinaryLayout</a> documentation.</p>
+<!-- @@@writeBinaryContent -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

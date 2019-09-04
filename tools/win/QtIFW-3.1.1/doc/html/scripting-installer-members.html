@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- packagemanagercore.qdoc -->
+  <title>List of All Members for installer | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">List of All Members for installer</h1>
+<p>This is the complete list of members for <a href="scripting-installer.html">installer</a>, including inherited members.</p>
+<ul>
+<li class="fn"><b><b><a href="scripting-installer.html#aboutCalculateComponentsToInstall-signal">aboutCalculateComponentsToInstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#aboutCalculateComponentsToUninstall-signal">aboutCalculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#addUserRepositories-method">addUserRepositories</a></b></b>(stringlist <i>repositories</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#addWizardPage-method">addWizardPage</a></b></b>(Component <i>component</i>, string <i>name</i>, int <i>page</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#addWizardPageItem-method">addWizardPageItem</a></b></b>(Component <i>component</i>, string <i>name</i>, int <i>page</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#autoAcceptMessageBoxes-method">autoAcceptMessageBoxes</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#autoRejectMessageBoxes-method">autoRejectMessageBoxes</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#calculateComponentsToInstall-method">calculateComponentsToInstall</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#calculateComponentsToUninstall-method">calculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#cancelMetaInfoJob-method">cancelMetaInfoJob</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#componentAdded-signal">componentAdded</a></b></b>(Component <i>component</i>)</li>
+<li class="fn">array <b><b><a href="scripting-installer.html#components-method">components</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#componentsToInstallNeedsRecalculation-method">componentsToInstallNeedsRecalculation</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#containsValue-method">containsValue</a></b></b>(string <i>key</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#coreNetworkSettingsChanged-signal">coreNetworkSettingsChanged</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#currentPageChanged-signal">currentPageChanged</a></b></b>(int <i>page</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#dropAdminRights-method">dropAdminRights</a></b></b>()</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#environmentVariable-method">environmentVariable</a></b></b>(string <i>name</i>)</li>
+<li class="fn">array <b><b><a href="scripting-installer.html#execute-method">execute</a></b></b>(string <i>program</i>, stringlist <i>arguments</i>, string <i>stdin</i>, string <i>stdinCodec</i>, string <i>stdoutCodec</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#executeDetached-method">executeDetached</a></b></b>(string <i>program</i>, stringlist <i>arguments</i>, string <i>workingDirectory</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#fileExists-method">fileExists</a></b></b>(string <i>filePath</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#findLibrary-method">findLibrary</a></b></b>(string <i>name</i>, stringlist <i>paths</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#findPath-method">findPath</a></b></b>(string <i>name</i>, stringlist <i>paths</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishAllComponentsReset-signal">finishAllComponentsReset</a></b></b>(list&lt;Component&gt; <i>rootComponents</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishButtonClicked-signal">finishButtonClicked</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishUpdaterComponentsReset-signal">finishUpdaterComponentsReset</a></b></b>(list&lt;Component&gt; <i>componentsWithUpdates</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishedCalculateComponentsToInstall-signal">finishedCalculateComponentsToInstall</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#finishedCalculateComponentsToUninstall-signal">finishedCalculateComponentsToUninstall</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#gainAdminRights-method">gainAdminRights</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationFinished-signal">installationFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationInterrupted-signal">installationInterrupted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#installationStarted-signal">installationStarted</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#interrupt-method">interrupt</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isFileExtensionRegistered-method">isFileExtensionRegistered</a></b></b>(string <i>extension</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isInstaller-method">isInstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isOfflineOnly-method">isOfflineOnly</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isPackageManager-method">isPackageManager</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isProcessRunning-method">isProcessRunning</a></b></b>(string <i>name</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isUninstaller-method">isUninstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#isUpdater-method">isUpdater</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#killProcess-method">killProcess</a></b></b>(string <i>absoluteFilePath</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#languageChanged-method">languageChanged</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#localInstallerBinaryUsed-method">localInstallerBinaryUsed</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#metaJobInfoMessage-signal">metaJobInfoMessage</a></b></b>(string <i>message</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#metaJobProgress-signal">metaJobProgress</a></b></b>(int <i>progress</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#performOperation-method">performOperation</a></b></b>(string <i>name</i>, stringlist <i>arguments</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#readFile-method">readFile</a></b></b>(string <i>filePath</i>, string <i>codecName</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#removeWizardPage-method">removeWizardPage</a></b></b>(Component <i>component</i>, string <i>name</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#removeWizardPageItem-method">removeWizardPageItem</a></b></b>(Component <i>component</i>, string <i>name</i>)</li>
+<li class="fn">float <b><b><a href="scripting-installer.html#requiredDiskSpace-method">requiredDiskSpace</a></b></b>()</li>
+<li class="fn">float <b><b><a href="scripting-installer.html#requiredTemporaryDiskSpace-method">requiredTemporaryDiskSpace</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#rootComponentsAdded-signal">rootComponentsAdded</a></b></b>(list&lt;Component&gt; <i>components</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runInstaller-method">runInstaller</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runPackageUpdater-method">runPackageUpdater</a></b></b>()</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#runUninstaller-method">runUninstaller</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#setAutomatedPageSwitchEnabled-signal">setAutomatedPageSwitchEnabled</a></b></b>(bool <i>request</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setCanceled-method">setCanceled</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setCompleteUninstallation-method">setCompleteUninstallation</a></b></b>(bool <i>complete</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#setDefaultPageVisible-method">setDefaultPageVisible</a></b></b>(int <i>page</i>, boolean <i>visible</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setDependsOnLocalInstallerBinary-method">setDependsOnLocalInstallerBinary</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setInstallerBaseBinary-method">setInstallerBaseBinary</a></b></b>(string <i>path</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setMessageBoxAutomaticAnswer-method">setMessageBoxAutomaticAnswer</a></b></b>(string <i>identifier</i>, int <i>button</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setPackageManager-method">setPackageManager</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setSharedFlag-method">setSharedFlag</a></b></b>(string <i>key</i>, boolean <i>value</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setTemporaryRepositories-method">setTemporaryRepositories</a></b></b>(stringlist <i>repositories</i>, boolean <i>replace</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setUninstaller-method">setUninstaller</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setUpdater-method">setUpdater</a></b></b>()</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setValidatorForCustomPage-method">setValidatorForCustomPage</a></b></b>(Component <i>component</i>, string <i>name</i>, string <i>callbackName</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#setValidatorForCustomPageRequested-signal">setValidatorForCustomPageRequested</a></b></b>(Component <i>component</i>, string <i>name</i>, string <i>callbackName</i>)</li>
+<li class="fn">void <b><b><a href="scripting-installer.html#setValue-method">setValue</a></b></b>(string <i>key</i>, string <i>value</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#sharedFlag-method">sharedFlag</a></b></b>(string <i>key</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#startAllComponentsReset-signal">startAllComponentsReset</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#startUpdaterComponentsReset-signal">startUpdaterComponentsReset</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#statusChanged-signal">statusChanged</a></b></b>(Status <i>status</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#titleMessageChanged-signal">titleMessageChanged</a></b></b>(string <i>title</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#uninstallationFinished-signal">uninstallationFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#uninstallationStarted-signal">uninstallationStarted</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#updateFinished-signal">updateFinished</a></b></b>()</li>
+<li class="fn"><b><b><a href="scripting-installer.html#updaterComponentsAdded-signal">updaterComponentsAdded</a></b></b>(list&lt;Component&gt; <i>components</i>)</li>
+<li class="fn">string <b><b><a href="scripting-installer.html#value-method">value</a></b></b>(string <i>key</i>, string <i>defaultValue</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#valueChanged-signal">valueChanged</a></b></b>(string <i>key</i>, string <i>value</i>)</li>
+<li class="fn">stringlist <b><b><a href="scripting-installer.html#values-method">values</a></b></b>(string <i>key</i>, stringlist <i>defaultValue</i>)</li>
+<li class="fn">boolean <b><b><a href="scripting-installer.html#versionMatches-method">versionMatches</a></b></b>(string <i>version</i>, string <i>requirement</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageInsertionRequested-signal">wizardPageInsertionRequested</a></b></b>(Widget <i>widget</i>, WizardPage <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageRemovalRequested-signal">wizardPageRemovalRequested</a></b></b>(Widget <i>widget</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardPageVisibilityChangeRequested-signal">wizardPageVisibilityChangeRequested</a></b></b>(bool <i>visible</i>, int <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardWidgetInsertionRequested-signal">wizardWidgetInsertionRequested</a></b></b>(Widget <i>widget</i>, WizardPage <i>page</i>)</li>
+<li class="fn"><b><b><a href="scripting-installer.html#wizardWidgetRemovalRequested-signal">wizardWidgetRemovalRequested</a></b></b>(Widget <i>widget</i>)</li>
+</ul>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

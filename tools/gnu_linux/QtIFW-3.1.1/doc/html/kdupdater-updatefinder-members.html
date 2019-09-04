@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- updatefinder.cpp -->
+  <title>List of All Members for UpdateFinder | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >UpdateFinder</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">List of All Members for UpdateFinder</h1>
+<p>This is the complete list of members for <a href="kdupdater-updatefinder.html">KDUpdater::UpdateFinder</a>, including inherited members.</p>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn">enum <span class="name"><b><a href="kdupdater-task.html#Capability-enum">Capability</a></b></span></li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#UpdateFinder">UpdateFinder</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#dtor.UpdateFinder">~UpdateFinder</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#addCompressedPackage">addCompressedPackage</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#autoDelete">autoDelete</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#capabilities">capabilities</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#doPause">doPause</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#doResume">doResume</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#doRun">doRun</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#doStop">doStop</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#error">error</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#error-1">error</a></b></span>(int , const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#errorString">errorString</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#finished">finished</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#isCompressedPackage">isCompressedPackage</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#isFinished">isFinished</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#isPaused">isPaused</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#isRunning">isRunning</a></b></span>() const : bool</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#isStopped">isStopped</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#name">name</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#pause">pause</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#paused">paused</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#progressPercent">progressPercent</a></b></span>() const : int</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#progressText">progressText</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#progressText-1">progressText</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#progressValue">progressValue</a></b></span>(int )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#resume">resume</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#resumed">resumed</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#run">run</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#setAutoDelete">setAutoDelete</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#setLocalPackageHub">setLocalPackageHub</a></b></span>(std::weak_ptr&lt;LocalPackageHub&gt; )</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#setPackageSources">setPackageSources</a></b></span>(const QSet&lt;QInstaller::PackageSource&gt; &amp;)</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#started">started</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#stop">stop</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-task.html#stopped">stopped</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="kdupdater-updatefinder.html#updates">updates</a></b></span>() const : QList&lt;Update *&gt;</li>
+</ul>
+</td></tr>
+</table></div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

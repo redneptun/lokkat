@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# make the dist
+./make_dist_windows
+
+# remove the archive
+rm pak/windows/packages/net.redneptun.lokkat/data/lokkat.7z
+
+# zip the dist
+(cd dist/windows/ && ../../tools/gnu_linux/QtIFW-3.1.1/bin/archivegen ../../pak/windows/packages/net.redneptun.lokkat/data/lokkat.7z ./*)
+
+# build the installer
+(cd pak/windows/ && wine ../../tools/win/QtIFW-3.1.1/bin/binarycreator.exe -c config/config.xml -p packages Lokkat-0.5-Installer.exe)

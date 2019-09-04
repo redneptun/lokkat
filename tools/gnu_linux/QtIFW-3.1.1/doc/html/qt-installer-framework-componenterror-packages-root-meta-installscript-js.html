@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>installscript.js Example File | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qt-installer-framework-componenterror-example.html">Component Error Example</a></td><td >installscript.js Example File</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">installscript.js Example File</h1>
+<span class="subtitle">componenterror/packages/root/meta/installscript.js</span>
+<!-- $$$componenterror/packages/root/meta/installscript.js-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="js">
+
+  <span class="comment">/**************************************************************************
+  **
+  ** Copyright (C) 2017 The Qt Company Ltd.
+  ** Contact: https://www.qt.io/licensing/
+  **
+  ** This file is part of the Qt Installer Framework.
+  **
+  ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see https://www.qt.io/terms-conditions. For further
+  ** information use the contact form at https://www.qt.io/contact-us.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+  ** included in the packaging of this file. Please review the following
+  ** information to ensure the GNU General Public License requirements will
+  ** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  **************************************************************************/</span>
+
+  <span class="keyword">function</span> <span class="name">abortInstaller</span>()
+  {
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">Introduction</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">TargetDirectory</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ComponentSelection</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">ReadyForInstallation</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">StartMenuSelection</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">PerformInstallation</span>, <span class="number">false</span>);
+      <span class="name">installer</span>.<span class="name">setDefaultPageVisible</span>(<span class="name">QInstaller</span>.<span class="name">LicenseCheck</span>, <span class="number">false</span>);
+
+      var <span class="name">abortText</span> = <span class="string">&quot;&lt;font color='red' size=3&gt;&quot;</span> <span class="operator">+</span> <span class="name">qsTr</span>(<span class="string">&quot;Installation failed:&quot;</span>) <span class="operator">+</span> <span class="string">&quot;&lt;/font&gt;&quot;</span>;
+
+      var <span class="name">error_list</span> = <span class="name">installer</span>.<span class="name">value</span>(<span class="string">&quot;component_errors&quot;</span>).<span class="name">split</span>(<span class="string">&quot;;;;&quot;</span>);
+      <span class="name">abortText</span> <span class="operator">+=</span> <span class="string">&quot;&lt;ul&gt;&quot;</span>;
+      <span class="comment">// ignore the first empty one</span>
+      <span class="keyword">for</span> (<span class="keyword">var</span> <span class="name">i</span> = <span class="number">0</span>; <span class="name">i</span> <span class="operator">&lt;</span> <span class="name">error_list</span>.<span class="name">length</span>; ++<span class="name">i</span>) {
+          <span class="keyword">if</span> (<span class="name">error_list</span>[<span class="name">i</span>] <span class="operator">!==</span> <span class="string">&quot;&quot;</span>) {
+              <span class="name">console</span>.<span class="name">log</span>(<span class="name">error_list</span>[<span class="name">i</span>]);
+              <span class="name">abortText</span> <span class="operator">+=</span> <span class="string">&quot;&lt;li&gt;&quot;</span> <span class="operator">+</span> <span class="name">error_list</span>[<span class="name">i</span>] <span class="operator">+</span> <span class="string">&quot;&lt;/li&gt;&quot;</span>
+          }
+      }
+      <span class="name">abortText</span> <span class="operator">+=</span> <span class="string">&quot;&lt;/ul&gt;&quot;</span>;
+      <span class="name">installer</span>.<span class="name">setValue</span>(<span class="string">&quot;FinishedText&quot;</span>, <span class="name">abortText</span>);
+  }
+
+  <span class="keyword">function</span> <span class="name">reactOnAbortInstallerChange</span>()
+  {
+      <span class="keyword">if</span> (<span class="name">installer</span>.<span class="name">value</span>(<span class="string">&quot;ComponentError&quot;</span>) <span class="operator">===</span> <span class="string">&quot;true&quot;</span>)
+          <span class="name">abortInstaller</span>();
+  }
+
+  <span class="keyword">function</span> <span class="name">Component</span>()
+  {
+      <span class="name">installer</span>.<span class="name">finishAllComponentsReset</span>.<span class="name">connect</span>(<span class="name">reactOnAbortInstallerChange</span>);
+  }
+
+</pre>
+</div>
+<!-- @@@componenterror/packages/root/meta/installscript.js -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

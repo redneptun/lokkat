@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- systeminfo.cpp -->
+  <title>SystemInfo Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >SystemInfo</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SystemInfo Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-systeminfo.html">QInstaller::SystemInfo</a>)<br/></span>
+<!-- $$$SystemInfo-brief -->
+<p>Provides information about the operating system. <a href="#details">More...</a></p>
+<!-- @@@SystemInfo -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;SystemInfo&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-systeminfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#currentCpuArchitecture-prop">currentCpuArchitecture</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#kernelType-prop">kernelType</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#kernelVersion-prop">kernelVersion</a></b> : const QString</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#prettyProductName-prop">prettyProductName</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#productType-prop">productType</a></b> : const QString</li>
+<li class="fn"><b><a href="qinstaller-systeminfo.html#productVersion-prop">productVersion</a></b> : const QString</li>
+</ul>
+</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#SystemInfo">SystemInfo</a></b>(QObject *<i>parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#currentCpuArchitecture-prop">currentCpuArchitecture</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#kernelType-prop">kernelType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#kernelVersion-prop">kernelVersion</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#prettyProductName-prop">prettyProductName</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#productType-prop">productType</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-systeminfo.html#productVersion-prop">productVersion</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$SystemInfo-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>Provides information about the operating system.</p>
+</div>
+<!-- @@@SystemInfo -->
+<div class="prop">
+<h2>Property Documentation</h2>
+<!-- $$$currentCpuArchitecture-prop$$$currentCpuArchitecture -->
+<h3 class="fn" id="currentCpuArchitecture-prop"><a name="currentCpuArchitecture-prop"></a><span class="name">currentCpuArchitecture</span> : const <span class="type">QString</span></h3>
+<p>The architecture of the CPU that the application is running on, in text format.</p>
+<p>Possible values include:</p>
+<ul>
+<li>&quot;i386&quot;</li>
+<li>&quot;x86_64&quot;</li>
+</ul>
+<p><b>Note: </b>This function depends on what the OS will report and may not detect the actual CPU architecture if the OS hides that information or is unable to provide it. For example, a 32-bit OS running on a 64-bit CPU is usually unable to determine whether the CPU is actually capable of running 64-bit programs.</p><p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>currentCpuArchitecture</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::currentCpuArchitecture().</p>
+<!-- @@@currentCpuArchitecture -->
+<!-- $$$kernelType-prop$$$kernelType -->
+<h3 class="fn" id="kernelType-prop"><a name="kernelType-prop"></a><span class="name">kernelType</span> : const <span class="type">QString</span></h3>
+<p>The type of the operating system kernel the installer was compiled for. It is also the kernel the installer is running on, unless the host operating system is running a form of compatibility or virtualization layer.</p>
+<p>For Windows, Linux, and OS X this will return:</p>
+<ul>
+<li>&quot;winnt&quot;</li>
+<li>&quot;linux&quot;</li>
+<li>&quot;darwin&quot;</li>
+</ul>
+<p>On Unix systems, it returns the same as the output of <code>uname -s</code> (lowercased).</p>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>kernelType</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::kernelType().</p>
+<!-- @@@kernelType -->
+<!-- $$$kernelVersion-prop$$$kernelVersion -->
+<h3 class="fn" id="kernelVersion-prop"><a name="kernelVersion-prop"></a><span class="name">kernelVersion</span> : const <span class="type">QString</span></h3>
+<p>The release version of the operating system kernel. On Windows, it returns the version of the NT or CE kernel. On Unix systems, including OS X, it returns the same as the <code>uname -r</code> command would return.</p>
+<p>Example values are:</p>
+<ul>
+<li>&quot;6.1&#x2e;7601&quot; for Windows 7 with Service Pack 1</li>
+<li>&quot;3.16.6-2-desktop&quot; for openSUSE 13.2 kernel 3.16.6-2</li>
+<li>&quot;12.5&#x2e;0&quot; last release of OS X &quot;Mountain Lion&quot;</li>
+</ul>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>kernelVersion</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::kernelVersion().</p>
+<!-- @@@kernelVersion -->
+<!-- $$$prettyProductName-prop$$$prettyProductName -->
+<h3 class="fn" id="prettyProductName-prop"><a name="prettyProductName-prop"></a><span class="name">prettyProductName</span> : const <span class="type">QString</span></h3>
+<p>A prettier form of <a href="qinstaller-systeminfo.html#productType-prop">SystemInfo::productType</a> and <a href="qinstaller-systeminfo.html#productVersion-prop">SystemInfo::productVersion</a>, containing other tokens like the operating system type, codenames and other information. The result of this function is suitable for displaying to the user.</p>
+<p>Example values are:</p>
+<ul>
+<li>&quot;Windows 7&quot;</li>
+<li>&quot;openSUSE 13.2 (Harlequin) (x86_64)&quot;</li>
+<li>&quot;OS X Mountain Lion (10.8)&quot;</li>
+</ul>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>prettyProductName</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::prettyProductName().</p>
+<!-- @@@prettyProductName -->
+<!-- $$$productType-prop$$$productType -->
+<h3 class="fn" id="productType-prop"><a name="productType-prop"></a><span class="name">productType</span> : const <span class="type">QString</span></h3>
+<p>The product name of the operating system this application is running in.</p>
+<p>Example values are:</p>
+<ul>
+<li>&quot;windows&quot;</li>
+<li>&quot;opensuse&quot; (for the Linux openSUSE distribution)</li>
+<li>&quot;osx&quot;</li>
+</ul>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>productType</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::productType().</p>
+<!-- @@@productType -->
+<!-- $$$productVersion-prop$$$productVersion -->
+<h3 class="fn" id="productVersion-prop"><a name="productVersion-prop"></a><span class="name">productVersion</span> : const <span class="type">QString</span></h3>
+<p>The product version of the operating system in string form. If the version could not be determined, this function returns &quot;unknown&quot;.</p>
+<p>Example values are:</p>
+<ul>
+<li>&quot;7&quot; for Windows 7</li>
+<li>&quot;13.2&quot; for openSUSE 13.2</li>
+<li>&quot;10.8&quot; for OS X Mountain Lion</li>
+</ul>
+<p><b>Access functions:</b></p>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft topAlign rightAlign"> QString </td><td class="memItemRight bottomAlign"><span class="name"><b>productVersion</b></span>() const</td></tr>
+</table></div>
+<p><b>See also </b>QSysInfo::productVersion().</p>
+<!-- @@@productVersion -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$SystemInfo[overload1]$$$SystemInfoQObject* -->
+<h3 class="fn" id="SystemInfo"><a name="SystemInfo"></a>SystemInfo::<span class="name">SystemInfo</span>(<span class="type">QObject</span> *<i>parent</i> = 0)</h3>
+<p>Creates a system info object with the parent <i>parent</i>.</p>
+<!-- @@@SystemInfo -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

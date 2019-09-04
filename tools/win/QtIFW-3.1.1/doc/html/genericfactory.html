@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- genericfactory.cpp -->
+  <title>GenericFactory Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >GenericFactory</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#protected-functions">Protected Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">GenericFactory Class</h1>
+<!-- $$$GenericFactory-brief -->
+<p>The <a href="genericfactory.html">GenericFactory</a> class implements a template-based generic factory. <a href="#details">More...</a></p>
+<!-- @@@GenericFactory -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;GenericFactory&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="kdupdater-filedownloaderfactory.html">KDUpdater::FileDownloaderFactory</a> and <a href="kdupdater-updateoperationfactory.html">KDUpdater::UpdateOperationFactory</a></p>
+</td></tr></table></div><ul>
+<li><a href="genericfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> typedef </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#FactoryFunction-typedef">FactoryFunction</a></b></td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> virtual </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#dtor.GenericFactory">~GenericFactory</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#containsProduct">containsProduct</a></b>(const IDENTIFIER &amp;<i>id</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> BASE *</td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#create">create</a></b>(const IDENTIFIER &amp;<i>id</i>, ARGUMENTS... <i>args</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#registerProduct">registerProduct</a></b>(const IDENTIFIER &amp;<i>id</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#registerProduct-1">registerProduct</a></b>(const IDENTIFIER &amp;<i>id</i>, FactoryFunction <i>func</i>)</td></tr>
+</table></div>
+<a name="protected-functions"></a>
+<h2 id="protected-functions">Protected Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="genericfactory.html#GenericFactory">GenericFactory</a></b>() = default</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$GenericFactory-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="genericfactory.html">GenericFactory</a> class implements a template-based generic factory.</p>
+<p><a href="genericfactory.html">GenericFactory</a> is an implementation of the factory pattern. It can be used to produce instances of different classes having a common superclass <code>BASE</code>. The user of the factory registers those producible classes in the factory by using the identifier <code>IDENTIFIER</code>. That identifier can then be used to produce as many instances of the registered product as the user wants.</p>
+<p>One factory instance is able to produce instances of different types of DERIVED classes only when the constructor of DERIVED or the registered generator function have a common signature for all DERIVED classes. This signature is described by the declaration order of ARGUMENTS. It is referred to as SIGNATURE in the following paragraphs.</p>
+<p>If a class derived from BASE does not contain a SIGNATURE matching the registered one for the constructor or the generator function, it is not possible to create instances of it using one instance of <a href="genericfactory.html">GenericFactory</a> subclass. In that case, more than one <a href="genericfactory.html">GenericFactory</a> subclass and instance are needed.</p>
+<p>It is possible to register a subclass of BASE inside an instance of <a href="genericfactory.html">GenericFactory</a> subclass using the <a href="genericfactory.html#registerProduct">registerProduct</a>() function. At least one of the following conditions needs to be met:</p>
+<ul>
+<li>A global or static function with SIGNATURE exists.</li>
+<li>The DERIVED class has a constructor with SIGNATURE.</li>
+<li>The DERIVED class has a static function with SIGNATURE.</li>
+</ul>
+<p>To get a new instance of DERIVED, one needs to call the <a href="genericfactory.html#create">create</a>() function. The value of IDENTIFIER determines the product's subclass registered in the factory, while the values of SIGNATURE are the actual arguments passed to the class constructor or the registered generator function.</p>
+</div>
+<!-- @@@GenericFactory -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$FactoryFunction -->
+<h3 class="fn" id="FactoryFunction-typedef"><a name="FactoryFunction-typedef"></a>typedef GenericFactory::<span class="name">FactoryFunction</span></h3>
+<p>This typedef defines a factory function producing an object of type BASE.</p>
+<!-- @@@FactoryFunction -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$GenericFactory[overload1]$$$GenericFactory -->
+<h3 class="fn" id="GenericFactory"><a name="GenericFactory"></a><code>[default protected] </code>GenericFactory::<span class="name">GenericFactory</span>()</h3>
+<p>Creates the generic factory.</p>
+<!-- @@@GenericFactory -->
+<!-- $$$~GenericFactory[overload1]$$$~GenericFactory -->
+<h3 class="fn" id="dtor.GenericFactory"><a name="dtor.GenericFactory"></a><code>[virtual] </code>GenericFactory::<span class="name">~GenericFactory</span>()</h3>
+<p>Destroys the generic factory.</p>
+<!-- @@@~GenericFactory -->
+<!-- $$$containsProduct[overload1]$$$containsProductconstIDENTIFIER& -->
+<h3 class="fn" id="containsProduct"><a name="containsProduct"></a><span class="type">bool</span> GenericFactory::<span class="name">containsProduct</span>(const <span class="type">IDENTIFIER</span> &amp;<i>id</i>) const</h3>
+<p>Returns <code>true</code> if the factory contains a type with the <i>id</i>; otherwise returns false.</p>
+<!-- @@@containsProduct -->
+<!-- $$$create[overload1]$$$createconstIDENTIFIER&ARGUMENTS... -->
+<h3 class="fn" id="create"><a name="create"></a><span class="type">BASE</span> *GenericFactory::<span class="name">create</span>(const <span class="type">IDENTIFIER</span> &amp;<i>id</i>, <span class="type">ARGUMENTS</span>... <i>args</i>) const</h3>
+<p>Creates and returns the type identified by <i>id</i>, but automatically upcasted to BASE. Ownership of the type is transferred to the caller.</p>
+<!-- @@@create -->
+<!-- $$$registerProduct[overload1]$$$registerProductconstIDENTIFIER& -->
+<h3 class="fn" id="registerProduct"><a name="registerProduct"></a><span class="type">void</span> GenericFactory::<span class="name">registerProduct</span>(const <span class="type">IDENTIFIER</span> &amp;<i>id</i>)</h3>
+<p>Registers a type DERIVED, identified by <i>id</i> in the factory. Any type with the same id gets unregistered.</p>
+<!-- @@@registerProduct -->
+<!-- $$$registerProduct$$$registerProductconstIDENTIFIER&FactoryFunction -->
+<h3 class="fn" id="registerProduct-1"><a name="registerProduct-1"></a><span class="type">void</span> GenericFactory::<span class="name">registerProduct</span>(const <span class="type">IDENTIFIER</span> &amp;<i>id</i>, <span class="type"><a href="genericfactory.html#FactoryFunction-typedef">FactoryFunction</a></span> <i>func</i>)</h3>
+<p>This is an overloaded function.</p>
+<p>Registers a function <i>func</i> that can create the type DERIVED, identified by <i>id</i> in the factory. Any type with the same id gets unregistered.</p>
+<!-- @@@registerProduct -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

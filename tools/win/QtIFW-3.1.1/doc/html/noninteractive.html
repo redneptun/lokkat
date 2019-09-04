@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- noninteractive.qdoc -->
+  <title>Controller Scripting | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Controller Scripting</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-component-description.html" />
+  <link rel="next" href="scripting.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-component-description.html">Package Directory</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="scripting.html">Component Scripting</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#writing-control-scripts">Writing Control Scripts</a></li>
+<li class="level1"><a href="#predefined-installer-pages">Predefined Installer Pages</a></li>
+<li class="level2"><a href="#introduction-page">Introduction Page</a></li>
+<li class="level2"><a href="#license-agreement-page">License Agreement Page</a></li>
+<li class="level2"><a href="#target-directory-page">Target Directory Page</a></li>
+<li class="level2"><a href="#component-selection-page">Component Selection Page</a></li>
+<li class="level2"><a href="#start-menu-directory-page">Start Menu Directory Page</a></li>
+<li class="level2"><a href="#ready-for-installation-page">Ready for Installation Page</a></li>
+<li class="level2"><a href="#perform-installation-page">Perform Installation Page</a></li>
+<li class="level2"><a href="#finished-page">Finished Page</a></li>
+<li class="level1"><a href="#custom-pages">Custom Pages</a></li>
+<li class="level1"><a href="#message-boxes">Message Boxes</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Controller Scripting</h1>
+<span class="subtitle"></span>
+<!-- $$$noninteractive.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>For each installer, you can specify a control script that interacts with certain parts of the installer's UI or functionality. The control script can add and remove pages to the wizard, change existing pages, do additional checks, and interact with the UI by simulating user clicks. This allows for example unattended installations.</p>
+<p>The script format has to be compatible with QJSEngine.</p>
+<p>This section describes the functions that are called to implement such a control script. It also gives an overview of installer pages and the widgets that are available on each page, such as push buttons, radio buttons, and line edits.</p>
+<a name="writing-control-scripts"></a>
+<h2 id="writing-control-scripts">Writing Control Scripts</h2>
+<p>A minimal valid script needs to contain at least a constructor, which can look like this:</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+  }
+
+</pre>
+<p>The following example presents a more advanced script that uses the <a href="scripting-gui.html">gui</a> JavaScript global object methods to set a new page title and welcome message on the introduction page and to automatically click the <b>Next</b> button on the target directory page:</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+  }
+
+  Controller<span class="operator">.</span>prototype<span class="operator">.</span>IntroductionPageCallback <span class="operator">=</span> function()
+  {
+      var widget <span class="operator">=</span> gui<span class="operator">.</span>currentPageWidget(); <span class="comment">// get the current wizard page</span>
+      <span class="keyword">if</span> (widget <span class="operator">!</span><span class="operator">=</span> null) {
+          widget<span class="operator">.</span>title <span class="operator">=</span> <span class="string">&quot;New title.&quot;</span>; <span class="comment">// set the page title</span>
+          widget<span class="operator">.</span>MessageLabel<span class="operator">.</span>setText(<span class="string">&quot;New Message.&quot;</span>); <span class="comment">// set the welcome text</span>
+      }
+  }
+
+  Controller<span class="operator">.</span>prototype<span class="operator">.</span>TargetDirectoryPageCallback <span class="operator">=</span> function()
+  {
+      gui<span class="operator">.</span>clickButton(buttons<span class="operator">.</span>NextButton); <span class="comment">// automatically click the Next button</span>
+  }
+
+</pre>
+<p>For more information about the JavaScript global objects that you can use in control scripts, see <a href="scripting-qmlmodule.html">Scripting API</a>.</p>
+<a name="predefined-installer-pages"></a>
+<h2 id="predefined-installer-pages">Predefined Installer Pages</h2>
+<p>The <a href="scripting-qinstaller.html">QInstaller</a> JavaScript object provides access to the following predefined installer pages:</p>
+<ul>
+<li><code>Introduction</code></li>
+<li><code>TargetDirectory</code></li>
+<li><code>ComponentSelection</code></li>
+<li><code>LicenseCheck</code></li>
+<li><code>StartMenuSelection</code></li>
+<li><code>ReadyForInstallation</code></li>
+<li><code>PerformInstallation</code></li>
+<li><code>InstallationFinished</code></li>
+</ul>
+<p>The <a href="scripting-buttons.html">buttons</a> JavaScript object provides a set of buttons that can be used on installer pages.</p>
+<p>The following sections describe the functions that you can implement to interact with installer pages and the widgets that are available on each page.</p>
+<a name="introduction-page"></a>
+<h3 >Introduction Page</h3>
+<p>Implement the <code>Controller.prototype.IntroductionPageCallback()</code> function to interact with widgets on the introduction page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>NextButton</code></li>
+<li><code>CancelButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>ErrorLabel</code></td><td >Displays an error message.</td></tr>
+<tr valign="top" class="even"><td ><code>MessageLabel</code></td><td >Displays a message. By default, it displays the &quot;Welcome to the <a href="ifw-globalconfig.html#productnametarget">&lt;Name&gt;</a> Setup Wizard&quot; message.</td></tr>
+<tr valign="top" class="odd"><td ><code>InformationLabel</code></td><td >Displays progress information.</td></tr>
+</table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Radio Buttons</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>PackageManagerRadioButton</code></td><td >The package manager radio button shown on the page while running as maintenance tool.</td></tr>
+<tr valign="top" class="even"><td ><code>UpdaterRadioButton</code></td><td >The updater radio button shown on the page while running as maintenance tool.</td></tr>
+<tr valign="top" class="odd"><td ><code>UninstallerRadioButton</code></td><td >The uninstaller radio button shown on the page while running as maintenance tool. Selected by default.</td></tr>
+</table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Progress Bar</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>InformationProgressBar</code></td><td >The progress bar shown while fetching remote packages.</td></tr>
+</table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Qt Core Feature</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>packageManagerCoreTypeChanged()</code></td><td >Connect to this signal if you want to be notified when the type of maintenance tool changes.<p><b>Note: </b>The signal is only emitted when the user has started the binary as so called maintenance tool (after the installation) and switches between the radio buttons.</p></td></tr>
+</table></div>
+<p>Example code:</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+      var widget <span class="operator">=</span> gui<span class="operator">.</span>pageById(<span class="type"><a href="scripting-qinstaller.html">QInstaller</a></span><span class="operator">.</span>Introduction); <span class="comment">// get the introduction wizard page</span>
+      <span class="keyword">if</span> (widget <span class="operator">!</span><span class="operator">=</span> null)
+          widget<span class="operator">.</span>packageManagerCoreTypeChanged<span class="operator">.</span>connect(onPackageManagerCoreTypeChanged);
+  }
+
+  onPackageManagerCoreTypeChanged <span class="operator">=</span> function()
+  {
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Updater: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isUpdater());
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Uninstaller: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isUninstaller());
+      console<span class="operator">.</span>log(<span class="string">&quot;Is Package Manager: &quot;</span> <span class="operator">+</span> installer<span class="operator">.</span>isPackageManager());
+  }
+
+</pre>
+<a name="license-agreement-page"></a>
+<h3 >License Agreement Page</h3>
+<p>Implement the <code>Controller.prototype.LicenseAgreementPageCallback()</code> function to interact with widgets on the license agreement page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>NextButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>BackButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>LicenseListWidget</code></td><td >Lists the available licenses.</td></tr>
+<tr valign="top" class="even"><td ><code>LicenseTextBrowser</code></td><td >Shows the content of the selected license file.</td></tr>
+<tr valign="top" class="odd"><td ><code>AcceptLicenseLabel</code></td><td >Shows the text next to the accept license radio button.</td></tr>
+<tr valign="top" class="even"><td ><code>RejectLicenseLabel</code></td><td >Shows the text next to the reject license radio button.</td></tr>
+</table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Radio Buttons</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>AcceptLicenseRadioButton</code></td><td >Accepts the license agreement.</td></tr>
+<tr valign="top" class="even"><td ><code>RejectLicenseRadioButton</code></td><td >Rejects the license agreement. Selected by default.</td></tr>
+</table></div>
+<a name="target-directory-page"></a>
+<h3 >Target Directory Page</h3>
+<p>Implement the <code>Controller.prototype.TargetDirectoryPageCallback()</code> function to interact with widgets on the target directory selection page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>NextButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>BackButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>MessageLabel</code></td><td >Displays a message.</td></tr>
+<tr valign="top" class="even"><td ><code>TargetDirectoryLineEdit</code></td><td >Displays the value of the installation's target directory.</td></tr>
+<tr valign="top" class="odd"><td ><code>WarningLabel</code></td><td >Displays a warning.</td></tr>
+</table></div>
+<a name="component-selection-page"></a>
+<h3 >Component Selection Page</h3>
+<p>Implement the <code>Controller.prototype.ComponentSelectionPageCallback()</code> function to interact with widgets on the component selection page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>NextButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>BackButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Methods</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>selectAll()</code></td><td >Selects all available packages if possible.</td></tr>
+<tr valign="top" class="even"><td ><code>deselectAll()</code></td><td >Deselects all available packages if possible.</td></tr>
+<tr valign="top" class="odd"><td ><code>selectDefault()</code></td><td >Resets the checked state of available packages to their initial state.</td></tr>
+<tr valign="top" class="even"><td ><code>selectComponent(id)</code></td><td >Selects the package with <code>id</code> (string).</td></tr>
+<tr valign="top" class="odd"><td ><code>deselectComponent(id)</code></td><td >Deselects the package with <code>id</code> (string).</td></tr>
+</table></div>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Push Buttons</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>SelectAllComponentsButton</code></td><td >Selects all available packages if possible.</td></tr>
+<tr valign="top" class="even"><td ><code>DeselectAllComponentsButton</code></td><td >Deselects all available packages if possible.</td></tr>
+<tr valign="top" class="odd"><td ><code>SelectDefaultComponentsButton</code></td><td >Resets the checked state of available packages to their initial state.</td></tr>
+<tr valign="top" class="even"><td ><code>ResetComponentsButton</code></td><td >Resets to already installed components.</td></tr>
+</table></div>
+<a name="start-menu-directory-page"></a>
+<h3 >Start Menu Directory Page</h3>
+<p>Implement the <code>Controller.prototype.StartMenuDirectoryPageCallback()</code> function to interact with widgets on the ready for installation page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>NextButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>BackButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>StartMenuPathLineEdit</code></td><td >Shows the directory where to create the program's shortcut.</td></tr>
+</table></div>
+<a name="ready-for-installation-page"></a>
+<h3 >Ready for Installation Page</h3>
+<p>Implement the <code>Controller.prototype.ReadyForInstallationPageCallback()</code> function to interact with widgets on the ready for installation page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>CommitButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>BackButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>MessageLabel</code></td><td >Displays a message.</td></tr>
+<tr valign="top" class="even"><td ><code>TaskDetailsBrowser</code></td><td >Displays some more detailed information about the installation.</td></tr>
+</table></div>
+<a name="perform-installation-page"></a>
+<h3 >Perform Installation Page</h3>
+<p>Implement the <code>Controller.prototype.PerformInstallationPageCallback()</code> function to interact with widgets on the perform installation page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>CommitButton</code></li>
+<li><code>CancelButton</code></li>
+</ul>
+<a name="finished-page"></a>
+<h3 >Finished Page</h3>
+<p>Implement the <code>Controller.prototype.FinishedPageCallback()</code> function to interact with widgets on the installation finished page.</p>
+<p>Wizard buttons:</p>
+<ul>
+<li><code>CommitButton</code></li>
+<li><code>CancelButton</code></li>
+<li><code>FinishButton</code></li>
+</ul>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Widgets</th><th >Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>MessageLabel</code></td><td >Displays a message.</td></tr>
+<tr valign="top" class="even"><td ><code>RunItCheckBox</code></td><td >Text field that informs users that they can start an application after the installation process has finished.</td></tr>
+</table></div>
+<a name="custom-pages"></a>
+<h2 id="custom-pages">Custom Pages</h2>
+<p>Custom pages are registered as <code>Dynamic${ObjectName}</code>, where <code>${ObjectName}</code> is the object name set in the UI file. Thus, the <code>Dynamic${ObjectName}Callback()</code> function is called. Widgets can be addressed using their object names (from the UI file).</p>
+<p>Example code:</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+      <span class="comment">// add page with widget \c SomePageWidget before the target directory page</span>
+      installer<span class="operator">.</span>addWizardPage(component<span class="operator">,</span> <span class="string">&quot;SomePageWidget&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qinstaller.html">QInstaller</a></span><span class="operator">.</span>TargetDirectory)
+  }
+
+  Controller<span class="operator">.</span>prototype<span class="operator">.</span>DynamicSomePageWidgetCallback <span class="operator">=</span> function()
+  {
+      var page <span class="operator">=</span> gui<span class="operator">.</span>pageWidgetByObjectName(<span class="string">&quot;DynamicSomePageWidget&quot;</span>);
+      page<span class="operator">.</span>myButton<span class="operator">.</span>click<span class="operator">,</span> <span class="comment">//direct child of the UI file's widget</span>
+      page<span class="operator">.</span>someFancyWidget<span class="operator">.</span>subWidget<span class="operator">.</span>setText(<span class="string">&quot;foobar&quot;</span>) <span class="comment">// nested widget</span>
+  }
+
+</pre>
+<a name="message-boxes"></a>
+<h2 id="message-boxes">Message Boxes</h2>
+<p>While executing the installer application, for example, the application might show some message boxes about an error that occurred. This is fine while running the application on the end user's system, but it might break automated test suites. To overcome this issue, all message boxes shown by the Qt Installer Framework are addressable by a specific identifier.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Identifier</th><th >Possible Answers</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><code>OverwriteTargetDirectory</code></td><td >Yes, No</td><td >Confirmation for using an already existing directory as the target directory for installation.</td></tr>
+<tr valign="top" class="even"><td ><code>installationError</code></td><td >OK, Retry, Ignore</td><td >A fatal error occurred while performing the installation.</td></tr>
+<tr valign="top" class="odd"><td ><code>installationErrorWithRetry</code></td><td >Retry, Ignore, Cancel</td><td >An error occurred while performing the installation. End users can select <b>Retry</b> to try again.</td></tr>
+<tr valign="top" class="even"><td ><code>AuthorizationError</code></td><td >Abort, OK</td><td >Elevated permissions could not be acquired.</td></tr>
+<tr valign="top" class="odd"><td ><code>OperationDoesNotExistError</code></td><td >Abort, Ignore</td><td >An error occurred while trying to perform an operation, but the operation did not exist.</td></tr>
+<tr valign="top" class="even"><td ><code>isAutoDependOnError</code></td><td >OK</td><td >An error occurred while calling a package script. It was not possible to evaluate if the package has a auto dependency on other packages.</td></tr>
+<tr valign="top" class="odd"><td ><code>isDefaultError</code></td><td >OK</td><td >An error occurred while calling a package script. It was not possible to evaluate if the package will be installed by default.</td></tr>
+<tr valign="top" class="even"><td ><code>DownloadError</code></td><td >Retry, Cancel</td><td >An error occurred while downloading an archive hash from a remote repository. End users can select <b>Retry</b> to try again.</td></tr>
+<tr valign="top" class="odd"><td ><code>archiveDownloadError</code></td><td >Retry, Cancel</td><td >An error occurred while downloading a archive from a remote repository. End users can select <b>Retry</b> to try again.</td></tr>
+<tr valign="top" class="even"><td ><code>WriteError</code></td><td >OK</td><td >An error occurred while writing the maintenance tool.</td></tr>
+<tr valign="top" class="odd"><td ><code>ElevationError</code></td><td >OK</td><td >Elevated permissions could not be acquired.</td></tr>
+<tr valign="top" class="even"><td ><code>unknown</code></td><td >OK</td><td >An unknown error occurred while removing a certain package.</td></tr>
+<tr valign="top" class="odd"><td ><code>Error</code></td><td >OK</td><td >Generic error.</td></tr>
+<tr valign="top" class="even"><td ><code>stopProcessesForUpdates</code></td><td >Retry, Ignore, Cancel</td><td >An error occurred while updating a package. Some running application or process needs to be quit before the update can be performed. End users can select <b>Retry</b> to try again once they have been stopped.</td></tr>
+<tr valign="top" class="odd"><td ><code>Installer_Needs_To_Be_Local_Error</code></td><td >OK</td><td >The installer binary was started from a network location, but the installation over network is not supported.</td></tr>
+<tr valign="top" class="even"><td ><code>TargetDirectoryInUse</code></td><td >No</td><td >The installation's target directory already contains an installation.</td></tr>
+<tr valign="top" class="odd"><td ><code>WrongTargetDirectory</code></td><td >OK</td><td >The installation's target directory is a file or symlink.</td></tr>
+<tr valign="top" class="even"><td ><code>AlreadyRunning</code></td><td >OK</td><td >Another application instance is already running.</td></tr>
+</table></div>
+<p>Example code:</p>
+<pre class="cpp">
+
+  function Controller()
+  {
+      installer<span class="operator">.</span>autoRejectMessageBoxes;
+      installer<span class="operator">.</span>setMessageBoxAutomaticAnswer(<span class="string">&quot;OverwriteTargetDirectory&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>Yes);
+      installer<span class="operator">.</span>setMessageBoxAutomaticAnswer(<span class="string">&quot;stopProcessesForUpdates&quot;</span><span class="operator">,</span> <span class="type"><a href="scripting-qmessagebox.html">QMessageBox</a></span><span class="operator">.</span>Ignore);
+  }
+
+</pre>
+</div>
+<!-- @@@noninteractive.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-component-description.html">Package Directory</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="scripting.html">Component Scripting</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

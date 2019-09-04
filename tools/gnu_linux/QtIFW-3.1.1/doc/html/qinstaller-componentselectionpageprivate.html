@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>ComponentSelectionPagePrivate Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ComponentSelectionPagePrivate</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#public-slots">Public Slots</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ComponentSelectionPagePrivate Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-componentselectionpageprivate.html">QInstaller::ComponentSelectionPagePrivate</a>)<br/></span>
+<ul>
+<li><a href="qinstaller-componentselectionpageprivate-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#ComponentSelectionPagePrivate">ComponentSelectionPagePrivate</a></b>(ComponentSelectionPage *<i>qq</i>, PackageManagerCore *<i>core</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#dtor.ComponentSelectionPagePrivate">~ComponentSelectionPagePrivate</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#allowCompressedRepositoryInstall">allowCompressedRepositoryInstall</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#hideCompressedRepositoryButton">hideCompressedRepositoryButton</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#setupCategoryLayout">setupCategoryLayout</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#showCategoryLayout">showCategoryLayout</a></b>(bool <i>show</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#showCompressedRepositoryButton">showCompressedRepositoryButton</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#updateTreeView">updateTreeView</a></b>()</td></tr>
+</table></div>
+<a name="public-slots"></a>
+<h2 id="public-slots">Public Slots</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#checkboxStateChanged">checkboxStateChanged</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#currentSelectedChanged">currentSelectedChanged</a></b>(const QModelIndex &amp;<i>current</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#customButtonClicked">customButtonClicked</a></b>(int <i>which</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#deselectAll">deselectAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#enableRepositoryCategory">enableRepositoryCategory</a></b>(const QString &amp;<i>repositoryName</i>, bool <i>enable</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#fetchRepositoryCategories">fetchRepositoryCategories</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#onModelStateChanged">onModelStateChanged</a></b>(QInstaller::ComponentModel::ModelState <i>state</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#onProgressChanged">onProgressChanged</a></b>(int <i>progress</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#selectAll">selectAll</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#selectDefault">selectDefault</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#setMessage">setMessage</a></b>(const QString &amp;<i>msg</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#setTotalProgress">setTotalProgress</a></b>(int <i>totalProgress</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-componentselectionpageprivate.html#updateWidgetVisibility">updateWidgetVisibility</a></b>(bool <i>show</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ComponentSelectionPagePrivate[overload1]$$$ComponentSelectionPagePrivateComponentSelectionPage*PackageManagerCore* -->
+<h3 class="fn" id="ComponentSelectionPagePrivate"><a name="ComponentSelectionPagePrivate"></a>ComponentSelectionPagePrivate::<span class="name">ComponentSelectionPagePrivate</span>(<span class="type"><a href="qinstaller-componentselectionpage.html">ComponentSelectionPage</a></span> *<i>qq</i>, <span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i>)</h3>
+<p>Default constructs an instance of ComponentSelectionPagePrivate.</p><!-- @@@ComponentSelectionPagePrivate -->
+<!-- $$$~ComponentSelectionPagePrivate[overload1]$$$~ComponentSelectionPagePrivate -->
+<h3 class="fn" id="dtor.ComponentSelectionPagePrivate"><a name="dtor.ComponentSelectionPagePrivate"></a>ComponentSelectionPagePrivate::<span class="name">~ComponentSelectionPagePrivate</span>()</h3>
+<p>Destroys the instance of ComponentSelectionPagePrivate.</p><!-- @@@~ComponentSelectionPagePrivate -->
+<!-- $$$allowCompressedRepositoryInstall[overload1]$$$allowCompressedRepositoryInstall -->
+<h3 class="fn" id="allowCompressedRepositoryInstall"><a name="allowCompressedRepositoryInstall"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">allowCompressedRepositoryInstall</span>()</h3>
+<!-- @@@allowCompressedRepositoryInstall -->
+<!-- $$$checkboxStateChanged[overload1]$$$checkboxStateChanged -->
+<h3 class="fn" id="checkboxStateChanged"><a name="checkboxStateChanged"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">checkboxStateChanged</span>()</h3>
+<!-- @@@checkboxStateChanged -->
+<!-- $$$currentSelectedChanged[overload1]$$$currentSelectedChangedconstQModelIndex& -->
+<h3 class="fn" id="currentSelectedChanged"><a name="currentSelectedChanged"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">currentSelectedChanged</span>(const <span class="type">QModelIndex</span> &amp;<i>current</i>)</h3>
+<!-- @@@currentSelectedChanged -->
+<!-- $$$customButtonClicked[overload1]$$$customButtonClickedint -->
+<h3 class="fn" id="customButtonClicked"><a name="customButtonClicked"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">customButtonClicked</span>(<span class="type">int</span> <i>which</i>)</h3>
+<!-- @@@customButtonClicked -->
+<!-- $$$deselectAll[overload1]$$$deselectAll -->
+<h3 class="fn" id="deselectAll"><a name="deselectAll"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">deselectAll</span>()</h3>
+<!-- @@@deselectAll -->
+<!-- $$$enableRepositoryCategory[overload1]$$$enableRepositoryCategoryconstQString&bool -->
+<h3 class="fn" id="enableRepositoryCategory"><a name="enableRepositoryCategory"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">enableRepositoryCategory</span>(const <span class="type">QString</span> &amp;<i>repositoryName</i>, <span class="type">bool</span> <i>enable</i>)</h3>
+<!-- @@@enableRepositoryCategory -->
+<!-- $$$fetchRepositoryCategories[overload1]$$$fetchRepositoryCategories -->
+<h3 class="fn" id="fetchRepositoryCategories"><a name="fetchRepositoryCategories"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">fetchRepositoryCategories</span>()</h3>
+<!-- @@@fetchRepositoryCategories -->
+<!-- $$$hideCompressedRepositoryButton[overload1]$$$hideCompressedRepositoryButton -->
+<h3 class="fn" id="hideCompressedRepositoryButton"><a name="hideCompressedRepositoryButton"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">hideCompressedRepositoryButton</span>()</h3>
+<!-- @@@hideCompressedRepositoryButton -->
+<!-- $$$onModelStateChanged[overload1]$$$onModelStateChangedQInstaller::ComponentModel::ModelState -->
+<h3 class="fn" id="onModelStateChanged"><a name="onModelStateChanged"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">onModelStateChanged</span>(<span class="type"><a href="qinstaller-componentmodel.html#ModelStateFlag-enum">QInstaller::ComponentModel::ModelState</a></span> <i>state</i>)</h3>
+<!-- @@@onModelStateChanged -->
+<!-- $$$onProgressChanged[overload1]$$$onProgressChangedint -->
+<h3 class="fn" id="onProgressChanged"><a name="onProgressChanged"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">onProgressChanged</span>(<span class="type">int</span> <i>progress</i>)</h3>
+<!-- @@@onProgressChanged -->
+<!-- $$$selectAll[overload1]$$$selectAll -->
+<h3 class="fn" id="selectAll"><a name="selectAll"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">selectAll</span>()</h3>
+<!-- @@@selectAll -->
+<!-- $$$selectDefault[overload1]$$$selectDefault -->
+<h3 class="fn" id="selectDefault"><a name="selectDefault"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">selectDefault</span>()</h3>
+<!-- @@@selectDefault -->
+<!-- $$$setMessage[overload1]$$$setMessageconstQString& -->
+<h3 class="fn" id="setMessage"><a name="setMessage"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">setMessage</span>(const <span class="type">QString</span> &amp;<i>msg</i>)</h3>
+<!-- @@@setMessage -->
+<!-- $$$setTotalProgress[overload1]$$$setTotalProgressint -->
+<h3 class="fn" id="setTotalProgress"><a name="setTotalProgress"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">setTotalProgress</span>(<span class="type">int</span> <i>totalProgress</i>)</h3>
+<!-- @@@setTotalProgress -->
+<!-- $$$setupCategoryLayout[overload1]$$$setupCategoryLayout -->
+<h3 class="fn" id="setupCategoryLayout"><a name="setupCategoryLayout"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">setupCategoryLayout</span>()</h3>
+<!-- @@@setupCategoryLayout -->
+<!-- $$$showCategoryLayout[overload1]$$$showCategoryLayoutbool -->
+<h3 class="fn" id="showCategoryLayout"><a name="showCategoryLayout"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">showCategoryLayout</span>(<span class="type">bool</span> <i>show</i>)</h3>
+<!-- @@@showCategoryLayout -->
+<!-- $$$showCompressedRepositoryButton[overload1]$$$showCompressedRepositoryButton -->
+<h3 class="fn" id="showCompressedRepositoryButton"><a name="showCompressedRepositoryButton"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">showCompressedRepositoryButton</span>()</h3>
+<!-- @@@showCompressedRepositoryButton -->
+<!-- $$$updateTreeView[overload1]$$$updateTreeView -->
+<h3 class="fn" id="updateTreeView"><a name="updateTreeView"></a><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">updateTreeView</span>()</h3>
+<!-- @@@updateTreeView -->
+<!-- $$$updateWidgetVisibility[overload1]$$$updateWidgetVisibilitybool -->
+<h3 class="fn" id="updateWidgetVisibility"><a name="updateWidgetVisibility"></a><code>[slot] </code><span class="type">void</span> ComponentSelectionPagePrivate::<span class="name">updateWidgetVisibility</span>(<span class="type">bool</span> <i>show</i>)</h3>
+<!-- @@@updateWidgetVisibility -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

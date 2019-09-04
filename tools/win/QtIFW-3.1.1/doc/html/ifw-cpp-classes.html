@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-cpp-classes.qdoc -->
+  <title>C++ API | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >C++ API</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="scripting-qmlmodule.html" />
+  <link rel="next" href="ifw-knownissues.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="scripting-qmlmodule.html">Scripting API</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-knownissues.html">Known Issues</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#namespaces">Namespaces</a></li>
+<li class="level1"><a href="#qinstaller-c-classes">QInstaller C++ Classes</a></li>
+<li class="level1"><a href="#kdupdater-c-classes">KDUpdater C++ Classes</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">C++ API</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-cpp-classes.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The C++ API documentation is written for developers who develop the Qt Installer Framework. It describes the internal API, so there is no compatibility promise. Further, the documentation is a work in progress and therefore parts of it are missing while other parts might be out of date.</p>
+<p>To create customized installers, use the <a href="scripting-qmlmodule.html">Scripting API</a>, instead. For more information, see <a href="ifw-customizing-installers.html">Customizing Installers</a>.</p>
+<a name="namespaces"></a>
+<h2 id="namespaces">Namespaces</h2>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Namespace</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="qinstaller.html">QInstaller</a></td><td >Contains classes to implement the core functionality of the Qt Installer Framework and the installer UI.</td></tr>
+<tr valign="top" class="even"><td ><a href="kdupdater.html">KDUpdater</a></td><td >Contains classes to automatically detect updates to applications, to retrieve them from external repositories, and to install them. <a href="kdupdater.html">KDUpdater</a> classes are a fork of KDAB's general <a href="http://docs.kdab.com/kdtools/2.2.2/group__kdupdater.html">KDUpdater module</a>.</td></tr>
+</table></div>
+<a name="qinstaller-c-classes"></a>
+<h2 id="qinstaller-c-classes">QInstaller C++ Classes</h2>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-abstractfiletask.html">QInstaller::AbstractFileTask</a></p></td><td class="tblDescr"><p>The base class of file related tasks</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-filetaskitem.html">QInstaller::FileTaskItem</a></p></td><td class="tblDescr"><p>Represents an item in a file task object</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-filetaskresult.html">QInstaller::FileTaskResult</a></p></td><td class="tblDescr"><p>Represents the results of a file task</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-binarycontent.html">QInstaller::BinaryContent</a></p></td><td class="tblDescr"><p>Handles binary information embedded into executables</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-operationblob.html">QInstaller::OperationBlob</a></p></td><td class="tblDescr"><p>Textual representation of an operation that can be instantiated and executed by the Qt Installer Framework</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-resource.html">QInstaller::Resource</a></p></td><td class="tblDescr"><p>Interface for wrapping a file as read only device</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-resourcecollection.html">QInstaller::ResourceCollection</a></p></td><td class="tblDescr"><p>Abstraction that groups together a number of resources</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-resourcecollectionmanager.html">QInstaller::ResourceCollectionManager</a></p></td><td class="tblDescr"><p>Abstraction that groups together a number of resource collections</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-binaryformatengine.html">QInstaller::BinaryFormatEngine</a></p></td><td class="tblDescr"><p>The default file engine for accessing resource collections and resource files</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-binaryformatenginehandler.html">QInstaller::BinaryFormatEngineHandler</a></p></td><td class="tblDescr"><p>Way to register resource collections and resource files</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-binarylayout.html">QInstaller::BinaryLayout</a></p></td><td class="tblDescr"><p>Describes the binary content appended to a file</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-component.html">QInstaller::Component</a></p></td><td class="tblDescr"><p>Represents the current component</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-component-sortingprioritygreaterthan.html">QInstaller::Component::SortingPriorityGreaterThan</a></p></td><td class="tblDescr"><p>Sets a decreasing sorting priority for child components</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-component-sortingprioritylessthan.html">QInstaller::Component::SortingPriorityLessThan</a></p></td><td class="tblDescr"><p>Sets an increasing sorting order for child components</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-componentmodel.html">QInstaller::ComponentModel</a></p></td><td class="tblDescr"><p>Holds a data model for visual representation of available components to install</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-messageboxhandler.html">QInstaller::MessageBoxHandler</a></p></td><td class="tblDescr"><p>Modal dialog for informing the user or asking the user a question and receiving an answer</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-packagemanagercore.html">QInstaller::PackageManagerCore</a></p></td><td class="tblDescr"><p>The core functionality of the Qt Installer Framework</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-componentselectionpage.html">QInstaller::ComponentSelectionPage</a></p></td><td class="tblDescr"><p>Changes the checked state of components</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-finishedpage.html">QInstaller::FinishedPage</a></p></td><td class="tblDescr"><p>Completes the installation wizard</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-introductionpage.html">QInstaller::IntroductionPage</a></p></td><td class="tblDescr"><p>Displays information about the product to install</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-licenseagreementpage.html">QInstaller::LicenseAgreementPage</a></p></td><td class="tblDescr"><p>Presents a license agreement to the end users for acceptance</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-packagemanagergui.html">QInstaller::PackageManagerGui</a></p></td><td class="tblDescr"><p>The core functionality for non-interactive installations</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-packagemanagerpage.html">QInstaller::PackageManagerPage</a></p></td><td class="tblDescr"><p>Displays information about the product to install</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-performinstallationpage.html">QInstaller::PerformInstallationPage</a></p></td><td class="tblDescr"><p>Shows progress information about the installation state</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-readyforinstallationpage.html">QInstaller::ReadyForInstallationPage</a></p></td><td class="tblDescr"><p>Informs end users that the installation can begin</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-restartpage.html">QInstaller::RestartPage</a></p></td><td class="tblDescr"><p>Enables restarting the installer</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-startmenudirectorypage.html">QInstaller::StartMenuDirectoryPage</a></p></td><td class="tblDescr"><p>Specifies the program group for the product in the Windows Start menu</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-targetdirectorypage.html">QInstaller::TargetDirectoryPage</a></p></td><td class="tblDescr"><p>Specifies the target directory for the installation</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-packagesource.html">QInstaller::PackageSource</a></p></td><td class="tblDescr"><p>Specifies a single package source</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-performinstallationform.html">QInstaller::PerformInstallationForm</a></p></td><td class="tblDescr"><p>Shows progress information about the installation state</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="qinstaller-scriptengine.html">QInstaller::ScriptEngine</a></p></td><td class="tblDescr"><p>Used to prepare and run the component scripts</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="qinstaller-systeminfo.html">QInstaller::SystemInfo</a></p></td><td class="tblDescr"><p>Provides information about the operating system</p></td></tr>
+</table></div>
+<a name="kdupdater-c-classes"></a>
+<h2 id="kdupdater-c-classes">KDUpdater C++ Classes</h2>
+<div class="table"><table class="annotated">
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-filedownloader.html">KDUpdater::FileDownloader</a></p></td><td class="tblDescr"><p>The base class for file downloaders used in KDUpdater</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-httpdownloader.html">KDUpdater::HttpDownloader</a></p></td><td class="tblDescr"><p>Used to download files over FTP, HTTP, or HTTPS</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-localfiledownloader.html">KDUpdater::LocalFileDownloader</a></p></td><td class="tblDescr"><p>Used to copy files from the local file system</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-resourcefiledownloader.html">KDUpdater::ResourceFileDownloader</a></p></td><td class="tblDescr"><p>Can be used to download resource files</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-filedownloaderfactory.html">KDUpdater::FileDownloaderFactory</a></p></td><td class="tblDescr"><p>Acts as a factory for KDUpdater::FileDownloader</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-filedownloaderproxyfactory.html">KDUpdater::FileDownloaderProxyFactory</a></p></td><td class="tblDescr"><p>Fine-grained proxy selection</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="genericfactory.html">GenericFactory</a></p></td><td class="tblDescr"><p>Implements a template-based generic factory</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-localpackage.html">KDUpdater::LocalPackage</a></p></td><td class="tblDescr"><p>Describes a single installed package in the application</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-localpackagehub.html">KDUpdater::LocalPackageHub</a></p></td><td class="tblDescr"><p>Access to information about packages installed on the application side</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-task.html">KDUpdater::Task</a></p></td><td class="tblDescr"><p>The base class for all tasks in KDUpdater</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-update.html">KDUpdater::Update</a></p></td><td class="tblDescr"><p>Represents a single update</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-updatefinder.html">KDUpdater::UpdateFinder</a></p></td><td class="tblDescr"><p>UpdaterFinder class finds updates applicable for installed packages</p></td></tr>
+<tr class="odd topAlign"><td class="tblName"><p><a href="kdupdater-updateoperation.html">KDUpdater::UpdateOperation</a></p></td><td class="tblDescr"><p>Abstract base class for update operations</p></td></tr>
+<tr class="even topAlign"><td class="tblName"><p><a href="kdupdater-updateoperationfactory.html">KDUpdater::UpdateOperationFactory</a></p></td><td class="tblDescr"><p>Used to create update operations based on their name</p></td></tr>
+</table></div>
+</div>
+<!-- @@@ifw-cpp-classes.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="scripting-qmlmodule.html">Scripting API</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-knownissues.html">Known Issues</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

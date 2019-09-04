@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-overview.qdoc -->
+  <title>Overview of Qt Installer Framework | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Overview of Qt Installer Framework</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="index.html" />
+  <link rel="next" href="ifw-getting-started.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="index.html">Qt Installer Framework Manual</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-getting-started.html">Getting Started</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#choosing-installer-type">Choosing Installer Type</a></li>
+<li class="level1"><a href="#promoting-updates">Promoting Updates</a></li>
+<li class="level1"><a href="#providing-content-for-installers">Providing Content for Installers</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Overview of Qt Installer Framework</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-overview.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Qt Installer Framework provides a set of tools and utilities to create installers once, and deploy them across all the supported desktop Qt platforms without rewriting the source code. The installers will have the native look and feel on the platform where they are run: Linux, Microsoft Windows, and OS X.</p>
+<p>The Qt Installer Framework tools generate installers with a set of pages that guide the users during the installation, update, or uninstallation process. You provide the installable content and specify information about it, such as the name of the product and the installer and the text for the license agreement.</p>
+<p>You can customize the installers by adding widgets to the predefined pages or by adding whole pages to provide users with additional options. You can create scripts to add operations to the installer.</p>
+<a name="choosing-installer-type"></a>
+<h2 id="choosing-installer-type">Choosing Installer Type</h2>
+<p>You can provide end users with an <i>offline</i> or <i>online</i> installer, or both, depending on your use cases.</p>
+<p class="centerAlign"><img src="images/ifw-overview.png" alt="" /></p><p>Both installers install a <i>maintenance tool</i> that can later be used to add, update, and remove components. Offline installers contain all the installable components and do not require network connections during the installation. Online installers only install the maintenance tool that then downloads and installs components from an online repository on a web server. Therefore, the size of an online installer binary is smaller and its download time is shorter than that of an offline installer binary. The total time spent downloading and running an online installer might also be shorter than dowloading and running an offline installer if the end users do not install all the available components.</p>
+<p>End users can use the maintenance tool to install additional components from the server after the initial installation, as well as to receive automatic updates to content as soon as the updates are published on the server. However, this works for an offline installation only if you specify a repository address in the offline installer configuration or if end users specify the repository address themselves in the maintenance tool settings.</p>
+<p>Create an offline installer to enable users to directly download the installation package on a media for installation on a computer later. You can also distribute the installation package on a CD-ROM or USB stick, for example.</p>
+<p>Create an online installer to enable users to always install the latest versions of the content binaries.</p>
+<a name="promoting-updates"></a>
+<h2 id="promoting-updates">Promoting Updates</h2>
+<p>Make online repositories available to promote updates to end users who install your product. The easiest way to provide an update is to recreate the repository and upload it to the web server. For large repositories, you can update only the changed components.</p>
+<a name="providing-content-for-installers"></a>
+<h2 id="providing-content-for-installers">Providing Content for Installers</h2>
+<p>You can enable other content providers to add components to the installer as add-on components. The component providers must set up repositories that contain the installable components and deliver the URL that points to the repositories to end users. End users must then configure the URL in the installer. The add-on components are visible in the package manager.</p>
+</div>
+<!-- @@@ifw-overview.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="index.html">Qt Installer Framework Manual</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-getting-started.html">Getting Started</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

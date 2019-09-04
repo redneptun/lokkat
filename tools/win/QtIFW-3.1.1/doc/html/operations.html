@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- operations.qdoc -->
+  <title>Operations | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Operations</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="scripting.html" />
+  <link rel="next" href="ifw-tools.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="scripting.html">Component Scripting</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-tools.html">Tools</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#summary-of-operations">Summary of Operations</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Operations</h1>
+<span class="subtitle"></span>
+<!-- $$$operations.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The operations are prepared by component and controller scripts and performed by the installer.</p>
+<p><b>Note: </b>Operations are performed threaded.</p><p>Internally, each operation has a <i>DO</i> step that contains instructions for the installer and an <i>UNDO</i> step that contains instructions for the uninstaller.</p>
+<a name="summary-of-operations"></a>
+<h2 id="summary-of-operations">Summary of Operations</h2>
+<p>The following table summarizes the available operations and their syntax.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Operation</th><th >Syntax</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >Copy</td><td >&quot;Copy&quot; <code>source</code> <code>target</code></td><td >Copies a file from <code>source</code> to <code>target</code>.</td></tr>
+<tr valign="top" class="even"><td >Move</td><td >&quot;Move&quot; <code>source</code> <code>target</code></td><td >Moves a file from <code>source</code> to <code>target</code>.</td></tr>
+<tr valign="top" class="odd"><td >SimpleMoveFile</td><td >&quot;SimpleMoveFile&quot; <code>source</code> <code>target</code></td><td >Moves a file from <code>source</code> to <code>target</code>.</td></tr>
+<tr valign="top" class="even"><td >Delete</td><td >&quot;Delete&quot; <code>filename</code></td><td >Deletes the file specified by <code>filename</code>.</td></tr>
+<tr valign="top" class="odd"><td >Mkdir</td><td >&quot;Mkdir&quot; <code>path</code></td><td >Creates the directory path <code>path</code>.</td></tr>
+<tr valign="top" class="even"><td >Rmdir</td><td >&quot;Rmdir&quot; <code>path</code></td><td >Removes the directory path <code>path</code>.</td></tr>
+<tr valign="top" class="odd"><td >CopyDirectory</td><td >&quot;CopyDirectory&quot; <code>sourcePath</code> <code>targetPath</code></td><td >Copies a directory from <code>sourcePath</code> to <code>targetPath</code>.</td></tr>
+<tr valign="top" class="even"><td >AppendFile</td><td >&quot;AppendFile&quot; <code>filename</code> <code>text</code></td><td >Appends <code>text</code> to the file specified by <code>filename</code>. <code>text</code> is treated as ASCII text.</td></tr>
+<tr valign="top" class="odd"><td >PrependFile</td><td >&quot;PrependFile&quot; <code>filename</code> <code>text</code></td><td >Prepends <code>text</code> to the file specified by <code>filename</code>. <code>text</code> is treated as ASCII text.</td></tr>
+<tr valign="top" class="even"><td >Replace</td><td >&quot;Replace&quot; <code>file</code> <code>search</code> replace</td><td >Opens <code>file</code> to find <code>search</code> string and replaces that with the <code>replace</code> string.</td></tr>
+<tr valign="top" class="odd"><td >LineReplace</td><td >&quot;LineReplace&quot; <code>file</code> <code>search</code> <code>replace</code></td><td >Opens <code>file</code> to find lines that start with <code>search</code> string and replaces that with the <code>replace</code> string. Lines are trimmed before the search.</td></tr>
+<tr valign="top" class="even"><td >Execute</td><td >&quot;Execute&quot; [{<code>exitcodes</code>}] <code>command</code> [<code>parameter1</code> [<code>parameter..&#x2e;</code> [<code>parameter10</code>]]]</td><td >Executes the command specified by <code>command</code>. Up to 10 parameters can be passed. If that is not enough, you can use a JavaScript string array.<p>Optionally, you can pass a comma-separated list of exit codes within curly brackets ({}) as the first argument to specify the exit codes for successful execution. This defaults to &quot;{0}&quot;.</p>
+<p>Other optional named arguments are: &quot;workingdirectory=&lt;your_working_dir&gt;&quot;; &quot;errormessage=&lt;your_custom_errormessage&gt;&quot;</p>
+<p>In addition, a special argument, UNDOEXECUTE, separates the DO step of the operation from the UNDO step.</p>
+<p>Example: <code>component.addOperation(&quot;Execute&quot;, &quot;touch&quot;, &quot;test.txt&quot;, &quot;UNDOEXECUTE&quot;, &quot;rm&quot;, &quot;test.txt&quot;)</code></p>
+</td></tr>
+<tr valign="top" class="odd"><td >CreateShortcut</td><td >&quot;CreateShortcut&quot; <code>filename</code> <code>linkname</code> [<code>arguments</code>]</td><td >Creates a shortcut from the file specified by <code>filename</code> to <code>linkname</code>. On Windows, this creates a .lnk file which can have <code>arguments</code>. Furthermore, on Windows, <code>filename</code> can be an HTTP or FTP URL in which case a URL shortcut is created. On Unix, this creates a symbolic link.</td></tr>
+<tr valign="top" class="even"><td >CreateDesktopEntry</td><td >&quot;CreateDesktopEntry&quot; <code>filename &quot;key=value[ key2=value2[ key3=value3]]]&quot;</code></td><td >Creates a .desktop initialization file, as specified by freedesktop.org.<p>If <code>filename</code> is absolute, the desktop entry is stored there. Otherwise, it is stored in the location specified in <code>$XDG_DATA_HOME/applications</code>, including the default path, as defined by freedesktop.org.</p>
+<p>The key-value pairs are written to the file.</p>
+<p>The file is set to use UTF-8 encoding.</p>
+</td></tr>
+<tr valign="top" class="odd"><td >InstallIcons</td><td >&quot;InstallIcons&quot; <code>directory</code> <code>[Vendorprefix]</code></td><td >Installs the contents of <code>directory</code> into a location, as specified by freedesktop.org. That is, into <code>$XDG_DATA_HOME/icons</code> or <code>$HOME/.local/share/icons</code>. The files are removed from their initial location. Make sure to add this operation after the operation that extracts the files from the archive. If you provide a <code>Vendorprefix</code> it replaces all characters up to the first dash (-) in the filename of the icon with this prefix.</td></tr>
+<tr valign="top" class="even"><td >Extract</td><td >&quot;Extract&quot; <code>archive</code> <code>targetdirectory</code></td><td >Extracts <code>archive</code> to <code>targetdirectory</code>.</td></tr>
+<tr valign="top" class="odd"><td >GlobalConfig</td><td >&quot;GlobalConfig&quot; <code>company</code> <code>application</code> <code>key</code> <code>value</code><p>or</p>
+<p>&quot;GlobalConfig&quot; <code>scope</code> <code>company</code> <code>application</code> <code>key</code> <code>value</code></p>
+<p>or</p>
+<p>&quot;GlobalConfig&quot; <code>filename</code> <code>key</code> <code>value</code></p>
+</td><td >Stores <code>value</code> for <code>key</code> in a configuration file. The configuration file is specified either by <code>filename</code> (using <code>QSettings::NativeFormat</code>, which might be the Windows registry) or by <code>application</code> and <code>company</code> name. Set <code>scope</code> to &quot;SystemScope&quot; to create an entry in the system scope.<p><b>Note: </b>The operation is using QSettings to store the key value pair. QSettings always treats backslash as a special character and provides no API for reading or writing such entries. Do not use slashes ('/' and '\') in section or key names; the backslash character is used to separate sub keys. On windows, '\' are converted by QSettings to '/', which makes them identical. Because the backslash character is used by QSettings to separate sub keys, you cannot read or write windows registry entries that contain slashes or backslashes. You should use a native windows API if you need to do so.</p></td></tr>
+<tr valign="top" class="even"><td >EnvironmentVariable</td><td >&quot;EnvironmentVariable&quot; <code>key</code> <code>value</code> [<code>persistent</code> [<code>system</code>]]</td><td >Sets the environment variable <code>key</code> to <code>value</code>. If <code>persistent</code> is set to <code>true</code>, the variable is set persistently. This is currently only supported on Windows. If <code>system</code> is set to <code>true</code>, the persistent variable is set system-wide, not only for the current user.</td></tr>
+<tr valign="top" class="odd"><td >RegisterFileType</td><td >&quot;RegisterFileType&quot; <code>extension</code> <code>command</code> [<code>description</code> [<code>contentType</code> [<code>icon</code>]]].</td><td >Registers the file type with <code>extension</code> to be opened via <code>command</code>. Optionally, you can specify <code>description</code>, <code>contentType</code>, and <code>icon</code>. This is currently only supported on Windows.</td></tr>
+<tr valign="top" class="even"><td >ConsumeOutput</td><td >&quot;ConsumeOutput&quot; <code>installerKeyName</code> <code>executablePath</code> <code>processArguments</code></td><td >Saves the output from running the executable located at <code>executablePath</code> with the arguments <code>processArguments</code> to the installer key specified by <code>installerKeyName</code>. Additional arguments can be passed.</td></tr>
+<tr valign="top" class="odd"><td >CreateLink</td><td >&quot;CreateLink&quot; <code>linkPath</code> <code>targetPath</code></td><td >Creates a link from the location specified by <code>linkPath</code> to the location specified by <code>targetPath</code>.</td></tr>
+<tr valign="top" class="even"><td >CreateLocalRepository</td><td >&quot;CreateLocalRepository&quot; <code>binaryPath</code> <code>repoPath</code></td><td >Creates a local repository in the directory specified by <code>repoPath</code>. For offline installers, stores binary data in the directory specified by <code>binaryPath</code>.</td></tr>
+<tr valign="top" class="odd"><td >FakeStopProcessForUpdate</td><td >&quot;FakeStopProcessForUpdate&quot; <code>processlist</code></td><td >Matches running processes against the comma-separated entries in <code>processlist</code> during uninstallation. If matches are found, shows a messagebox asking the user to stop those processes before continuing.</td></tr>
+<tr valign="top" class="even"><td >License</td><td >&quot;License&quot; <code>licenses</code></td><td >Copies the license files specified by <code>licenses</code> to a subfolder called <code>Licenses</code> in the target directory. This operation is automatically added for packages declaring <code>&lt;Licenses&gt;</code> in their package description file.</td></tr>
+<tr valign="top" class="odd"><td >MinimumProgress</td><td >&quot;MinimumProgress&quot;</td><td >Increases the progress value by one.</td></tr>
+<tr valign="top" class="even"><td >SelfRestart</td><td >&quot;SelfRestart&quot; <code>core</code></td><td >Restarts the updater or package manager specified by <code>core</code>.</td></tr>
+<tr valign="top" class="odd"><td >Settings</td><td >&quot;Settings&quot; <code>path</code> <code>method</code> <code>key</code> <code>aValue</code></td><td >Sets or removes the value <code>aValue</code> of <code>key</code> in the settings file or registry located at <code>path</code>, depending on the value of <code>method</code>: <code>set</code>, <code>remove</code>, <code>add_array_value</code>, and <code>remove_array_value</code>.</td></tr>
+</table></div>
+<p>The Extract, License, and MinimumProgress operations are automatically added for matching components that do not overwrite the <a href="scripting-component.html#createOperations-method">component::createOperations</a>() method. See also <a href="scripting-component.html#autoCreateOperations-prop">component::autoCreateOperations</a>.</p>
+<p>If errors occur, you can test operations manually using the <code>devtool</code>. However, variables are not resolved, so you need to use absolute values.</p>
+<p>For example, to test copying a file:</p>
+<pre class="cpp">
+
+  devtool <span class="operator">-</span><span class="operator">-</span>operation DO<span class="operator">,</span>Copy<span class="operator">,</span><span class="operator">&lt;</span>source<span class="operator">&gt;</span><span class="operator">,</span><span class="operator">&lt;</span>target<span class="operator">&gt;</span>
+
+</pre>
+</div>
+<!-- @@@operations.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="scripting.html">Component Scripting</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-tools.html">Tools</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

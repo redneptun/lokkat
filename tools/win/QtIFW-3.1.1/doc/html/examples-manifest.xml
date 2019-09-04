@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<instructionals module="Qt Installer Framework">
+    <examples>
+        <example name="Change Installer UI Example" docUrl="qthelp:////qt-installer-framework-changeuserinterface-example.html" projectPath="changeuserinterface/changeuserinterface.pro" imageUrl="qthelp:////images/qtifw-examples-changeuserinterface.png">
+            <description><![CDATA[Using a component script to modify the installer UI.]]></description>
+            <tags>change,framework,installer,ui</tags>
+        </example>
+        <example name="Component Error Example" docUrl="qthelp:////qt-installer-framework-componenterror-example.html" projectPath="componenterror/componenterror.pro" imageUrl="qthelp:////images/qtifw-examples-componenterror.png">
+            <description><![CDATA[Using a component script to stop the installation if the components cannot be installed.]]></description>
+            <tags>component,error,framework,installer</tags>
+        </example>
+        <example name="Dependency Solving Example" docUrl="qthelp:////qt-installer-framework-dependencies-example.html" projectPath="dependencies/dependencies.pro" imageUrl="qthelp:////images/qtifw-examples-dependencies.png">
+            <description><![CDATA[Using components' package.xml files to define dependencies and automatic dependencies between components.]]></description>
+            <tags>dependency,framework,installer,solving</tags>
+        </example>
+        <example name="Dynamic Page Installer Example" docUrl="qthelp:////qt-installer-framework-dynamicpage-example.html" projectPath="dynamicpage/dynamicpage.pro" imageUrl="qthelp:////images/qtifw-examples-dynamicpages.png">
+            <description><![CDATA[Using a component script and dynamic pages to build an installer.]]></description>
+            <tags>dynamic,framework,installer,page</tags>
+        </example>
+        <example name="Hide Checkbox Example" docUrl="qthelp:////qt-installer-framework-hidecheckbox-example.html" projectPath="hidecheckbox/hidecheckbox.pro" imageUrl="qthelp:////images/qtifw-examples-hidecheckbox.png">
+            <description><![CDATA[Using components' package.xml files to hide checkboxes for items.]]></description>
+            <tags>checkbox,framework,hide,installer</tags>
+        </example>
+        <example name="Modify Extract Installer Example" docUrl="qthelp:////qt-installer-framework-modifyextract-example.html" projectPath="modifyextract/modifyextract.pro" imageUrl="qthelp:////images/qtifw-examples-modifyextract.png">
+            <description><![CDATA[Using the extract archive hook in a component script to modify the target path.]]></description>
+            <tags>extract,framework,installer,modify</tags>
+        </example>
+        <example name="Online Installer Example" docUrl="qthelp:////qt-installer-framework-online-example.html" projectPath="online/online.pro" imageUrl="qthelp:////images/qtifw-examples-online.png">
+            <description><![CDATA[Using the repogen tool and the configuration file to set up an online installer.]]></description>
+            <tags>framework,installer,online</tags>
+        </example>
+        <example name="Open ReadMe Example" docUrl="qthelp:////qt-installer-framework-openreadme-example.html" projectPath="openreadme/openreadme.pro" imageUrl="qthelp:////images/qtifw-examples-openreadme.png">
+            <description><![CDATA[Using a component script to add a check box for opening the readme file to the final installer page.]]></description>
+            <tags>framework,installer,open,readme</tags>
+        </example>
+        <example name="Quit Installer Example" docUrl="qthelp:////qt-installer-framework-quitinstaller-example.html" projectPath="quitinstaller/quitinstaller.pro" imageUrl="qthelp:////images/qtifw-examples-quitinstaller.png">
+            <description><![CDATA[Using a component script to quit an installer.]]></description>
+            <tags>framework,installer,quit</tags>
+        </example>
+        <example name="Register File Extension Example" docUrl="qthelp:////qt-installer-framework-registerfileextension-example.html" projectPath="registerfileextension/registerfileextension.pro" imageUrl="qthelp:////images/qtifw-examples-registerfileextension.png">
+            <description><![CDATA[Using a component script to register a filename extension on Windows.]]></description>
+            <tags>extension,file,framework,installer,register</tags>
+        </example>
+        <example name="Repository Categories Example" docUrl="qthelp:////qt-installer-framework-repositorycategories-example.html" projectPath="repositorycategories/repositorycategories.pro" imageUrl="qthelp:////images/qtifw-examples-repository-categories.png">
+            <description><![CDATA[Using the RepositoryCategories element to set up an online installer where repositories are grouped.]]></description>
+            <tags>categories,framework,installer,repository</tags>
+        </example>
+        <example name="Start Menu Shortcut Example" docUrl="qthelp:////qt-installer-framework-startmenu-example.html" projectPath="startmenu/startmenu.pro" imageUrl="qthelp:////images/qtifw-examples-startmenu.png">
+            <description><![CDATA[Using a component script to add an entry to the Windows Start menu.]]></description>
+            <tags>framework,installer,menu,shortcut,start</tags>
+        </example>
+        <example name="Stylesheet Example" docUrl="qthelp:////qt-installer-framework-stylesheet-example.html" projectPath="stylesheet/stylesheet.pro" imageUrl="qthelp:////images/qtifw-examples-stylesheet.png">
+            <description><![CDATA[Using a stylesheet to customize a UI.]]></description>
+            <tags>framework,installer,stylesheet</tags>
+        </example>
+        <example name="System Information Example" docUrl="qthelp:////qt-installer-framework-systeminfo-example.html" projectPath="systeminfo/systeminfo.pro">
+            <description><![CDATA[Using the systemInfo API in a component script to check operating system version and bitness.]]></description>
+            <tags>framework,information,installer,system</tags>
+        </example>
+        <example name="Translation Example" docUrl="qthelp:////qt-installer-framework-translations-example.html" projectPath="translations/translations.pro" imageUrl="qthelp:////images/qtifw-examples-translations.png">
+            <description><![CDATA[Using translations to localize installer pages and licenses.]]></description>
+            <tags>framework,installer,translation</tags>
+        </example>
+    </examples>
+</instructionals>

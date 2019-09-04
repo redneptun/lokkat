@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- binaryformat.cpp -->
+  <title>ResourceCollection Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ResourceCollection</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ResourceCollection Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-resourcecollection.html">QInstaller::ResourceCollection</a>)<br/></span>
+<!-- $$$ResourceCollection-brief -->
+<p>The <a href="qinstaller-resourcecollection.html">ResourceCollection</a> class is an abstraction that groups together a number of resources. <a href="#details">More...</a></p>
+<!-- @@@ResourceCollection -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;ResourceCollection&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-resourcecollection-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#ResourceCollection">ResourceCollection</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#ResourceCollection-1">ResourceCollection</a></b>(const QByteArray &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#appendResource">appendResource</a></b>(const QSharedPointer&lt;Resource&gt; &amp;<i>resource</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#appendResources">appendResources</a></b>(const QList&lt;QSharedPointer&lt;Resource&gt; &gt; &amp;<i>resources</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#name">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QSharedPointer&lt;Resource&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#resourceByName">resourceByName</a></b>(const QByteArray &amp;<i>name</i>) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QSharedPointer&lt;Resource&gt; &gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#resources">resources</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resourcecollection.html#setName">setName</a></b>(const QByteArray &amp;<i>name</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$ResourceCollection-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-resourcecollection.html">ResourceCollection</a> class is an abstraction that groups together a number of resources.</p>
+<p>The resources are supposed to be sequential, so the collection keeps them ordered once a new resource is added. The name can be set at any time using <a href="qinstaller-resourcecollection.html#setName">setName</a>().</p>
+</div>
+<!-- @@@ResourceCollection -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ResourceCollection[overload1]$$$ResourceCollection -->
+<h3 class="fn" id="ResourceCollection"><a name="ResourceCollection"></a>ResourceCollection::<span class="name">ResourceCollection</span>()</h3>
+<p>The class constructor creates an empty resource collection. By default the collection gets a unique name assigned using QUuid.</p>
+<!-- @@@ResourceCollection -->
+<!-- $$$ResourceCollection$$$ResourceCollectionconstQByteArray& -->
+<h3 class="fn" id="ResourceCollection-1"><a name="ResourceCollection-1"></a>ResourceCollection::<span class="name">ResourceCollection</span>(const <span class="type">QByteArray</span> &amp;<i>name</i>)</h3>
+<p>The class constructor creates an empty resource collection with a name set to <i>name</i>.</p>
+<!-- @@@ResourceCollection -->
+<!-- $$$appendResource[overload1]$$$appendResourceconstQSharedPointer<Resource>& -->
+<h3 class="fn" id="appendResource"><a name="appendResource"></a><span class="type">void</span> ResourceCollection::<span class="name">appendResource</span>(const <span class="type">QSharedPointer</span>&lt;<span class="type"><a href="qinstaller-resource.html">Resource</a></span>&gt; &amp;<i>resource</i>)</h3>
+<p>Appends <i>resource</i> to this collection. The collection takes ownership of <i>resource</i>.</p>
+<!-- @@@appendResource -->
+<!-- $$$appendResources[overload1]$$$appendResourcesconstQList<QSharedPointer<Resource>>& -->
+<h3 class="fn" id="appendResources"><a name="appendResources"></a><span class="type">void</span> ResourceCollection::<span class="name">appendResources</span>(const <span class="type">QList</span>&lt;<span class="type">QSharedPointer</span>&lt;<span class="type"><a href="qinstaller-resource.html">Resource</a></span>&gt; &gt; &amp;<i>resources</i>)</h3>
+<p>Appends a list of <i>resources</i> to this collection. The collection takes ownership of <i>resources</i>.</p>
+<!-- @@@appendResources -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn" id="name"><a name="name"></a><span class="type">QByteArray</span> ResourceCollection::<span class="name">name</span>() const</h3>
+<p>Returns the name of the resource collection.</p>
+<p><b>See also </b><a href="qinstaller-resourcecollection.html#setName">setName</a>().</p>
+<!-- @@@name -->
+<!-- $$$resourceByName[overload1]$$$resourceByNameconstQByteArray& -->
+<h3 class="fn" id="resourceByName"><a name="resourceByName"></a><span class="type">QSharedPointer</span>&lt;<span class="type"><a href="qinstaller-resource.html">Resource</a></span>&gt; ResourceCollection::<span class="name">resourceByName</span>(const <span class="type">QByteArray</span> &amp;<i>name</i>) const</h3>
+<p>Returns the resource associated with the name <i>name</i>.</p>
+<!-- @@@resourceByName -->
+<!-- $$$resources[overload1]$$$resources -->
+<h3 class="fn" id="resources"><a name="resources"></a><span class="type">QList</span>&lt;<span class="type">QSharedPointer</span>&lt;<span class="type"><a href="qinstaller-resource.html">Resource</a></span>&gt; &gt; ResourceCollection::<span class="name">resources</span>() const</h3>
+<p>Returns the resources associated with this collection.</p>
+<!-- @@@resources -->
+<!-- $$$setName[overload1]$$$setNameconstQByteArray& -->
+<h3 class="fn" id="setName"><a name="setName"></a><span class="type">void</span> ResourceCollection::<span class="name">setName</span>(const <span class="type">QByteArray</span> &amp;<i>name</i>)</h3>
+<p>Sets the name of the resource collection to <i>name</i>.</p>
+<p><b>See also </b><a href="qinstaller-resourcecollection.html#name">name</a>().</p>
+<!-- @@@setName -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

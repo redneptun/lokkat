@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- scriptengine.cpp -->
+  <title>ScriptEngine Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >ScriptEngine</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ScriptEngine Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-scriptengine.html">QInstaller::ScriptEngine</a>)<br/></span>
+<!-- $$$ScriptEngine-brief -->
+<p>The <a href="qinstaller-scriptengine.html">ScriptEngine</a> class is used to prepare and run the component scripts. <a href="#details">More...</a></p>
+<!-- @@@ScriptEngine -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;ScriptEngine&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-scriptengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#ScriptEngine">ScriptEngine</a></b>(PackageManagerCore *<i>core</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#addToGlobalObject">addToGlobalObject</a></b>(QObject *<i>object</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#callScriptMethod">callScriptMethod</a></b>(const QJSValue &amp;<i>scriptContext</i>, const QString &amp;<i>methodName</i>, const QJSValueList &amp;<i>arguments</i> = QJSValueList())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#evaluate">evaluate</a></b>(const QString &amp;<i>program</i>, const QString &amp;<i>fileName</i> = QString(), int <i>lineNumber</i> = 1)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#globalObject">globalObject</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#loadInContext">loadInContext</a></b>(const QString &amp;<i>context</i>, const QString &amp;<i>fileName</i>, const QString &amp;<i>scriptInjection</i> = QString())</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#newArray">newArray</a></b>(uint <i>length</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QJSValue </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#newQObject">newQObject</a></b>(QObject *<i>object</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-scriptengine.html#removeFromGlobalObject">removeFromGlobalObject</a></b>(QObject *<i>object</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$ScriptEngine-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-scriptengine.html">ScriptEngine</a> class is used to prepare and run the component scripts.</p>
+</div>
+<!-- @@@ScriptEngine -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$ScriptEngine[overload1]$$$ScriptEnginePackageManagerCore* -->
+<h3 class="fn" id="ScriptEngine"><a name="ScriptEngine"></a>ScriptEngine::<span class="name">ScriptEngine</span>(<span class="type"><a href="qinstaller-packagemanagercore.html">PackageManagerCore</a></span> *<i>core</i> = 0)</h3>
+<p>Constructs a script engine with <i>core</i> as parent.</p>
+<!-- @@@ScriptEngine -->
+<!-- $$$addToGlobalObject[overload1]$$$addToGlobalObjectQObject* -->
+<h3 class="fn" id="addToGlobalObject"><a name="addToGlobalObject"></a><span class="type">void</span> ScriptEngine::<span class="name">addToGlobalObject</span>(<span class="type">QObject</span> *<i>object</i>)</h3>
+<p>Registers QObject <i>object</i> in the engine, and makes it globally accessible under its object name.</p>
+<!-- @@@addToGlobalObject -->
+<!-- $$$callScriptMethod[overload1]$$$callScriptMethodconstQJSValue&constQString&constQJSValueList& -->
+<h3 class="fn" id="callScriptMethod"><a name="callScriptMethod"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">callScriptMethod</span>(const <span class="type">QJSValue</span> &amp;<i>scriptContext</i>, const <span class="type">QString</span> &amp;<i>methodName</i>, const <span class="type">QJSValueList</span> &amp;<i>arguments</i> = QJSValueList())</h3>
+<p>Tries to call the method specified by <i>methodName</i> with the arguments specified by <i>arguments</i> within the script and returns the result. If the method does not exist or is not callable, an undefined result is returned. If the call to the method succeeds and the return value is still undefined, a null value will be returned instead. If the method call has an exception, its string representation is thrown as an Error exception.</p>
+<p><b>Note: </b>The method is not called if <i>scriptContext</i> is the same method, to avoid infinite recursion.</p><!-- @@@callScriptMethod -->
+<!-- $$$evaluate[overload1]$$$evaluateconstQString&constQString&int -->
+<h3 class="fn" id="evaluate"><a name="evaluate"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">evaluate</span>(const <span class="type">QString</span> &amp;<i>program</i>, const <span class="type">QString</span> &amp;<i>fileName</i> = QString(), <span class="type">int</span> <i>lineNumber</i> = 1)</h3>
+<p>Evaluates <i>program</i>, using <i>lineNumber</i> as the base line number, and returns the results of the evaluation. <i>fileName</i> is used for error reporting.</p>
+<!-- @@@evaluate -->
+<!-- $$$globalObject[overload1]$$$globalObject -->
+<h3 class="fn" id="globalObject"><a name="globalObject"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">globalObject</span>() const</h3>
+<p>Returns a global object.</p>
+<!-- @@@globalObject -->
+<!-- $$$loadInContext[overload1]$$$loadInContextconstQString&constQString&constQString& -->
+<h3 class="fn" id="loadInContext"><a name="loadInContext"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">loadInContext</span>(const <span class="type">QString</span> &amp;<i>context</i>, const <span class="type">QString</span> &amp;<i>fileName</i>, const <span class="type">QString</span> &amp;<i>scriptInjection</i> = QString())</h3>
+<p>Loads a script into the given <i>context</i> at <i>fileName</i> inside the <a href="qinstaller-scriptengine.html">ScriptEngine</a>.</p>
+<p>The installer and all its components as well as other useful stuff are being exported into the script. For more information, see <a href="scripting.html">Component Scripting</a>. Throws Error when either the script at <i>fileName</i> could not be opened, or the QScriptEngine could not evaluate the script.</p>
+<p>TODO: document <i>scriptInjection</i>.</p>
+<!-- @@@loadInContext -->
+<!-- $$$newArray[overload1]$$$newArrayuint -->
+<h3 class="fn" id="newArray"><a name="newArray"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">newArray</span>(<span class="type">uint</span> <i>length</i> = 0)</h3>
+<p>Creates a JavaScript object of class Array with the specified <i>length</i>.</p>
+<!-- @@@newArray -->
+<!-- $$$newQObject[overload1]$$$newQObjectQObject* -->
+<h3 class="fn" id="newQObject"><a name="newQObject"></a><span class="type">QJSValue</span> ScriptEngine::<span class="name">newQObject</span>(<span class="type">QObject</span> *<i>object</i>)</h3>
+<p>Creates a JavaScript object that wraps the given QObject <i>object</i>.</p>
+<p>Signals and slots, properties and children of <i>object</i> are available as properties of the created QJSValue. In addition some helper methods and properties are added:</p>
+<ul>
+<li>findChild(), findChildren() recursively search for child objects with the given object name.</li>
+<li>Direct child objects are made accessible as properties under their respective object names.</li>
+</ul>
+<!-- @@@newQObject -->
+<!-- $$$removeFromGlobalObject[overload1]$$$removeFromGlobalObjectQObject* -->
+<h3 class="fn" id="removeFromGlobalObject"><a name="removeFromGlobalObject"></a><span class="type">void</span> ScriptEngine::<span class="name">removeFromGlobalObject</span>(<span class="type">QObject</span> *<i>object</i>)</h3>
+<p>Removes the <i>object</i> name from the global object.</p>
+<!-- @@@removeFromGlobalObject -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

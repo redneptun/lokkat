@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- messageboxhandler.cpp -->
+  <title>MessageBoxHandler Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >MessageBoxHandler</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-types">Public Types</a></li>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#buttons-in-message-boxes">Buttons in Message Boxes</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">MessageBoxHandler Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-messageboxhandler.html">QInstaller::MessageBoxHandler</a>)<br/></span>
+<!-- $$$MessageBoxHandler-brief -->
+<p>The <a href="qinstaller-messageboxhandler.html">MessageBoxHandler</a> class provides a modal dialog for informing the user or asking the user a question and receiving an answer. <a href="#details">More...</a></p>
+<!-- @@@MessageBoxHandler -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;MessageBoxHandler&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-messageboxhandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h2 id="public-types">Public Types</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#DefaultAction-enum">DefaultAction</a></b> { AskUser, Accept, Reject }</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> enum </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#MessageType-enum">MessageType</a></b> { criticalType, informationType, questionType, warningType }</td></tr>
+</table></div>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#critical-1">critical</a></b>(const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, int <i>buttons</i> = QMessageBox::Ok, int <i>button</i> = QMessageBox::NoButton) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#information-1">information</a></b>(const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, int <i>buttons</i> = QMessageBox::Ok, int <i>button</i> = QMessageBox::NoButton) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#question-1">question</a></b>(const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, int <i>buttons</i> = QMessageBox::Yes | QMessageBox::No, int <i>button</i> = QMessageBox::NoButton) const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#setAutomaticAnswer">setAutomaticAnswer</a></b>(const QString &amp;<i>identifier</i>, QMessageBox::StandardButton <i>answer</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#setDefaultAction">setDefaultAction</a></b>(DefaultAction <i>defaultAction</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#warning-1">warning</a></b>(const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, int <i>buttons</i> = QMessageBox::Ok, int <i>button</i> = QMessageBox::NoButton) const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QMessageBox::StandardButton </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#critical">critical</a></b>(QWidget *<i>parent</i>, const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, QMessageBox::StandardButtons <i>buttons</i> = QMessageBox::Ok, QMessageBox::StandardButton <i>button</i> = QMessageBox::NoButton)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QWidget *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#currentBestSuitParent">currentBestSuitParent</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMessageBox::StandardButton </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#information">information</a></b>(QWidget *<i>parent</i>, const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, QMessageBox::StandardButtons <i>buttons</i> = QMessageBox::Ok, QMessageBox::StandardButton <i>button</i> = QMessageBox::NoButton)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> MessageBoxHandler *</td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#instance">instance</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QList&lt;QMessageBox::Button&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#orderedButtons">orderedButtons</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMessageBox::StandardButton </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#question">question</a></b>(QWidget *<i>parent</i>, const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, QMessageBox::StandardButtons <i>buttons</i> = QMessageBox::Yes | QMessageBox::No, QMessageBox::StandardButton <i>button</i> = QMessageBox::NoButton)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QMessageBox::StandardButton </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-messageboxhandler.html#warning">warning</a></b>(QWidget *<i>parent</i>, const QString &amp;<i>identifier</i>, const QString &amp;<i>title</i>, const QString &amp;<i>text</i>, QMessageBox::StandardButtons <i>buttons</i> = QMessageBox::Ok, QMessageBox::StandardButton <i>button</i> = QMessageBox::NoButton)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$MessageBoxHandler-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-messageboxhandler.html">MessageBoxHandler</a> class provides a modal dialog for informing the user or asking the user a question and receiving an answer.</p>
+<pre class="cpp plain">
+
+  var result = QMessageBox.question(&quot;quit.question&quot;, &quot;Installer&quot;, &quot;Do you want to quit the installer?&quot;,
+                                    QMessageBox.Yes | QMessageBox.No);
+  if (result == QMessageBox.Yes) {
+     // ..&#x2e;
+  }
+
+</pre>
+<a name="buttons-in-message-boxes"></a>
+<h4 >Buttons in Message Boxes</h4>
+<p><code>QMessageBox</code> defines a list of common buttons:</p>
+<ul>
+<li>OK</li>
+<li>Open</li>
+<li>Save</li>
+<li>Cancel</li>
+<li>Close</li>
+<li>Discard</li>
+<li>Apply</li>
+<li>Reset</li>
+<li>RestoreDefaults</li>
+<li>Help</li>
+<li>SaveAll</li>
+<li>Yes</li>
+<li>YesToAll</li>
+<li>No</li>
+<li>NoToAll</li>
+<li>Abort</li>
+<li>Retry</li>
+<li>Ignore</li>
+<li>NoButton</li>
+</ul>
+</div>
+<!-- @@@MessageBoxHandler -->
+<div class="types">
+<h2>Member Type Documentation</h2>
+<!-- $$$DefaultAction$$$AskUser$$$Accept$$$Reject -->
+<h3 class="fn" id="DefaultAction-enum"><a name="DefaultAction-enum"></a>enum MessageBoxHandler::<span class="name">DefaultAction</span></h3>
+<p>This enum value holds the default action for the message box handler:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::AskUser</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">Ask the end user for confirmation.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::Accept</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">Accept the message box.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::Reject</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">Reject the message box.</td></tr>
+</table></div>
+<!-- @@@DefaultAction -->
+<!-- $$$MessageType$$$criticalType$$$informationType$$$questionType$$$warningType -->
+<h3 class="fn" id="MessageType-enum"><a name="MessageType-enum"></a>enum MessageBoxHandler::<span class="name">MessageType</span></h3>
+<p>This enum value holds the severity level of the message displayed in the message box:</p>
+<div class="table"><table class="valuelist"><tr valign="top" class="odd"><th class="tblConst">Constant</th><th class="tblval">Value</th><th class="tbldscr">Description</th></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::criticalType</code></td><td class="topAlign tblval"><code>0</code></td><td class="topAlign">Reports critical errors.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::informationType</code></td><td class="topAlign tblval"><code>1</code></td><td class="topAlign">Reports information about normal operations.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::questionType</code></td><td class="topAlign tblval"><code>2</code></td><td class="topAlign">Asks a question during normal operations.</td></tr>
+<tr><td class="topAlign"><code>QInstaller::MessageBoxHandler::warningType</code></td><td class="topAlign tblval"><code>3</code></td><td class="topAlign">Reports non-critical errors.</td></tr>
+</table></div>
+<!-- @@@MessageType -->
+</div>
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$critical[overload1]$$$criticalQWidget*constQString&constQString&constQString&QMessageBox::StandardButtonsQMessageBox::StandardButton -->
+<h3 class="fn" id="critical"><a name="critical"></a><code>[static] </code><span class="type">QMessageBox::StandardButton</span> MessageBoxHandler::<span class="name">critical</span>(<span class="type">QWidget</span> *<i>parent</i>, const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">QMessageBox::StandardButtons</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">QMessageBox::StandardButton</span> <i>button</i> = QMessageBox::NoButton)</h3>
+<p>Opens a critical message box with the parent <i>parent</i>, identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@critical -->
+<!-- $$$critical$$$criticalconstQString&constQString&constQString&intint -->
+<h3 class="fn" id="critical-1"><a name="critical-1"></a><span class="type">int</span> MessageBoxHandler::<span class="name">critical</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">int</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">int</span> <i>button</i> = QMessageBox::NoButton) const</h3>
+<p>Opens a critical message box with the identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@critical -->
+<!-- $$$currentBestSuitParent[overload1]$$$currentBestSuitParent -->
+<h3 class="fn" id="currentBestSuitParent"><a name="currentBestSuitParent"></a><code>[static] </code><span class="type">QWidget</span> *MessageBoxHandler::<span class="name">currentBestSuitParent</span>()</h3>
+<p>Returns the widget or window that is most suitable to become the parent of the message box. Returns <code>0</code> if an application cannot be found.</p>
+<!-- @@@currentBestSuitParent -->
+<!-- $$$information[overload1]$$$informationQWidget*constQString&constQString&constQString&QMessageBox::StandardButtonsQMessageBox::StandardButton -->
+<h3 class="fn" id="information"><a name="information"></a><code>[static] </code><span class="type">QMessageBox::StandardButton</span> MessageBoxHandler::<span class="name">information</span>(<span class="type">QWidget</span> *<i>parent</i>, const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">QMessageBox::StandardButtons</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">QMessageBox::StandardButton</span> <i>button</i> = QMessageBox::NoButton)</h3>
+<p>Opens an information message box with the parent <i>parent</i>, identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@information -->
+<!-- $$$information$$$informationconstQString&constQString&constQString&intint -->
+<h3 class="fn" id="information-1"><a name="information-1"></a><span class="type">int</span> MessageBoxHandler::<span class="name">information</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">int</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">int</span> <i>button</i> = QMessageBox::NoButton) const</h3>
+<p>Opens an information message box with the identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@information -->
+<!-- $$$instance[overload1]$$$instance -->
+<h3 class="fn" id="instance"><a name="instance"></a><code>[static] </code><span class="type">MessageBoxHandler</span> *MessageBoxHandler::<span class="name">instance</span>()</h3>
+<p>Returns a message box handler instance.</p>
+<!-- @@@instance -->
+<!-- $$$orderedButtons[overload1]$$$orderedButtons -->
+<h3 class="fn" id="orderedButtons"><a name="orderedButtons"></a><code>[static] </code><span class="type">QList</span>&lt;<span class="type">QMessageBox::Button</span>&gt; MessageBoxHandler::<span class="name">orderedButtons</span>()</h3>
+<p>Returns an ordered list of buttons to display in the message box.</p>
+<!-- @@@orderedButtons -->
+<!-- $$$question[overload1]$$$questionQWidget*constQString&constQString&constQString&QMessageBox::StandardButtonsQMessageBox::StandardButton -->
+<h3 class="fn" id="question"><a name="question"></a><code>[static] </code><span class="type">QMessageBox::StandardButton</span> MessageBoxHandler::<span class="name">question</span>(<span class="type">QWidget</span> *<i>parent</i>, const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">QMessageBox::StandardButtons</span> <i>buttons</i> = QMessageBox::Yes | QMessageBox::No, <span class="type">QMessageBox::StandardButton</span> <i>button</i> = QMessageBox::NoButton)</h3>
+<p>Opens a question message box with the parent <i>parent</i>, identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@question -->
+<!-- $$$question$$$questionconstQString&constQString&constQString&intint -->
+<h3 class="fn" id="question-1"><a name="question-1"></a><span class="type">int</span> MessageBoxHandler::<span class="name">question</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">int</span> <i>buttons</i> = QMessageBox::Yes | QMessageBox::No, <span class="type">int</span> <i>button</i> = QMessageBox::NoButton) const</h3>
+<p>Opens a question message box with the identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@question -->
+<!-- $$$setAutomaticAnswer[overload1]$$$setAutomaticAnswerconstQString&QMessageBox::StandardButton -->
+<h3 class="fn" id="setAutomaticAnswer"><a name="setAutomaticAnswer"></a><span class="type">void</span> MessageBoxHandler::<span class="name">setAutomaticAnswer</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, <span class="type">QMessageBox::StandardButton</span> <i>answer</i>)</h3>
+<p>Sets the button that is used as the default button and that is automatically invoked if a message box is shown in automatic mode. The string <i>identifier</i> is used to identify the message box that the default button <i>answer</i> is associated to.</p>
+<!-- @@@setAutomaticAnswer -->
+<!-- $$$setDefaultAction[overload1]$$$setDefaultActionDefaultAction -->
+<h3 class="fn" id="setDefaultAction"><a name="setDefaultAction"></a><span class="type">void</span> MessageBoxHandler::<span class="name">setDefaultAction</span>(<span class="type"><a href="qinstaller-messageboxhandler.html#DefaultAction-enum">DefaultAction</a></span> <i>defaultAction</i>)</h3>
+<p>Sets the default action for the message box to <i>defaultAction</i>.</p>
+<!-- @@@setDefaultAction -->
+<!-- $$$warning[overload1]$$$warningQWidget*constQString&constQString&constQString&QMessageBox::StandardButtonsQMessageBox::StandardButton -->
+<h3 class="fn" id="warning"><a name="warning"></a><code>[static] </code><span class="type">QMessageBox::StandardButton</span> MessageBoxHandler::<span class="name">warning</span>(<span class="type">QWidget</span> *<i>parent</i>, const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">QMessageBox::StandardButtons</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">QMessageBox::StandardButton</span> <i>button</i> = QMessageBox::NoButton)</h3>
+<p>Opens a warning message box with the parent <i>parent</i>, identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@warning -->
+<!-- $$$warning$$$warningconstQString&constQString&constQString&intint -->
+<h3 class="fn" id="warning-1"><a name="warning-1"></a><span class="type">int</span> MessageBoxHandler::<span class="name">warning</span>(const <span class="type">QString</span> &amp;<i>identifier</i>, const <span class="type">QString</span> &amp;<i>title</i>, const <span class="type">QString</span> &amp;<i>text</i>, <span class="type">int</span> <i>buttons</i> = QMessageBox::Ok, <span class="type">int</span> <i>button</i> = QMessageBox::NoButton) const</h3>
+<p>Opens a warning message box with the identifier <i>identifier</i>, title <i>title</i>, and text <i>text</i>.</p>
+<p>The standard buttons specified by <i>buttons</i> are added to the message box. <i>button</i> specifies the button that is used when <b>Enter</b> is pressed. <i>button</i> must refer to a button that is specified in <i>buttons</i>. If <i>button</i> is QMessageBox::NoButton, a suitable default is chosen automatically.</p>
+<p>Returns the identity of the standard button that was clicked. However, if <b>Esc</b> was pressed, returns the escape button.</p>
+<!-- @@@warning -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

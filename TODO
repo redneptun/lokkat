@@ -1,0 +1,62 @@
+Features:
+=========
+
+Not now:
+------------
+- Windows Uninstall startmenu shortcut?
+
+1.0:
+----
+- create project website
+- upload project to github
+- bugreporting
+- nicer icons
+
+1.0?:
+-----
+- save en/decryption path in config
+- config location for windows not in ".config"?
+- errorlogging
+- optimization: better memory usage?
+- more start menu entries
+- deb package
+
+1.1+
+----
+- fix windows version not working with python multiprocessing
+- version string update system
+- check for remaining space before enc/dec
+- notice crashes: cleanup?
+- close/abort warning, cleanup?
+- mvc overhaul..?
+
+Bugs:
+=====
+- it should take longer hovering for tooltips to appear
+- something is not quite right with the .gitignore in dist/windows & dist
+- Python37 probably not portable...
+
+Won't fix (for now):
+====================
+- fix windows help file path bug
+- cant properly open help after starting directly from installer
+
+Done:
+=====
+- OK default en/decryption path in userhome
+- OK l10n for file dialogs
+- OK colored INFO/ERROR/SUCCESS messages
+- OK create support mail address
+- OK no UI response while waiting for the ANU...
+- OK no response from UI during en/decryption on Windows
+- OK min width 600px for installer
+- OK use another hotkey for project website
+- OK ANU timeout after 60! seconds + UI text
+- OK physikalischer/physischer Zufall in rbAnu-Beschreibungstext
+- OK reset easter egg
+- OK about dialog min size is to large
+- OK desktop shortcut
+- OK start menu entry!
+- OK "Install Lokkat" in the component installer
+- OK fix donation link
+- OK fix https bug on windows (certifi?)

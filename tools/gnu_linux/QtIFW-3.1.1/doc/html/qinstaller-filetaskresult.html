@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- abstractfiletask.cpp -->
+  <title>FileTaskResult Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >FileTaskResult</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">FileTaskResult Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-filetaskresult.html">QInstaller::FileTaskResult</a>)<br/></span>
+<!-- $$$FileTaskResult-brief -->
+<p>The <a href="qinstaller-filetaskresult.html">FileTaskResult</a> class represents the results of a file task. <a href="#details">More...</a></p>
+<!-- @@@FileTaskResult -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;FileTaskResult&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-filetaskresult-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#FileTaskResult">FileTaskResult</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#FileTaskResult-1">FileTaskResult</a></b>(const QString &amp;<i>t</i>, const QByteArray &amp;<i>c</i>, const FileTaskItem &amp;<i>i</i>, bool <i>checksumMismatch</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#checkSum">checkSum</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#checksumMismatch">checksumMismatch</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QString </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#target">target</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> FileTaskItem </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-filetaskresult.html#taskItem">taskItem</a></b>() const</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$FileTaskResult-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The <a href="qinstaller-filetaskresult.html">FileTaskResult</a> class represents the results of a file task.</p>
+</div>
+<!-- @@@FileTaskResult -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$FileTaskResult[overload1]$$$FileTaskResult -->
+<h3 class="fn" id="FileTaskResult"><a name="FileTaskResult"></a>FileTaskResult::<span class="name">FileTaskResult</span>()</h3>
+<p>Creates file task results.</p>
+<!-- @@@FileTaskResult -->
+<!-- $$$FileTaskResult$$$FileTaskResultconstQString&constQByteArray&constFileTaskItem&bool -->
+<h3 class="fn" id="FileTaskResult-1"><a name="FileTaskResult-1"></a>FileTaskResult::<span class="name">FileTaskResult</span>(const <span class="type">QString</span> &amp;<i>t</i>, const <span class="type">QByteArray</span> &amp;<i>c</i>, const <span class="type"><a href="qinstaller-filetaskitem.html">FileTaskItem</a></span> &amp;<i>i</i>, <span class="type">bool</span> <i>checksumMismatch</i>)</h3>
+<p>Default constructs an instance of FileTaskResult.</p><!-- @@@FileTaskResult -->
+<!-- $$$checkSum[overload1]$$$checkSum -->
+<h3 class="fn" id="checkSum"><a name="checkSum"></a><span class="type">QByteArray</span> FileTaskResult::<span class="name">checkSum</span>() const</h3>
+<p>Returns the checksum of the task result.</p>
+<!-- @@@checkSum -->
+<!-- $$$checksumMismatch[overload1]$$$checksumMismatch -->
+<h3 class="fn" id="checksumMismatch"><a name="checksumMismatch"></a><span class="type">bool</span> FileTaskResult::<span class="name">checksumMismatch</span>() const</h3>
+<!-- @@@checksumMismatch -->
+<!-- $$$target[overload1]$$$target -->
+<h3 class="fn" id="target"><a name="target"></a><span class="type">QString</span> FileTaskResult::<span class="name">target</span>() const</h3>
+<p>Returns the target file of the task result.</p>
+<!-- @@@target -->
+<!-- $$$taskItem[overload1]$$$taskItem -->
+<h3 class="fn" id="taskItem"><a name="taskItem"></a><span class="type"><a href="qinstaller-filetaskitem.html">FileTaskItem</a></span> FileTaskResult::<span class="name">taskItem</span>() const</h3>
+<p>Returns file task items.</p>
+<!-- @@@taskItem -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

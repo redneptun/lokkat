@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>installscript.qs Example File | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td ><a href="qt-installer-framework-registerfileextension-example.html">Register File Extension Example</a></td><td >installscript.qs Example File</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">installscript.qs Example File</h1>
+<span class="subtitle">registerfileextension/packages/org.qtproject.ifw.example.registerfileextension/meta/installscript.qs</span>
+<!-- $$$registerfileextension/packages/org.qtproject.ifw.example.registerfileextension/meta/installscript.qs-description -->
+<div class="descr"> <a name="details"></a>
+<pre class="cpp">
+
+  /****************************************************************************
+  **
+  ** Copyright (C) 2017 The Qt Company Ltd.
+  ** Contact: https://www.qt.io/licensing/
+  **
+  ** This file is part of the FOO module of the Qt Toolkit.
+  **
+  ** $QT_BEGIN_LICENSE:GPL-EXCEPT$
+  ** Commercial License Usage
+  ** Licensees holding valid commercial Qt licenses may use this file in
+  ** accordance with the commercial license agreement provided with the
+  ** Software or, alternatively, in accordance with the terms contained in
+  ** a written agreement between you and The Qt Company. For licensing terms
+  ** and conditions see https://www.qt.io/terms-conditions. For further
+  ** information use the contact form at https://www.qt.io/contact-us.
+  **
+  ** GNU General Public License Usage
+  ** Alternatively, this file may be used under the terms of the GNU
+  ** General Public License version 3 as published by the Free Software
+  ** Foundation with exceptions as appearing in the file LICENSE.GPL3-EXCEPT
+  ** included in the packaging of this file. Please review the following
+  ** information to ensure the GNU General Public License requirements will
+  ** be met: https://www.gnu.org/licenses/gpl-3.0.html.
+  **
+  ** $QT_END_LICENSE$
+  **
+  ****************************************************************************/
+
+  function Component()
+  {
+      component.loaded.connect(this, addRegisterFileCheckBox);
+      installer.installationFinished.connect(this, addOpenFileCheckBoxToFinishPage);
+      installer.finishButtonClicked.connect(this, openRegisteredFileIfChecked);
+      component.unusualFileType = generateUnusualFileType(5)
+  }
+
+  generateUnusualFileType = function(length)
+  {
+      var randomString = &quot;&quot;;
+      var possible = &quot;abcdefghijklmnopqrstuvwxyz0123456789&quot;;
+
+      for (var i = 0; i &lt; length; i++)
+          randomString += possible.charAt(Math.floor(Math.random() * possible.length));
+      return randomString;
+  }
+
+  // called as soon as the component was loaded
+  addRegisterFileCheckBox = function()
+  {
+      // don't show when updating or uninstalling
+      if (installer.isInstaller()) {
+          installer.addWizardPageItem(component, &quot;RegisterFileCheckBoxForm&quot;, QInstaller.TargetDirectory);
+          component.userInterface(&quot;RegisterFileCheckBoxForm&quot;).RegisterFileCheckBox.text =
+              component.userInterface(&quot;RegisterFileCheckBoxForm&quot;).RegisterFileCheckBox.text + component.unusualFileType;
+      }
+  }
+
+  // here we are creating the operation chain which will be processed at the real installation part later
+  Component.prototype.createOperations = function()
+  {
+      // call default implementation to actually install the registeredfile
+      component.createOperations();
+
+      var isRegisterFileChecked = component.userInterface(&quot;RegisterFileCheckBoxForm&quot;).RegisterFileCheckBox.checked;
+      if (installer.value(&quot;os&quot;) === &quot;win&quot;) {
+          var iconId = 0;
+          var notepadPath = installer.environmentVariable(&quot;SystemRoot&quot;) + &quot;\\notepad.exe&quot;;
+          component.addOperation(&quot;RegisterFileType&quot;,
+                                 component.unusualFileType,
+                                 notepadPath + &quot; '%1'&quot;,
+                                 &quot;QInstaller Framework example file type&quot;,
+                                 &quot;text/plain&quot;,
+                                 notepadPath + &quot;,&quot; + iconId,
+                                 &quot;ProgId=QtProject.QtInstallerFramework.&quot; + component.unusualFileType);
+      }
+      component.fileWithRegisteredType = installer.value(&quot;TargetDir&quot;) + &quot;/registeredfile.&quot; + component.unusualFileType
+      component.addOperation(&quot;Move&quot;, &quot;@TargetDir@/registeredfile&quot;, component.fileWithRegisteredType);
+  }
+
+  openRegisteredFileIfChecked = function()
+  {
+      if (!component.installed)
+          return;
+
+      if (installer.value(&quot;os&quot;) == &quot;win&quot; &amp;&amp; installer.isInstaller() &amp;&amp; installer.status == QInstaller.Success) {
+          var isOpenRegisteredFileChecked = component.userInterface(&quot;OpenFileCheckBoxForm&quot;).OpenRegisteredFileCheckBox.checked;
+          if (isOpenRegisteredFileChecked) {
+              QDesktopServices.openUrl(&quot;file:///&quot; + component.fileWithRegisteredType);
+          }
+      }
+  }
+
+  addOpenFileCheckBoxToFinishPage = function()
+  {
+      if (installer.isInstaller() &amp;&amp; installer.status == QInstaller.Success) {
+          installer.addWizardPageItem(component, &quot;OpenFileCheckBoxForm&quot;, QInstaller.InstallationFinished);
+          component.userInterface(&quot;OpenFileCheckBoxForm&quot;).OpenRegisteredFileCheckBox.text =
+              component.userInterface(&quot;OpenFileCheckBoxForm&quot;).OpenRegisteredFileCheckBox.text + component.unusualFileType;
+      }
+  }
+
+</pre>
+</div>
+<!-- @@@registerfileextension/packages/org.qtproject.ifw.example.registerfileextension/meta/installscript.qs -->
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

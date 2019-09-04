@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw.qdoc -->
+  <title>Tools | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Tools</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="operations.html" />
+  <link rel="next" href="scripting-qmlmodule.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="operations.html">Operations</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="scripting-qmlmodule.html">Scripting API</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#installerbase">installerbase</a></li>
+<li class="level1"><a href="#binarycreator">binarycreator</a></li>
+<li class="level2"><a href="#using-binarycreator">Using binarycreator</a></li>
+<li class="level2"><a href="#summary-of-binarycreator-parameters">Summary of binarycreator Parameters</a></li>
+<li class="level2"><a href="#using-icons">Using Icons</a></li>
+<li class="level1"><a href="#repogen">repogen</a></li>
+<li class="level2"><a href="#summary-of-repogen-parameters">Summary of repogen Parameters</a></li>
+<li class="level1"><a href="#archivegen">archivegen</a></li>
+<li class="level1"><a href="#devtool">devtool</a></li>
+<li class="level2"><a href="#summary-of-devtool-parameters">Summary of devtool Parameters</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Tools</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-tools.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The Qt Installer Framework contains the following tools:</p>
+<ul>
+<li><a href="ifw-tools.html#installerbase">installerbase</a></li>
+<li><a href="ifw-tools.html#binarycreator">binarycreator</a></li>
+<li><a href="ifw-tools.html#repogen">repogen</a></li>
+<li><a href="ifw-tools.html#archivegen">archivegen</a></li>
+<li><a href="ifw-tools.html#devtool">devtool</a></li>
+</ul>
+<a name="installerbase"></a>
+<h2 id="installerbase">installerbase</h2>
+<p>The <code>installerbase</code> tool describes the core installer itself. All data and meta information will be packed to this binary. For the installer creation process you will not need to call it directly.</p>
+<a name="binarycreator"></a>
+<h2 id="binarycreator">binarycreator</h2>
+<p>Use the <code>binarycreator</code> tool to create offline and online installers. Component information and data are appended to the offline installer binary, which enables the file extraction and post installation scripts to work without an Internet connection.</p>
+<p>Online installers store the location of the repository that contains the data. On startup, they load the component information, not the data.</p>
+<p>You can also create hybrid installers that store some components locally and receive others via a network connection. For more information, see <a href="ifw-online-installers.html#reducing-installer-size">Reducing Installer Size</a>.</p>
+<p>For information about how to implement data integration into the installer binary, see <a href="qinstaller-binarycontent.html">QInstaller::BinaryContent</a>.</p>
+<p><b>Note: </b>If you change this configuration, you must recompile the <code>installerbase</code> tool.</p><a name="using-binarycreator"></a>
+<h3 >Using binarycreator</h3>
+<p>You can use the <code>binarycreator</code> tool to create offline and online installers. Some options have default values, and therefore, you can omit them.</p>
+<p>To create an offline installer (in Windows), enter the following command:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\installerbase<span class="operator">.</span>exe <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span>\<span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+</li>
+<li>On Linux and OS X<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span><span class="operator">/</span>binarycreator <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span><span class="operator">/</span>installerbase <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span><span class="operator">/</span><span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+</li>
+</ul>
+<p>To create an online only installer, you can use the --online-only which defines all packages to install from an online repository on a web server:</p>
+<ul>
+<li>On Windows:<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\binarycreator<span class="operator">.</span>exe <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span>\installerbase<span class="operator">.</span>exe <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span>\<span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">-</span>e <span class="operator">&lt;</span>packages<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+</li>
+<li>On Linux and OS X<pre class="cpp">
+
+  <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span><span class="operator">/</span>binarycreator <span class="operator">-</span>t <span class="operator">&lt;</span>location<span class="operator">-</span>of<span class="operator">-</span>ifw<span class="operator">&gt;</span><span class="operator">/</span>installerbase <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">-</span>c <span class="operator">&lt;</span>config_directory<span class="operator">&gt;</span><span class="operator">/</span><span class="operator">&lt;</span>config_file<span class="operator">&gt;</span> <span class="operator">-</span>e <span class="operator">&lt;</span>packages<span class="operator">&gt;</span> <span class="operator">&lt;</span>installer_name<span class="operator">&gt;</span>
+
+</pre>
+</li>
+</ul>
+<a name="summary-of-binarycreator-parameters"></a>
+<h3 >Summary of binarycreator Parameters</h3>
+<p>The <code>binarycreator</code> tool accepts the following parameters:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Parameter</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >-t or --template file</td><td >Use <code>file</code> as an installer template binary to which the component information is appended. If you omit this parameter, the <code>installerbase</code> template is used.</td></tr>
+<tr valign="top" class="even"><td >-p or --packages directory</td><td >Use <code>directory</code> as the <a href="ifw-component-description.html#package-directory-structure">package directory</a>. Defaults to the current working directory.</td></tr>
+<tr valign="top" class="odd"><td >--repository directory</td><td >Use <code>directory</code> as the repository directory with packages to repack. This entry can be given multiple times.</td></tr>
+<tr valign="top" class="even"><td >-n or --online-only</td><td >Compile without any component in the installer binary.</td></tr>
+<tr valign="top" class="odd"><td >-f or --offline-only</td><td >Create an offline installer that never accesses online repositories.</td></tr>
+<tr valign="top" class="even"><td >-c or --config file</td><td >Use <code>file</code> as the <a href="ifw-globalconfig.html">config file</a>.</td></tr>
+<tr valign="top" class="odd"><td >-e or --exclude p1,..&#x2e;,pn</td><td >Comma-separated list of packages to retrieve from an online repository. The packages are not included in the installer binary.</td></tr>
+<tr valign="top" class="even"><td >-i or --include p1,..&#x2e;,pn</td><td >Comma-separated list of packages to retrieve from the installer binary. You cannot combine or merge <code>--include</code> and <code>--exclude</code>.</td></tr>
+<tr valign="top" class="odd"><td >-r or --resources</td><td >Comma-separated list of resources to include in the installer binary.</td></tr>
+<tr valign="top" class="even"><td >--ignore-translations</td><td >Disable the use of translation files to make testing faster.</td></tr>
+<tr valign="top" class="odd"><td >--ignore-invalid-packages</td><td >Ignore component or package directories that do not have valid metadata information (package.xml) to make testing faster.</td></tr>
+<tr valign="top" class="even"><td >--ignore-invalid-repositories</td><td >Ignore repository directories that do not have valid metadata information (Updates.xml) instead of aborting.</td></tr>
+<tr valign="top" class="odd"><td >-v or --verbose</td><td >Display debug output.</td></tr>
+<tr valign="top" class="even"><td >-s or --sign identity</td><td >Only available on OS X. Allows specifying a code signing identity to be used for signing the generated app bundle.</td></tr>
+</table></div>
+<p>These parameters are followed by the name of the target binary and a list of packages to be available for installation.</p>
+<p><b>Note: </b>The listed packages are included in the installer, as well as all their dependencies and all packages that share the same prefix, unless you specify the <code>--nodeps</code> parameter.</p><p>In the optional resource files specified via the <code>--resources</code> parameter, a special <code>fonts/</code> path can be used to ship custom fonts. These fonts will be loaded automatically and thus become available in a stylesheet which can be specified via the <code>StyleSheet</code> variable.</p>
+<p>On Windows, the name of the target binary is automatically extended with .exe, if you do not specify the extension. On Mac, the target is created as an application bundle with the extension .app, which is automatically added, if not supplied. Additionally, you can specify the .dmg extension, which creates a DMG disk image that contains an .app bundle.</p>
+<a name="using-icons"></a>
+<h3 >Using Icons</h3>
+<p>On OS X, if the target binary is suffixed with .app, a OS X application bundle is created. The icon that you specify in config.xml is extended with .icns and used as the icon for the created bundle.</p>
+<p>On Windows, the icon that you specify in config.xml is extended with .ico and used as the application icon for the .exe file.</p>
+<p>On Linux, the icon that you specify in config.xml is extended with .png and used as the window icon.</p>
+<a name="repogen"></a>
+<h2 id="repogen">repogen</h2>
+<p>Use the <code>repogen</code> tool to generate online repositories.</p>
+<p>The <code>repogen</code> tool expects the following parameters in the following order:</p>
+<pre class="cpp">
+
+  repogen<span class="operator">.</span>exe <span class="operator">-</span>p <span class="operator">&lt;</span>package_directory<span class="operator">&gt;</span> <span class="operator">&lt;</span>repository_directory<span class="operator">&gt;</span>
+
+</pre>
+<p>When the repository has been created, you can upload it anywhere. You must specify the location in the installer configuration file when creating an installer for it.</p>
+<p>You can use an existing repository to repack packages to another repository or offline installer.</p>
+<a name="summary-of-repogen-parameters"></a>
+<h3 >Summary of repogen Parameters</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Parameter</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >-p or --packages directory</td><td >Use <code>directory</code> as the <a href="ifw-component-description.html#package-directory-structure">package directory</a>. This is mandatory.</td></tr>
+<tr valign="top" class="even"><td >--repository directory</td><td >Use <code>directory</code> as the repository directory with packages to repack (not to confuse with the mandatory target repository directory). This entry can be given multiple times.</td></tr>
+<tr valign="top" class="odd"><td >repository directory</td><td >Target directory for the repository. During an initial installation, the directory must not yet exist. When updating, the directory may exist and its contents may be overwritten or removed. This is mandatory.</td></tr>
+<tr valign="top" class="even"><td >-e or --exclude p1,..&#x2e;,pn</td><td >Comma-separated list of packages to be ignored from the set of all packages in the packages directory.</td></tr>
+<tr valign="top" class="odd"><td >-i or --include p1,..&#x2e;,pn</td><td >Comma-separated list of packages to be used from the set of all packages in the packages directory.</td></tr>
+<tr valign="top" class="even"><td >--update</td><td >Update all packages in the packages directory. The list can be further filtered with the <code>-i</code>, <code>-e</code> parameters.</td></tr>
+<tr valign="top" class="odd"><td >--update-new-components</td><td >Update only components that are new or have a newer version. The list can be further filtered with the <code>-i</code>, <code>-e</code> parameters.</td></tr>
+<tr valign="top" class="even"><td >-r or --remove</td><td >Force removal of existing target directory before generating it again.</td></tr>
+<tr valign="top" class="odd"><td >-v or --verbose</td><td >Display debug output.</td></tr>
+</table></div>
+<p><b>Note: </b>We recommend that you use the <code>--update-new-packages</code> parameter to update an existing repository, especially if you have a content delivery system. This helps you avoid updating components that have not changed and this makes it much easier for a content delivery system to distribute only new files, because only the updated components are assigned new SHA checksums.</p><a name="archivegen"></a>
+<h2 id="archivegen">archivegen</h2>
+<p>You can use <code>archivegen</code> to package files and directories into 7zip (.7z) archives.</p>
+<p>The <code>archivegen</code> tool expects the following parameters in the following order:</p>
+<pre class="cpp">
+
+  archivegen <span class="operator">&lt;</span>name<span class="operator">.</span><span class="number">7z</span><span class="operator">&gt;</span> <span class="operator">&lt;</span>data<span class="operator">&gt;</span>
+
+</pre>
+<p>Where <i>&lt;name.7z&gt;</i> is the path and file name of the archive to create and <i>&lt;data&gt;</i> contains the paths and names of the files or directories to package into the archive, separated by spaces.</p>
+<a name="devtool"></a>
+<h2 id="devtool">devtool</h2>
+<p>You can use <code>devtool</code> to update an existing installer or maintenance tool with a new installer base, to dump binary content from an installer or maintenance tool to a target, and to execute operations. For a summary of available operations, see <a href="operations.html">Operations</a>.</p>
+<p><code>devtool</code> expects the following parameters in the following order:</p>
+<pre class="cpp">
+
+  devtool <span class="operator">[</span>options<span class="operator">]</span> binary
+
+</pre>
+<p>Where <i>binary</i> is the path and name of an existing installer or maintenance tool.</p>
+<a name="summary-of-devtool-parameters"></a>
+<h3 >Summary of devtool Parameters</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Parameter</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >-?, -h, --help</td><td >Display help.</td></tr>
+<tr valign="top" class="even"><td >-v, --version</td><td >Display version information.</td></tr>
+<tr valign="top" class="odd"><td >--verbose</td><td >Display additional information.</td></tr>
+<tr valign="top" class="even"><td >--update &lt;file&gt;</td><td >Update an existing installer or maintenance tool with a new installer base.</td></tr>
+<tr valign="top" class="odd"><td >--dump &lt;folder&gt;</td><td >Dump the binary content that belongs to an installer or maintenance tool into the target.</td></tr>
+<tr valign="top" class="even"><td >--operation &lt;mode,name,args,..&#x2e;&gt;</td><td >Execute an operation with a list of arguments.<p><code>mode</code> can be <code>DO</code> or <code>UNDO</code>, depending on whether the step contains instructions for the installer or uninstaller.</p>
+</td></tr>
+</table></div>
+</div>
+<!-- @@@ifw-tools.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="operations.html">Operations</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="scripting-qmlmodule.html">Scripting API</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-using.qdoc -->
+  <title>Removing Components | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Removing Components</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-use-cases-add.html" />
+  <link rel="next" href="ifw-use-cases-update.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-use-cases-add.html">Adding Components</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-update.html">Updating Components</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#removing-all-components">Removing All Components</a></li>
+<li class="level1"><a href="#removing-selected-components">Removing Selected Components</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Removing Components</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-use-cases-remove.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>The following image illustrates the default workflow for removing either all or some installed components:</p>
+<p class="centerAlign"><img src="images/ifw-user-flow-removing.png" alt="&quot;Remove components workflow&quot;" /></p><p>This section uses the Qt 5 Maintenance Tool run on OS X as an example implementation of how end users can remove all or selected components.</p>
+<a name="removing-all-components"></a>
+<h2 id="removing-all-components">Removing All Components</h2>
+<p>When end users start the Maintenance Tool, the introduction page opens:</p>
+<p class="centerAlign"><img src="images/ifw-add-components-introduction.png" alt="&quot;Introduction page&quot;" /></p><p>End users can select <b>Remove all components</b>, and then <b>Continue</b>, to remove all installed components.</p>
+<p>The ready to uninstall page informs end users that the uninstallation can begin when users select <b>Uninstall</b>.</p>
+<p class="centerAlign"><img src="images/ifw-ready-to-uninstall.png" alt="&quot;Ready to uninstall page&quot;" /></p><a name="removing-selected-components"></a>
+<h2 id="removing-selected-components">Removing Selected Components</h2>
+<p>End users can select <b>Package manager</b>, and then <b>Continue</b>, to select components to remove on the component selection page:</p>
+<p class="centerAlign"><img src="images/ifw-add-components-selection.png" alt="&quot;Component selection page&quot;" /></p><p>When end users deselect the components to remove, and then select <b>Continue</b>, the ready to update page opens. It informs end users that the components are removed when users select <b>Update</b>.</p>
+<p class="centerAlign"><img src="images/ifw-ready-to-update.png" alt="&quot;Ready to update page&quot;" /></p><p>The update page displays information about how removal is progressing. End users can select <b>Show Details</b> to view more information.</p>
+<p class="centerAlign"><img src="images/ifw-removing-components.png" alt="&quot;Update page&quot;" /></p><p>When the removal is complete, the update finished page opens.</p>
+<p class="centerAlign"><img src="images/ifw-update-finished.png" alt="&quot;Update finished page&quot;" /></p></div>
+<!-- @@@ifw-use-cases-remove.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-use-cases-add.html">Adding Components</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases-update.html">Updating Components</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

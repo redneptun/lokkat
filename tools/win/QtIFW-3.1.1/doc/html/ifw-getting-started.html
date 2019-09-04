@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- installerfw-getting-started.qdoc -->
+  <title>Getting Started | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Getting Started</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+  <link rel="prev" href="ifw-overview.html" />
+  <link rel="next" href="ifw-use-cases.html" />
+<p class="naviNextPrevious headerNavi">
+<a class="prevPage" href="ifw-overview.html">Overview of Qt Installer Framework</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases.html">End User Workflows</a>
+</p><p/>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#supported-platforms">Supported Platforms</a></li>
+<li class="level1"><a href="#building-from-sources">Building from Sources</a></li>
+<li class="level2"><a href="#supported-compilers">Supported Compilers</a></li>
+<li class="level2"><a href="#configuring-qt">Configuring Qt</a></li>
+<li class="level2"><a href="#setting-up-qt-installer-framework">Setting up Qt Installer Framework</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Getting Started</h1>
+<span class="subtitle"></span>
+<!-- $$$ifw-getting-started.html-description -->
+<div class="descr"> <a name="details"></a>
+<p>Qt Installer Framework is developed as part of the Qt project. The framework itself uses Qt. However, it can be used to install all kind of applications, including (but not limited to) applications built with Qt.</p>
+<a name="supported-platforms"></a>
+<h2 id="supported-platforms">Supported Platforms</h2>
+<p>You can use the Qt Installer Framework to create installers for all platforms supported by <a href="ifw-getting-started.html#supported-platforms">desktop Qt</a>.</p>
+<p>The installers have been tested on the following platforms:</p>
+<ul>
+<li>Microsoft Windows XP, and later</li>
+<li>Ubuntu Linux 11.10, and later</li>
+<li>OS X 10.7, and later</li>
+</ul>
+<a name="building-from-sources"></a>
+<h2 id="building-from-sources">Building from Sources</h2>
+<p>The following steps describe how to build the Qt Installer Framework yourself. You can skip this if you have downloaded a pre-built version of the framework.</p>
+<a name="supported-compilers"></a>
+<h3 >Supported Compilers</h3>
+<p>The Qt Installer Framework can be compiled with Microsoft Visual Studio 2013 and newer, GCC 4.7 and newer, and Clang 3.1 and newer.</p>
+<a name="configuring-qt"></a>
+<h3 >Configuring Qt</h3>
+<p>If you use a statically built Qt to build the Qt Installer Framework you do not have to deliver Qt libraries, which enables you to distribute installers as one file.</p>
+<p>The minimum required Qt version is 5.5&#x2e;</p>
+<a name="configuring-qt-for-windows"></a>
+<h4 >Configuring Qt for Windows</h4>
+<p>We recommend that you use the following options when you configure Qt for Windows:</p>
+<pre class="cpp">
+
+  configure <span class="operator">-</span>prefix <span class="operator">%</span>CD<span class="operator">%</span>\qtbase <span class="operator">-</span>release <span class="operator">-</span><span class="keyword">static</span> <span class="operator">-</span><span class="keyword">static</span><span class="operator">-</span>runtime <span class="operator">-</span>target xp <span class="operator">-</span>accessibility <span class="operator">-</span>no<span class="operator">-</span>opengl <span class="operator">-</span>no<span class="operator">-</span>icu <span class="operator">-</span>no<span class="operator">-</span>sql<span class="operator">-</span>sqlite <span class="operator">-</span>no<span class="operator">-</span>qml<span class="operator">-</span>debug <span class="operator">-</span>nomake examples <span class="operator">-</span>nomake tests <span class="operator">-</span>skip qtactiveqt <span class="operator">-</span>skip qtenginio <span class="operator">-</span>skip qtlocation <span class="operator">-</span>skip qtmultimedia <span class="operator">-</span>skip qtserialport <span class="operator">-</span>skip qtquick1 <span class="operator">-</span>skip qtquickcontrols <span class="operator">-</span>skip qtscript <span class="operator">-</span>skip qtsensors <span class="operator">-</span>skip qtwebkit <span class="operator">-</span>skip qtwebsockets <span class="operator">-</span>skip qtxmlpatterns <span class="operator">-</span>skip qt3d
+
+</pre>
+<a name="configuring-qt-for-linux"></a>
+<h4 >Configuring Qt for Linux</h4>
+<p>We recommend that you use the following configuration options for Linux:</p>
+<pre class="cpp">
+
+  configure <span class="operator">-</span>prefix $PWD<span class="operator">/</span>qtbase <span class="operator">-</span>release <span class="operator">-</span><span class="keyword">static</span> <span class="operator">-</span>accessibility <span class="operator">-</span>qt<span class="operator">-</span>zlib <span class="operator">-</span>qt<span class="operator">-</span>libpng <span class="operator">-</span>qt<span class="operator">-</span>libjpeg <span class="operator">-</span>qt<span class="operator">-</span>xcb <span class="operator">-</span>qt<span class="operator">-</span>pcre <span class="operator">-</span>qt<span class="operator">-</span>freetype <span class="operator">-</span>no<span class="operator">-</span>glib <span class="operator">-</span>no<span class="operator">-</span>cups <span class="operator">-</span>no<span class="operator">-</span>sql<span class="operator">-</span>sqlite <span class="operator">-</span>no<span class="operator">-</span>qml<span class="operator">-</span>debug <span class="operator">-</span>no<span class="operator">-</span>opengl <span class="operator">-</span>no<span class="operator">-</span>egl <span class="operator">-</span>no<span class="operator">-</span>xinput <span class="operator">-</span>no<span class="operator">-</span>xinput2 <span class="operator">-</span>no<span class="operator">-</span>sm <span class="operator">-</span>no<span class="operator">-</span>icu <span class="operator">-</span>nomake examples <span class="operator">-</span>nomake tests <span class="operator">-</span>skip qtactiveqt <span class="operator">-</span>skip qtenginio <span class="operator">-</span>skip qtlocation <span class="operator">-</span>skip qtmultimedia <span class="operator">-</span>skip qtserialport <span class="operator">-</span>skip qtquick1 <span class="operator">-</span>skip qtquickcontrols <span class="operator">-</span>skip qtscript <span class="operator">-</span>skip qtsensors <span class="operator">-</span>skip qtwebkit <span class="operator">-</span>skip qtwebsockets <span class="operator">-</span>skip qtxmlpatterns <span class="operator">-</span>skip qt3d
+
+</pre>
+<a name="configuring-qt-for-os-x"></a>
+<h4 >Configuring Qt for OS X</h4>
+<p>We recommend that you use the following configuration options for OS X:</p>
+<pre class="cpp">
+
+  configure <span class="operator">-</span>prefix $PWD<span class="operator">/</span>qtbase <span class="operator">-</span>release <span class="operator">-</span><span class="keyword">static</span> <span class="operator">-</span>accessibility <span class="operator">-</span>qt<span class="operator">-</span>zlib <span class="operator">-</span>qt<span class="operator">-</span>libpng <span class="operator">-</span>qt<span class="operator">-</span>libjpeg <span class="operator">-</span>no<span class="operator">-</span>cups <span class="operator">-</span>no<span class="operator">-</span>sql<span class="operator">-</span>sqlite <span class="operator">-</span>no<span class="operator">-</span>qml<span class="operator">-</span>debug <span class="operator">-</span>nomake examples <span class="operator">-</span>nomake tests <span class="operator">-</span>skip qtactiveqt <span class="operator">-</span>skip qtenginio <span class="operator">-</span>skip qtlocation <span class="operator">-</span>skip qtmultimedia <span class="operator">-</span>skip qtserialport <span class="operator">-</span>skip qtquick1 <span class="operator">-</span>skip qtquickcontrols <span class="operator">-</span>skip qtscript <span class="operator">-</span>skip qtsensors <span class="operator">-</span>skip qtwebkit <span class="operator">-</span>skip qtwebsockets <span class="operator">-</span>skip qtxmlpatterns <span class="operator">-</span>skip qt3d
+
+</pre>
+<a name="setting-up-qt-installer-framework"></a>
+<h3 >Setting up Qt Installer Framework</h3>
+<ol class="1" type="1"><li>Clone the Qt Installer Framework source code from <a href="http://code.qt.io/cgit/installer-framework/installer-framework.git/">http://code.qt.io/cgit/installer-framework/installer-framework.git/</a> to get the sources for the tools.</li>
+<li>Build the tools by running the &quot;qmake&quot; from the static Qt, followed by &quot;make&quot; or &quot;nmake&quot;.</li>
+</ol>
+<p><b>Note: </b>To contribute patches to Qt Installer Framework, follow the standard Qt processes and guidelines. For more information, see <a href="http://wiki.qt.io/Contribute">Contribute to Qt</a>.</p></div>
+<!-- @@@ifw-getting-started.html -->
+<p class="naviNextPrevious footerNavi">
+<a class="prevPage" href="ifw-overview.html">Overview of Qt Installer Framework</a>
+<span class="naviSeparator">  &#9702;  </span>
+<a class="nextPage" href="ifw-use-cases.html">End User Workflows</a>
+</p>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- component.cpp -->
+  <title>List of All Members for Component | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Component</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar"><div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">List of All Members for Component</h1>
+<p>This is the complete list of members for <a href="qinstaller-component.html">QInstaller::Component</a>, including inherited members.</p>
+<div class="table"><table class="propsummary">
+<tr><td class="topAlign"><ul>
+<li class="fn">class <span class="name"><b><a href="qinstaller-component-sortingprioritygreaterthan.html">SortingPriorityGreaterThan</a></b></span></li>
+<li class="fn">class <span class="name"><b><a href="qinstaller-component-sortingprioritylessthan.html">SortingPriorityLessThan</a></b></span></li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#Component">Component</a></b></span>(PackageManagerCore *)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#dtor.Component">~Component</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addAutoDependOn">addAutoDependOn</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addDependency">addDependency</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addDownloadableArchive">addDownloadableArchive</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addElevatedOperation">addElevatedOperation</a></b></span>(Operation *)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addElevatedOperation-2">addElevatedOperation</a></b></span>(const QString &amp;, const QStringList &amp;) : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addOperation">addOperation</a></b></span>(Operation *)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addOperation-2">addOperation</a></b></span>(const QString &amp;, const QStringList &amp;) : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#addStopProcessForUpdateRequest">addStopProcessForUpdateRequest</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#appendComponent">appendComponent</a></b></span>(Component *)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#archives">archives</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#autoCreateOperations">autoCreateOperations</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#autoDependencies-prop">autoDependencies</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#beginInstallation">beginInstallation</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#componentChangeRequested">componentChangeRequested</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#createOperations">createOperations</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#createOperationsForArchive">createOperationsForArchive</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#createOperationsForPath">createOperationsForPath</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#dependencies-prop">dependencies</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#descendantComponents">descendantComponents</a></b></span>() const : QList&lt;Component *&gt;</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#displayName">displayName</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#downloadableArchives">downloadableArchives</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#forcedInstallation">forcedInstallation</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#installationRequested">installationRequested</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isAutoDependOn">isAutoDependOn</a></b></span>(const QSet&lt;QString&gt; &amp;) const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#default-prop">isDefault</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isFromOnlineRepository">isFromOnlineRepository</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#installed-prop">isInstalled</a></b></span>(const QString ) const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isSelected">isSelected</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isSelectedForInstallation">isSelectedForInstallation</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isUninstalled">isUninstalled</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#unstable-prop">isUnstable</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#isVirtual">isVirtual</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#licenses">licenses</a></b></span>() const : QHash&lt;QString, QPair&lt;QString, QString&gt; &gt;</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadComponentScript">loadComponentScript</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadComponentScript-1">loadComponentScript</a></b></span>(const QString &amp;)</li>
+</ul></td><td class="topAlign"><ul>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadDataFromPackage">loadDataFromPackage</a></b></span>(const Package &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadDataFromPackage-1">loadDataFromPackage</a></b></span>(const KDUpdater::LocalPackage &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadLicenses">loadLicenses</a></b></span>(const QString &amp;, const QHash&lt;QString, QVariant&gt; &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadTranslations">loadTranslations</a></b></span>(const QDir &amp;, const QStringList &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loadUserInterfaces">loadUserInterfaces</a></b></span>(const QDir &amp;, const QStringList &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#loaded">loaded</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#localTempPath">localTempPath</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#markAsPerformedInstallation">markAsPerformedInstallation</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#name">name</a></b></span>() const : QString</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#operations">operations</a></b></span>() const : OperationList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#operationsCreatedSuccessfully">operationsCreatedSuccessfully</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#packageManagerCore">packageManagerCore</a></b></span>() const : PackageManagerCore *</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#parentComponent">parentComponent</a></b></span>() const : Component *</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#pathsForUninstallation">pathsForUninstallation</a></b></span>() const : QList&lt;QPair&lt;QString, bool&gt; &gt;</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#registerPathForUninstallation">registerPathForUninstallation</a></b></span>(const QString &amp;, bool )</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#removeComponent">removeComponent</a></b></span>(Component *)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#removeDownloadableArchive">removeDownloadableArchive</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#removeStopProcessForUpdateRequest">removeStopProcessForUpdateRequest</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#repositoryUrl">repositoryUrl</a></b></span>() const : QUrl</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#autoCreateOperations-prop">setAutoCreateOperations</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setInstalled">setInstalled</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setRepositoryUrl">setRepositoryUrl</a></b></span>(const QUrl &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setStopProcessForUpdateRequest">setStopProcessForUpdateRequest</a></b></span>(const QString &amp;, bool )</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setUninstalled">setUninstalled</a></b></span>()</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setUnstable">setUnstable</a></b></span>(PackageManagerCore::UnstableError , const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setUpdateAvailable">setUpdateAvailable</a></b></span>(bool )</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setValidatorCallbackName">setValidatorCallbackName</a></b></span>(const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#setValue">setValue</a></b></span>(const QString &amp;, const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#stopProcessForUpdateRequests">stopProcessForUpdateRequests</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#uninstallationRequested">uninstallationRequested</a></b></span>() const : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#updateRequested">updateRequested</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#updateUncompressedSize">updateUncompressedSize</a></b></span>() : quint64</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#userInterface">userInterface</a></b></span>(const QString &amp;) const : QWidget *</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#userInterfaces-prop">userInterfaces</a></b></span>() const : QStringList</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#validatePage">validatePage</a></b></span>() : bool</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#value">value</a></b></span>(const QString &amp;, const QString &amp;) const : QString</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#valueChanged">valueChanged</a></b></span>(const QString &amp;, const QString &amp;)</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#variables">variables</a></b></span>() const : QHash&lt;QString, QString&gt;</li>
+<li class="fn"><span class="name"><b><a href="qinstaller-component.html#virtualStateChanged">virtualStateChanged</a></b></span>()</li>
+</ul>
+</td></tr>
+</table></div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>

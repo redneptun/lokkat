@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- binaryformat.cpp -->
+  <title>Resource Class | Qt Installer Framework Manual</title>
+  <link rel="stylesheet" type="text/css" href="style/offline-simple.css" />
+  <script type="text/javascript">
+    document.getElementsByTagName("link").item(0).setAttribute("href", "style/offline.css");
+    // loading style sheet breaks anchors that were jumped to before
+    // so force jumping to anchor again
+    setTimeout(function() {
+        var anchor = location.hash;
+        // need to jump to different anchor first (e.g. none)
+        location.hash = "#";
+        setTimeout(function() {
+            location.hash = anchor;
+        }, 0);
+    }, 0);
+  </script>
+</head>
+<body>
+<div class="header" id="qtdocheader">
+  <div class="main">
+    <div class="main-rounded">
+      <div class="navigationbar">
+        <table><tr>
+<td ><a href="index.html">Qt Installer Framework Manual</a></td><td >Resource</td>        </tr></table>
+      </div>
+    </div>
+<div class="content">
+<div class="line">
+<div class="content mainContent">
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Resource Class</h1>
+<span class="small-subtitle">(<a href="qinstaller-resource.html">QInstaller::Resource</a>)<br/></span>
+<!-- $$$Resource-brief -->
+<p>The Resource class is an interface for wrapping a file as read only device. <a href="#details">More...</a></p>
+<!-- @@@Resource -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign">   <span class="preprocessor">#include &lt;Resource&gt;</span>
+</td></tr></table></div><ul>
+<li><a href="qinstaller-resource-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#Resource">Resource</a></b>(const QString &amp;<i>path</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#Resource-1">Resource</a></b>(const QString &amp;<i>path</i>, const QByteArray &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#Resource-2">Resource</a></b>(const QString &amp;<i>path</i>, const Range&lt;qint64&gt; &amp;<i>segment</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#dtor.Resource">~Resource</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#close">close</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#copyData">copyData</a></b>(QFileDevice *<i>out</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QByteArray </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#name">name</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#open">open</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> bool </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#seek">seek</a></b>(qint64 <i>pos</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> Range&lt;qint64&gt; </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#segment">segment</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#setName">setName</a></b>(const QByteArray &amp;<i>name</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#setSegment">setSegment</a></b>(const Range&lt;qint64&gt; &amp;<i>segment</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> qint64 </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#size">size</a></b>() const</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qinstaller-resource.html#copyData-1">copyData</a></b>(Resource *<i>resource</i>, QFileDevice *<i>out</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$Resource-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p>The Resource class is an interface for wrapping a file as read only device.</p>
+<p>Resource is an interface for reading inside a file, but is not supposed to write to the file it wraps. The <code>Resource</code> class is created by passing a path to an existing binary (such as a zipped archive or a Qt resource file).</p>
+<p>The resource name can be set at any time using <a href="qinstaller-resource.html#setName">setName</a>() or during construction. The segment supplied during construction represents the offset and size of the resource inside the file.</p>
+</div>
+<!-- @@@Resource -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$Resource[overload1]$$$ResourceconstQString& -->
+<h3 class="fn" id="Resource"><a name="Resource"></a>Resource::<span class="name">Resource</span>(const <span class="type">QString</span> &amp;<i>path</i>)</h3>
+<p>Creates a resource providing the data in <i>path</i>.</p>
+<!-- @@@Resource -->
+<!-- $$$Resource$$$ResourceconstQString&constQByteArray& -->
+<h3 class="fn" id="Resource-1"><a name="Resource-1"></a>Resource::<span class="name">Resource</span>(const <span class="type">QString</span> &amp;<i>path</i>, const <span class="type">QByteArray</span> &amp;<i>name</i>)</h3>
+<p>Creates a resource providing the data in <i>path</i> identified by <i>name</i>.</p>
+<!-- @@@Resource -->
+<!-- $$$Resource$$$ResourceconstQString&constRange<qint64>& -->
+<h3 class="fn" id="Resource-2"><a name="Resource-2"></a>Resource::<span class="name">Resource</span>(const <span class="type">QString</span> &amp;<i>path</i>, const <span class="type">Range</span>&lt;<span class="type">qint64</span>&gt; &amp;<i>segment</i>)</h3>
+<p>Creates a resource providing the data in <i>path</i> limited to <i>segment</i>.</p>
+<!-- @@@Resource -->
+<!-- $$$~Resource[overload1]$$$~Resource -->
+<h3 class="fn" id="dtor.Resource"><a name="dtor.Resource"></a>Resource::<span class="name">~Resource</span>()</h3>
+<p>Destroys the resource. Calls <a href="qinstaller-resource.html#close">close</a>() if necessary before destroying the resource.</p>
+<!-- @@@~Resource -->
+<!-- $$$close[overload1]$$$close -->
+<h3 class="fn" id="close"><a name="close"></a><span class="type">void</span> Resource::<span class="name">close</span>()</h3>
+<!-- @@@close -->
+<!-- $$$copyData[overload1]$$$copyDataQFileDevice* -->
+<h3 class="fn" id="copyData"><a name="copyData"></a><span class="type">void</span> Resource::<span class="name">copyData</span>(<span class="type">QFileDevice</span> *<i>out</i>)</h3>
+<p>Copies the resource data to a file called <i>out</i>. Throws Error on failure.</p>
+<!-- @@@copyData -->
+<!-- $$$copyData$$$copyDataResource*QFileDevice* -->
+<h3 class="fn" id="copyData-1"><a name="copyData-1"></a><code>[static] </code><span class="type">void</span> Resource::<span class="name">copyData</span>(<span class="type"><a href="qinstaller-resource.html#Resource">Resource</a></span> *<i>resource</i>, <span class="type">QFileDevice</span> *<i>out</i>)</h3>
+<p>This is an overloaded function.</p>
+<p>Copies the resource data of <i>resource</i> to a file called <i>out</i>. Throws Error on failure.</p>
+<!-- @@@copyData -->
+<!-- $$$name[overload1]$$$name -->
+<h3 class="fn" id="name"><a name="name"></a><span class="type">QByteArray</span> Resource::<span class="name">name</span>() const</h3>
+<p>Returns the name of the resource.</p>
+<p><b>See also </b><a href="qinstaller-resource.html#setName">setName</a>().</p>
+<!-- @@@name -->
+<!-- $$$open[overload1]$$$open -->
+<h3 class="fn" id="open"><a name="open"></a><span class="type">bool</span> Resource::<span class="name">open</span>()</h3>
+<p>Opens a resource in QIODevice::ReadOnly mode. The function returns <code>true</code> if successful.</p>
+<!-- @@@open -->
+<!-- $$$seek[overload1]$$$seekqint64 -->
+<h3 class="fn" id="seek"><a name="seek"></a><span class="type">bool</span> Resource::<span class="name">seek</span>(<span class="type">qint64</span> <i>pos</i>)</h3>
+<!-- @@@seek -->
+<!-- $$$segment[overload1]$$$segment -->
+<h3 class="fn" id="segment"><a name="segment"></a><span class="type">Range</span>&lt;<span class="type">qint64</span>&gt; Resource::<span class="name">segment</span>() const</h3>
+<p>Returns the range inside the file this resource represents.</p>
+<p><b>See also </b><a href="qinstaller-resource.html#setSegment">setSegment</a>().</p>
+<!-- @@@segment -->
+<!-- $$$setName[overload1]$$$setNameconstQByteArray& -->
+<h3 class="fn" id="setName"><a name="setName"></a><span class="type">void</span> Resource::<span class="name">setName</span>(const <span class="type">QByteArray</span> &amp;<i>name</i>)</h3>
+<p>Sets the name of the resource to <i>name</i>.</p>
+<p><b>See also </b><a href="qinstaller-resource.html#name">name</a>().</p>
+<!-- @@@setName -->
+<!-- $$$setSegment[overload1]$$$setSegmentconstRange<qint64>& -->
+<h3 class="fn" id="setSegment"><a name="setSegment"></a><span class="type">void</span> Resource::<span class="name">setSegment</span>(const <span class="type">Range</span>&lt;<span class="type">qint64</span>&gt; &amp;<i>segment</i>)</h3>
+<p>Sets the range to the <i>segment</i> of the file that this resource represents.</p>
+<p><b>See also </b><a href="qinstaller-resource.html#segment">segment</a>().</p>
+<!-- @@@setSegment -->
+<!-- $$$size[overload1]$$$size -->
+<h3 class="fn" id="size"><a name="size"></a><span class="type">qint64</span> Resource::<span class="name">size</span>() const</h3>
+<!-- @@@size -->
+</div>
+        </div>
+       </div>
+   </div>
+   </div>
+</div>
+<div class="footer">
+   <p>
+   <acronym title="Copyright">&copy;</acronym> 2017 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.<br>    The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.<br>    Qt and respective logos are trademarks of The Qt Company Ltd.     in Finland and/or other countries worldwide. All other trademarks are property
+   of their respective owners. </p>
+</div>
+</body>
+</html>
