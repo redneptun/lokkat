@@ -40,12 +40,28 @@ Setting up a development environment for Lokkat is easy. Just follow these instr
 
 This is not the only README of Lokkat. In its various subdirectories you are going to find more READMEs to provide you with more info on the specific contents and purpose of those subdirectories.
 
+### Where to start?
+
+I suggest these steps:
+
+1. Clone the source code
+2. Download and install the [requirements](https://github.com/redneptun/lokkat#requirements) you need for your platform
+3. Read the this README in full
+4. Choose an IDE
+5. Open the project inside the IDE and try to get it to run
+6. If it runs: get to work with whatever you were planning ;-P
+7. If it doesn't: find the problem
+  - See if somebody already had the same problem
+  - Maybe opening a new [issue](https://github.com/redneptun/lokkat/issues) can get you some help
+  - Find a solution and document it here ;-)
+
 #### The project root
 
 Here are is some general information about the project root and its structure:
 
 - **config/**: contains the code for loading/saving the configuration file of Lokkat
 - **crypt/**: contains the code for encrypting the data and retrieving random data from external sources
+- **dist**: only exists after you first build of distributables (either for Windows or GNU/Linux); contains executables of Lokkat
 - **etc/**: contains stuff that did not fit anywhere else
 - **gui/**: contains the Qt GUI design files, their Python counterparts as well as all of the code of UI in general
 - **help/**: contains the user manual and its images
@@ -59,7 +75,7 @@ Here are is some general information about the project root and its structure:
 - *gnu_linux.spec*: this file specifies how [Pyinstaller](https://www.pyinstaller.org/) should build the distributable for GNU/Linux
 - *lokkat.py*: **THIS IS THE MAIN ENTRY POINT OF THE APPLICATION**
 - *make_dist_gnu_linux*: a shell script to build a distributable for GNU/Linux. Intended to be used on a GNU/Linux machine.
-- *make_dist_windows*: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).
+- *make_dist_windows*: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).*s
 - *make_dist_windows.bat*: a batch script to build a distributable `.EXE` for Windows. Intended to be used on a Windows system.
 - *make_pak_windows*: creates an installer for Windows using the Qt Installer Framework. Intended to be used on a GNU/Linux system utilizing Wine.
 - *make_pak_windows.bat*: just the same as the shell script for GNU/Linux but intended to be used from a Windows system instead
@@ -70,21 +86,6 @@ Here are is some general information about the project root and its structure:
 - *run.bat*: runs Lokkat on Windows from source
 - *run.sh*: runs Lokkat on GNU/Linux from source
 - *windows.spec*: this file specifies how [Pyinstaller](https://www.pyinstaller.org/) should build the distributable for Windows
-
-### Where to start?
-
-I suggest these steps:
-
-1. Clone the source code
-2. Download and install the [requirements](https://github.com/redneptun/lokkat#requirements) you need for your platform
-3. Read the this README in full
-4. Choose an IDE
-5. Open the project inside the IDE and try to get it to run
-6. If it runs: get to work with whatever you were planning ;-P
-7. If it doesn't: find the problem
-  1. See if somebody already had the same problem
-  2. Maybe opening a new [issue](https://github.com/redneptun/lokkat/issues) can get you some help
-  3. Find a solution and document it here ;-)
 
 # Postface
 
