@@ -33,6 +33,7 @@ Not now:
 
 Bugs:
 =====
+- changeing the language seems bugged
 - it should take longer hovering for tooltips to appear
 - something is not quite right with the .gitignore in dist/windows & dist
 - Python37 probably not portable...
