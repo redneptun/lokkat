@@ -73,12 +73,12 @@ Here are is some general information about the project root and its structure:
 - **README.md**: is the file you are currently reading
 - **TODO*: contains some planned features and known bugs
 - **gnu_linux.spec**: this file specifies how [Pyinstaller](https://www.pyinstaller.org/) should build the distributable for GNU/Linux
-- **lokkat.py*: **THIS IS THE MAIN ENTRY POINT OF THE APPLICATION**
+- **lokkat.py**: **THIS IS THE MAIN ENTRY POINT OF THE APPLICATION**
 - **make_dist_gnu_linux**: a shell script to build a distributable for GNU/Linux. Intended to be used on a GNU/Linux machine.
-- **make_dist_windows**: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).*s
+- **make_dist_windows**: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).
 - **make_dist_windows.bat**: a batch script to build a distributable `.EXE` for Windows. Intended to be used on a Windows system.
 - **make_pak_windows**: creates an installer for Windows using the Qt Installer Framework. Intended to be used on a GNU/Linux system utilizing Wine.
-- **make_pak_windows.bat*: just the same as the shell script for GNU/Linux but intended to be used from a Windows system instead
+- **make_pak_windows.bat**: just the same as the shell script for GNU/Linux but intended to be used from a Windows system instead
 - **qtedit**: a convencience shell script to be used during UI design.
   - Opens a .ui file in the Qt-Designer. After that, runs `lupdate` to update the `.ts` translations file and opens the `.ts` files for this UI files in Qt Linguist for you to provide localization for potential new strings. When you close the Linguist application afterwards the `.ts` files are automatically converted into `.qm` binary files to be used by the Qt resource system. After that the resources file is rebuilt.
   - As you can see this convenience script can save you a lot of time when patching UIs in Qt. If you are not familiar with all the tools involved, I recommend doing it all step by step manually first and taking a look with an editor at what the script is doing.
