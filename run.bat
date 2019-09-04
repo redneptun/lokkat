@@ -1,0 +1,1 @@
+tools\win\Python37\python.exe lokkat.py
