@@ -40,7 +40,7 @@ Setting up a development environment for Lokkat is easy. Just follow these instr
 
 This is not the only README of Lokkat. In its various subdirectories you are going to find more READMEs to provide you with more info on the specific contents and purpose of those subdirectories.
 
-### Where to start?
+#### Where to start?
 
 I suggest these steps:
 
