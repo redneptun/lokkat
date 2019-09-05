@@ -148,7 +148,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def openHelpFile(self):
         path = Path().absolute()
         url = f'file://{path}/help/user_manual_{self.activeConfig.language.value}.html'
-        QMessageBox.information(self, 'derp', url);
         webbrowser.open(url, new=2)
 
     def setLanguageGerman(self):

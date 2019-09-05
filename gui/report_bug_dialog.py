@@ -81,7 +81,8 @@ class ReportBugDialog(QDialog, Ui_report_bug):
             body += '___\n'
 
         body += description
-        headers = {'Authorization': 'token a78b944547e372ce55aab7bd23565e6a0aa50b9c'}
+        #headers = {'Authorization': 'token a78b944547e372ce55aab7bd23565e6a0aa50b9c'}
+        headers = {'Authorization': 'token  df57f534e0900b2d5f0349e5d2fb1b4ac075ac40'}
         url = 'https://api.github.com/repos/redneptun/lokkat/issues'
         data = {"title": title, "body": body}
         response = requests.post(url, data=json.dumps(data), headers=headers, verify=certifi.where())
