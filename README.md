@@ -71,11 +71,10 @@ Here are is some general information about the project root and its structure:
 - **venv/**: contains a virtual Python 3.7 environment for development purposes
 - **LICENSE**: is the GNU GPL v3 license
 - **README.md**: is the file you are currently reading
-- **TODO*: contains some planned features and known bugs
 - **gnu_linux.spec**: this file specifies how [Pyinstaller](https://www.pyinstaller.org/) should build the distributable for GNU/Linux
 - **lokkat.py**: **THIS IS THE MAIN ENTRY POINT OF THE APPLICATION**
 - **make_dist_gnu_linux**: a shell script to build a distributable for GNU/Linux. Intended to be used on a GNU/Linux machine.
-- **make_dist_windows**: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).
+- **make_dist_windows**: a shell script to build a distributable `.EXE` for Windows. Intended to be used on a GNU/Linux machine. *Yes, you can build executable files for Windows on a GNU/Linux system using PyInstaller, but you are going to need [Wine](https://www.winehq.org/).*
 - **make_dist_windows.bat**: a batch script to build a distributable `.EXE` for Windows. Intended to be used on a Windows system.
 - **make_pak_windows**: creates an installer for Windows using the Qt Installer Framework. Intended to be used on a GNU/Linux system utilizing Wine.
 - **make_pak_windows.bat**: just the same as the shell script for GNU/Linux but intended to be used from a Windows system instead
