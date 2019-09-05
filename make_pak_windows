@@ -1,5 +1,8 @@
 #!/bin/bash
 
+rm pak/windows/*.exe
+rm pak/windows/*.zip
+
 # make the dist
 ./make_dist_windows
 
@@ -11,3 +14,6 @@ rm pak/windows/packages/net.redneptun.lokkat/data/lokkat.7z
 
 # build the installer
 (cd pak/windows/ && wine ../../tools/win/QtIFW-3.1.1/bin/binarycreator.exe -c config/config.xml -p packages Lokkat-0.5-Installer.exe)
+
+# build the portable zip
+(cd dist/windows && zip -r ../../pak/windows/Lokkat-0.5.zip ./*)

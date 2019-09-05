@@ -1,9 +1,8 @@
 #!/bin/bash
 # clear dist dir
-shopt -s extglob
-cd dist/gnu_linux
-rm -rf !(.*)
-cd ../..
+# clear dist dir
+rm -rf dist/gnu_linux
+mkdir dist/gnu_linux
 
 #build dist
 source venv/bin/activate
@@ -21,6 +20,3 @@ cp help/img/*.png dist/gnu_linux/help/img
 
 #license
 cp LICENSE dist/gnu_linux/
-
-#links
-cp etc/open_project_website.sh dist/gnu_linux/

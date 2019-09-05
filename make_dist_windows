@@ -5,7 +5,7 @@ mkdir dist/windows
 
 #build dist
 
-wine tools/win/Python37/Scripts/pyinstaller.exe -D --distpath dist/windows windows.spec 
+wine tools/win/Python37/Scripts/pyinstaller.exe -F --distpath dist/windows windows.spec 
 
 #copy additional files
 

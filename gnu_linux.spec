@@ -4,7 +4,6 @@ block_cipher = None
 
 
 a = Analysis(['lokkat.py'],
-             pathex=['/home/pboeckmann/wc/lokkat'],
              binaries=[],
              datas=[],
              hiddenimports=[],
