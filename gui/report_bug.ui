@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>report_bug</class>
+ <widget class="QDialog" name="report_bug">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>669</width>
+    <height>396</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fehlerbericht senden</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../res/resources.qrc">
+    <normaloff>:/icons/bug.png</normaloff>:/icons/bug.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="lblName">
+           <property name="text">
+            <string>Name (optional):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="txtName"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="lblEmail">
+           <property name="text">
+            <string>E-Mail (optional):</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="txtMail"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="lblTitle">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Titel:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="txtTitle"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="lblDescription">
+           <property name="font">
+            <font>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Fehlerbeschreibung:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QTextEdit" name="txtDescription">
+           <property name="autoFormatting">
+            <set>QTextEdit::AutoNone</set>
+           </property>
+           <property name="acceptRichText">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="1">
+          <widget class="QLabel" name="lblInfo">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="text">
+            <string>Mit einem Klick auf &quot;Absenden&quot; wird aus deinen Einträgen ein sog. &quot;Issue&quot; auf der Quellcodeverwaltungsseite von Lokkat bei Github erstellt. Dieses Issue kann dann Entwicklern bearbeitet und (hoffentlich) gelöst werden.</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::RichText</enum>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QPushButton" name="btnSend">
+           <property name="text">
+            <string>Absenden</string>
+           </property>
+           <property name="icon">
+            <iconset resource="../res/resources.qrc">
+             <normaloff>:/icons/mail_yellow.png</normaloff>:/icons/mail_yellow.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="lblInfo_2">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="lineWidth">
+            <number>1</number>
+           </property>
+           <property name="text">
+            <string>Trage deine E-Mailadresse nur ein, wenn du mit Rückfragen rechnest und es dir egal ist, dass sie im öffentlichen Repository von Lokkat auf Github angezeigt wird und somit öffentlich sichtbar ist.</string>
+           </property>
+           <property name="textFormat">
+            <enum>Qt::RichText</enum>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+           <property name="openExternalLinks">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QLabel" name="trError">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>54</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Fehler</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trInvalidMail">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>341</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Ungültige E-Mailadresse. Vielleicht hast du dich vertippt?</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trSuccess">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>341</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Problem erfolgreich gemeldet</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trSuccessLink">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>391</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Du kannst den Status deines gemeldeten Problems hier einsehen: {}</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trFailureText">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>611</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Der Fehlerbericht konnte leider nicht automatisiert versendet werden. Sieht so aus, als läge hier noch mehr im Argen. Schreibst du bitte eine E-Mail an lokkat@redneptun.net? Danke.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trInvalidTitle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>611</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Trag bitte einen Titel ein, der zu deiner Problemmeldung passt.</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="trInvalidDescription">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>611</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Das Beschreibungsfeld darf nicht leer sein.</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res/resources.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -300,6 +300,11 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation>&lt;div style=&quot;color:red;font-weight:bold;&quot;&gt;ERROR&lt;/div&gt;: An unknown error occurred during the request to the ANU.</translation>
     </message>
     <message>
+        <location filename="../../gui/gui.ui" line="1154"/>
+        <source>Programmfehler melden</source>
+        <translation>Report bug</translation>
+    </message>
+    <message>
         <source>Alle Dateien (*)</source>
         <translation type="vanished">All files (*)</translation>
     </message>
@@ -410,28 +415,28 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1053"/>
+        <location filename="../../gui/gui.ui" line="1054"/>
         <source>Sprache/Language</source>
         <translation>Language/Sprache</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1068"/>
+        <location filename="../../gui/gui.ui" line="1069"/>
         <source>Hilfedatei öffnen</source>
         <translation>Open help file</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1071"/>
+        <location filename="../../gui/gui.ui" line="1072"/>
         <source>F1</source>
         <comment>actionOpenHelpFile</comment>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1083"/>
+        <location filename="../../gui/gui.ui" line="1084"/>
         <source>Projektwebseite aufrufen</source>
         <translation>Open project website</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1086"/>
+        <location filename="../../gui/gui.ui" line="1087"/>
         <source>F3</source>
         <translation>F3</translation>
     </message>
@@ -441,12 +446,12 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation type="vanished">Shift+F1</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1095"/>
+        <location filename="../../gui/gui.ui" line="1096"/>
         <source>Über Lokkat...</source>
         <translation>About Lokkat...</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1113"/>
+        <location filename="../../gui/gui.ui" line="1114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Schließt Lokkat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Closes Lokkat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -455,12 +460,12 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation type="vanished">About DerpOTP...</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1098"/>
+        <location filename="../../gui/gui.ui" line="1099"/>
         <source>F12</source>
         <translation>F12</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1110"/>
+        <location filename="../../gui/gui.ui" line="1111"/>
         <source>Schließen</source>
         <translation>Close</translation>
     </message>
@@ -469,7 +474,7 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Closes DerpOTP.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1116"/>
+        <location filename="../../gui/gui.ui" line="1117"/>
         <source>Ctrl+Q</source>
         <comment>actionClose</comment>
         <translation>Ctrl+Q</translation>
@@ -479,12 +484,12 @@ If it should not work, I will stop trying after 60 seconds.</translation>
         <translation type="vanished">derp2</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1130"/>
+        <location filename="../../gui/gui.ui" line="1131"/>
         <source>Deutsch</source>
         <translation>German</translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1141"/>
+        <location filename="../../gui/gui.ui" line="1142"/>
         <source>Englisch</source>
         <translation>English</translation>
     </message>

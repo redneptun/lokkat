@@ -21,5 +21,9 @@
         <file>l10n/about_en.qm</file>
         <file>l10n/gui_de.qm</file>
         <file>l10n/gui_en.qm</file>
+        <file>icons/bug.png</file>
+        <file>l10n/report_bug_en.qm</file>
+        <file>l10n/report_bug_de.qm</file>
+        <file>icons/mail_yellow.png</file>
     </qresource>
 </RCC>

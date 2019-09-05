@@ -8,9 +8,7 @@ Not now:
 1.0:
 ----
 - create project website
-- upload project to github
 - bugreporting
-- nicer icons
 
 1.0?:
 -----
@@ -45,6 +43,8 @@ Won't fix (for now):
 
 Done:
 =====
+- OK nicer icons
+- OK upload project to github
 - OK default en/decryption path in userhome
 - OK l10n for file dialogs
 - OK colored INFO/ERROR/SUCCESS messages

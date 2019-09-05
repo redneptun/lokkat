@@ -1045,6 +1045,7 @@ Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</string>
     </property>
     <addaction name="actionOpenHelpFile"/>
     <addaction name="actionOpenOnlineHelp"/>
+    <addaction name="actionReportBug"/>
     <addaction name="separator"/>
     <addaction name="actionAbout"/>
    </widget>
@@ -1142,6 +1143,15 @@ Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</string>
    </property>
    <property name="autoRepeat">
     <bool>false</bool>
+   </property>
+  </action>
+  <action name="actionReportBug">
+   <property name="icon">
+    <iconset resource="../res/resources.qrc">
+     <normaloff>:/icons/bug.png</normaloff>:/icons/bug.png</iconset>
+   </property>
+   <property name="text">
+    <string>Programmfehler melden</string>
    </property>
   </action>
  </widget>

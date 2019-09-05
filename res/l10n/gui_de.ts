@@ -199,6 +199,11 @@ Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</translation>
         <translation></translation>
     </message>
     <message>
+        <location filename="../../gui/gui.ui" line="1154"/>
+        <source>Programmfehler melden</source>
+        <translation></translation>
+    </message>
+    <message>
         <location filename="../../gui/gui.ui" line="229"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Wenn diese Option gewählt ist, dann wird die Internetseite &amp;quot;http://qrng.anu.edu.au&amp;quot; als Quelle für die beim Verschlüsselungsvorgang benötigten Zufallszahlen verwendet.&lt;/p&gt;&lt;p&gt;Die Australian National University verwendet Quantenfluktuation im Vakuum als Quelle für &amp;quot;echten&amp;quot; Zufall (meint: Zufall aus physikalischen Vorgängen).&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Vorteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Physischer Zufall sorgt für erhöhte Sicherheit (da er schlichtweg nicht vorhersehbar oder nachträglich rekonstruierbar ist)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Nachteile&lt;/span&gt;:&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Internetverbindung wird benötigt&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Nur für geringe Datenmengen nutzbar, da wir die ANU nicht mit zu vielen Anfragen überfluten und ihre kostenlos bereitgestellte Serverleistung und Bandbreite übermäßig beanspruchen möchten&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
@@ -292,38 +297,38 @@ Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1053"/>
+        <location filename="../../gui/gui.ui" line="1054"/>
         <source>Sprache/Language</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1068"/>
+        <location filename="../../gui/gui.ui" line="1069"/>
         <source>Hilfedatei öffnen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1071"/>
+        <location filename="../../gui/gui.ui" line="1072"/>
         <source>F1</source>
         <comment>actionOpenHelpFile</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1083"/>
+        <location filename="../../gui/gui.ui" line="1084"/>
         <source>Projektwebseite aufrufen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1095"/>
+        <location filename="../../gui/gui.ui" line="1096"/>
         <source>Über Lokkat...</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1113"/>
+        <location filename="../../gui/gui.ui" line="1114"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Schließt Lokkat.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1098"/>
+        <location filename="../../gui/gui.ui" line="1099"/>
         <source>F12</source>
         <translation></translation>
     </message>
@@ -348,28 +353,28 @@ Sollte es nicht klappen, lasse ich es nach 60 Sekunden bleiben.</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1086"/>
+        <location filename="../../gui/gui.ui" line="1087"/>
         <source>F3</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1110"/>
+        <location filename="../../gui/gui.ui" line="1111"/>
         <source>Schließen</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1116"/>
+        <location filename="../../gui/gui.ui" line="1117"/>
         <source>Ctrl+Q</source>
         <comment>actionClose</comment>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1130"/>
+        <location filename="../../gui/gui.ui" line="1131"/>
         <source>Deutsch</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../../gui/gui.ui" line="1141"/>
+        <location filename="../../gui/gui.ui" line="1142"/>
         <source>Englisch</source>
         <translation></translation>
     </message>

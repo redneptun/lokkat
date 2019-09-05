@@ -34,6 +34,8 @@ from gui.gui import Ui_MainWindow
 from gui.iconsetter import setIcon
 from pathlib import Path
 
+from gui.report_bug_dialog import ReportBugDialog
+
 ENCDEC_SLEEP_TIME = 0.2
 
 
@@ -104,6 +106,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionAbout.triggered.connect(self.about)
         self.actionGerman.triggered.connect(self.setLanguageGerman)
         self.actionEnglish.triggered.connect(self.setLanguageEnglish)
+        self.actionReportBug.triggered.connect(self.reportBug)
         # ENCRYPTION
         self.btnAddInputFilesEnc.clicked.connect(self.addInputFilesEnc)
         self.btnRemoveInputFilesEnc.clicked.connect(self.removeInputFilesEnc)
@@ -124,6 +127,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         self.actionAbout.triggered.disconnect(self.about)
         self.actionGerman.triggered.disconnect(self.setLanguageGerman)
         self.actionEnglish.triggered.disconnect(self.setLanguageEnglish)
+        self.actionReportBug.triggered.disconnect(self.reportBug)
         # ENCRYPTION
         self.btnAddInputFilesEnc.clicked.disconnect(self.addInputFilesEnc)
         self.btnRemoveInputFilesEnc.clicked.disconnect(self.removeInputFilesEnc)
@@ -189,6 +193,10 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def about(self):
         diag = AboutDialog(activeconfig=self.activeConfig)
+        diag.exec()
+
+    def reportBug(self):
+        diag = ReportBugDialog(activeconfig=self.activeConfig)
         diag.exec()
 
     def addEncText(self, text):
