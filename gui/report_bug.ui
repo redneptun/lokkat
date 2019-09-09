@@ -116,7 +116,7 @@
             <number>1</number>
            </property>
            <property name="text">
-            <string>Mit einem Klick auf &quot;Absenden&quot; wird aus deinen Einträgen ein sog. &quot;Issue&quot; auf der Quellcodeverwaltungsseite von Lokkat bei Github erstellt. Dieses Issue kann dann Entwicklern bearbeitet und (hoffentlich) gelöst werden.</string>
+            <string>Mit einem Klick auf &quot;Absenden&quot; wird aus deinen Einträgen ein sog. &quot;Issue&quot; auf der Quellcodeverwaltungsseite von Lokkat bei Github erstellt. Dieses Issue kann dann von Entwicklern bearbeitet und (hoffentlich) gelöst werden.</string>
            </property>
            <property name="textFormat">
             <enum>Qt::RichText</enum>
@@ -132,11 +132,14 @@
          <item row="5" column="1">
           <widget class="QPushButton" name="btnSend">
            <property name="text">
-            <string>Absenden</string>
+            <string> Absenden</string>
            </property>
            <property name="icon">
             <iconset resource="../res/resources.qrc">
              <normaloff>:/icons/mail_yellow.png</normaloff>:/icons/mail_yellow.png</iconset>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
            </property>
           </widget>
          </item>

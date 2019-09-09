@@ -59,13 +59,6 @@ def getPathsFromList(listWidget):
 def closeApp():
     sys.exit()
 
-
-def openProjectWebsite():
-    # todo insert proper project page address
-    url = 'http://redneptun.net/lokkat'
-    webbrowser.open(url, new=2)
-
-
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def __init__(self, activeConfig, *args, obj=None, **kwargs):
@@ -102,7 +95,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # MENU
         self.actionClose.triggered.connect(closeApp)
         self.actionOpenHelpFile.triggered.connect(self.openHelpFile)
-        self.actionOpenOnlineHelp.triggered.connect(openProjectWebsite)
+        self.actionOpenOnlineHelp.triggered.connect(self.openProjectWebsite)
         self.actionAbout.triggered.connect(self.about)
         self.actionGerman.triggered.connect(self.setLanguageGerman)
         self.actionEnglish.triggered.connect(self.setLanguageEnglish)
@@ -123,7 +116,7 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         # MENU
         self.actionClose.triggered.disconnect(closeApp)
         self.actionOpenHelpFile.triggered.disconnect(self.openHelpFile)
-        self.actionOpenOnlineHelp.triggered.disconnect(openProjectWebsite)
+        self.actionOpenOnlineHelp.triggered.disconnect(self.openProjectWebsite)
         self.actionAbout.triggered.disconnect(self.about)
         self.actionGerman.triggered.disconnect(self.setLanguageGerman)
         self.actionEnglish.triggered.disconnect(self.setLanguageEnglish)
@@ -150,6 +143,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         url = f'file://{path}/help/user_manual_{self.activeConfig.language.value}.html'
         webbrowser.open(url, new=2)
 
+    def openProjectWebsite(self):
+        if self.activeConfig.language == Language.GERMAN:
+            url = 'http://redneptun.net/lokkat/lokkat_de.html'
+        else:
+            url = 'http://redneptun.net/lokkat/lokkat_en.html'
+        webbrowser.open(url, new=2)
+
     def setLanguageGerman(self):
         self.setLanguage(Language.GERMAN)
 
@@ -164,8 +164,6 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
         qmfile = "qtbase_" + QLocale.system().name().split('_')[0] + '.qm'
         self.file_dialog_translator.load(qmfile,
                                          QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        # todo: remove
-        print(qmfile + '  location: ' + QLibraryInfo.location(QLibraryInfo.TranslationsPath))
         QApplication.installTranslator(self.file_dialog_translator)
 
         # rest of app
