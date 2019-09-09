@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm pak/gnu_linux/*.tar.gz
+rm pak/gnu_linux/*.tar.*
 mkdir pak/gnu_linux
 
 # make the dist
@@ -16,4 +16,4 @@ mkdir pak/gnu_linux
 
 
 # build the portable tar.gz
-tar -cavf pak/gnu_linux/Lokkat-0.5.tar.gz dist/gnu_linux
+(cd dist/gnu_linux && tar -cavf ../../pak/gnu_linux/Lokkat-0.5.tar.gz *)
